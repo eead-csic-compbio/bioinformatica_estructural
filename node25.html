@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de promotores</TITLE>
+<META NAME="description" CONTENT="Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de promotores">
+<META NAME="keywords" CONTENT="algoritmos3D">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="algoritmos3D.css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node26.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html807"
+  HREF="node24.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html813"
+  HREF="node24.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html815"
+  HREF="node26.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html816"
+  HREF="node26.html">Dise&#241;o de primers para PCR</A></b>  Arriba: <b><A NAME="tex2html814"
+  HREF="node24.html">Estructura primaria o secuencia</A></b>  Anterior: <b><A NAME="tex2html808"
+  HREF="node24.html">Estructura primaria o secuencia</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000"></A> <A NAME="dna1"></A>
+<BR>
+Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de promotores
+</H1>
+
+<P>
+El modelo  <i> Nearest Neighbor  </i> (NN) aproxima la estabilidad molecular de un &#225;cido nucleico en disoluci&#243;n
+a partir de su secuencia, que se analiza como una secuencia de dinucle&#243;tidos solapantes 
+de interacciones aditivas, cuyas energ&#237;as se han determinado experimentalmente (<A NAME="tex2html817" target="contents"
+  HREF="node44.html#SantaLucia1998">SantaLucia, 1998</A>; <A NAME="tex2html818" target="contents"
+  HREF="node44.html#Breslauer1986">Breslauer <EM>et&nbsp;al.</EM>, 1986</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:NN"></A><A NAME="1676"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.1:</STRONG>
+C&#225;lculo de estabilidad (energ&#237;a libre de Gibbs, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Delta G$"></SPAN>) a temperatura fisiol&#243;gica en base al modelo NN, 
+incluyendo un t&#233;rmino de iniciaci&#243;n de d&#250;plex, tomado de (<A
+ HREF="node44.html#SantaLucia1998">SantaLucia, 1998</A>).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="560" HEIGHT="388" ALIGN="BOTTOM" BORDER="0"
+ SRC="./NN.jpg"
+ ALT="Image NN">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Modelos recientes amplian la vecindad hasta usar por ejemplo pent&#225;meros:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:NN5"></A><A NAME="1677"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.2:</STRONG>
+Aproximaci&#243;n de propiedades estructurales de un d&#250;plex de ADN por solapamiento de pent&#225;meros, 
+base del algoritmo <A NAME="tex2html143"
+  HREF="http://rohslab.cmb.usc.edu/DNAshape/">DNAshape</A>, adaptado de (<A
+ HREF="node44.html#Zhou2013">Zhou <EM>et&nbsp;al.</EM>, 2013</A>).
+Este tipo de aproximaciones se est&#225;n usando para enriquecer motivos de DNA reconocidos por factores de transcripci&#243;n (<A
+ HREF="node44.html#Yang2015">Yang &amp; Ramsey, 2015</A>)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="671" HEIGHT="360" ALIGN="BOTTOM" BORDER="0"
+ SRC="./DNApentamers.jpg"
+ ALT="Image DNApentamers">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+En esta secci&#243;n aplicaremos el modelo NN a la predicci&#243;n de promotores:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> disponemos de coordenadas de una colecci&#243;n de marcos de lectura 
+(<A NAME="tex2html148"
+  HREF="http://es.wikipedia.org/wiki/Marco_abierto_de_lectura"> <i> ORFs  </i></A>), 
+pero desconocemos la posici&#243;n de sus secuencias promotoras
+</LI>
+<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> buscar la "huella" de estabilidad molecular de los promotores en la secuencia del DNA
+</LI>
+</UL>
+
+<P>
+Este problema ha tenido mayor importancia en procariotas por la gran velocidad con que se han ido obteniendo sus secuencias gen&#243;micas, 
+y el algoritmo de <A
+ HREF="node44.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A> es un ejemplo de como emplear una estrategia estructural para atacar este problema. 
+El algoritmo consiste en estimar la estabilidad helicoidal del ADN cromos&#243;mico, que se supone es menor en
+las regiones promotoras, donde la maquinaria transcripcional se asienta para comenzar la s&#237;ntesis de ARN. 
+En concreto este m&#233;todo estima la estabilidad de una (ventana de) secuencia de ADN a ambos lados de una coordenada y define como posibles
+posiciones promotores aquellas donde la diferencia de estabilidad en torno a una coordenada es significativa. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:window"></A><A NAME="1680"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.3:</STRONG>
+Ejemplos de ventanas de 6 y 11 nucle&#243;tidos, que sirven para promediar propiedades a lo largo de la secuencia.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="406" HEIGHT="62" ALIGN="BOTTOM" BORDER="0"
+ SRC="./window.png"
+ ALT="Image window">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Este algoritmo incluye varios par&#225;metros libres y en el art&#237;culo original se muestra como entrenarlo para obtener valores adecuados para todos ellos.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Kanhere"></A><A NAME="1681"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.4:</STRONG>
+Algoritmo de <A
+ HREF="node44.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A>, que se basa en calcular la diferencia de <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Delta G$"></SPAN> entre dos ventanas en torno a una posici&#243;n <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ n$"></SPAN>.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="600" HEIGHT="900" ALIGN="BOTTOM" BORDER="0"
+ SRC="./flowKanhere.jpg"
+ ALT="Image flowKanhere">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Se han propuesto otras aproximaciones estructurales, como la de <A
+ HREF="node44.html#Gogni2007">Go&#241;i <EM>et&nbsp;al.</EM> (2007)</A>, que identifica regiones promotoras en base a la capacidad de deformaci&#243;n de los 
+<A NAME="tex2html149"
+  HREF="http://nar.oxfordjournals.org/content/31/17/5108/F1.large.jpg">pares de bases</A>,
+estimada por medio de extensas simulaciones moleculares precalculadas. 
+Sin duda &#233;sta es un &#225;rea de investigaci&#243;n en crecimiento y constantemente se siguen publicando 
+<A NAME="tex2html150"
+  HREF="http://www.ncbi.nlm.nih.gov/pubmed?term=structural[All Fields] AND prediction[All Fields] AND promoters[All Fields]">nuevos trabajos</A>. 
+
+<P>
+El repertorio de m&#233;todos para predicci&#243;n de promotores en base a inferencias estructurales es limitado, pero incluye al menos: 
+<A NAME="tex2html151"
+  HREF="http://mmb.pcb.ub.es/proStar/">proStar</A>, <A NAME="tex2html152"
+  HREF="http://bioinformatics.psb.ugent.be/software/details/ProSOM">ProSOM</A>
+o el algoritmo de <A
+ HREF="node44.html#Song2012">Song (2012)</A>.
+
+<P>
+El ejercicio de esta secci&#243;n consiste en completar el siguiente programa, usando los par&#225;metros unificados de <A
+ HREF="node44.html#SantaLucia1998">SantaLucia (1998)</A>,
+para calcular la funci&#243;n 
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+D(n) = E1(n) - E2(n)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="157" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$\displaystyle D(n) = E1(n) - E2(n)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+del art&#237;culo de <A
+ HREF="node44.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A>, calculada sobre ventanas de longitud 15, donde 
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+E1(n) = \frac{\sum_{n}^{n+49}\Delta G}{50}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="134" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$\displaystyle E1(n) = \frac{\sum_{n}^{n+49}\Delta G}{50}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+y 
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+E2(n) = \frac{\sum_{n+99}^{n+199}\Delta G}{100}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="140" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\displaystyle E2(n) = \frac{\sum_{n+99}^{n+199}\Delta G}{100}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Como conjunto de datos para la predicci&#243;n de promotores usaremos las secuencias del fichero <A NAME="tex2html153"
+  HREF="./files/K12_400_50_sites">K12_400_50_sites</A>, 
+que contiene coordenadas de ORFs de  <i> Escherichia coli  </i> con coordenadas -400,+50, con el 0 centrado cerca del cod&#243;n de inicio.
+Qu&#233; observas al cambiar el tama&#241;o de la ventana?
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/perl -w
+
+# prog1.1 
+# Bruno Contreras-Moreira
+# Nearest Neighbor dG calculator
+
+use strict;
+
+# global variables
+my $T           = 37; # temperature(C)
+my $windowL     = 15;  # window length, http://www.biomedcentral.com/1471-2105/6/1
+my %NNparams    = ( 
+	# SantaLucia J (1998) PNAS 95(4): 1460-1465.
+	# [NaCl] 1M, 37C &amp; pH=7 
+	# H(enthalpy): kcal/mol	, S(entropy): cal/k·mol
+	# stacking dinucleotides
+	'AA/TT' , {'H',-7.9, 'S',-22.2},
+	'AT/TA' , {'H',-7.2, 'S',-20.4},
+	'TA/AT' , {'H',-7.2, 'S',-21.3},
+	'CA/GT' , {'H',-8.5, 'S',-22.7},
+	'GT/CA' , {'H',-8.4, 'S',-22.4},
+	'CT/GA' , {'H',-7.8, 'S',-21.0},
+	'GA/CT' , {'H',-8.2, 'S',-22.2},
+	'CG/GC' , {'H',-10.6,'S',-27.2},
+	'GC/CG' , {'H',-9.8, 'S',-24.4},
+	'GG/CC' , {'H',-8.0, 'S',-19.9},
+	# initiation costs
+	'G'     , {'H', 0.1, 'S',-2.8 },
+	'A'     , {'H', 2.3, 'S',4.1  },
+	# symmetry correction
+	'sym'   , {'H',   0, 'S',-1.4 } );
+
+my $infile = $ARGV[0] || die "# usage: $0 &lt;promoters file&gt;\n";
+
+print "# parameters: Temperature=$T\C Window=$windowL\n\n";
+
+open(SEQ, $infile) || die "# cannot open input $infile : $!\n";
+while(&lt;SEQ&gt;)
+{
+	if(/^(b\d{4}) \\ ([ATGC]+)/)
+	{
+		my ($name,$seq) = ($1,$2); 
+	
+		printf("sequence %s (%d nts)\n",$name,length($seq));
+		# your code here
+	}
+	
+}
+close(SEQ);
+
+
+# calculate NN free energy of a DNA duplex , dG(t) = (1000*dH - t*dS) / 1000
+# parameters: 1) DNA sequence string; 2) Celsius temperature
+# returns; 1) free energy scalar
+# uses global hash %NNparams
+sub duplex_deltaG
+{
+   	my ($seq,$tCelsius) = @_; 
+	
+	my ($DNAstep,$nt,$dG,$total_dG) = ('','',0,0);
+	my @sequence = split(//,uc($seq));
+	my $tK = 273.15 + $tCelsius;
+	
+	sub complement{ $_[0] =~ tr/ATGC/TACG/; return $_[0] }
+	
+	# add dG for overlapping dinculeotides
+	for(my $n=0;$n&lt;$#sequence;$n++) 
+	{
+			$DNAstep = $sequence[$n].$sequence[$n+1].'/'.
+				complement($sequence[$n].$sequence[$n+1]);
+			
+			if(!defined($NNparams{$DNAstep}))
+			{
+				$DNAstep = reverse($DNAstep);
+			}
+			
+			$dG = ((1000*$NNparams{$DNAstep}{'H'})-
+					($tK*$NNparams{$DNAstep}{'S'}))
+					/ 1000 ;
+			
+			$total_dG += $dG; 
+	}
+	
+	# add correction for helix initiation
+	$nt = $sequence[0]; # first pair
+	if(!defined($NNparams{$nt})){ $nt = complement($nt) } 
+	$total_dG += ((1000*$NNparams{$nt}{'H'})-
+					($tK*$NNparams{$nt}{'S'}))
+					/ 1000; 
+	
+	$nt = $sequence[$#sequence]; # last pair
+	if(!defined($NNparams{$nt})){ $nt = complement($nt) }
+	$total_dG += ((1000*$NNparams{$nt}{'H'})-
+					($tK*$NNparams{$nt}{'S'}))
+					/ 1000;
+					
+	# please complete for symmetry correction
+	
+	return $total_dG;
+}
+
+
+</PRE>
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html807"
+  HREF="node24.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html813"
+  HREF="node24.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html815"
+  HREF="node26.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

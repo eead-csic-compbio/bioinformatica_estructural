@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Cadenas laterales y SCWRL</TITLE>
+<META NAME="description" CONTENT="Cadenas laterales y SCWRL">
+<META NAME="keywords" CONTENT="algoritmos3D">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="algoritmos3D.css">
+
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node47.html">
+<LINK REL="next" HREF="node49.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html711"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> 
+<A NAME="tex2html709"
+  HREF="node47.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html705"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A>  <div style="background:#81BEF7;color:white;">Siguiente: <b><A NAME="tex2html712"
+  HREF="node49.html">Bibliograf&#237;a</A></b>  Sube: <b><A NAME="tex2html710"
+  HREF="node47.html">Molecular interfaces</A></b>  Anterior: <b><A NAME="tex2html706"
+  HREF="node47.html">Molecular interfaces</A></b></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00441000000000000000">
+Cadenas laterales y SCWRL</A>
+</H2>
+
+<P>
+Como ejercicio para poner estas cosas en pr&#225;ctica sugiero aprender a utilizar el 
+programa SCWRL, dise&#241;ado por <A
+ HREF="node49.html#Bower1997">Bower <EM>et&nbsp;al.</EM> (1997)</A>, que encontrar&#233;is en /home/bioinfo/scwrl. 
+SCWRL, que en ingl&#233;s se pronuncia algo as&#237; como 'ardilla', calcula las cadenas laterales
+de una prote&#237;na dada la geometr&#237;a de su esqueleto. Para ello utiliza una librer&#237;a de cadenas laterales precompiladas, extra&#237;das del Protein Data Bank, cuyas orientaciones
+(rot&#225;meros) <A NAME="1817"></A> dependen de la geometr&#237;a local del esqueleto:
+
+<P>
+
+<UL>
+<LI>identifica y obt&#233;n las estructuras PDB utilizadas en el art&#237;culo de <A
+ HREF="node49.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>,
+¿cu&#225;l de ellas incluye las coordenadas de un p&#233;ptido? Selecciona esa.
+</LI>
+<LI>usado SCWRL calcula los rot&#225;meros m&#225;s adecuados para el p&#233;ptido y comp&#225;ralos con
+los del PDB.
+</LI>
+<LI>con SCWRL muta el p&#233;ptido ligando usando algunas de las secuencias del art&#237;culo. Deber&#225;s
+utilizar la opci&#243;n 
+<code>-s</code>  
+</LI>
+<LI>para cada p&#233;ptido mutante, en formato PDB, calcula usando SCWRL los rot&#225;meros m&#225;s
+adecuadas de los res&#237;duos del dominio <A NAME="tex2html135"
+  HREF="http://pfam.wustl.edu/cgi-bin/getdesc?acc=PF00595">PDZ</A>
+que lo reconoce. ¿Ves qu&#233; residuos han cambiado de rot&#225;mero? 
+</LI>
+<LI>Prueba a hacer las mutaciones adecuadas para que cada dominio PDZ reconozca cada p&#233;ptido,
+seg&#250;n el art&#237;culo. 
+</LI>
+</UL>
+
+<P>
+
+
+<DIV CLASS="navigation"><hr style="color:#81BEF7">
+<A NAME="tex2html711"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> 
+<A NAME="tex2html709"
+  HREF="node47.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html705"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A>  </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

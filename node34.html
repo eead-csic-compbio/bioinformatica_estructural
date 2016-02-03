@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelado de prote&#237;nas por homolog&#237;a</TITLE>
+<META NAME="description" CONTENT="Modelado de prote&#237;nas por homolog&#237;a">
+<META NAME="keywords" CONTENT="algoritmos3D">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="algoritmos3D.css">
+
+<LINK REL="next" HREF="node35.html">
+<LINK REL="previous" HREF="node33.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node35.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html906"
+  HREF="node33.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html912"
+  HREF="node30.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html914"
+  HREF="node35.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html915"
+  HREF="node35.html">Modelado de prote&#237;nas por predicci&#243;n</A></b>  Arriba: <b><A NAME="tex2html913"
+  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html907"
+  HREF="node33.html">Protein fold recognition</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00540000000000000000"></A> <A NAME="CM"></A>
+<BR>
+Modelado de prote&#237;nas por homolog&#237;a
+</H1>
+
+<P>
+Con las herramientas que hemos estado manejando ya estamos preparados para modelar prote&#237;nas. 
+En este contexto modelar significa hacer una predicci&#243;n de c&#243;mo se disponen los &#225;tomos 
+de una prote&#237;na conocida su secuencia, con el fin de estudiar su funci&#243;n molecular, su historia evolutiva o, 
+si el modelo es bueno, dise&#241;ar o muestrear ligandos e incluso calcular sus afinidades (<A
+ HREF="node44.html#Singh2010">Singh &amp; Dominy, 2010</A>). 
+Asimismo este tipo de modelos se usan mucho para estudiar el efecto de mutaciones puntuales (<A
+ HREF="node44.html#Kellogg2011">Kellogg <EM>et&nbsp;al.</EM>, 2011</A>).
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> disponemos de la secuencia de una prote&#237;na A y quisi&#233;ramos conocer, aunque esa de manera aproximada, su estructura tridimensional
+</LI>
+<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> estimar coordenadas cartesianas para la mayor&#237;a de los &#225;tomos de A, en base a la estructura conocida de prote&#237;nas  similares, que llamamos moldes, templados o  <i> templates  </i>
+</LI>
+</UL>
+
+<P>
+Esta metodolog&#237;a se llama modelado comparativo o por homolog&#237;a y se describe en profundidad en este
+art&#237;culo de <A
+ HREF="node44.html#Fiser2003">Fiser &amp; Sali (2003)</A>. Hay fundamentalmente dos estrategias, que en general requieren alineamientos entre la secuencia problema y los posibles moldes:
+
+<UL>
+<LI>ensamblado de fragmentos r&#237;gidos obtenidos de estructuras similares alineadas (<A NAME="tex2html255"
+  HREF="http://swissmodel.expasy.org">SWISS-MODEL</A>, 
+<A NAME="tex2html256"
+  HREF="http://robetta.bakerlab.org">ROBETTA</A>, <A NAME="tex2html257"
+  HREF="http://bmm.cancerresearchuk.org/~3djigsaw">3D-JIGSAW</A>
+o 
+<A NAME="tex2html258"
+  HREF="http://www.stats.ox.ac.uk/~kelm/medeller">MEDELLER</A>
+para prote&#237;nas transmembrana).
+</LI>
+<LI>modelado por satisfacci&#243;n de restricciones (distancias, &#225;ngulos, potenciales) moleculares extra&#237;das de bases de datos y estructuras similares
+(moldes) alineadas (<A NAME="tex2html259"
+  HREF="http://salilab.org/modeller/">MODELLER</A>,<A NAME="tex2html260"
+  HREF="http://mordred.bioc.cam.ac.uk/~rapper">RAPPER</A>)
+</LI>
+</UL>
+
+<P>
+El algoritmo gen&#233;rico de modelado comparativo puede dividirse en varios pasos, ilustrados en la figura <A HREF="#fig:CMflow">5.7</A>:
+
+<UL>
+<LI>1. Identificar dominios <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ D_{1..d}$"></SPAN> en la secuencia <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ S$"></SPAN> que queremos modelar.
+</LI>
+<LI>2. Buscar y alinear estructuras molde <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$ M_{1..m}$"></SPAN> que nos sirvan para modelar uno o m&#225;s dominios de <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ S$"></SPAN>. 
+</LI>
+<LI>3. Para cada dominio <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$ D_{i}$"></SPAN> modelable:
+
+<UL>
+<LI>3.1. Refinar el alineamiento local de cada segmento alineado del molde.
+</LI>
+<LI>3.2. Tomar las coordenadas pept&#237;dicas (o descriptores moleculares) de la estructura molde alineada.
+</LI>
+<LI>3.3. Copiar los <A NAME="tex2html261"
+  HREF="http://kinemage.biochem.duke.edu/databases/rotamer.php">rot&#225;meros</A>
+de las cadenas laterales de los amino&#225;cidos conservados en el alineamiento.
+</LI>
+<LI>3.4. Modelar los rot&#225;meros de los residuos que mutan, con ayuda de una <A NAME="tex2html262"
+  HREF="http://dunbrack.fccc.edu/bbdep2010">biblioteca</A>.
+
+<DIV ALIGN="CENTER"><A NAME="fig:rotamer"></A><A NAME="2851"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.6:</STRONG>
+
+&#193;ngulos que definen los rot&#225;meros de las cadenas laterales.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="280" HEIGHT="233" ALIGN="BOTTOM" BORDER="0"
+ SRC="./rotamer.jpg"
+ ALT="Image rotamer">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+</LI>
+<LI>3.4. A&#241;adir los segmentos, normalmente <A NAME="tex2html263"
+  HREF="http://bmm.cancerresearchuk.org/loop"> <i> loops  </i></A>, 
+correspondientes a  <i> gaps  </i> en la secuencia alineada del molde.
+</LI>
+<LI>3.5. Refinar 1 &#243; m&#225;s modelos completos <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ P_{n}$"></SPAN> con el objeto de eliminar errores obvios de estructura, como impedimentos o choques est&#233;ricos.
+</LI>
+<LI>3.6. Evaluar los modelos <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ P_{n}$"></SPAN> y estimar su calidad, por medio de aplicaciones como 
+<A NAME="tex2html264"
+  HREF="http://nihserver.mbi.ucla.edu/Verify_3D">Verify3D</A>
+o 
+<A NAME="tex2html265"
+  HREF="http://filtrest3d.genesilico.pl/filtrest3d/index.html">FiltRest3D</A>.
+</LI>
+</UL>
+</LI>
+</UL>
+
+<P>
+El paso 2 es el m&#225;s determinante sobre la calidad del modelo y de hecho marca el techo de precisi&#243;n de la metodolog&#237;a 
+(<A
+ HREF="node44.html#ContrerasMoreira2005">Contreras-Moreira <EM>et&nbsp;al.</EM>, 2005</A>). Es adem&#225;s un paso cr&#237;tico en el sentido de que si el alineamiento <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ M_{i}$"></SPAN> es malo, 
+el modelo resultante ser&#225; malo, como ya vislumbramos en la secci&#243;n <A HREF="node31.html#3dcons">5.1</A>. Para modelos complicados ser&#225; 
+necesario explorar diferentes combinaciones de moldes y alineamientos para encontrar la mejor soluci&#243;n. 
+<P>
+Con el objeto de explicar en mayor detalle el algoritmo, el siguiente c&#243;digo implementa los pasos 3.1 y 3.2, quiz&#225;s
+los m&#225;s fundamentales tras el el paso 2. El programa usa como ejemplo secuencias
+y estructuras ya utilizadas en el apartado <A HREF="node31.html#3dcons">5.1</A> (<A NAME="tex2html266"
+  HREF="./files/1gd6.pdb">1gd6.pdb</A>):
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/env python
+""" prog3.3 Construye un modelo sin gaps ni rotameros una secuencia problema (query) 
+en base a las coordenadas del model (pdb2) en base a un alineamiento. 
+Genera un fichero PDB con el modelo comparativo resultante."""
+
+__author__  = 'Bruno Contreras-Moreira' 
+
+from math import exp
+
+# 0) parametros del algoritmo: 
+query = { 'align':'KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQIN' +
+	'SRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRDVRQYVQGCGV' };
+
+molde = { 'file':'./files/1gd6.pdb', 
+	'align':'KTFTRCGLVHELRKHGFEEN---LMRNWVCLVEHESSRDTSKTNTNR-NGSKDYGLFQIN' +
+	'DRYWCSKGASPG--KDCNVKCSDLLTDDITKAAKCAKKIYKR-HRFDAWYGWKNHCQG--SLPDISSC--' };
+
+# 1) subrutinas
+def lee_coordenadas_PDB(filename):
+	""" Devuelve una lista de residuos, cada uno con las coordenadas de sus atomos. 
+	Ejemplo de linea en formato PDB:
+	ATOM     42  CA  PHE X   3       6.981  22.274  18.887  1.00  6.72 """
+	
+	coords = []
+	pdbfile = open(filename,'r')
+	try:
+		res,prev_resID = '',''
+		for line in pdbfile:
+			if(line[0:3] == 'TER'): break
+			if(line[0:4] != 'ATOM'): continue
+			resID = line[17:26]
+			if(resID != prev_resID):
+				if(res != ''): coords.append(res)
+				res = line
+			else: res += line	
+			
+			prev_resID = resID
+		
+		if(res != ''): coords.append(res)		
+	finally:
+		pdbfile.close()	
+	return coords	
+
+def copia_coords_alineadas(align1,align2,coords_molde,PDBname):
+	""" Devuelve:
+	1) una lista con las coordenadas de coords_molde 
+	que se pueden copiar segun el alineamiento align1,align2. 
+	2) una estimacion del RMSD segun la curva RMSD(A) = 0.40 e^{l.87(1-ID)} 
+	de  Chothia &amp; Lesk (1986) """
+	
+	aanames = { "A":"ALA","C":"CYS","D":"ASP","E":"GLU","F":"PHE","G":"GLY",
+		"H":"HIS","I":"ILE","K":"LYS","L":"LEU","M":"MET","N":"ASN","P":"PRO",
+		"Q":"GLN","R":"ARG","S":"SER","T":"THR","V":"VAL","W":"TRP","Y":"TYR" }
+
+	rmsd,identical = 0,0
+	total1,total2,total_model = -1,-1,0
+	length = len(align1)
+	
+	if(length != len(align2)): 
+		print "# copia_coords_alineadas: alineamientos tienen != longitud",
+		return []
+	
+	pdbfile = open(PDBname, 'w')
+	print &gt;&gt; pdbfile, "HEADER comparative model\nREMARK alignment:\n",
+	print &gt;&gt; pdbfile, "REMARK query   : %s\n" % (align1),
+	print &gt;&gt; pdbfile, "REMARK template: %s\n" % (align2),
+	
+	for r in range(0, length):
+		conserved = False
+		res1 = align1[r:r+1]
+		res2 = align2[r:r+1]
+		if(res1 != '-'): total1+=1
+		if(res2 != '-'): total2+=1
+		if(res1 == '-' or res2 == '-'): continue # salta los gaps
+		total_model += 1.0;
+		if(res1 == res2): 
+			conserved = True
+			identical += 1.0
+		for atomo in coords_molde[total2].split("\n"):
+			if(atomo == ''): break
+			if(atomo[12:16] == ' CA ' or atomo[12:16] == ' C  ' or \
+				atomo[12:16] == ' N  ' or atomo[12:16] == ' O  ' \
+				or conserved):
+				print &gt;&gt; pdbfile, "%s%s%s%4d%s" % \
+				(atomo[0:17],aanames[res1],atomo[20:22],total1+1,atomo[26:])	
+		
+	print &gt;&gt; pdbfile, "TER\n",
+	pdbfile.close()	
+	
+	rmsd = 0.40 * exp(1.87*(1-(identical/total_model)))
+	identical = (identical/total_model)
+	
+	return (total_model,identical,rmsd)
+	
+# 2) programa principal 
+
+molde['coords'] = lee_coordenadas_PDB( molde['file'] )
+		
+print "# total residuos en estructura molde : %s\n" % (len(molde['coords'])),
+
+(long_modelo,identidad,rmsd) = copia_coords_alineadas(query['align'],
+				molde['align'],molde['coords'],'modelo.pdb' )
+
+print "# archivo PDB = modelo.pdb longitud modelo (residuos) = %d \n" % long_modelo,
+print "# identidad = %1.0f%% RMSD estimado = %1.2f ansgtrom\n" % (100*identidad,rmsd),
+
+</PRE>
+<P>
+Como en otros campos de la biolog&#237;a computacional, el repertorio de software para modelar prote&#237;nas es muy extenso,
+y constantemente incluye nuevas herramientas que sustituyen a otras que envejecen.
+Un buen punto de partida para elegir la mejor soluci&#243;n son los  <i> rankings  </i> que actualiza cada dos a&#241;os 
+<A NAME="tex2html267"
+  HREF="http://predictioncenter.org/index.cgi?page=public_serv">CASP</A>, aunque probablemente los 
+programas de modelado preferidos por los usuarios son probablemente SWISS-MODEL en la web y MODELLER como instalable.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CMflow"></A><A NAME="2853"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.7:</STRONG>
+
+Algoritmo gen&#233;rico de modelado comparativo, tomado de <A
+ HREF="node44.html#Fiser2003">Fiser &amp; Sali (2003)</A>.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="608" HEIGHT="853" ALIGN="BOTTOM" BORDER="0"
+ SRC="./CMflow.png"
+ ALT="Image CMflow">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+En la pr&#225;ctica podemos hacer nuestros modelos por homolog&#237;a, con la opci&#243;n de controlar todos los pasos
+del procedimiento, por medio del programa <A NAME="tex2html268"
+  HREF="http://salilab.org/modeller/">MODELLER</A>
+(<A
+ HREF="node44.html#Sali1993">Sali &amp; Blundell, 1993</A>), 
+disponible sin costo para usuarios acad&#233;micos. El programa tiene <A NAME="tex2html269"
+  HREF="http://salilab.org/modeller/tutorial/">m&#250;ltiples posibilidades</A>, pero en este ejemplo
+nos centramos en el caso m&#225;s sencillo de c&#243;mo hacer un modelo a partir de un s&#243;lo molde o  <i> template  </i>,
+estimando su calidad del modelo por medio de la funci&#243;n DOPE (<A
+ HREF="node44.html#Shen2006">Shen &amp; Sali, 2006</A>):
+
+<UL>
+<LI>Secuencia problema: <A NAME="tex2html270"
+  HREF="http://www.expasy.org/uniprot/FNR_ECOLI">FNR</A>, 
+regulador transcripcional de  <i> Escherichia coli  </i>.
+
+<P>
+</LI>
+<LI>Busca, por ejemplo usando PSI-BLAST, secuencias similares (probablemente hom&#243;logas)
+cuya estructura est&#233; en el PDB (moldes o  <i> templates  </i>).
+
+<P>
+</LI>
+<LI>Para cada uno de los  <i> templates  </i> interesantes sigue estos pasos:
+
+<UL>
+<LI>descarga el fichero de coordenadas del <A NAME="tex2html271"
+  HREF="http://www.rcsb.org/pdb">PDB</A>
+y extrae la secuencia S contenida en los campos <code>ATOM</code>
+
+<P>
+</LI>
+<LI>alinea la secuencia S de las coordenadas con la secuencia problema (FNR, por ejemplo con clustal o usando el mismo alineamiento de BLAST) 
+	y crea un archivo con extensi&#243;n 
+	<code>.ali</code> con este formato, donde <code>structureX</code> es el molde, <code>sequence</code> es la secuencia problema o  <i> query  </i> 
+	y los dem&#225;s campos definen el rango de residuos alineados del  <i> template  </i>, y su resoluci&#243;n:
+
+<P>
+<PRE>
+C; Alineamiento de muestra en formato PIR
+&gt;P1;1PDB
+structureX:1PDB:1    :A:106  :A:nombre_template:: 1.90: 
+AFVVTDNCIKCKYTDCVEVCPVDCFYEGPNFLVIHPDECIDCALCEPECPAQAIFSEDEVPEDMQEFIQLNAELA
+EVWPNITEKKDPLPDAEDWDGVKGKLQHLER*
+&gt;P1;query
+sequence:query:::::::0.00: 0.00
+AYVINDSC--IACGACKPECPVNIIQGS--IYAIDADSCIDCGSCASVCPVGAPNPED-----------------
+-------------------------------*
+</PRE>
+
+<P>
+</LI>
+<LI>genera un gui&#243;n o  <i> script  </i> para MODELLER como <code>guion_nombre_template.py</code>:
+
+<P>
+<PRE>
+from modeller.automodel import *   
+
+log.verbose()    
+env = environ() 
+
+# 1) directorio donde se encuentran los ficheros con coordenadas de moldes/templates, 
+# con extension .pdb,.atm,.ent
+env.io.atom_files_directory = './templates/'
+
+# 2) prepara el modelado
+a = automodel(env,
+              alnfile  = 'alineamiento.ali',  # fichero con el alineamiento
+              knowns   = '1PDB',              # nombre del template como aparece en alnfile
+              sequence = 'query',             # nombre de secuencia problema como aparece en alnfile
+	          assess_methods=(assess.DOPE))      
+
+a.starting_model= 1                           # define cuantos modelos diferentes quieres
+a.ending_model  = 2                 
+				  
+# 3) accion! 
+a.make()
+</PRE>
+
+<P>
+</LI>
+<LI>ahora ejecuta MODELLER (por ejemplo poniendo en el terminal: <code>$ mod9v8 guion_template.py</code> y al terminar revisa 
+	<code>guion_nombre_template.log</code> para comprobar la evaluaci&#243;n emp&#237;rica del modelo o modelos obtenidos
+
+<P>
+</LI>
+</UL>
+</LI>
+</UL>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html906"
+  HREF="node33.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html912"
+  HREF="node30.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html914"
+  HREF="node35.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

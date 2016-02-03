@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelos bidimensionales de plegamiento de prote&#237;nas</TITLE>
+<META NAME="description" CONTENT="Modelos bidimensionales de plegamiento de prote&#237;nas">
+<META NAME="keywords" CONTENT="algoritmos3D">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="algoritmos3D.css">
+
+<LINK REL="next" HREF="node21.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node21.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html750"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html756"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html758"
+  HREF="node21.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html759"
+  HREF="node21.html">Modelos tridimensionales de mec&#225;nica molecular</A></b>  Arriba: <b><A NAME="tex2html757"
+  HREF="node19.html">Algoritmos de din&#225;mica molecular y</A></b>  Anterior: <b><A NAME="tex2html751"
+  HREF="node19.html">Algoritmos de din&#225;mica molecular y</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00261000000000000000">
+Modelos bidimensionales de plegamiento de prote&#237;nas</A>
+</H2>
+Los modelos bidimensionales inventados por Ken Dill (<A NAME="tex2html760" target="contents"
+  HREF="node44.html#MorenoHernandez2012">Moreno-Hernandez &amp; Levitt, 2012</A>; <A NAME="tex2html761" target="contents"
+  HREF="node44.html#Dill1995">Dill <EM>et&nbsp;al.</EM>, 1995</A>), usando un alfabeto reducido donde los
+amino&#225;cidos son polares (P) o hidrof&#243;bicos (H) y donde las cadenas se pliegan en una malla bidimensional, sirvieron
+originalmente para aproximarse al plegamiento de una forma simplificada. En general se acepta que estos 
+modelos reproducen las caracter&#237;sticas m&#225;s importantes del proceso de plegamiento real con la ventaja 
+de ser m&#225;s manejables:
+
+<UL>
+<LI>se forman estructuras secundarias, que limitan la velocidad del proceso
+</LI>
+<LI>el plegamiento se hace por etapas y est&#225; dominado por la hidrofobicidad
+</LI>
+</UL>
+
+<P>
+Vamos a definir m&#225;s formalmente este modelo, porque ilustra de forma sencilla los algoritmos de din&#225;mica molecular
+que mencionaremos en la siguiente secci&#243;n:
+
+<P>
+
+<UL>
+<LI>dado el alfabeto {H,P}, una prote&#237;na es una secuencia de longitud N, 
+tal como <TT>HHHPPPHHPPPPPHHHPPPPHHH</TT>.
+</LI>
+<LI>las prote&#237;nas viven en una malla bidimensional, como la de la figura <A HREF="#fig:dillmodel">2.6</A>, donde cada posici&#243;n no
+puede estar ocupada por m&#225;s de un residuo.
+</LI>
+<LI>cada celda de la malla tiene 4 vecinos: N, S, E y O.
+</LI>
+<LI>cada residuo est&#225; dado en coordenadas internas empezando por el extremo, por ejemplo el residuo 2 est&#225; al N del 1.
+</LI>
+<LI>hay por lo tanto un m&#225;ximo de <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ 4^{N}$"></SPAN> conformaciones posibles.
+</LI>
+<LI>no se admiten cruces en la secuencia.
+</LI>
+<LI>cuando dos residuos no contiguos en secuencia ocupan celdas vecinas se dice que interaccionan.
+</LI>
+<LI>la energ&#237;a de cada interacci&#243;n se eval&#250;a usando la matriz de la tabla <A HREF="#tab:matrizHP">2.2</A>.
+</LI>
+<LI>la conformaci&#243;n nativa es aquella que minimiza la energ&#237;a total, maximizando la estabilidad en soluci&#243;n.
+</LI>
+</UL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:dillmodel"></A><A NAME="1370"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.6:</STRONG>
+
+Plegamiento en dos dimensiones en el modelo HP de <A
+ HREF="node44.html#Dill1995">Dill <EM>et&nbsp;al.</EM> (1995)</A>. 
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="631" HEIGHT="347" BORDER="0"
+ SRC="img30.png"
+ ALT="\begin{figure}
+\begin{center}
+\includegraphics{dillmodel}
+\end{center}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="1371"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 2.2:</STRONG>
+Matriz de interacci&#243;n <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ M_{ij}$"></SPAN> en un modelo HP</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">P</TD>
+<TD ALIGN="LEFT">H</TD>
+</TR>
+<TR><TD ALIGN="LEFT">P</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">-1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">H</TD>
+<TD ALIGN="LEFT">-1</TD>
+<TD ALIGN="LEFT">-3</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<A NAME="tab:matrizHP"></A>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR> 
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html750"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html756"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html758"
+  HREF="node21.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mutaciones puntuales de prote&#237;nas</TITLE>
+<META NAME="description" CONTENT="Mutaciones puntuales de prote&#237;nas">
+<META NAME="keywords" CONTENT="algoritmos3D">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="algoritmos3D.css">
+
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node37.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html928"
+  HREF="node35.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html932"
+  HREF="node30.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html934"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html935"
+  HREF="node37.html">Estructura cuaternaria</A></b>  Arriba: <b><A NAME="tex2html933"
+  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html929"
+  HREF="node35.html">Modelado de prote&#237;nas por predicci&#243;n</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00560000000000000000">
+Mutaciones puntuales de prote&#237;nas</A>
+</H1>
+
+<P>
+Un problema que se presenta con cada vez mayor frecuencia desde que llegaron las tecnolog&#237;as de 
+ultrasecuenciaci&#243;n es el de estimar el fenotipo molecular de una mutaci&#243;n, por ejemplo un SNP
+observado en un paciente, que cambia la secuencia de aminoá&#237;cidos de una proteína. Esto es necesario
+porque hay muchos m&#225;s genotipos que fenotipos observados, y porque cu&#225;nto m&#225;s se secuencia se hace
+patente que los individuos de una especie son portadores de m&#250;ltiples mutaciones de diferente naturaleza
+(<A
+ HREF="node44.html#Peterson2013">Peterson <EM>et&nbsp;al.</EM>, 2013</A>).
+Esto recuerda un poco a los resultados de <A
+ HREF="node44.html#Chothia1986">Chothia &amp; Lesk (1986)</A>, presentados en la secci&#243;n <A HREF="node31.html#3dcons">5.1</A>, que ya
+observaron que los efectos de las mutaciones sobre la estructura (y por tanto la funci&#243;n) dependen en
+parte de d&#243;nde se produzcan. No tiene el mismo efecto cambiar un amino&#225;cido enterrado que uno en un
+ <i> loop  </i>, o uno que coevoluciona con otro de un lazo vecino. Del mismo modo, una sustituci&#243;n en el interior
+de una h&#233;lice no se puede comparar con la eliminaci&#243;n de un residuo catal&#237;tico (<A
+ HREF="node44.html#Berrondo2011">Berrondo &amp; Gray, 2011</A>)
+o de otro clave para interaccionar con otras proteínas (<A
+ HREF="node44.html#deJuan2013">de&nbsp;Juan <EM>et&nbsp;al.</EM>, 2013</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:ppi_interface"></A><A NAME="3203"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.14:</STRONG>
+
+Grafo de la interfaz entre una histona-deacetilasa (en rojo) y tres parejas distintas, tomado de <A
+ HREF="node44.html#Cukuroglu2014">Cukuroglu <EM>et&nbsp;al.</EM> (2014)</A>.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="455" HEIGHT="659" ALIGN="BOTTOM" BORDER="0"
+ SRC="./ppi_interface.png"
+ ALT="Image ppi_interface">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:human_mutations_heatmap"></A><A NAME="3204"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.15:</STRONG>
+
+Frecuencias de sustituci&#243;n de amino&#225;cidos en enfermedades humanas, tomadas de <A
+ HREF="node44.html#Peterson2013">Peterson <EM>et&nbsp;al.</EM> (2013)</A>.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="536" HEIGHT="286" ALIGN="BOTTOM" BORDER="0"
+ SRC="./human_mutations_heatmap.jpg"
+ ALT="Image human_mutations_heatmap">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Como se muestra en la figura <A HREF="#fig:SNPpredictors">5.16</A>, hay una gran variedad de m&#233;todos para la inferencia del fenotipo
+molecular de mutaciones puntuales en prote&#237;nas, y solamente algunos usan informaci&#243;n estructural.
+Probablemente el m&#225;s universal de todos sea SIFT (<A
+ HREF="node44.html#Kumar2009">Kumar <EM>et&nbsp;al.</EM>, 2009</A>), que usa como evidencia la
+historia evolutiva de cada familia de prote&#237;nas, que integra entre otras cosas determinantes estructurales
+siempre y cuando haya suficientes secuencias homó&#243;logas conocidas (<A
+ HREF="node44.html#Saunders2002">Saunders &amp; Baker, 2002</A>). 
+Sin embargo, como ocurre a menudo en biolog&#237;a computacional, no es sencillo averiguar a partir de un
+an&#225;lisis de la literatura qu&#233; m&#233;todos son mejores. Hay que probarlos y escoger, y entre los
+disponibles haya cada vez m&#225;s alternativas que hacen un uso expl&#237;cito de informaci&#243;n
+estructural, en concreto del contexto del residuo sustituido, como PolyPhen-2 (<A
+ HREF="node44.html#Adzhubei2010">Adzhubei <EM>et&nbsp;al.</EM>, 2010</A>),
+SusPect (<A
+ HREF="node44.html#Yates2014">Yates <EM>et&nbsp;al.</EM>, 2014</A>) o mCSM (<A
+ HREF="node44.html#Pires2014">Pires <EM>et&nbsp;al.</EM>, 2014</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SNPpredictors"></A><A NAME="3205"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.16:</STRONG>
+
+Clasificaci&#243;n de m&#233;todos de inferencia de fenotipos de mutaciones no sin&#243;nimas, tomada de <A
+ HREF="node44.html#Peterson2013">Peterson <EM>et&nbsp;al.</EM> (2013)</A>.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="618" HEIGHT="657" ALIGN="BOTTOM" BORDER="0"
+ SRC="./SNPpredictors.png"
+ ALT="Image SNPpredictors">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SNP_performance"></A><A NAME="3206"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.17:</STRONG>
+
+Comparaci&#243;n del rendimiento de SusPect prediciendo mutaciones humanas delet&#233;reas frente a otros predictores, tomada de (<A
+ HREF="node44.html#Yates2014">Yates <EM>et&nbsp;al.</EM>, 2014</A>).
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="524" HEIGHT="524" ALIGN="BOTTOM" BORDER="0"
+ SRC="./SNP_performance.jpg"
+ ALT="Image SNP_performance">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Para explorar la predicci&#243;n de fenotipos de mutaciones no sin&#243;nimas planteo este ejercicio:
+
+<UL>
+<LI>Visita una base de datos de mutantes, como <A NAME="tex2html290"
+  HREF="http://www.omim.org/">OMIM</A>, y elige una prote&#237;na P (ejemplo: OPCML).
+
+<P>
+</LI>
+<LI>Obt&#233;n la secuencia silvestre de amino&#225;cidos S y al menos otra M con una mutaci&#243;n delet&#233;rea.
+
+<P>
+</LI>
+<LI>Construye un modelo comparativo de M y S.
+
+<P>
+</LI>
+<LI>Haz predicciones de fenotipo para S y M con ayuda, por ejemplo, de: <A NAME="tex2html291"
+  HREF="http://sift.jcvi.org/">SIFT</A>, 
+<A NAME="tex2html292"
+  HREF="http://genetics.bwh.harvard.edu/pph2/">PolyPhen-2</A>
+y <A NAME="tex2html293"
+  HREF="http://www.sbg.bio.ic.ac.uk/~suspect">SusPect</A>.
+
+<P>
+</LI>
+<LI>Compara las predicciones obtenidas e interpr&#233;talas a la luz de las estructuras modeladas. 
+Qu&#233; limitaciones del modelado comparativo afloran?
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html928"
+  HREF="node35.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html932"
+  HREF="node30.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html934"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>
