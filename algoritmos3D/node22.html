@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelos aproximados</TITLE>
+<META NAME="description" CONTENT="Modelos aproximados">
+<META NAME="keywords" CONTENT="algoritmos3D">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="algoritmos3D.css">
+
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node23.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html772"
+  HREF="node21.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html776"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html778"
+  HREF="node23.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html779"
+  HREF="node23.html">Foldit: jugando a plegar prote&#237;nas</A></b>  Arriba: <b><A NAME="tex2html777"
+  HREF="node19.html">Algoritmos de din&#225;mica molecular y</A></b>  Anterior: <b><A NAME="tex2html773"
+  HREF="node21.html">Modelos tridimensionales de mec&#225;nica molecular</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00263000000000000000">
+Modelos aproximados</A>
+</H2>
+
+<P>
+En contraste con los algoritmos de din&#225;mica molecular, que en general no se pueden ejecutar en PCs,
+tenemos a nuestro alcance otros m&#233;todos m&#225;s simples, en general heur&#237;sticos, que permiten obtener
+descripciones e inferencias estructurales de calidad suficiente para muchas aplicaciones y que en general s&#237; se pueden
+realizar en cualquier computador. Los siguientes cap&#237;tulos del curso se centran en algunos de estos m&#233;todos.
+
+<P>
+Para prote&#237;nas podemos mencionar los m&#225;s importantes:
+
+<UL>
+<LI>redes neuronales para la predicci&#243;n de estructura secundaria a partir de la secuencia
+</LI>
+<LI>modelado de estructura terciaria por comparaci&#243;n con prote&#237;nas de estructura conocida (incluye  <i> fold recognition  </i>, 
+m&#225;s en este <A NAME="tex2html134"
+  HREF="http://www.eead.csic.es/compbio/material/modelado_comparativo/">enlace</A>)
+</LI>
+<LI>protocolos de modelado de estructura terciaria a base de fragmentos, que simulan el proceso de 
+plegamiento (normalmente denominados  <i> ab initio  </i>)
+</LI>
+<LI>predicci&#243;n de efectos de mutaciones en prote&#237;nas
+</LI>
+<LI>algoritmos de predicci&#243;n de secuencias intr&#237;nsecamente desordenadas (<A
+ HREF="node44.html#Dunker2008">Dunker <EM>et&nbsp;al.</EM>, 2008</A>) y de amiloides (<A NAME="tex2html780" target="contents"
+  HREF="node44.html#Bryan2011">Bryan <EM>et&nbsp;al.</EM>, 2011</A>; <A NAME="tex2html781" target="contents"
+  HREF="node44.html#Agostini2012">Agostini <EM>et&nbsp;al.</EM>, 2012</A>)
+</LI>
+<LI>modelos predictivos para prote&#237;nas de membrana (<A NAME="tex2html782" target="contents"
+  HREF="node44.html#Nugent2012">Nugent &amp; Jones, 2012</A>; <A NAME="tex2html783" target="contents"
+  HREF="node44.html#PerezAguilar2012">Perez-Aguilar &amp; Saven, 2012</A>)
+</LI>
+</UL>
+
+<P>
+Dentro del &#225;mbito de los &#225;cidos nucleicos:
+
+<UL>
+<LI>algoritmos de predicci&#243;n de estructura secundaria de ARN
+</LI>
+<LI>m&#233;todos de predicci&#243;n de estabilidad de la doble h&#233;lice de ADN y predicci&#243;n de promotores
+</LI>
+<LI>predicci&#243;n de curvatura del ADN
+</LI>
+</UL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DNApapel"></A><A NAME="1375"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.8:</STRONG>
+
+Modelo recortable de la doble h&#233;lice de ADN.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="650" HEIGHT="495" ALIGN="BOTTOM" BORDER="0"
+ SRC="./DNApapel.png"
+ ALT="Image DNApapel">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html772"
+  HREF="node21.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html776"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html778"
+  HREF="node23.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>
