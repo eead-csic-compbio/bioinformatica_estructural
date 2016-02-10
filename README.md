@@ -14,4 +14,4 @@ _[Structural Bioinformatics: An Algorithmic Approach](http://www.structuralbioin
 En español, el texto _[Bioinformática con Ñ](http://www.scribd.com/doc/231270078/Bioinformatica-con-N)_ contiene varios capítulos 
 que pueden ser muy buen complemento para este material.
 
-Puedes descargar este material en formato PDF en [Digital.CSIC](http://hdl.handle.net/10261/21892) y navegarlo con tu navegador en <http://eead-csic-compbio.github.io/bioinformatica_estructural>. 
+Puedes descargar este material en formato PDF en [Digital.CSIC](http://hdl.handle.net/10261/21892) y navegarlo en <http://eead-csic-compbio.github.io/bioinformatica_estructural>. 
