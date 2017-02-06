@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html896"
+<A NAME="tex2html916"
   HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html902"
+<A NAME="tex2html922"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html904"
+<A NAME="tex2html924"
   HREF="node34.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html905"
-  HREF="node34.html">Modelado de prote&#237;nas por homolog&#237;a</A></b>  Arriba: <b><A NAME="tex2html903"
-  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html897"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html925"
+  HREF="node34.html">Modelado de prote&#237;nas por homolog&#237;a</A></b>  Arriba: <b><A NAME="tex2html923"
+  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html917"
   HREF="node32.html">Comparaci&#243;n de estructura terciaria entre</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -69,27 +69,27 @@ la estructura y topolog&#237;a de las prote&#237;nas hom&#243;logas que sus secu
 
 <P>
 La segunda posibilidad ha justificado una familia de m&#233;todos llamados gen&#233;ricamente de  <i> Fold Recognition  </i> (FR), que tienen como objeto reconocer a qu&#233; tipo de plegamiento (de los conocidos) se debe asignar una secuencia problema, especialmente cuando b&#250;squedas m&#225;s convencionales con 
-<A NAME="tex2html239"
+<A NAME="tex2html240"
   HREF="http://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST</A>
 o 
-<A NAME="tex2html240"
+<A NAME="tex2html241"
   HREF="http://www.ebi.ac.uk/Tools/fasta/index.html">FASTA</A>
 han fracasado.
 Hist&#243;ricamente algunos de estos m&#233;todos se han llamado de
-<A NAME="tex2html241"
+<A NAME="tex2html242"
   HREF="http://en.wikipedia.org/wiki/Threading_%28protein_sequence%29"> <i> threading  </i></A>, 
 ya que ciertos algoritmos 
 literalmente enhebran la secuencia problema en patrones de coordenadas conocidas, normalmente un subconjunto no redundante
-del PDB, para ver si es compatible con alguno. 
+del PDB, para ver si es compatible con alguno, como en la siguiente figura:
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:threading"></A><A NAME="2662"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:threading"></A><A NAME="2724"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.5:</STRONG>
 
-Figura tomada de <A NAME="tex2html236"
-  HREF="http://www.bioscience.org">http://www.bioscience.org</A>
+Figura tomada de <A
+ HREF="node46.html#Guo2008">Guo &amp; Xu (2008)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -117,62 +117,71 @@ Se han publicado muchas maneras diferentes de hacer FR:
 
 <UL>
 <LI>por medio de b&#250;squedas BLAST bidireccionales transitivas (<A
- HREF="node44.html#Koretke2002">Koretke <EM>et&nbsp;al.</EM>, 2002</A>)
+ HREF="node46.html#Koretke2002">Koretke <EM>et&nbsp;al.</EM>, 2002</A>)
 </LI>
 <LI>representando cada  <i> fold  </i> por medio de las secuencias conocidas que se pliegan en esa conformaci&#243;n, 
 ya sea por medio de perfiles (<A
- HREF="node44.html#Gribskov1987">Gribskov <EM>et&nbsp;al.</EM>, 1987</A>)
-o <A NAME="tex2html242"
+ HREF="node46.html#Gribskov1987">Gribskov <EM>et&nbsp;al.</EM>, 1987</A>)
+o <A NAME="tex2html243"
   HREF="http://en.wikipedia.org/wiki/Hidden_Markov_model">modelos de Markov</A>
 </LI>
 <LI>con alineamientos secuencia-perfil o los m&#225;s sensibles perfil-perfil (<A
- HREF="node44.html#Soding2005">Soding, 2005</A>) que son la raz&#243;n del &#233;xito del servidor <A NAME="tex2html243"
+ HREF="node46.html#Soding2005">Soding, 2005</A>) que son la raz&#243;n del &#233;xito del servidor <A NAME="tex2html244"
   HREF="http://toolkit.tuebingen.mpg.de/hhpred">HHpred</A>
 </LI>
 <LI>usando potenciales estad&#237;sticos para evaluar la cercan&#237;a de los residuos de una secuencia
 dado un plegamiento (lo que llamamos  <i> threading  </i> (<A
- HREF="node44.html#Threader1992">Jones <EM>et&nbsp;al.</EM>, 1992</A>)) </LI>
+ HREF="node46.html#Threader1992">Jones <EM>et&nbsp;al.</EM>, 1992</A>)) </LI>
 <LI>combinando diferentes moldes, alineamientos y algoritmos en estrategias de b&#250;squeda de consenso, 
-con la ayuda de m&#233;tricas fiables como <A NAME="tex2html244"
+con la ayuda de m&#233;tricas fiables como <A NAME="tex2html245"
   HREF="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2040163/">3D-Jury</A>
 (<A
- HREF="node44.html#Ginalski2003">Ginalski <EM>et&nbsp;al.</EM>, 2003</A>)
+ HREF="node46.html#Ginalski2003">Ginalski <EM>et&nbsp;al.</EM>, 2003</A>)
 </LI>
 <LI>partiendo la secuencia problema en fragmentos, como una estrategia divide y vencer&#225;s, buscando la estructura
 mas probable para cada fragmento por  <i> threading  </i> (<A
- HREF="node44.html#Wu2010">Wu &amp; Zhang, 2010</A>)
+ HREF="node46.html#Wu2010">Wu &amp; Zhang, 2010</A>)
 </LI>
 </UL>
 
 <P>
-Probablemente la mejor manera de evaluar objetivamente y elegir un m&#233;todo de FR son los experimentos  
-<A NAME="tex2html245"
+Probablemente la mejor manera de evaluar objetivamente y elegir un m&#233;todo de FR 
+son los experimentos  colectivos 
+<A NAME="tex2html246"
   HREF="http://predictioncenter.org/index.cgi?page=public_serv">CASP</A>,
 que miden peri&#243;dicamente la competencia de los diferentes algoritmos. 
+En palabras de <A
+ HREF="node46.html#Kelley2015">Kelley <EM>et&nbsp;al.</EM> (2015)</A>, desarrollador principal de 
+<A NAME="tex2html247"
+  HREF="http://www.sbg.bio.ic.ac.uk/phyre2">Phyre2</A>, uno de los m&#225;s completos,
+los mejores predictores tienen resultados indistinguibles en la mayor parte de los casos,
+pero en los casos mas complejos desde hace tiempo destaca por su consistencia y 
+superiores resultados <A NAME="tex2html248"
+  HREF="http://zhanglab.ccmb.med.umich.edu/I-TASSER/">I-TASSER</A>.
 
 <P>
 Estas herramientas web son adecuadas para estudiar unas pocas secuencias, pero si queremos hacer un experimento de FR 
 a gran escala, entonces buena idea instalar localmente el software elegido, como por ejemplo
-<A NAME="tex2html246"
+<A NAME="tex2html249"
   HREF="https://github.com/soedinglab/hh-suite">hh-suite</A>, el software que da vida a 
-<A NAME="tex2html247"
+<A NAME="tex2html250"
   HREF="http://toolkit.tuebingen.mpg.de/hhpred">HHpred</A>.
 
 <P>
 El siguiente programa es un prototipo de alineamiento perfil-perfil que usa adem&#225;s predicciones de estructura secundaria (ver figura <A HREF="node29.html#fig:psipred">4.7</A>) 
 para guiar el alineamiento. Es un algoritmo de programaci&#243;n din&#225;mica, que puedes comprender mejor con ayuda 
-del <A NAME="tex2html248"
+del <A NAME="tex2html251"
   HREF="http://protein.bio.puc.cl/websoftware/web/?sid=3"> <i> Sequence Alignment Teacher  </i></A>
 (<A
- HREF="node44.html#Ibarra2010">Ibarra &amp; Melo, 2010</A>).
+ HREF="node46.html#Ibarra2010">Ibarra &amp; Melo, 2010</A>).
 
 <P>
 Para probarlo necesitaras descargar los archivos de entrada
-(<A NAME="tex2html249"
-  HREF="./files/1ngk_A.pssm">1ngk_A.pssm</A>,<A NAME="tex2html250"
+(<A NAME="tex2html252"
+  HREF="./files/1ngk_A.pssm">1ngk_A.pssm</A>,<A NAME="tex2html253"
   HREF="./files/1s69_A.pssm">1s69_A.pssm</A>,
-<A NAME="tex2html251"
-  HREF="./files/1ngk_A.psipred">1ngk_A.psipred</A>,<A NAME="tex2html252"
+<A NAME="tex2html254"
+  HREF="./files/1ngk_A.psipred">1ngk_A.psipred</A>,<A NAME="tex2html255"
   HREF="./files/1s69_A.psipred">1s69_A.psipred</A>):
 <BR>
 <PRE  CLASS="verbatim">#!/usr/bin/perl -w
@@ -344,15 +353,15 @@ sub max
 }            		
 </PRE>
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html896"
+<A NAME="tex2html916"
   HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html902"
+<A NAME="tex2html922"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html904"
+<A NAME="tex2html924"
   HREF="node34.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>

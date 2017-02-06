@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html883"
+<A NAME="tex2html902"
   HREF="node31.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html889"
+<A NAME="tex2html908"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html891"
+<A NAME="tex2html910"
   HREF="node33.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html892"
-  HREF="node33.html">Protein fold recognition</A></b>  Arriba: <b><A NAME="tex2html890"
-  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html884"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html911"
+  HREF="node33.html">Protein fold recognition</A></b>  Arriba: <b><A NAME="tex2html909"
+  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html903"
   HREF="node31.html">Relaci&#243;n entre estructura primaria y</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -85,13 +85,13 @@ Repasemos algunos algoritmos para calcular la similitud estructural entre prote&
   HREF="http://www.compbio.dundee.ac.uk/downloads/stamp/">STAMP</A>)
 </LI>
 <LI>doble programaci&#243;n din&#225;mica (<A NAME="tex2html223"
-  HREF="http://www.cathdb.info/cgi-bin/SsapServer.pl">SSAP</A>, m&#225;s detalles en este <A NAME="tex2html224"
+  HREF="http://sillitoe.cathdb.info/tools/cath-ssap">SSAP</A>, m&#225;s detalles en este <A NAME="tex2html224"
   HREF="http://en.wikipedia.org/wiki/Structural_alignment#SSAP">enlace</A>)
 </LI>
 <LI>extensi&#243;n combinatoria de fragmentos alineados localmente (<A NAME="tex2html225"
   HREF="http://source.rcsb.org/jfatcatserver/ceHome.jsp">CE</A>)
 </LI>
-<LI>comparaci&#243;n de matrices de contactos (<A NAME="tex2html226"
+<LI>comparaci&#243;n de matrices de contactos/distancias (<A NAME="tex2html226"
   HREF="http://ekhidna.biocenter.helsinki.fi/dali_server">DALI</A>)
 </LI>
 <LI>alineamiento iterativo de fragmentos de  <i> backbone  </i> hasta converger en subconjunto equivalente &#243;ptimo 
@@ -107,12 +107,12 @@ Repasemos algunos algoritmos para calcular la similitud estructural entre prote&
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:dali"></A><A NAME="2495"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:dali"></A><A NAME="2539"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.2:</STRONG>
 
-Alineamiento DALI de matrices de distancias, tomado de <A
- HREF="node44.html#Holm2006">Holm <EM>et&nbsp;al.</EM> (2006)</A>.
+Alineamiento DALI de matrices de contactos/distancias, tomado de <A
+ HREF="node46.html#Holm2006">Holm <EM>et&nbsp;al.</EM> (2006)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -127,13 +127,13 @@ Alineamiento DALI de matrices de distancias, tomado de <A
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:tfcompare"></A><A NAME="2496"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:tfcompare"></A><A NAME="2540"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.3:</STRONG>
 
 Superposiciones de dominios de uni&#243;n a DNA de factores de transcripci&#243;n, que ponen de manifiesto 
 su mecanismo, no siempre conservado, de reconocimiento de sus elementos CIS. Figura tomada de <A
- HREF="node44.html#Sebastian2013">Sebastian &amp; Contreras-Moreira (2013)</A>.
+ HREF="node46.html#Sebastian2013">Sebastian &amp; Contreras-Moreira (2013)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -153,23 +153,28 @@ La raz&#243;n es que no existe una definici&#243;n satisfactoria del alineamient
 que es en definitiva la funci&#243;n que todos estos algoritmos tratan de optimizar. De hecho, ni siquiera
 est&#225; claro si las taxonom&#237;as estructurales cl&#225;sicas, 
 como <A NAME="tex2html230"
-  HREF="http://scop.berkeley.edu">SCOP</A>
+  HREF="http://scop.berkeley.edu">SCOP</A>,
+
 o <A NAME="tex2html231"
   HREF="http://www.cathdb.info">CATH</A>,
 son compatibles con la evidencia disponible sobre la evoluci&#243;n de los plegamientos ( <i> folds  </i>), que
-actualmente se imagina como un proceso discreto s&#243;lo hasta cierto punto (<A NAME="tex2html893" target="contents"
-  HREF="node44.html#Taylor2002">Taylor, 2002</A>; <A NAME="tex2html894" target="contents"
-  HREF="node44.html#Sadowski2010">Sadowski &amp; Taylor, 2010</A>; <A NAME="tex2html895" target="contents"
-  HREF="node44.html#Pascual2009">Pascual-Garc&#237;a <EM>et&nbsp;al.</EM>, 2009</A>).
+actualmente se imagina como un proceso discreto s&#243;lo hasta cierto punto (<A NAME="tex2html912" target="contents"
+  HREF="node46.html#Sadowski2010">Sadowski &amp; Taylor, 2010</A>; <A NAME="tex2html913" target="contents"
+  HREF="node46.html#Pascual2009">Pascual-Garc&#237;a <EM>et&nbsp;al.</EM>, 2009</A>; <A NAME="tex2html914" target="contents"
+  HREF="node46.html#Andreeva2014">Andreeva <EM>et&nbsp;al.</EM>, 2014</A>; <A NAME="tex2html915" target="contents"
+  HREF="node46.html#Taylor2002">Taylor, 2002</A>) 
+De hecho <A NAME="tex2html232"
+  HREF="http://scop2.mrc-lmb.cam.ac.uk/">SCOP2</A>
+nace para superar esas limitaciones.
 Otra complicaci&#243;n adicional es que algunos plegamientos pueden verse como permutaciones circulares de elementos de estructura 
 secundaria de otros (<A
- HREF="node44.html#Schmidt-Goenner2010">Schmidt-Goenner <EM>et&nbsp;al.</EM>, 2010</A>).
+ HREF="node46.html#Schmidt-Goenner2010">Schmidt-Goenner <EM>et&nbsp;al.</EM>, 2010</A>).
 
 <P>
 Lo habitual cuando se publica un nuevo m&#233;todo es compararlo con otros preexistentes. Estas comparaciones, 
-si est&#225;n bien hechas y son realmente objetivas, pueden ayudar en la tarea de seleccionar un programa id&#243;neo 
+si son rigurosas y reproducibles, pueden ayudar en la tarea de seleccionar un programa id&#243;neo 
 para esta tarea. El algoritmo MAMMOTH (<A
- HREF="node44.html#Ortiz2002">Ortiz <EM>et&nbsp;al.</EM>, 2002</A>), con el que vamos a trabajar, se resume en estos pasos:
+ HREF="node46.html#Ortiz2002">Ortiz <EM>et&nbsp;al.</EM>, 2002</A>), con el que vamos a trabajar, se resume en estos pasos:
 <BLOCKQUOTE>
 1.- From the Calpha trace,  compute the unit-vector  U-RMS  between
  all pairs of heptapeptides of both model and experimental structure.
@@ -208,17 +213,17 @@ para esta tarea. El algoritmo MAMMOTH (<A
 </BLOCKQUOTE>
 
 <P>
-Y ha sido comparado con varios m&#233;todos, como se ve en esta figura:  
+MAMMOTH fue comparado con varios m&#233;todos, como se ve en esta figura:  
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:mammoth"></A><A NAME="2497"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:mammoth"></A><A NAME="2541"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.4:</STRONG>
 
-Similitud de MAMMOTH con otros algoritmos de comparaci&#243;n de estructura de prote&#237;nas, 
+Semejanza de MAMMOTH respecto a otros algoritmos de comparaci&#243;n de estructura de prote&#237;nas, 
 incluyendo el criterio de un experto humano (Murzin), tomada de (<A
- HREF="node44.html#Ortiz2002">Ortiz <EM>et&nbsp;al.</EM>, 2002</A>).
+ HREF="node46.html#Ortiz2002">Ortiz <EM>et&nbsp;al.</EM>, 2002</A>).
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -232,18 +237,55 @@ incluyendo el criterio de un experto humano (Murzin), tomada de (<A
 </DIV>
 
 <P>
-En mi opini&#243;n MAMMOTH es junto con DALI y CE de los mejores programas, 
-porque adem&#225;s de generar superposiciones y alineamientos satisfactorios, 
-sus medidas num&#233;ricas de similitud devuelven valores que se ajustan a
-la evaluaci&#243;n visual que cualquier usuario hace de una superposici&#243;n.
+MAMMOTH es junto con DALI y CE de los mejores programas, porque adem&#225;s de generar superposiciones y alineamientos satisfactorios, 
+sus medidas num&#233;ricas de similitud devuelven valores que se ajustan a la evaluaci&#243;n visual de la superposici&#243;n obtenida.
 En concreto, MAMMOTH devuelve para cada alineamiento una puntuaci&#243;n y su valor esperado asociado ( <i> E-value  </i>),
 que podemos interpretar de manera an&#225;loga a los valores esperados de BLAST, superando las limitaciones del RMSD para 
 comparar estructuras que solamente se parecen en algunas regiones (<A
- HREF="node44.html#Siew2000">Siew <EM>et&nbsp;al.</EM>, 2000</A>).
+ HREF="node46.html#Siew2000">Siew <EM>et&nbsp;al.</EM>, 2000</A>). 
+Adem&#225;s, hay una versi&#243;n de MAMMOTH que permite calcular 
+<A NAME="tex2html233"
+  HREF="https://ub.cbm.uam.es/software/mammothm.php">alineamientos m&#250;ltiples</A>.
 
 <P>
-Sin embargo, dada la dificultad te&#243;rica del problema, hay una gran variedad de software 
-para esta tarea, como se muestra en esta <A NAME="tex2html232"
+Para superar las limitaciones del RMSD, que da el mismo peso a regiones del core que a regiones divergentes, 
+<A
+ HREF="node46.html#Zhang2004">Zhang &amp; Skolnick (2004)</A> propusieron otra funci&#243;n, el TM-score, que disminuye el peso de las parejas alineadas a mayor distancia y es menos sensible
+a la longitud de las estructuras comparadas. La funci&#243;n <!-- MATH
+ $d_{0} L_{target}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ d_{0} L_{target}$"></SPAN> permite normalizar las distancias respecto a alineamientos al azar:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+TMscore = max[  \frac{1}{L_{target}}  \sum_{i=1}^L \frac{1}{1+ (\frac{d_{i}}{d_{0} L_{target}})2} ]
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="288" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$\displaystyle TMscore = max[ \frac{1}{L_{target}} \sum_{i=1}^L \frac{1}{1+ (\frac{d_{i}}{d_{0} L_{target}})2} ]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> 
+
+<P>
+Para calcularlo de manera &#243;ptima podemos usar su algoritmo TM-align (<A
+ HREF="node46.html#Zhang2005">Zhang &amp; Skolnick, 2005</A>), cuyo c&#243;digo fuente esta disponible en 
+<A NAME="tex2html234"
+  HREF="http://zhanglab.ccmb.med.umich.edu/TM-align/TM-align-C/TMalignc.tar.gz">TMalignc.tar.gz</A>. La funci&#243;n TM-score
+se ha convertido en el est&#225;ndar para medir el parecido entre estructuras, ya que se acepta que un valor de 0.5 garantiza un plegamiento similar.
+
+<P>
+De todos modos, hay una gran variedad de software para esta tarea, como se muestra por ejemplo en esta <A NAME="tex2html235"
   HREF="http://en.wikipedia.org/wiki/Structural_alignment_software">lista de la WikipediA</A>.
 
 <P>
@@ -252,14 +294,14 @@ Para aprender a hacer alineamientos/superposiciones estructurales, y a interpret
 <P>
 
 <UL>
-<LI>Visita <A NAME="tex2html233"
+<LI>Visita <A NAME="tex2html236"
   HREF="http://scop.berkeley.edu">SCOP</A>, 
 elige una clase
 y selecciona un grupo de 5 estructuras de prote&#237;nas que pertenezcan a la misma superfamilia, para despu&#233;s
 
 <UL>
 <LI>descargar los archivos PDB correspondientes,que contienen las coordenadas at&#243;micas,  del
-<A NAME="tex2html234"
+<A NAME="tex2html237"
   HREF="http://www.rcsb.org/pdb">Protein Data Bank</A>
 y
 </LI>
@@ -281,25 +323,23 @@ Cu&#225;l es el l&#237;mite esperado de precisi&#243;n, en t&#233;rminos de RMSD
 
 <P>
 </LI>
-<LI>Calcula para algunas de las superposiciones el <A NAME="tex2html235"
-  HREF="http://zhanglab.ccmb.med.umich.edu/TM-score/">TM-score</A>, 
-seg&#250;n se define en <A
- HREF="node44.html#Zhang2004">Zhang &amp; Skolnick (2004)</A>.
+<LI>Calcula para algunas de las superposiciones el <A NAME="tex2html238"
+  HREF="http://zhanglab.ccmb.med.umich.edu/TM-score/">TM-score</A>.
 
 <P>
 </LI>
 </UL>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html883"
+<A NAME="tex2html902"
   HREF="node31.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html889"
+<A NAME="tex2html908"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html891"
+<A NAME="tex2html910"
   HREF="node33.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>

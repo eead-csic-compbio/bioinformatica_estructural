@@ -39,20 +39,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html849"
+<A NAME="tex2html866"
   HREF="node28.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html853"
+<A NAME="tex2html870"
   HREF="node27.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html855"
+<A NAME="tex2html872"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html856"
-  HREF="node30.html">Estructura terciaria</A></b>  Arriba: <b><A NAME="tex2html854"
-  HREF="node27.html">Estructura secundaria</A></b>  Anterior: <b><A NAME="tex2html850"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html873"
+  HREF="node30.html">Estructura terciaria</A></b>  Arriba: <b><A NAME="tex2html871"
+  HREF="node27.html">Estructura secundaria</A></b>  Anterior: <b><A NAME="tex2html867"
   HREF="node28.html">Estructura secundaria de RNA</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -65,16 +65,16 @@ La estructura secundaria es una propiedad de las prote&#237;nas naturales en sol
 que se explica por medio de una red (din&#225;mica) de puentes de hidr&#243;geno que conectan diferentes partes del polip&#233;ptido 
 a escala m&#225;s o menos local, formando h&#233;lices y l&#225;minas que quedan conectadas por lazos ( <i> loops  </i>) y regiones 
 desordenadas, como ya recordamos en la secci&#243;n <A HREF="node9.html#SS">1.3.2</A> 
-(y en este <A NAME="tex2html193"
+(y en este <A NAME="tex2html192"
   HREF="http://www.eead.csic.es/compbio/material/modelado_comparativo/node5.html">otro curso</A>). 
 
 <P>
 Cuando forman parte de un elemento de estructura secundaria,
 los amino&#225;cidos adoptan conformaciones caracter&#237;sticas, que se pueden resumir en forma de 
-<A NAME="tex2html194"
+<A NAME="tex2html193"
   HREF="http://en.wikipedia.org/wiki/Ramachandran_plot">diagramas de Ramachandran</A>
 (<A
- HREF="node44.html#Ramachandran1968">Ramachandran &amp; Sasisekharan, 1968</A>), que muestran la distribuci&#243;n
+ HREF="node46.html#Ramachandran1968">Ramachandran &amp; Sasisekharan, 1968</A>), que muestran la distribuci&#243;n
 de valores <SPAN CLASS="MATH"><IMG
  WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
  SRC="img44.png"
@@ -85,12 +85,12 @@ de valores <SPAN CLASS="MATH"><IMG
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:psiphi"></A><A NAME="2210"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:psiphi"></A><A NAME="2233"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.4:</STRONG>
 
 &#193;ngulos diedros en el esqueleto proteico, 
-figura tomada de <A NAME="tex2html185"
+figura tomada de <A NAME="tex2html184"
   HREF="http://employees.csbsju.edu/HJAKUBOWSKI">http://employees.csbsju.edu/HJAKUBOWSKI</A>.
 </CAPTION>
 <TR><TD>
@@ -106,12 +106,12 @@ figura tomada de <A NAME="tex2html185"
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:ramachandran"></A><A NAME="2211"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:ramachandran"></A><A NAME="2234"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.5:</STRONG>
 
 Diagrama de Ramachandran tomado de (<A
- HREF="node44.html#Porter2011">Porter &amp; Rose, 2011</A>), con las regiones de l&#225;mina beta y h&#233;lice alfa en el cuadrante superior izquierdo.
+ HREF="node46.html#Porter2011">Porter &amp; Rose, 2011</A>), con las regiones de l&#225;mina beta y h&#233;lice alfa en el cuadrante superior izquierdo.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -127,7 +127,7 @@ Diagrama de Ramachandran tomado de (<A
 <P>
 Si disponemos de las coordenadas at&#243;micas de una prote&#237;na podemos medir sus &#225;ngulos diedros 
 para generar nuestros propios diagramas de Ramachandran, como hace 
-<A NAME="tex2html195"
+<A NAME="tex2html194"
   HREF="http://dicsoft1.physics.iisc.ernet.in/rp/">esta herramienta web</A>, con dos fines:
 
 <UL>
@@ -135,15 +135,15 @@ para generar nuestros propios diagramas de Ramachandran, como hace
 de la estructura. 
 </LI>
 <LI>Averiguar en base a la geometr&#237;a del esqueleto proteico el estado de estructura secundaria de segmentos de residuos
-(como en este <A NAME="tex2html196"
+(como en este <A NAME="tex2html195"
   HREF="http://www.eead.csic.es/compbio/material/bioperl/node53.html">ejercicio</A>). 
 </LI>
 </UL>
 
 <P>
-El procedimiento, dado unas coordenadas en formato PDB (<A NAME="tex2html197"
+El procedimiento, dado unas coordenadas en formato PDB (<A NAME="tex2html196"
   HREF="./files/1lfu.html">1LFU</A>),
-es relativamente sencillo, recurriendo a programas como <A NAME="tex2html198"
+es relativamente sencillo, recurriendo a programas como <A NAME="tex2html197"
   HREF="http://kinemage.biochem.duke.edu/software/dangle.php">DANGLE</A>
 o haciendo un poco de &#225;lgebra y trigonometr&#237;a:
 <BR>
@@ -268,12 +268,12 @@ sub angulo_diedro
 </PRE>
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:signo_diedro1"></A><A NAME="2212"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:signo_diedro1"></A><A NAME="2235"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.6:</STRONG>
 
 Definici&#243;n de &#225;ngulo diedro, 
-figura tomada de <A NAME="tex2html189"
+figura tomada de <A NAME="tex2html188"
   HREF="http://structuralbioinformatics.com">http://structuralbioinformatics.com</A>.
 </CAPTION>
 <TR><TD>
@@ -296,10 +296,10 @@ hidr&#243;geno entre grupos <SPAN CLASS="MATH"><IMG
  WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
  SRC="img47.png"
  ALT="$ -NH$"></SPAN> del esqueleto pept&#237;dico, 
-como por ejemplo hace el software <A NAME="tex2html199"
+como por ejemplo hace el software <A NAME="tex2html198"
   HREF="http://swift.cmbi.ru.nl/gv/dssp/">DSSP</A>
 (<A
- HREF="node44.html#Kabsch1983">Kabsch &amp; Sander, 1983</A>)
+ HREF="node46.html#Kabsch1983">Kabsch &amp; Sander, 1983</A>)
 de acuerdo con esta definici&#243;n energ&#233;tica, donde un puente v&#225;lido debe tener E&lt;-0.5 kcal/mol, 
 q1=0.42e y q2=0.20e y <SPAN CLASS="MATH"><IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
@@ -323,10 +323,10 @@ E = q_{1} q_{2} \left[ \frac{1}{r_{ON}} + \frac{1}{r_{CH}} - \frac{1}{r_{OH}} - 
 <BR CLEAR="ALL"><P></P>
 
 <P>
-El software <A NAME="tex2html200"
+El software <A NAME="tex2html199"
   HREF="http://webclu.bio.wzw.tum.de/stride/">STRIDE</A>
 (<A
- HREF="node44.html#Frishman1995">Frishman &amp; Argos, 1995</A>) es otro programa para este fin 
+ HREF="node46.html#Frishman1995">Frishman &amp; Argos, 1995</A>) es otro programa para este fin 
 que en experimentos de validaci&#243;n mejora las asignaciones de estructura secundaria de DSSP.
 
 <P>
@@ -349,7 +349,7 @@ experimentos y algoritmos que trabajen sobre la estructura terciaria.
 <P>
 Hay una buena exposici&#243;n de este tema en el
 art&#237;culo de <A
- HREF="node44.html#Jones1999">Jones (1999)</A>, donde se presenta el algoritmo <A NAME="tex2html201"
+ HREF="node46.html#Jones1999">Jones (1999)</A>, donde se presenta el algoritmo <A NAME="tex2html200"
   HREF="http://bioinf.cs.ucl.ac.uk/psipred">PSIPRED</A>
 y se eval&#250;a la precisi&#243;n de las asignaciones de estructura secundaria de varias maneras, incluyendo la funci&#243;n:
 <P></P>
@@ -371,12 +371,12 @@ Q_{3} = \frac{\sum\limits_{i=H,E,C}{corrpred_{i}}}{\sum\limits_{i=H,E,C}{obs_{i}
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:psipred"></A><A NAME="2220"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:psipred"></A><A NAME="2243"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.7:</STRONG>
 
 Ejemplo de predicci&#243;n de estructura secundaria de PSIPRED (<A
- HREF="node44.html#Jones1999">Jones, 1999</A>).
+ HREF="node46.html#Jones1999">Jones, 1999</A>).
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -392,7 +392,7 @@ Ejemplo de predicci&#243;n de estructura secundaria de PSIPRED (<A
 <P>
 PSIPRED es aceptado como uno de los mejores predictores, pero hay muchos otros algoritmos de predicci&#243;n de estructura secundaria y 
 la mejor manera de compararlos es por medio de evaluaciones autom&#225;ticas a ciegas. Desgraciadamente iniciativas de este tipo, como  
-<A NAME="tex2html202"
+<A NAME="tex2html201"
   HREF="http://en.wikipedia.org/wiki/LiveBench">LiveBench</A>
 o EVA,  
 que recolectan datos de distintos algoritmos a medida que crece el PDB, son financiadas por poco tiempo y mueren.
@@ -400,30 +400,34 @@ que recolectan datos de distintos algoritmos a medida que crece el PDB, son fina
 <P>
 Tras la aparici&#243;n de los primeros predictores de estructura secundaria empez&#243; a ser evidente que muchas prote&#237;nas, 
 sobre todo de vertebrados, no ten&#237;an aparentemente una estructura ordenada, al menos en ciertos estados fisiol&#243;gicos 
-(ver por ejemplo el repositorio <A NAME="tex2html203"
+(ver por ejemplo el repositorio <A NAME="tex2html202"
   HREF="http://www.disprot.org">Disprot</A>
 (<A
- HREF="node44.html#Sickmeier2007">Sickmeier <EM>et&nbsp;al.</EM>, 2007</A>)).
+ HREF="node46.html#Sickmeier2007">Sickmeier <EM>et&nbsp;al.</EM>, 2007</A>)).
 Hoy sabemos que muchas prote&#237;nas en general ordenadas pueden contener segmentos desordenados (<A
- HREF="node44.html#Lobanov2010">Lobanov <EM>et&nbsp;al.</EM>, 2010</A>).
+ HREF="node46.html#Lobanov2010">Lobanov <EM>et&nbsp;al.</EM>, 2010</A>).
 Como resultado se dise&#241;aron predictores para un cuarto estado, el de desorden intr&#237;nseco, y se han creado recursos para la 
-anotaci&#243;n de estas secuencias como <A NAME="tex2html204"
+anotaci&#243;n de estas secuencias como <A NAME="tex2html203"
   HREF="http://d2p2.pro">D2P2</A>.
 
 <P>
 En el caso de PSIPRED, la evoluci&#243;n es un software de nombre
-<A NAME="tex2html205"
+<A NAME="tex2html204"
   HREF="http://bioinfadmin.cs.ucl.ac.uk/downloads/DISOPRED/">DISOPRED</A>
 (<A
- HREF="node44.html#Ward2004">Ward <EM>et&nbsp;al.</EM>, 2004</A>),
+ HREF="node46.html#Ward2004">Ward <EM>et&nbsp;al.</EM>, 2004</A>),
 que adem&#225;s de reconocer elementos de estructura secundaria, estima una probabilidad emp&#237;rica de que cada amino&#225;cido est&#233; desordenado, 
 sin pertenecer a ninguna clase de estructura secundaria. Otros predictores recientes que combinan estructura secundaria y otras propiedades son 
+<A NAME="tex2html205"
+  HREF="http://www-mvsoftware.ch.cam.ac.uk/">s2D</A>
+o 
 <A NAME="tex2html206"
-  HREF="http://www-mvsoftware.ch.cam.ac.uk/">s2D</A>, con una precisi&#243;n por encima del 80% (<A
- HREF="node44.html#Sormanni2014">Sormanni <EM>et&nbsp;al.</EM>, 2014</A>),
+  HREF="http://sparks-lab.org/server/SPIDER2">SPIDER2</A>, con una precisi&#243;n por encima del 80% (<A NAME="tex2html874" target="contents"
+  HREF="node46.html#Sormanni2014">Sormanni <EM>et&nbsp;al.</EM>, 2014</A>; <A NAME="tex2html875" target="contents"
+  HREF="node46.html#Heffernan2015">Heffernan <EM>et&nbsp;al.</EM>, 2015</A>),
 o <A NAME="tex2html207"
   HREF="http://scratch.proteomics.ics.uci.edu/">SSpro</A>, rayando el %90 en las validaciones de sus autores (<A
- HREF="node44.html#Magnan2014">Magnan &amp; Baldi, 2014</A>).
+ HREF="node46.html#Magnan2014">Magnan &amp; Baldi, 2014</A>).
 
 <P>
 El ejercicio de esta secci&#243;n consiste en calcular la estructura secundaria de una prote&#237;na del 
@@ -448,15 +452,15 @@ seg&#250;n el diagrama de Ramachandran y
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html849"
+<A NAME="tex2html866"
   HREF="node28.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html853"
+<A NAME="tex2html870"
   HREF="node27.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html855"
+<A NAME="tex2html872"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>

@@ -1,4 +1,4 @@
-\begin{thebibliography}{128}
+\begin{thebibliography}{143}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -11,8 +11,7 @@ Adzhubei, I.~A., Schmidt, S., Peshkin, L., Ramensky, V.~E., Gerasimova, A.,
 \newblock {{A} method and server for predicting damaging missense mutations}.
 \newblock {\em Nat. Methods\/}, 7(4):248--249.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC2855889/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2855889/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2855889/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2855889/}}.
 
 \bibitem[{Agostini {\em et~al.\/}(2012)Agostini, Vendruscolo \&
   Tartaglia}]{Agostini2012}
@@ -20,8 +19,7 @@ Agostini, F., Vendruscolo, M. \& Tartaglia, G.~G. ({\bf 2012}).
 \newblock {{S}equence-based prediction of protein solubility}.
 \newblock {\em J. Mol. Biol.\/}, 421(2-3):237--241.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2217248%
-7}{http://www.ncbi.nlm.nih.gov/pubmed/22172487}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/22172487}{http://www.ncbi.nlm.nih.gov/pubmed/22172487}}.
 
 \bibitem[{Aloy \& Russell(2002)}]{Aloy2002a}
 Aloy, P. \& Russell, R.~B. ({\bf 2002}).
@@ -29,8 +27,17 @@ Aloy, P. \& Russell, R.~B. ({\bf 2002}).
   biology.
 \newblock {\em PNAS\/}, 99(9):5896--5901.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/99/9/5896.shor%
-t}{http://www.pnas.org/content/99/9/5896.short}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/99/9/5896.short}{http://www.pnas.org/content/99/9/5896.short}}.
+
+\bibitem[{Andreeva {\em et~al.\/}(2014)Andreeva, Howorth, Chothia, Kulesha \&
+  Murzin}]{Andreeva2014}
+Andreeva, A., Howorth, D., Chothia, C., Kulesha, E. \& Murzin, A.~G. ({\bf
+  2014}).
+\newblock {{S}{C}{O}{P}2 prototype: a new approach to protein structure
+  mining}.
+\newblock {\em Nucleic Acids Res.\/}, 42(Database issue):D310--314.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3964979}{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3964979}}.
 
 \bibitem[{Anfinsen {\em et~al.\/}(1961)Anfinsen, Haber, Sela \&
   White~Jr}]{Anfinsen1961}
@@ -39,8 +46,7 @@ Anfinsen, C.~B., Haber, E., Sela, M. \& White~Jr, F. ({\bf 1961}).
   the reduced polypeptide chain}.
 \newblock {\em PNAS\/}, 47(9):1309--1314.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC223141/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC223141/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC223141/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC223141/}}.
 
 \bibitem[{Behrouzi {\em et~al.\/}(2012)Behrouzi, Roh, Kilburn, Briber \&
   Woodson}]{Behrouzi2012}
@@ -50,8 +56,7 @@ Behrouzi, R., Roh, J.~H., Kilburn, D., Briber, R.~M. \& Woodson, S.~A. ({\bf
   folding}.
 \newblock {\em Cell\/}, 149(2):348--357.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3384715/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3384715/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3384715/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3384715/}}.
 
 \bibitem[{Bernhart {\em et~al.\/}(2006)Bernhart, Tafer, Muckstein, Flamm,
   Stadler \& Hofacker}]{Bernhart2006}
@@ -61,8 +66,7 @@ Bernhart, S.~H., Tafer, H., Muckstein, U., Flamm, C., Stadler, P.~F. \&
   heterodimers}.
 \newblock {\em Algorithms Mol Biol\/}, 1:3.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.almob.org/content/1/1/3}{http:/%
-/www.almob.org/content/1/1/3}}.
+  \urlprefix\url{\htmladdnormallink{http://www.almob.org/content/1/1/3}{http://www.almob.org/content/1/1/3}}.
 
 \bibitem[{Berrondo \& Gray(2011)}]{Berrondo2011}
 Berrondo, M. \& Gray, J.~J. ({\bf 2011}).
@@ -70,8 +74,7 @@ Berrondo, M. \& Gray, J.~J. ({\bf 2011}).
   activities}.
 \newblock {\em Proteins\/}, 79(10):2844--2860.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3170519/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3170519/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3170519/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3170519/}}.
 
 \bibitem[{Bower {\em et~al.\/}(1997)Bower, Cohen \& Dunbrack}]{Bower1997}
 Bower, M.~J., Cohen, F.~E. \& Dunbrack, R.~L., J. ({\bf 1997}).
@@ -79,9 +82,7 @@ Bower, M.~J., Cohen, F.~E. \& Dunbrack, R.~L., J. ({\bf 1997}).
   rotamer library: a new homology modeling tool.
 \newblock {\em J.Mol.Biol.\/}, 267(5):1268--1282.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pi%
-i/S0022-2836(97)90926-8}{http://linkinghub.elsevier.com/retrieve/pii/S0022-283%
-6(97)90926-8}}.
+  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pii/S0022-2836(97)90926-8}{http://linkinghub.elsevier.com/retrieve/pii/S0022-2836(97)90926-8}}.
 
 \bibitem[{Branden \& Tooze(1999)}]{Branden1999}
 Branden, C.-I. \& Tooze, J. ({\bf 1999}).
@@ -94,8 +95,7 @@ Breslauer, K.~J., Frank, R., Blocker, H. \& Marky, L.~A. ({\bf 1986}).
 \newblock {{P}redicting {D}{N}{A} duplex stability from the base sequence}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 83:3746--3750.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/83/11/3746}{ht%
-tp://www.pnas.org/content/83/11/3746}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/83/11/3746}{http://www.pnas.org/content/83/11/3746}}.
 
 \bibitem[{Brunger(1997)}]{Brunger1997}
 Brunger, A.~T. ({\bf 1997}).
@@ -103,8 +103,7 @@ Brunger, A.~T. ({\bf 1997}).
   and dynamics.
 \newblock {\em Nat.Struct.Biol.\/}, 4 Suppl:862--825.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/9377160%
-}{http://www.ncbi.nlm.nih.gov/pubmed/9377160}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/9377160}{http://www.ncbi.nlm.nih.gov/pubmed/9377160}}.
 
 \bibitem[{Bryan {\em et~al.\/}(2011)Bryan, O'Donnell, Menke, Cowen, Lindquist
   \& Berger}]{Bryan2011}
@@ -114,8 +113,7 @@ Bryan, A.~W., O'Donnell, C.~W., Menke, M., Cowen, L.~J., Lindquist, S. \&
   prion structures from secondary structure predictions}.
 \newblock {\em Proteins\/}, 80(2):410--420.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3298606/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3298606/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3298606/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3298606/}}.
 
 \bibitem[{Burra {\em et~al.\/}(2009)Burra, Zhang, Godzik \& Stec}]{Burra2009}
 Burra, P.~V., Zhang, Y., Godzik, A. \& Stec, B. ({\bf 2009}).
@@ -124,16 +122,22 @@ Burra, P.~V., Zhang, Y., Godzik, A. \& Stec, B. ({\bf 2009}).
   structure}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 106:10505--10510.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/106/26/10505.l%
-ong}{http://www.pnas.org/content/106/26/10505.long}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/106/26/10505.long}{http://www.pnas.org/content/106/26/10505.long}}.
+
+\bibitem[{Callaway(2015)}]{Callaway2015}
+Callaway, E. ({\bf 2015}).
+\newblock {The revolution will not be crystallized: a new method sweeps through
+  structural biology.}
+\newblock {\em Nature\/}, 525(7568):172--174.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/26354465}{http://www.ncbi.nlm.nih.gov/pubmed/26354465}}.
 
 \bibitem[{Cavanagh~J \& NJ(2005)}]{Cavanagh2000}
 Cavanagh~J, Fairbrother~WJ, P. I. A. R.~M. \& NJ, S. ({\bf 2005}).
 \newblock {\em Protein NMR Spectroscopy: Principles & Practice\/}.
 \newblock Academic Press, New York, 2nd edition.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/book/%
-9780121644918}{http://www.sciencedirect.com/science/book/9780121644918}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/book/9780121644918}{http://www.sciencedirect.com/science/book/9780121644918}}.
 
 \bibitem[{Chaudhury {\em et~al.\/}(2010)Chaudhury, Lyskov \&
   Gray}]{Chaudhury2010}
@@ -142,9 +146,7 @@ Chaudhury, S., Lyskov, S. \& Gray, J. ({\bf 2010}).
   modeling algorithms using Rosetta.
 \newblock {\em Bioinformatics\/}, 26(5):689--691.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/c%
-ontent/26/5/689.abstract}{http://bioinformatics.oxfordjournals.org/content/26/%
-5/689.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/26/5/689.abstract}{http://bioinformatics.oxfordjournals.org/content/26/5/689.abstract}}.
 
 \bibitem[{Chothia \& Lesk(1986)}]{Chothia1986}
 Chothia, C. \& Lesk, A.~M. ({\bf 1986}).
@@ -152,8 +154,7 @@ Chothia, C. \& Lesk, A.~M. ({\bf 1986}).
   proteins.
 \newblock {\em EMBO J.\/}, 5(4):823--826.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC1166865/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1166865/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1166865/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1166865/}}.
 
 \bibitem[{Contreras-Moreira(2010)}]{ContrerasMoreira2010}
 Contreras-Moreira, B. ({\bf 2010}).
@@ -161,17 +162,14 @@ Contreras-Moreira, B. ({\bf 2010}).
   complexes.
 \newblock {\em Nucleic Acids Research\/}, 38:D91--D97.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/38/s%
-uppl\_1/D91}{http://nar.oxfordjournals.org/content/38/suppl\_1/D91}}.
+  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/38/suppl\_1/D91}{http://nar.oxfordjournals.org/content/38/suppl\_1/D91}}.
 
 \bibitem[{Contreras-Moreira \& Collado-Vides(2006)}]{ContrerasMoreira2006}
 Contreras-Moreira, B. \& Collado-Vides, J. ({\bf 2006}).
 \newblock {Comparative footprinting of DNA-binding proteins.}
 \newblock {\em Bioinformatics\/}, 22(14):e74.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/c%
-ontent/22/14/e74.short}{http://bioinformatics.oxfordjournals.org/content/22/14%
-/e74.short}}.
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/22/14/e74.short}{http://bioinformatics.oxfordjournals.org/content/22/14/e74.short}}.
 
 \bibitem[{Contreras-Moreira {\em et~al.\/}(2005)Contreras-Moreira, Ezkurdia,
   Tress \& Valencia}]{ContrerasMoreira2005}
@@ -180,9 +178,7 @@ Contreras-Moreira, B., Ezkurdia, I., Tress, M. \& Valencia, A. ({\bf 2005}).
   the CASP5 example.}
 \newblock {\em FEBS Letters\/}, 579(5):1203--1207.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pi%
-i/S0014579305000773}{http://linkinghub.elsevier.com/retrieve/pii/S001457930500%
-0773}}.
+  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pii/S0014579305000773}{http://linkinghub.elsevier.com/retrieve/pii/S0014579305000773}}.
 
 \bibitem[{Cooper {\em et~al.\/}(2010)Cooper, Khatib, Treuille, Barbero, Lee,
   Beenen, Leaver-Fay, Baker, Popovic \& Players}]{Cooper2010}
@@ -191,8 +187,7 @@ Cooper, S., Khatib, F., Treuille, A., Barbero, J., Lee, J., Beenen, M.,
 \newblock {{P}redicting protein structures with a multiplayer online game}.
 \newblock {\em Nature\/}, 466:756--760.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC2956414}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2956414}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2956414}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2956414}}.
 
 \bibitem[{Cukuroglu {\em et~al.\/}(2014)Cukuroglu, Gursoy, Nussinov \&
   Keskin}]{Cukuroglu2014}
@@ -201,9 +196,7 @@ Cukuroglu, E., Gursoy, A., Nussinov, R. \& Keskin, O. ({\bf 2014}).
   modeling protein interactions}.
 \newblock {\em PLoS ONE\/}, 9(1):e86738.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://journals.plos.org/plosone/article?i%
-d=10.1371/journal.pone.0086738}{http://journals.plos.org/plosone/article?id=10%
-.1371/journal.pone.0086738}}.
+  \urlprefix\url{\htmladdnormallink{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0086738}{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0086738}}.
 
 \bibitem[{Davis {\em et~al.\/}(2006)Davis, Arendall, Richardson \&
   Richardson}]{Davis2006}
@@ -212,17 +205,14 @@ Davis, I., Arendall, W., Richardson, D. \& Richardson, J. ({\bf 2006}).
   dances.
 \newblock {\em Structure\/}, 14(2):265--74.
 \newblock
-  \urlprefix\url{\htmladdnormallink{https://www.cell.com/structure/abstract/S0%
-969-2126(06)00040-2}{https://www.cell.com/structure/abstract/S0969-2126(06)000%
-40-2}}.
+  \urlprefix\url{\htmladdnormallink{https://www.cell.com/structure/abstract/S0969-2126(06)00040-2}{https://www.cell.com/structure/abstract/S0969-2126(06)00040-2}}.
 
 \bibitem[{de~Juan {\em et~al.\/}(2013)de~Juan, Pazos \& Valencia}]{deJuan2013}
 de~Juan, D., Pazos, F. \& Valencia, A. ({\bf 2013}).
 \newblock {{E}merging methods in protein co-evolution}.
 \newblock {\em Nat. Rev. Genet.\/}, 14(4):249--261.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2345885%
-6}{http://www.ncbi.nlm.nih.gov/pubmed/23458856}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/23458856}{http://www.ncbi.nlm.nih.gov/pubmed/23458856}}.
 
 \bibitem[{Dekker {\em et~al.\/}(2013)Dekker, Marti-Renom \& Mirny}]{Dekker2013}
 Dekker, J., Marti-Renom, M.~A. \& Mirny, L.~A. ({\bf 2013}).
@@ -230,8 +220,7 @@ Dekker, J., Marti-Renom, M.~A. \& Mirny, L.~A. ({\bf 2013}).
   interpreting chromatin interaction data}.
 \newblock {\em Nat. Rev. Genet.\/}, 14:390--403.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2365748%
-0}{http://www.ncbi.nlm.nih.gov/pubmed/23657480}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/23657480}{http://www.ncbi.nlm.nih.gov/pubmed/23657480}}.
 
 \bibitem[{Dill {\em et~al.\/}(1995)Dill, Bromberg, Yue, Fiebig, Yee, Thomas \&
   Chan}]{Dill1995}
@@ -241,33 +230,28 @@ Dill, K., Bromberg, S., Yue, K., Fiebig, K., Yee, D., Thomas, P. \& Chan, H.
   models}.
 \newblock {\em Protein Science\/}, 4(4):561--602.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC2143098/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2143098/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2143098/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2143098/}}.
 
 \bibitem[{Dill(1990)}]{Dill1990}
 Dill, K.~A. ({\bf 1990}).
 \newblock {The meaning of hydrophobicity}.
 \newblock {\em Science\/}, 250(4978):297--298.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencemag.org/content/250/4978%
-/297.2.extract}{http://www.sciencemag.org/content/250/4978/297.2.extract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencemag.org/content/250/4978/297.2.extract}{http://www.sciencemag.org/content/250/4978/297.2.extract}}.
 
 \bibitem[{Dill \& MacCallum(2012)}]{Dill2012}
 Dill, K.~A. \& MacCallum, J.~L. ({\bf 2012}).
 \newblock {{T}he protein-folding problem, 50 years on}.
 \newblock {\em Science\/}, 338(6110):1042--1046.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2318085%
-5}{http://www.ncbi.nlm.nih.gov/pubmed/23180855}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/23180855}{http://www.ncbi.nlm.nih.gov/pubmed/23180855}}.
 
 \bibitem[{Donald {\em et~al.\/}(2011)Donald, Kulp \& DeGrado}]{Donald2011}
 Donald, J.~E., Kulp, D.~W. \& DeGrado, W.~F. ({\bf 2011}).
 \newblock {{S}alt bridges: geometrically specific, designable interactions}.
 \newblock {\em Proteins\/}, 79:898--915.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.22927/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22927/ab%
-stract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.22927/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22927/abstract}}.
 
 \bibitem[{Dunker {\em et~al.\/}(2008)Dunker, Silman, Uversky \&
   Sussman}]{Dunker2008}
@@ -275,16 +259,14 @@ Dunker, A., Silman, I., Uversky, V. \& Sussman, J. ({\bf 2008}).
 \newblock Function and structure of inherently disordered proteins.
 \newblock {\em Curr Opin Struct Biol.\/}, 18(6):756--764.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1895216%
-8}{http://www.ncbi.nlm.nih.gov/pubmed/18952168}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/18952168}{http://www.ncbi.nlm.nih.gov/pubmed/18952168}}.
 
 \bibitem[{Eddy(2004)}]{Eddy2004b}
 Eddy, S.~R. ({\bf 2004}).
 \newblock {{H}ow do {R}{N}{A} folding algorithms work?}
 \newblock {\em Nat. Biotechnol.\/}, 22(11):1457--1458.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1552917%
-2}{http://www.ncbi.nlm.nih.gov/pubmed/15529172}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/15529172}{http://www.ncbi.nlm.nih.gov/pubmed/15529172}}.
 
 \bibitem[{Eiben {\em et~al.\/}(2012)Eiben, Siegel, Bale, Cooper, Khatib, Shen,
   Players, Stoddard, Popovic \& Baker}]{Eiben2012}
@@ -294,9 +276,15 @@ Eiben, C.~B., Siegel, J.~B., Bale, J.~B., Cooper, S., Khatib, F., Shen, B.~W.,
   guided by {F}oldit players}.
 \newblock {\em Nat. Biotechnol.\/}, 30:190--192.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nbt/journal/v30/n2/f%
-ull/nbt.2109.html}{http://www.nature.com/nbt/journal/v30/n2/full/nbt.2109.html%
-}}.
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nbt/journal/v30/n2/full/nbt.2109.html}{http://www.nature.com/nbt/journal/v30/n2/full/nbt.2109.html}}.
+
+\bibitem[{Eser \& Churchman(2016)}]{Eser2016}
+Eser, U. \& Churchman, L. ({\bf 2016}).
+\newblock {FIDDLE: An integrative deep learning framework for functional
+  genomic data inference}.
+\newblock {\em Biorxiv\/}, 10(17):081380.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://biorxiv.org/content/early/2016/10/17/081380}{http://biorxiv.org/content/early/2016/10/17/081380}}.
 
 \bibitem[{Espinosa~Angarica {\em et~al.\/}(2008)Espinosa~Angarica,
   Gonz\'{a}lez~P\'{e}rez, Vasconcelos, Collado-Vides \&
@@ -307,8 +295,7 @@ Espinosa~Angarica, V., Gonz\'{a}lez~P\'{e}rez, A., Vasconcelos, A.,
   protein-DNA complexes.
 \newblock {\em BMC Bioinformatics\/}, 9:436.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.biomedcentral.com/1471-2105/9/4%
-36}{http://www.biomedcentral.com/1471-2105/9/436}}.
+  \urlprefix\url{\htmladdnormallink{http://www.biomedcentral.com/1471-2105/9/436}{http://www.biomedcentral.com/1471-2105/9/436}}.
 
 \bibitem[{Fiser \& Sali(2003)}]{Fiser2003}
 Fiser, A. \& Sali, A. ({\bf 2003}).
@@ -316,9 +303,7 @@ Fiser, A. \& Sali, A. ({\bf 2003}).
   Structure Models}.
 \newblock {\em Methods in Enzymology\/}, 374:461--491.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pi%
-i/S0076687903740208}{http://linkinghub.elsevier.com/retrieve/pii/S007668790374%
-0208}}.
+  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pii/S0076687903740208}{http://linkinghub.elsevier.com/retrieve/pii/S0076687903740208}}.
 
 \bibitem[{Flock {\em et~al.\/}(2014)Flock, Weatheritt, Latysheva \&
   Babu}]{Flock2014}
@@ -327,17 +312,14 @@ Flock, T., Weatheritt, R.~J., Latysheva, N.~S. \& Babu, M.~M. ({\bf 2014}).
   disordered regions}.
 \newblock {\em Curr. Opin. Struct. Biol.\/}, 26:62--72.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2493002%
-0}{http://www.ncbi.nlm.nih.gov/pubmed/24930020}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/24930020}{http://www.ncbi.nlm.nih.gov/pubmed/24930020}}.
 
 \bibitem[{Frishman \& Argos(1995)}]{Frishman1995}
 Frishman, D. \& Argos, P. ({\bf 1995}).
 \newblock {Knowledge-based protein secondary structure assignment}.
 \newblock {\em Proteins\/}, 23(4):566--579.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.340230412/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.3402%
-30412/abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.340230412/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.340230412/abstract}}.
 
 \bibitem[{Fujikawa {\em et~al.\/}(2003)Fujikawa, Kurumizaka, Nureki, Terada,
   Shirouzu, Katayama \& Yokoyama}]{Fujikawa2003}
@@ -347,8 +329,7 @@ Fujikawa, N., Kurumizaka, H., Nureki, O., Terada, T., Shirouzu, M., Katayama,
   protein}.
 \newblock {\em Nucleic Acids Res.\/}, 31:2077--2086.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC153737}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC153737}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC153737}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC153737}}.
 
 \bibitem[{Garbuzynskiy {\em et~al.\/}(2013)Garbuzynskiy, Ivankov, Bogatyreva \&
   Finkelstein}]{Garbuzynskiy2013}
@@ -357,8 +338,7 @@ Garbuzynskiy, S.~O., Ivankov, D.~N., Bogatyreva, N.~S. \& Finkelstein, A.~V.
 \newblock {{G}olden triangle for folding rates of globular proteins}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 110(1):147--150.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/110/1/147.long%
-}{http://www.pnas.org/content/110/1/147.long}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/110/1/147.long}{http://www.pnas.org/content/110/1/147.long}}.
 
 \bibitem[{Ginalski {\em et~al.\/}(2003)Ginalski, Elofsson, Fischer \&
   Rychlewski}]{Ginalski2003}
@@ -367,9 +347,7 @@ Ginalski, K., Elofsson, A., Fischer, D. \& Rychlewski, L. ({\bf 2003}).
   predictions}.
 \newblock {\em Bioinformatics\/}, 19(8):1015--1018.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/c%
-ontent/19/8/1015.long}{http://bioinformatics.oxfordjournals.org/content/19/8/1%
-015.long}}.
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/19/8/1015.long}{http://bioinformatics.oxfordjournals.org/content/19/8/1015.long}}.
 
 \bibitem[{Go\~ni {\em et~al.\/}(2007)Go\~ni, P\'{e}rez, Torrents \&
   Orozco}]{Gogni2007}
@@ -378,8 +356,7 @@ Go\~ni, J., P\'{e}rez, A., Torrents, D. \& Orozco, M. ({\bf 2007}).
   first-principles calculations}.
 \newblock {\em Genome Biol.\/}, 8:R263.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://genomebiology.com/content/8/12/R263%
-}{http://genomebiology.com/content/8/12/R263}}.
+  \urlprefix\url{\htmladdnormallink{http://genomebiology.com/content/8/12/R263}{http://genomebiology.com/content/8/12/R263}}.
 
 \bibitem[{Gobel {\em et~al.\/}(1994)Gobel, Sander, Schneider \&
   Valencia}]{Gobel1994}
@@ -387,8 +364,7 @@ Gobel, U., Sander, C., Schneider, R. \& Valencia, A. ({\bf 1994}).
 \newblock {{C}orrelated mutations and residue contacts in proteins}.
 \newblock {\em Proteins\/}, 18(4):309--317.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/8208723%
-}{http://www.ncbi.nlm.nih.gov/pubmed/8208723}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/8208723}{http://www.ncbi.nlm.nih.gov/pubmed/8208723}}.
 
 \bibitem[{Golosov {\em et~al.\/}(2010)Golosov, Warren, Beese \&
   Karplus}]{Golosov2010}
@@ -397,8 +373,7 @@ Golosov, A., Warren, J., Beese, L. \& Karplus, M. ({\bf 2010}).
   Polymerase I: A Computer Simulation Analysis.}
 \newblock {\em Structure\/}, 18(1):83--93.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2015215%
-5}{http://www.ncbi.nlm.nih.gov/pubmed/20152155}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/20152155}{http://www.ncbi.nlm.nih.gov/pubmed/20152155}}.
 
 \bibitem[{Gong {\em et~al.\/}(2003)Gong, Isom, Srinivasan \&
   Rose}]{SSfoldingrate2003}
@@ -407,8 +382,7 @@ Gong, H., Isom, D.~G., Srinivasan, R. \& Rose, G.~D. ({\bf 2003}).
   two-state proteins}.
 \newblock {\em J.Mol.Biol.\/}, 327(5):1149--1154.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1266293%
-7}{http://www.ncbi.nlm.nih.gov/pubmed/12662937}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/12662937}{http://www.ncbi.nlm.nih.gov/pubmed/12662937}}.
 
 \bibitem[{Gribskov {\em et~al.\/}(1987)Gribskov, McLachlan \&
   Eisenberg}]{Gribskov1987}
@@ -416,8 +390,14 @@ Gribskov, M., McLachlan, A.~D. \& Eisenberg, D. ({\bf 1987}).
 \newblock Profile analysis: detection of distantly related proteins.
 \newblock {\em PNAS\/}, 84(13):4355--4358.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/84/13/4355.lon%
-g}{http://www.pnas.org/content/84/13/4355.long}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/84/13/4355.long}{http://www.pnas.org/content/84/13/4355.long}}.
+
+\bibitem[{Guo \& Xu(2008)}]{Guo2008}
+Guo, J.~T. \& Xu, Y. ({\bf 2008}).
+\newblock {{T}owards modeling of amyloid fibril structures}.
+\newblock {\em Front. Biosci.\/}, 13:4039--4050.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://www.ncbi.nlm.nih.gov/pubmed/18508498}{https://www.ncbi.nlm.nih.gov/pubmed/18508498}}.
 
 \bibitem[{Hartl \& Hayer-Hartl(2002)}]{Hartl2002}
 Hartl, F.~U. \& Hayer-Hartl, M. ({\bf 2002}).
@@ -425,8 +405,18 @@ Hartl, F.~U. \& Hayer-Hartl, M. ({\bf 2002}).
   protein}.
 \newblock {\em Science\/}, 295(5561):1852--1858.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencemag.org/content/295/5561%
-/1852.abstract}{http://www.sciencemag.org/content/295/5561/1852.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencemag.org/content/295/5561/1852.abstract}{http://www.sciencemag.org/content/295/5561/1852.abstract}}.
+
+\bibitem[{Heffernan {\em et~al.\/}(2015)Heffernan, Paliwal, Lyons, Dehzangi,
+  Sharma, Wang, Sattar, Yang \& Zhou}]{Heffernan2015}
+Heffernan, R., Paliwal, K., Lyons, J., Dehzangi, A., Sharma, A., Wang, J.,
+  Sattar, A., Yang, Y. \& Zhou, Y. ({\bf 2015}).
+\newblock {{I}mproving prediction of secondary structure, local backbone
+  angles, and solvent accessible surface area of proteins by iterative deep
+  learning}.
+\newblock {\em Sci Rep\/}, 5:11476.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/articles/srep11476}{http://www.nature.com/articles/srep11476}}.
 
 \bibitem[{Holm {\em et~al.\/}(2006)Holm, Kaariainen, Wilton \&
   Plewczynski}]{Holm2006}
@@ -434,8 +424,7 @@ Holm, L., Kaariainen, S., Wilton, C. \& Plewczynski, D. ({\bf 2006}).
 \newblock {{U}sing {D}ali for structural comparison of proteins}.
 \newblock {\em Curr Protoc Bioinformatics\/}, Chapter 5:Unit 5.5.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.currentprotocols.com/protocol/b%
-i0505}{http://www.currentprotocols.com/protocol/bi0505}}.
+  \urlprefix\url{\htmladdnormallink{http://www.currentprotocols.com/protocol/bi0505}{http://www.currentprotocols.com/protocol/bi0505}}.
 
 \bibitem[{Hopf {\em et~al.\/}(2012)Hopf, Colwell, Sheridan, Rost, Sander \&
   Marks}]{Hopf2012}
@@ -445,8 +434,7 @@ Hopf, T.~A., Colwell, L.~J., Sheridan, R., Rost, B., Sander, C. \& Marks, D.~S.
   sequencing}.
 \newblock {\em Cell\/}, 149(7):1607--1621.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2257904%
-5}{http://www.ncbi.nlm.nih.gov/pubmed/22579045}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/22579045}{http://www.ncbi.nlm.nih.gov/pubmed/22579045}}.
 
 \bibitem[{Hopf {\em et~al.\/}(2014)Hopf, Scharfe, Rodrigues, Green, Kohlbacher,
   Sander, Bonvin \& Marks}]{Hopf2014}
@@ -456,8 +444,7 @@ Hopf, T.~A., Scharfe, C.~P., Rodrigues, J.~P., Green, A.~G., Kohlbacher, O.,
   protein complexes}.
 \newblock {\em Elife\/}, 3.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://elifesciences.org/content/3/e03430}%
-{http://elifesciences.org/content/3/e03430}}.
+  \urlprefix\url{\htmladdnormallink{http://elifesciences.org/content/3/e03430}{http://elifesciences.org/content/3/e03430}}.
 
 \bibitem[{Hou {\em et~al.\/}(2005)Hou, Jun, Zhang \& Kim}]{Hou2005}
 Hou, J., Jun, S.~R., Zhang, C. \& Kim, S.~H. ({\bf 2005}).
@@ -465,8 +452,28 @@ Hou, J., Jun, S.~R., Zhang, C. \& Kim, S.~H. ({\bf 2005}).
   structure-based inference of protein function}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 102:3651--3656.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/102/10/3651}{h%
-ttp://www.pnas.org/content/102/10/3651}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/102/10/3651}{http://www.pnas.org/content/102/10/3651}}.
+
+\bibitem[{Hrabe {\em et~al.\/}(2016)Hrabe, Li, Sedova, Rotkiewicz, Jaroszewski
+  \& Godzik}]{Hrabe2016}
+Hrabe, T., Li, Z., Sedova, M., Rotkiewicz, P., Jaroszewski, L. \& Godzik, A.
+  ({\bf 2016}).
+\newblock {{P}{D}{B}{F}lex: exploring flexibility in protein structures}.
+\newblock {\em Nucleic Acids Res.\/}, 44(D1):D423--428.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4702920}{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4702920}}.
+
+\bibitem[{Hudson {\em et~al.\/}(2016)Hudson, Kossmann, de~Vera, Chuo, Weikum,
+  Eick, Thornton, Ivanov, Kojetin \& Ortlund}]{Hudson2016}
+Hudson, W.~H., Kossmann, B.~R., de~Vera, I.~M., Chuo, S.~W., Weikum, E.~R.,
+  Eick, G.~N., Thornton, J.~W., Ivanov, I.~N., Kojetin, D.~J. \& Ortlund, E.~A.
+  ({\bf 2016}).
+\newblock {{D}istal substitutions drive divergent {D}{N}{A} specificity among
+  paralogous transcription factors through subdivision of conformational
+  space}.
+\newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 113(2):326--331.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/26715749}{http://www.ncbi.nlm.nih.gov/pubmed/26715749}}.
 
 \bibitem[{Ibarra \& Melo(2010)}]{Ibarra2010}
 Ibarra, I.~L. \& Melo, F. ({\bf 2010}).
@@ -474,9 +481,7 @@ Ibarra, I.~L. \& Melo, F. ({\bf 2010}).
   sequence alignments with dynamic programming}.
 \newblock {\em Bioinformatics\/}, 26:1664--1665.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/c%
-ontent/26/13/1664.long}{http://bioinformatics.oxfordjournals.org/content/26/13%
-/1664.long}}.
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/26/13/1664.long}{http://bioinformatics.oxfordjournals.org/content/26/13/1664.long}}.
 
 \bibitem[{Illergard {\em et~al.\/}(2009)Illergard, Ardell \&
   Elofsson}]{Illergard2009}
@@ -485,9 +490,7 @@ Illergard, K., Ardell, D. \& Elofsson, A. ({\bf 2009}).
   of structural response in protein cores.
 \newblock {\em Proteins\/}, 77(3):499--508.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.22458/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22458/ab%
-stract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.22458/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22458/abstract}}.
 
 \bibitem[{Isom {\em et~al.\/}(2010)Isom, Castaneda, Cannon, Velu \&
   Garcia-Moreno~E}]{Isom2010}
@@ -496,8 +499,7 @@ Isom, D.~G., Castaneda, C.~A., Cannon, B.~R., Velu, P.~D. \& Garcia-Moreno~E,
 \newblock {{C}harges in the hydrophobic interior of proteins}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 107:16096--16100.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/107/37/16096.a%
-bstract}{http://www.pnas.org/content/107/37/16096.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/107/37/16096.abstract}{http://www.pnas.org/content/107/37/16096.abstract}}.
 
 \bibitem[{Jones(1999)}]{Jones1999}
 Jones, D.~T. ({\bf 1999}).
@@ -505,17 +507,14 @@ Jones, D.~T. ({\bf 1999}).
   scoring matrices.
 \newblock {\em J.Mol.Biol.\/}, 292(2):195--202.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1049386%
-8}{http://www.ncbi.nlm.nih.gov/pubmed/10493868}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/10493868}{http://www.ncbi.nlm.nih.gov/pubmed/10493868}}.
 
 \bibitem[{Jones {\em et~al.\/}(1992)Jones, Taylor \& Thornton}]{Threader1992}
 Jones, D.~T., Taylor, W.~R. \& Thornton, J.~M. ({\bf 1992}).
 \newblock {A new approach to protein fold recognition}.
 \newblock {\em Nature\/}, 358(6381):86--89.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nature/journal/v358/%
-n6381/abs/358086a0.html}{http://www.nature.com/nature/journal/v358/n6381/abs/3%
-58086a0.html}}.
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nature/journal/v358/n6381/abs/358086a0.html}{http://www.nature.com/nature/journal/v358/n6381/abs/358086a0.html}}.
 
 \bibitem[{Kabsch \& Sander(1983)}]{Kabsch1983}
 Kabsch, W. \& Sander, C. ({\bf 1983}).
@@ -523,9 +522,7 @@ Kabsch, W. \& Sander, C. ({\bf 1983}).
   hydrogen-bonded and geometrical features.
 \newblock {\em Biopolymers\/}, 22(12):2577--2637.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/bip.360221211/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/bip.360221%
-211/abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/bip.360221211/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/bip.360221211/abstract}}.
 
 \bibitem[{Kanhere \& Bansal(2005)}]{Kanhere2005}
 Kanhere, A. \& Bansal, M. ({\bf 2005}).
@@ -533,8 +530,7 @@ Kanhere, A. \& Bansal, M. ({\bf 2005}).
   stability}.
 \newblock {\em BMC Bioinformatics\/}, 6(1):1.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.biomedcentral.com/1471-2105/6/1%
-}{http://www.biomedcentral.com/1471-2105/6/1}}.
+  \urlprefix\url{\htmladdnormallink{http://www.biomedcentral.com/1471-2105/6/1}{http://www.biomedcentral.com/1471-2105/6/1}}.
 
 \bibitem[{Katchalski-Katzir {\em et~al.\/}(1992)Katchalski-Katzir, Shariv,
   Eisenstein, Friesem, Aflalo \& Vakser}]{Katchalski1992}
@@ -544,8 +540,17 @@ Katchalski-Katzir, E., Shariv, I., Eisenstein, M., Friesem, A.~A., Aflalo, C.
   between proteins and their ligands by correlation techniques}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 89:2195--2199.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/89/6/2195.abst%
-ract}{http://www.pnas.org/content/89/6/2195.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/89/6/2195.abstract}{http://www.pnas.org/content/89/6/2195.abstract}}.
+
+\bibitem[{Kelley {\em et~al.\/}(2015)Kelley, Mezulis, Yates, Wass \&
+  Sternberg}]{Kelley2015}
+Kelley, L.~A., Mezulis, S., Yates, C.~M., Wass, M.~N. \& Sternberg, M.~J. ({\bf
+  2015}).
+\newblock {{T}he {P}hyre2 web portal for protein modeling, prediction and
+  analysis}.
+\newblock {\em Nat Protoc\/}, 10(6):845--858.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nprot/journal/v10/n6/full/nprot.2015.053.html}{http://www.nature.com/nprot/journal/v10/n6/full/nprot.2015.053.html}}.
 
 \bibitem[{Kellogg {\em et~al.\/}(2011)Kellogg, Leaver-Fay \&
   Baker}]{Kellogg2011}
@@ -554,9 +559,7 @@ Kellogg, E.~H., Leaver-Fay, A. \& Baker, D. ({\bf 2011}).
   changes in protein structure and stability}.
 \newblock {\em Proteins\/}, 79:830--838.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.22921/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22921/ab%
-stract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.22921/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22921/abstract}}.
 
 \bibitem[{Kendrew {\em et~al.\/}(1958)Kendrew, Bodo, Dintzis, Parrish, Wyckoff
   \& Phillips}]{Kendrew1958}
@@ -566,9 +569,7 @@ Kendrew, J.~C., Bodo, G., Dintzis, H.~M., Parrish, R.~G., Wyckoff, H. \&
   x-ray analysis}.
 \newblock {\em Nature\/}, 181(4610):662--666.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nature/journal/v181/%
-n4610/abs/181662a0.html}{http://www.nature.com/nature/journal/v181/n4610/abs/1%
-81662a0.html}}.
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nature/journal/v181/n4610/abs/181662a0.html}{http://www.nature.com/nature/journal/v181/n4610/abs/181662a0.html}}.
 
 \bibitem[{Khatib {\em et~al.\/}(2011)Khatib, Cooper, Tyka, Xu, Makedon,
   Popovic, Baker \& Players}]{Khatib2011}
@@ -577,8 +578,7 @@ Khatib, F., Cooper, S., Tyka, M.~D., Xu, K., Makedon, I., Popovic, Z., Baker,
 \newblock {{A}lgorithm discovery by protein folding game players}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 108:18949--18953.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/108/47/18949.l%
-ong}{http://www.pnas.org/content/108/47/18949.long}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/108/47/18949.long}{http://www.pnas.org/content/108/47/18949.long}}.
 
 \bibitem[{King {\em et~al.\/}(2010)King, Jacobitz, Sawaya, Goldschmidt \&
   Yeates}]{King2010}
@@ -587,8 +587,7 @@ King, N.~P., Jacobitz, A.~W., Sawaya, M.~R., Goldschmidt, L. \& Yeates, T.~O.
 \newblock {{S}tructure and folding of a designed knotted protein}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 107:20732--20737.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/107/48/20732.a%
-bstract}{http://www.pnas.org/content/107/48/20732.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/107/48/20732.abstract}{http://www.pnas.org/content/107/48/20732.abstract}}.
 
 \bibitem[{Konietzny \& Greiner(2003)}]{Konietzny2003}
 Konietzny, U. \& Greiner, R. ({\bf 2003}).
@@ -596,17 +595,14 @@ Konietzny, U. \& Greiner, R. ({\bf 2003}).
   foods}.
 \newblock {\em Braz. J. Microbiol.\/}, 34(4):283--300.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.scielo.br/scielo.php?pid=S1517-%
-83822003000400001\&script=sci\_arttext}{http://www.scielo.br/scielo.php?pid=S1%
-517-83822003000400001&script=sci_arttext}}.
+  \urlprefix\url{\htmladdnormallink{http://www.scielo.br/scielo.php?pid=S1517-83822003000400001\&script=sci\_arttext}{http://www.scielo.br/scielo.php?pid=S1517-83822003000400001&script=sci_arttext}}.
 
 \bibitem[{Koretke {\em et~al.\/}(2002)Koretke, Russell \& Lupas}]{Koretke2002}
 Koretke, K.~K., Russell, R.~B. \& Lupas, A.~N. ({\bf 2002}).
 \newblock {{F}old recognition without folds}.
 \newblock {\em Protein Sci.\/}, 11:1575--1579.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://dx.doi.org/10.1110/ps.3590102}{http%
-://dx.doi.org/10.1110/ps.3590102}}.
+  \urlprefix\url{\htmladdnormallink{http://dx.doi.org/10.1110/ps.3590102}{http://dx.doi.org/10.1110/ps.3590102}}.
 
 \bibitem[{Kortemme {\em et~al.\/}(2003)Kortemme, Morozov \&
   Baker}]{Kortemme2003}
@@ -616,8 +612,7 @@ Kortemme, T., Morozov, A. \& Baker, D. ({\bf 2003}).
   Complexes.
 \newblock {\em Journal of Molecular Biology\/}, 326(4):1239--1259.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1258976%
-6}{http://www.ncbi.nlm.nih.gov/pubmed/12589766}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/12589766}{http://www.ncbi.nlm.nih.gov/pubmed/12589766}}.
 
 \bibitem[{Kosloff \& Kolodny(2008)}]{Kosloff2008}
 Kosloff, M. \& Kolodny, R. ({\bf 2008}).
@@ -625,9 +620,7 @@ Kosloff, M. \& Kolodny, R. ({\bf 2008}).
   {P}{D}{B}}.
 \newblock {\em Proteins\/}, 71:891--902.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.21770/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.21770/ab%
-stract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.21770/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.21770/abstract}}.
 
 \bibitem[{Kumar {\em et~al.\/}(2009)Kumar, Henikoff \& Ng}]{Kumar2009}
 Kumar, P., Henikoff, S. \& Ng, P.~C. ({\bf 2009}).
@@ -635,8 +628,7 @@ Kumar, P., Henikoff, S. \& Ng, P.~C. ({\bf 2009}).
   protein function using the {S}{I}{F}{T} algorithm}.
 \newblock {\em Nat Protoc\/}, 4(7):1073--1081.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1956159%
-0}{http://www.ncbi.nlm.nih.gov/pubmed/19561590}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/19561590}{http://www.ncbi.nlm.nih.gov/pubmed/19561590}}.
 
 \bibitem[{Kyte(1982)}]{Kyte1982}
 Kyte, J.and~Doolittle, R. ({\bf 1982}).
@@ -644,16 +636,14 @@ Kyte, J.and~Doolittle, R. ({\bf 1982}).
   protein}.
 \newblock {\em J.Mol.Biol.\/}, 157:105--132.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/7108955%
-}{http://www.ncbi.nlm.nih.gov/pubmed/7108955}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/7108955}{http://www.ncbi.nlm.nih.gov/pubmed/7108955}}.
 
 \bibitem[{Leach(2001)}]{Leach2001}
 Leach, A.~R. ({\bf 2001}).
 \newblock {\em Molecular modelling: principles and applications\/}.
 \newblock Prentice Hall, 2nd edition.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://books.google.com/books?id=kB7jsbV-u%
-hkC\&pg=PA305}{http://books.google.com/books?id=kB7jsbV-uhkC\&pg=PA305}}.
+  \urlprefix\url{\htmladdnormallink{http://books.google.com/books?id=kB7jsbV-uhkC\&pg=PA305}{http://books.google.com/books?id=kB7jsbV-uhkC\&pg=PA305}}.
 
 \bibitem[{Lee {\em et~al.\/}(2013)Lee, Cho, Kang, Scheraga \& No}]{Lee2013}
 Lee, S., Cho, K.~H., Kang, Y.~M., Scheraga, H.~A. \& No, K.~T. ({\bf 2013}).
@@ -661,8 +651,7 @@ Lee, S., Cho, K.~H., Kang, Y.~M., Scheraga, H.~A. \& No, K.~T. ({\bf 2013}).
   calculation model}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 110(8):E662--667.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/110/8/E662.ful%
-l}{http://www.pnas.org/content/110/8/E662.full}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/110/8/E662.full}{http://www.pnas.org/content/110/8/E662.full}}.
 
 \bibitem[{Lehninger(1982)}]{Lehninger1982}
 Lehninger, A.~L. ({\bf 1982}).
@@ -675,8 +664,7 @@ Lindorff-Larsen, K., Piana, S., Dror, R.~O. \& Shaw, D.~E. ({\bf 2011}).
 \newblock {{H}ow fast-folding proteins fold}.
 \newblock {\em Science\/}, 334(6055):517--520.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2203443%
-4}{http://www.ncbi.nlm.nih.gov/pubmed/22034434}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/22034434}{http://www.ncbi.nlm.nih.gov/pubmed/22034434}}.
 
 \bibitem[{Lobanov {\em et~al.\/}(2010)Lobanov, Furletova, Bogatyreva, Roytberg
   \& Galzitskaya}]{Lobanov2010}
@@ -685,8 +673,7 @@ Lobanov, M.~Y., Furletova, E.~I., Bogatyreva, N.~S., Roytberg, M.~A. \&
 \newblock {{L}ibrary of disordered patterns in 3{D} protein structures}.
 \newblock {\em PLoS Comput. Biol.\/}, 6:e1000958.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://dx.plos.org/10.1371/journal.pcbi.10%
-00958}{http://dx.plos.org/10.1371/journal.pcbi.1000958}}.
+  \urlprefix\url{\htmladdnormallink{http://dx.plos.org/10.1371/journal.pcbi.1000958}{http://dx.plos.org/10.1371/journal.pcbi.1000958}}.
 
 \bibitem[{Lu \& Olson(2008)}]{Lu2008}
 Lu, X.~J. \& Olson, W.~K. ({\bf 2008}).
@@ -695,9 +682,24 @@ Lu, X.~J. \& Olson, W.~K. ({\bf 2008}).
   structures}.
 \newblock {\em Nat Protoc\/}, 3:1213--1227.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nprot/journal/v3/n7/%
-full/nprot.2008.104.html}{http://www.nature.com/nprot/journal/v3/n7/full/nprot%
-.2008.104.html}}.
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nprot/journal/v3/n7/full/nprot.2008.104.html}{http://www.nature.com/nprot/journal/v3/n7/full/nprot.2008.104.html}}.
+
+\bibitem[{Mackenzie {\em et~al.\/}(2016)Mackenzie, Zhou \&
+  Grigoryan}]{Mackenzie2017}
+Mackenzie, C.~O., Zhou, J. \& Grigoryan, G. ({\bf 2016}).
+\newblock {{T}ertiary alphabet for the observable protein structural universe}.
+\newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 113(47):E7438--E7447.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://www.ncbi.nlm.nih.gov/pubmed/27810958}{https://www.ncbi.nlm.nih.gov/pubmed/27810958}}.
+
+\bibitem[{Magnan \& Baldi(2014)}]{Magnan2014}
+Magnan, C.~N. \& Baldi, P. ({\bf 2014}).
+\newblock {{S}{S}pro/{A}{C}{C}pro 5: almost perfect prediction of protein
+  secondary structure and relative solvent accessibility using profiles,
+  machine learning and structural similarity}.
+\newblock {\em Bioinformatics\/}, 30(18):2592--2597.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/30/18/2592.full}{http://bioinformatics.oxfordjournals.org/content/30/18/2592.full}}.
 
 \bibitem[{Marks {\em et~al.\/}(2011)Marks, Colwell, Sheridan, Hopf, Pagnani,
   Zecchina \& Sander}]{Marks2011}
@@ -707,16 +709,14 @@ Marks, D.~S., Colwell, L.~J., Sheridan, R., Hopf, T.~A., Pagnani, A., Zecchina,
   variation}.
 \newblock {\em PLoS ONE\/}, 6(12):e28766.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2216333%
-1}{http://www.ncbi.nlm.nih.gov/pubmed/22163331}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/22163331}{http://www.ncbi.nlm.nih.gov/pubmed/22163331}}.
 
 \bibitem[{Marks {\em et~al.\/}(2012)Marks, Hopf \& Sander}]{Marks2012}
 Marks, D.~S., Hopf, T.~A. \& Sander, C. ({\bf 2012}).
 \newblock {{P}rotein structure prediction from sequence variation}.
 \newblock {\em Nat. Biotechnol.\/}, 30(11):1072--1080.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2313830%
-6}{http://www.ncbi.nlm.nih.gov/pubmed/23138306}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/23138306}{http://www.ncbi.nlm.nih.gov/pubmed/23138306}}.
 
 \bibitem[{Mathews {\em et~al.\/}(1999)Mathews, van Holde \&
   Ahern}]{Mathews1999}
@@ -724,22 +724,27 @@ Mathews, C., van Holde, K. \& Ahern, K. ({\bf 1999}).
 \newblock {\em Biochemistry\/}.
 \newblock Addison Wesley Longman, 3rd edition.
 
+\bibitem[{Mavridis \& Janes(2017)}]{Mavridis2016}
+Mavridis, L. \& Janes, R.~W. ({\bf 2017}).
+\newblock {{P}{D}{B}2{C}{D}: a web-based application for the generation of
+  circular dichroism spectra from protein atomic coordinates}.
+\newblock {\em Bioinformatics\/}, 33(1):56--63.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btw554}{https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btw554}}.
+
 \bibitem[{McDonald \& Thornton(1994)}]{McDonald1994}
 McDonald, I. \& Thornton, J. ({\bf 1994}).
 \newblock Satisfying Hydrogen Bonding Potential in Proteins.
 \newblock {\em Journal of Molecular Biology\/}, 238(5):777--793.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/8182748%
-}{http://www.ncbi.nlm.nih.gov/pubmed/8182748}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/8182748}{http://www.ncbi.nlm.nih.gov/pubmed/8182748}}.
 
 \bibitem[{McLachlan(1979)}]{McLachlan1979}
 McLachlan, A.~D. ({\bf 1979}).
 \newblock {Gene duplications in the structural evolution of chymotrypsin}.
 \newblock {\em J.Mol.Biol.\/}, 128(1):49--79.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pi%
-i/0022283679903085}{http://linkinghub.elsevier.com/retrieve/pii/00222836799030%
-85}}.
+  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pii/0022283679903085}{http://linkinghub.elsevier.com/retrieve/pii/0022283679903085}}.
 
 \bibitem[{Moreno-Hernandez \& Levitt(2012)}]{MorenoHernandez2012}
 Moreno-Hernandez, S. \& Levitt, M. ({\bf 2012}).
@@ -747,9 +752,7 @@ Moreno-Hernandez, S. \& Levitt, M. ({\bf 2012}).
   hydrophobic-polar models on a two-dimensional lattice}.
 \newblock {\em Proteins\/}, 80(6):1683--1693.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.24067/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.24067/ab%
-stract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.24067/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.24067/abstract}}.
 
 \bibitem[{Nepomnyachiy {\em et~al.\/}(2014)Nepomnyachiy, Ben-Tal \&
   Kolodny}]{Nepomnyachiy2014}
@@ -757,24 +760,31 @@ Nepomnyachiy, S., Ben-Tal, N. \& Kolodny, R. ({\bf 2014}).
 \newblock {{G}lobal view of the protein universe}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 111(32):11691--11696.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2507117%
-0}{http://www.ncbi.nlm.nih.gov/pubmed/25071170}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/25071170}{http://www.ncbi.nlm.nih.gov/pubmed/25071170}}.
+
+\bibitem[{Nido {\em et~al.\/}(2016)Nido, Bachschmid-Romano, Bastolla \&
+  Pascual-Garc\'{i}a}]{Nido2016}
+Nido, G., Bachschmid-Romano, L., Bastolla, U. \& Pascual-Garc\'{i}a, A. ({\bf
+  2016}).
+\newblock {Learning structural bioinformatics and evolution with a snake
+  puzzle}.
+\newblock {\em PeerJ Computer Science\/}, 2:e100.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://doi.org/10.7717/peerj-cs.100}{https://doi.org/10.7717/peerj-cs.100}}.
 
 \bibitem[{Noller(2004)}]{Noller2004}
 Noller, H.~F. ({\bf 2004}).
 \newblock {{T}he driving force for molecular evolution of translation}.
 \newblock {\em RNA\/}, 10:1833--1837.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://rnajournal.cshlp.org/content/10/12/%
-1833.full}{http://rnajournal.cshlp.org/content/10/12/1833.full}}.
+  \urlprefix\url{\htmladdnormallink{http://rnajournal.cshlp.org/content/10/12/1833.full}{http://rnajournal.cshlp.org/content/10/12/1833.full}}.
 
 \bibitem[{Nugent \& Jones(2012)}]{Nugent2012}
 Nugent, T. \& Jones, D.~T. ({\bf 2012}).
 \newblock {{M}embrane protein structural bioinformatics}.
 \newblock {\em J. Struct. Biol.\/}, 179(3):327--337.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2207522%
-6}{http://www.ncbi.nlm.nih.gov/pubmed/22075226}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/22075226}{http://www.ncbi.nlm.nih.gov/pubmed/22075226}}.
 
 \bibitem[{Nussinov {\em et~al.\/}(1978)Nussinov, Piecznik, Grigg \&
   Kleitman}]{Nussinov1978}
@@ -782,8 +792,7 @@ Nussinov, R., Piecznik, G., Grigg, J. \& Kleitman, D. ({\bf 1978}).
 \newblock {Algorithms for loop matchings.}
 \newblock {\em SIAM Journal on Applied Mathematics\/}, 35(1):68--82.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.jstor.org/stable/2101031}{http:%
-//www.jstor.org/stable/2101031}}.
+  \urlprefix\url{\htmladdnormallink{http://www.jstor.org/stable/2101031}{http://www.jstor.org/stable/2101031}}.
 
 \bibitem[{Onodera(2007)}]{Onodera2007}
 Onodera, K. ({\bf 2007}).
@@ -791,8 +800,7 @@ Onodera, K. ({\bf 2007}).
 \newblock In Yuryev, A., editor, {\em PCR Primer Design\/}, pages 61--74.
   Humana Press.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://books.google.com/books?id=prgbLkMNy%
-9wC\&pg=PA61}{http://books.google.com/books?id=prgbLkMNy9wC&pg=PA61}}.
+  \urlprefix\url{\htmladdnormallink{http://books.google.com/books?id=prgbLkMNy9wC\&pg=PA61}{http://books.google.com/books?id=prgbLkMNy9wC&pg=PA61}}.
 
 \bibitem[{Ortiz {\em et~al.\/}(2002)Ortiz, Strauss \& Olmea}]{Ortiz2002}
 Ortiz, A., Strauss, C. \& Olmea, O. ({\bf 2002}).
@@ -800,8 +808,7 @@ Ortiz, A., Strauss, C. \& Olmea, O. ({\bf 2002}).
   automated method for model comparison}.
 \newblock {\em Protein Sci\/}, 11(11):2606--2621.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://dx.doi.org/10.1110/ps.0215902}{http%
-://dx.doi.org/10.1110/ps.0215902}}.
+  \urlprefix\url{\htmladdnormallink{http://dx.doi.org/10.1110/ps.0215902}{http://dx.doi.org/10.1110/ps.0215902}}.
 
 \bibitem[{Ota {\em et~al.\/}(2013)Ota, Koike, Amemiya, Tenno, Romero, Hiroaki,
   Dunker \& Fukuchi}]{Ota2013}
@@ -811,8 +818,16 @@ Ota, M., Koike, R., Amemiya, T., Tenno, T., Romero, P.~R., Hiroaki, H., Dunker,
   based on {N}{M}{R} structures}.
 \newblock {\em J. Struct. Biol.\/}, 181(1):29--36.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3529935}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3529935}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3529935}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3529935}}.
+
+\bibitem[{Ovchinnikov {\em et~al.\/}(2017)Ovchinnikov, Park, Varghese, Huang,
+  Pavlopoulos, Kim, Kamisetty, Kyrpides \& Baker}]{Ovchinnikov2017}
+Ovchinnikov, S., Park, H., Varghese, N., Huang, P.~S., Pavlopoulos, G.~A., Kim,
+  D.~E., Kamisetty, H., Kyrpides, N.~C. \& Baker, D. ({\bf 2017}).
+\newblock {{P}rotein structure determination using metagenome sequence data}.
+\newblock {\em Science\/}, 355(6322):294--298.
+\newblock
+  \urlprefix\url{\htmladdnormallink{https://www.ncbi.nlm.nih.gov/pubmed/28104891}{https://www.ncbi.nlm.nih.gov/pubmed/28104891}}.
 
 \bibitem[{Pascual-Garc\'{i}a {\em et~al.\/}(2009)Pascual-Garc\'{i}a, Abia,
   Ortiz \& Bastolla}]{Pascual2009}
@@ -821,16 +836,14 @@ Pascual-Garc\'{i}a, A., Abia, D., Ortiz, A. \& Bastolla, U. ({\bf 2009}).
   Insights into Automatic Classification and Networks of Protein Structures.
 \newblock {\em PLoS Computational Biology\/}, 5(3):e1000331.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://dx.plos.org/10.1371/journal.pcbi.10%
-00331}{http://dx.plos.org/10.1371/journal.pcbi.1000331}}.
+  \urlprefix\url{\htmladdnormallink{http://dx.plos.org/10.1371/journal.pcbi.1000331}{http://dx.plos.org/10.1371/journal.pcbi.1000331}}.
 
 \bibitem[{Perez-Aguilar \& Saven(2012)}]{PerezAguilar2012}
 Perez-Aguilar, J.~M. \& Saven, J.~G. ({\bf 2012}).
 \newblock {{C}omputational design of membrane proteins}.
 \newblock {\em Structure\/}, 20(1):5--14.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2224475%
-2}{http://www.ncbi.nlm.nih.gov/pubmed/22244752}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/22244752}{http://www.ncbi.nlm.nih.gov/pubmed/22244752}}.
 
 \bibitem[{Peterson {\em et~al.\/}(2013)Peterson, Doughty \&
   Kann}]{Peterson2013}
@@ -839,8 +852,7 @@ Peterson, T.~A., Doughty, E. \& Kann, M.~G. ({\bf 2013}).
   for the analysis of human variants}.
 \newblock {\em J. Mol. Biol.\/}, 425(21):4047--4063.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3807015/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3807015/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3807015/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3807015/}}.
 
 \bibitem[{Pires {\em et~al.\/}(2014)Pires, Ascher \& Blundell}]{Pires2014}
 Pires, D.~E., Ascher, D.~B. \& Blundell, T.~L. ({\bf 2014}).
@@ -848,8 +860,7 @@ Pires, D.~E., Ascher, D.~B. \& Blundell, T.~L. ({\bf 2014}).
   graph-based signatures}.
 \newblock {\em Bioinformatics\/}, 30(3):335--342.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3904523/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3904523/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3904523/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3904523/}}.
 
 \bibitem[{Plaxco {\em et~al.\/}(1998)Plaxco, Simmons \& Baker}]{Plaxco1998}
 Plaxco, K., Simmons, K. \& Baker, D. ({\bf 1998}).
@@ -857,8 +868,7 @@ Plaxco, K., Simmons, K. \& Baker, D. ({\bf 1998}).
   single domain proteins}.
 \newblock {\em J.Mol.Biol.\/}, 277:985--994.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/9545386%
-}{http://www.ncbi.nlm.nih.gov/pubmed/9545386}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/9545386}{http://www.ncbi.nlm.nih.gov/pubmed/9545386}}.
 
 \bibitem[{Porter \& Rose(2011)}]{Porter2011}
 Porter, L.~L. \& Rose, G.~D. ({\bf 2011}).
@@ -866,16 +876,14 @@ Porter, L.~L. \& Rose, G.~D. ({\bf 2011}).
   hydrogen-bonding constraints}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 108:109--113.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/108/1/109.shor%
-t}{http://www.pnas.org/content/108/1/109.short}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/108/1/109.short}{http://www.pnas.org/content/108/1/109.short}}.
 
 \bibitem[{Porter \& Rose(2012)}]{Porter2012}
 Porter, L.~L. \& Rose, G.~D. ({\bf 2012}).
 \newblock {{A} thermodynamic definition of protein domains}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 109(24):9420--9425.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/109/24/9420.lo%
-ng}{http://www.pnas.org/content/109/24/9420.long}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/109/24/9420.long}{http://www.pnas.org/content/109/24/9420.long}}.
 
 \bibitem[{Potestio {\em et~al.\/}(2010)Potestio, Micheletti \&
   Orland}]{Potestio2010}
@@ -883,18 +891,14 @@ Potestio, R., Micheletti, C. \& Orland, H. ({\bf 2010}).
 \newblock {{K}notted vs. unknotted proteins: evidence of knot-promoting loops}.
 \newblock {\em PLoS Comput. Biol.\/}, 6:e1000864.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ploscompbiol.org/article/info\%%
-3Adoi\%2F10.1371\%2Fjournal.pcbi.1000864}{http://www.ploscompbiol.org/article/%
-info\%3Adoi\%2F10.1371\%2Fjournal.pcbi.1000864}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ploscompbiol.org/article/info\%3Adoi\%2F10.1371\%2Fjournal.pcbi.1000864}{http://www.ploscompbiol.org/article/info\%3Adoi\%2F10.1371\%2Fjournal.pcbi.1000864}}.
 
 \bibitem[{Ramachandran \& Sasisekharan(1968)}]{Ramachandran1968}
 Ramachandran, G.~N. \& Sasisekharan, V. ({\bf 1968}).
 \newblock {Conformation of polypeptides and proteins}.
 \newblock {\em Adv.Protein Chem.\/}, 23:283--438.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pi%
-i/S0065323308604027}{http://linkinghub.elsevier.com/retrieve/pii/S006532330860%
-4027}}.
+  \urlprefix\url{\htmladdnormallink{http://linkinghub.elsevier.com/retrieve/pii/S0065323308604027}{http://linkinghub.elsevier.com/retrieve/pii/S0065323308604027}}.
 
 \bibitem[{Ramirez-Romero {\em et~al.\/}(2006)Ramirez-Romero, Masulis, Cevallos,
   Gonzalez \& Davila}]{RamirezRomero2006}
@@ -904,8 +908,7 @@ Ramirez-Romero, M.~A., Masulis, I., Cevallos, M.~A., Gonzalez, V. \& Davila, G.
   consensus promoter}.
 \newblock {\em Nucleic Acids Res.\/}, 34:1470--1480.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/34/5%
-/1470.long}{http://nar.oxfordjournals.org/content/34/5/1470.long}}.
+  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/34/5/1470.long}{http://nar.oxfordjournals.org/content/34/5/1470.long}}.
 
 \bibitem[{Reina {\em et~al.\/}(2002)Reina, Lacroix, Hobson,
   Fernandez-Ballester, Rybin, Schwab, Serrano \& Gonzalez}]{Reina2002}
@@ -915,16 +918,14 @@ Reina, J., Lacroix, E., Hobson, S.~D., Fernandez-Ballester, G., Rybin, V.,
   sequences}.
 \newblock {\em Nat.Struct.Biol.\/}, 9(8):621--627.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nsmb/journal/v9/n8/a%
-bs/nsb815.html}{http://www.nature.com/nsmb/journal/v9/n8/abs/nsb815.html}}.
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/nsmb/journal/v9/n8/abs/nsb815.html}{http://www.nature.com/nsmb/journal/v9/n8/abs/nsb815.html}}.
 
 \bibitem[{Rhodes(2000)}]{Rhodes2000}
 Rhodes, G. ({\bf 2000}).
 \newblock {\em Crystallography Made Crystal Clear\/}.
 \newblock Academic Press, New York, 2nd edition.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/book/%
-9780125870733}{http://www.sciencedirect.com/science/book/9780125870733}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/book/9780125870733}{http://www.sciencedirect.com/science/book/9780125870733}}.
 
 \bibitem[{Rosato {\em et~al.\/}(2012)Rosato, Aramini, Arrowsmith, Bagaria,
   Baker, Cavalli, Doreleijers, Eletsky, Giachetti, Guerry, Gutmanas, Guntert,
@@ -943,9 +944,7 @@ Rosato, A., Aramini, J.~M., Arrowsmith, C., Bagaria, A., Baker, D., Cavalli,
   structures from {N}{M}{R} data}.
 \newblock {\em Structure\/}, 20:227--236.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/artic%
-le/pii/S0969212612000081}{http://www.sciencedirect.com/science/article/pii/S09%
-69212612000081}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/article/pii/S0969212612000081}{http://www.sciencedirect.com/science/article/pii/S0969212612000081}}.
 
 \bibitem[{Roy {\em et~al.\/}(2014)Roy, Perez, Dill \& Maccallum}]{Roy2014}
 Roy, A., Perez, A., Dill, K.~A. \& Maccallum, J.~L. ({\bf 2014}).
@@ -953,8 +952,7 @@ Roy, A., Perez, A., Dill, K.~A. \& Maccallum, J.~L. ({\bf 2014}).
   in protein conformational changes}.
 \newblock {\em Structure\/}, 22(1):168--175.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3905753/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3905753/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3905753/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3905753/}}.
 
 \bibitem[{Sabate {\em et~al.\/}(2015)Sabate, Rousseau, Schymkowitz \&
   Ventura}]{Sabate2015}
@@ -962,9 +960,7 @@ Sabate, R., Rousseau, F., Schymkowitz, J. \& Ventura, S. ({\bf 2015}).
 \newblock {{W}hat makes a protein sequence a prion?}
 \newblock {\em PLoS Comput. Biol.\/}, 11(1):e1004013.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://journals.plos.org/ploscompbiol/arti%
-cle?id=10.1371/journal.pcbi.1004013}{http://journals.plos.org/ploscompbiol/art%
-icle?id=10.1371/journal.pcbi.1004013}}.
+  \urlprefix\url{\htmladdnormallink{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004013}{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004013}}.
 
 \bibitem[{Sadowski \& Taylor(2010)}]{Sadowski2010}
 Sadowski, M.~I. \& Taylor, W.~R. ({\bf 2010}).
@@ -972,17 +968,14 @@ Sadowski, M.~I. \& Taylor, W.~R. ({\bf 2010}).
   alpha-beta domains}.
 \newblock {\em J. Struct. Biol.\/}, 172:244--252.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/artic%
-le/pii/S1047847710002315}{http://www.sciencedirect.com/science/article/pii/S10%
-47847710002315}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencedirect.com/science/article/pii/S1047847710002315}{http://www.sciencedirect.com/science/article/pii/S1047847710002315}}.
 
 \bibitem[{Sali \& Blundell(1993)}]{Sali1993}
 Sali, A. \& Blundell, T.~L. ({\bf 1993}).
 \newblock Comparative protein modelling by satisfaction of spatial restraints.
 \newblock {\em J.Mol.Biol.\/}, 234(3):779--815.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/8254673%
-}{http://www.ncbi.nlm.nih.gov/pubmed/8254673}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/8254673}{http://www.ncbi.nlm.nih.gov/pubmed/8254673}}.
 
 \bibitem[{SantaLucia(1998)}]{SantaLucia1998}
 SantaLucia, J. ({\bf 1998}).
@@ -990,8 +983,7 @@ SantaLucia, J. ({\bf 1998}).
   nearest-neighbor thermodynamics}.
 \newblock {\em Proc. Natl. Acad. Sci. U.S.A.\/}, 95:1460--1465.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC19045/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC19045/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC19045/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC19045/}}.
 
 \bibitem[{SantaLucia(2007)}]{Santalucia2007}
 SantaLucia, J. ({\bf 2007}).
@@ -999,8 +991,7 @@ SantaLucia, J. ({\bf 2007}).
 \newblock In Yuryev, A., editor, {\em PCR Primer Design\/}, pages 3--34. Humana
   Press.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://books.google.com/books?id=prgbLkMNy%
-9wC\&pg=PA3}{http://books.google.com/books?id=prgbLkMNy9wC&pg=PA3}}.
+  \urlprefix\url{\htmladdnormallink{http://books.google.com/books?id=prgbLkMNy9wC\&pg=PA3}{http://books.google.com/books?id=prgbLkMNy9wC&pg=PA3}}.
 
 \bibitem[{Saunders \& Baker(2002)}]{Saunders2002}
 Saunders, C.~T. \& Baker, D. ({\bf 2002}).
@@ -1008,8 +999,7 @@ Saunders, C.~T. \& Baker, D. ({\bf 2002}).
   deleterious mutation prediction}.
 \newblock {\em J. Mol. Biol.\/}, 322(4):891--901.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1227072%
-2}{http://www.ncbi.nlm.nih.gov/pubmed/12270722}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/12270722}{http://www.ncbi.nlm.nih.gov/pubmed/12270722}}.
 
 \bibitem[{Schmidt-Goenner {\em et~al.\/}(2010)Schmidt-Goenner, Guerler, Kolbeck
   \& Knapp}]{Schmidt-Goenner2010}
@@ -1017,24 +1007,21 @@ Schmidt-Goenner, T., Guerler, A., Kolbeck, B. \& Knapp, E.~W. ({\bf 2010}).
 \newblock {{C}ircular permuted proteins in the universe of protein folds}.
 \newblock {\em Proteins\/}, 78(7):1618--1630.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2011242%
-1}{http://www.ncbi.nlm.nih.gov/pubmed/20112421}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/20112421}{http://www.ncbi.nlm.nih.gov/pubmed/20112421}}.
 
 \bibitem[{Schnabel(2010)}]{Schnabel2010}
 Schnabel, J. ({\bf 2010}).
 \newblock {{P}rotein folding: {T}he dark side of proteins}.
 \newblock {\em Nature\/}, 464:828--829.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.nature.com/news/2010/100407/ful%
-l/464828a.html}{http://www.nature.com/news/2010/100407/full/464828a.html}}.
+  \urlprefix\url{\htmladdnormallink{http://www.nature.com/news/2010/100407/full/464828a.html}{http://www.nature.com/news/2010/100407/full/464828a.html}}.
 
 \bibitem[{Sebastian \& Contreras-Moreira(2013)}]{Sebastian2013}
 Sebastian, A. \& Contreras-Moreira, B. ({\bf 2013}).
 \newblock {{T}he twilight zone of cis element alignments}.
 \newblock {\em Nucleic Acids Res.\/}, 41(3):1438--1449.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/41/3%
-/1438.long}{http://nar.oxfordjournals.org/content/41/3/1438.long}}.
+  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/41/3/1438.long}{http://nar.oxfordjournals.org/content/41/3/1438.long}}.
 
 \bibitem[{Shaw {\em et~al.\/}(2010)Shaw, Maragakis, Lindorff-Larsen, Piana,
   Dror, Eastwood, Bank, Jumper, Salmon, Shan \& Wriggers}]{Shaw2010}
@@ -1045,8 +1032,7 @@ Shaw, D.~E., Maragakis, P., Lindorff-Larsen, K., Piana, S., Dror, R.~O.,
   proteins}.
 \newblock {\em Science\/}, 330:341--346.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.sciencemag.org/content/330/6002%
-/341.abstract}{http://www.sciencemag.org/content/330/6002/341.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.sciencemag.org/content/330/6002/341.abstract}{http://www.sciencemag.org/content/330/6002/341.abstract}}.
 
 \bibitem[{Shen \& Sali(2006)}]{Shen2006}
 Shen, M. \& Sali, A. ({\bf 2006}).
@@ -1054,9 +1040,7 @@ Shen, M. \& Sali, A. ({\bf 2006}).
   structures.
 \newblock {\em Protein Science\/}, 15:2507--2524.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1110%
-/ps.062416606/abstract}{http://onlinelibrary.wiley.com/doi/10.1110/ps.06241660%
-6/abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1110/ps.062416606/abstract}{http://onlinelibrary.wiley.com/doi/10.1110/ps.062416606/abstract}}.
 
 \bibitem[{Sickmeier {\em et~al.\/}(2007)Sickmeier, Hamilton, LeGall, Vacic,
   Cortese, Tantos, Szabo, Tompa, Chen, Uversky, Obradovic \&
@@ -1067,9 +1051,7 @@ Sickmeier, M., Hamilton, J.~A., LeGall, T., Vacic, V., Cortese, M.~S., Tantos,
 \newblock {{D}is{P}rot: the {D}atabase of {D}isordered {P}roteins}.
 \newblock {\em Nucleic Acids Res.\/}, 35:D786--793.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/35/s%
-uppl\_1/D786.abstract}{http://nar.oxfordjournals.org/content/35/suppl_1/D786.a%
-bstract}}.
+  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/35/suppl\_1/D786.abstract}{http://nar.oxfordjournals.org/content/35/suppl_1/D786.abstract}}.
 
 \bibitem[{Siew {\em et~al.\/}(2000)Siew, Elofsson, Rychlewski \&
   Fischer}]{Siew2000}
@@ -1078,9 +1060,7 @@ Siew, N., Elofsson, A., Rychlewski, L. \& Fischer, D. ({\bf 2000}).
   structure prediction quality}.
 \newblock {\em Bioinformatics\/}, 16(9):776--785.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/c%
-ontent/16/9/776.long}{http://bioinformatics.oxfordjournals.org/content/16/9/77%
-6.long}}.
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/16/9/776.long}{http://bioinformatics.oxfordjournals.org/content/16/9/776.long}}.
 
 \bibitem[{Sikic {\em et~al.\/}(2010)Sikic, Tomic \& Carugo}]{Sikic2010}
 Sikic, K., Tomic, S. \& Carugo, O. ({\bf 2010}).
@@ -1088,8 +1068,7 @@ Sikic, K., Tomic, S. \& Carugo, O. ({\bf 2010}).
   deposited in the protein data bank}.
 \newblock {\em Open Biochem J\/}, 4:83--95.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC3032220}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3032220}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3032220}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3032220}}.
 
 \bibitem[{Singh \& Dominy(2010)}]{Singh2010}
 Singh, M.~K. \& Dominy, B.~N. ({\bf 2010}).
@@ -1097,17 +1076,14 @@ Singh, M.~K. \& Dominy, B.~N. ({\bf 2010}).
   structures affect binding affinity predictions?}
 \newblock {\em Proteins\/}, 78:1613--1617.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002%
-/prot.22691/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22691/ab%
-stract}}.
+  \urlprefix\url{\htmladdnormallink{http://onlinelibrary.wiley.com/doi/10.1002/prot.22691/abstract}{http://onlinelibrary.wiley.com/doi/10.1002/prot.22691/abstract}}.
 
 \bibitem[{Soding(2005)}]{Soding2005}
 Soding, J. ({\bf 2005}).
 \newblock {{P}rotein homology detection by {H}{M}{M}-{H}{M}{M} comparison}.
 \newblock {\em Bioinformatics\/}, 21:951--960.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1553160%
-3}{http://www.ncbi.nlm.nih.gov/pubmed/15531603}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/15531603}{http://www.ncbi.nlm.nih.gov/pubmed/15531603}}.
 
 \bibitem[{Song(2012)}]{Song2012}
 Song, K. ({\bf 2012}).
@@ -1115,8 +1091,7 @@ Song, K. ({\bf 2012}).
   variable-window {Z}-curve method}.
 \newblock {\em Nucleic Acids Res.\/}, 40:963--971.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/40/3%
-/963.abstract}{http://nar.oxfordjournals.org/content/40/3/963.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://nar.oxfordjournals.org/content/40/3/963.abstract}{http://nar.oxfordjournals.org/content/40/3/963.abstract}}.
 
 \bibitem[{Sormanni {\em et~al.\/}(2014)Sormanni, Camilloni, Fariselli \&
   Vendruscolo}]{Sormanni2014}
@@ -1126,8 +1101,7 @@ Sormanni, P., Camilloni, C., Fariselli, P. \& Vendruscolo, M. ({\bf 2014}).
   {P}roteins}.
 \newblock {\em J. Mol. Biol.\/}.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2553408%
-1}{http://www.ncbi.nlm.nih.gov/pubmed/25534081}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/25534081}{http://www.ncbi.nlm.nih.gov/pubmed/25534081}}.
 
 \bibitem[{Sun {\em et~al.\/}(2014)Sun, Lin, Campbell, Allingham \&
   Davies}]{Sun2014}
@@ -1137,16 +1111,14 @@ Sun, T., Lin, F.~H., Campbell, R.~L., Allingham, J.~S. \& Davies, P.~L. ({\bf
   400 semi-clathrate waters}.
 \newblock {\em Science\/}, 343(6172):795--798.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2453197%
-2}{http://www.ncbi.nlm.nih.gov/pubmed/24531972}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/24531972}{http://www.ncbi.nlm.nih.gov/pubmed/24531972}}.
 
 \bibitem[{Taylor(2002)}]{Taylor2002}
 Taylor, W.~R. ({\bf 2002}).
 \newblock {{A} 'periodic table' for protein structures}.
 \newblock {\em Nature\/}, 416:657--660.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1194835%
-4}{http://www.ncbi.nlm.nih.gov/pubmed/11948354}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/11948354}{http://www.ncbi.nlm.nih.gov/pubmed/11948354}}.
 
 \bibitem[{Uversky(2013)}]{Uversky2013}
 Uversky, V.~N. ({\bf 2013}).
@@ -1154,8 +1126,7 @@ Uversky, V.~N. ({\bf 2013}).
   in autoinhibition}.
 \newblock {\em Structure\/}, 21(3):315--316.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2347366%
-3}{http://www.ncbi.nlm.nih.gov/pubmed/23473663}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/23473663}{http://www.ncbi.nlm.nih.gov/pubmed/23473663}}.
 
 \bibitem[{van Dijk {\em et~al.\/}(2006)van Dijk, van Dijk, Hsu, Boelens \&
   Bonvin}]{vanDijk2006}
@@ -1165,8 +1136,7 @@ van Dijk, M., van Dijk, A.~D., Hsu, V., Boelens, R. \& Bonvin, A.~M. ({\bf
   {H}{A}{D}{D}{O}{C}{K}: it is a matter of flexibility}.
 \newblock {\em Nucleic Acids Res.\/}, 34:3317--3325.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC1500871/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1500871/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1500871/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1500871/}}.
 
 \bibitem[{Ward {\em et~al.\/}(2004)Ward, McGuffin, Bryson, Buxton \&
   Jones}]{Ward2004}
@@ -1176,9 +1146,7 @@ Ward, J.~J., McGuffin, L.~J., Bryson, K., Buxton, B.~F. \& Jones, D.~T. ({\bf
   disorder}.
 \newblock {\em Bioinformatics\/}, 20:2138--2139.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/c%
-ontent/20/13/2138.abstract}{http://bioinformatics.oxfordjournals.org/content/2%
-0/13/2138.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://bioinformatics.oxfordjournals.org/content/20/13/2138.abstract}{http://bioinformatics.oxfordjournals.org/content/20/13/2138.abstract}}.
 
 \bibitem[{Washietl {\em et~al.\/}(2005)Washietl, Hofacker \&
   Stadler}]{Washietl2005}
@@ -1186,8 +1154,7 @@ Washietl, S., Hofacker, I. \& Stadler, P.~F. ({\bf 2005}).
 \newblock {Fast and reliable prediction of noncoding RNAs}.
 \newblock {\em PNAS\/}, 102(7):2454--2459.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/102/7/2454.abs%
-tract}{http://www.pnas.org/content/102/7/2454.abstract}}.
+  \urlprefix\url{\htmladdnormallink{http://www.pnas.org/content/102/7/2454.abstract}{http://www.pnas.org/content/102/7/2454.abstract}}.
 
 \bibitem[{Wright \& Dyson(1999)}]{Dyson1999}
 Wright, P. \& Dyson, H. ({\bf 1999}).
@@ -1195,8 +1162,7 @@ Wright, P. \& Dyson, H. ({\bf 1999}).
   structure-function paradigm.}
 \newblock {\em J.Mol.Biol.\/}, 293:321--331.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1055021%
-2}{http://www.ncbi.nlm.nih.gov/pubmed/10550212}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/10550212}{http://www.ncbi.nlm.nih.gov/pubmed/10550212}}.
 
 \bibitem[{Wu \& Zhang(2010)}]{Wu2010}
 Wu, S. \& Zhang, Y. ({\bf 2010}).
@@ -1204,9 +1170,15 @@ Wu, S. \& Zhang, Y. ({\bf 2010}).
   threading}.
 \newblock {\em Structure\/}, 18:858--867.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.cell.com/structure/abstract/S09%
-69-2126\%2810\%2900186-3}{http://www.cell.com/structure/abstract/S0969-2126\%2%
-810\%2900186-3}}.
+  \urlprefix\url{\htmladdnormallink{http://www.cell.com/structure/abstract/S0969-2126\%2810\%2900186-3}{http://www.cell.com/structure/abstract/S0969-2126\%2810\%2900186-3}}.
+
+\bibitem[{Yang \& Ramsey(2015)}]{Yang2015}
+Yang, J. \& Ramsey, S.~A. ({\bf 2015}).
+\newblock {{A} {D}{N}{A} shape-based regulatory score improves position-weight
+  matrix-based recognition of transcription factor binding sites}.
+\newblock {\em Bioinformatics\/}, 31(21):3445--3450.
+\newblock
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/26130577}{http://www.ncbi.nlm.nih.gov/pubmed/26130577}}.
 
 \bibitem[{Yates {\em et~al.\/}(2014)Yates, Filippis, Kelley \&
   Sternberg}]{Yates2014}
@@ -1215,8 +1187,7 @@ Yates, C.~M., Filippis, I., Kelley, L.~A. \& Sternberg, M.~J. ({\bf 2014}).
   ({S}{A}{V}) phenotype using network features}.
 \newblock {\em J. Mol. Biol.\/}, 426(14):2692--2701.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/P%
-MC4087249/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4087249/}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4087249/}{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4087249/}}.
 
 \bibitem[{Zhang \& Skolnick(2004)}]{Zhang2004}
 Zhang, Y. \& Skolnick, J. ({\bf 2004}).
@@ -1224,8 +1195,13 @@ Zhang, Y. \& Skolnick, J. ({\bf 2004}).
   template quality}.
 \newblock {\em Proteins\/}, 57:702--710.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/1547625%
-9}{http://www.ncbi.nlm.nih.gov/pubmed/15476259}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/15476259}{http://www.ncbi.nlm.nih.gov/pubmed/15476259}}.
+
+\bibitem[{Zhang \& Skolnick(2005)}]{Zhang2005}
+Zhang, Y. \& Skolnick, J. ({\bf 2005}).
+\newblock {{T}{M}-align: a protein structure alignment algorithm based on the
+  {T}{M}-score}.
+\newblock {\em Nucleic Acids Res.\/}, 33(7):2302--2309.
 
 \bibitem[{Zhou {\em et~al.\/}(2013)Zhou, Yang, Lu, Dror, Dantas~Machado, Ghane,
   Di~Felice \& Rohs}]{Zhou2013}
@@ -1235,7 +1211,6 @@ Zhou, T., Yang, L., Lu, Y., Dror, I., Dantas~Machado, A.~C., Ghane, T.,
   {D}{N}{A} structural features on a genomic scale}.
 \newblock {\em Nucleic Acids Res.\/}, 41(Web Server issue):56--62.
 \newblock
-  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/2370320%
-9}{http://www.ncbi.nlm.nih.gov/pubmed/23703209}}.
+  \urlprefix\url{\htmladdnormallink{http://www.ncbi.nlm.nih.gov/pubmed/23703209}{http://www.ncbi.nlm.nih.gov/pubmed/23703209}}.
 
 \end{thebibliography}

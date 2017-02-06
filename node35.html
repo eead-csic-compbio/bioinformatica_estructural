@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html916"
+<A NAME="tex2html936"
   HREF="node34.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html922"
+<A NAME="tex2html942"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html924"
+<A NAME="tex2html944"
   HREF="node36.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html925"
-  HREF="node36.html">Mutaciones puntuales de prote&#237;nas</A></b>  Arriba: <b><A NAME="tex2html923"
-  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html917"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html945"
+  HREF="node36.html">Mutaciones puntuales de prote&#237;nas</A></b>  Arriba: <b><A NAME="tex2html943"
+  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html937"
   HREF="node34.html">Modelado de prote&#237;nas por homolog&#237;a</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -66,17 +66,17 @@ En la secci&#243;n <A HREF="node32.html#compS3">5.2</A> mencionamos por primera 
 que resumen en forma matricial los contactos observados entre los residuos de una secuencia
 en su estructura terciaria. Es habitual que las matrices de contactos o  <i> contact maps  </i>
 se calculen excluyendo los contactos entre residuos inmediatamente vecinos.
-La siguiente figura muestra de qu&#233; manera se replejan los elementos de estructura
+La siguiente figura muestra de qu&#233; manera se reflejan los elementos de estructura
 secundaria en una matriz de contactos, donde los ejes son los residuos ordenados por su posici&#243;n en la secuencia.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:SScontacts"></A><A NAME="3037"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:SScontacts"></A><A NAME="3121"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.8:</STRONG>
 
 Elementos de estructura secundaria en una matriz de contactos.
-Figura tomada de <A NAME="tex2html272"
+Figura tomada de <A NAME="tex2html275"
   HREF="http://en.wikipedia.org/wiki/Protein_contact_map">http://en.wikipedia.org/wiki/Protein_contact_map</A>.
 </CAPTION>
 <TR><TD>
@@ -95,28 +95,28 @@ Esta manera de condensar una estructura terciaria es literalmente el fundamento 
 (ver secci&#243;n <A HREF="node12.html#metodosExp">1.4</A>), donde las observaciones experimentales de partida son esencialmente contactos at&#243;micos 
 entre residuos. Adem&#225;s, las matrices de contactos han sido durante mucho tiempo una fuente de inspiraci&#243;n de m&#233;todos 
 de predicci&#243;n estructural, con la idea subyacente de 'si somos capaces de predecir con informaci&#243;n evolutiva qu&#233; residuos de 
-una secuencia contactan, entonces podremos resolver su estructura' (<A NAME="tex2html926" target="contents"
-  HREF="node44.html#deJuan2013">de&nbsp;Juan <EM>et&nbsp;al.</EM>, 2013</A>; <A NAME="tex2html927" target="contents"
-  HREF="node44.html#Gobel1994">Gobel <EM>et&nbsp;al.</EM>, 1994</A>).
+una secuencia contactan, entonces podremos resolver su estructura' (<A NAME="tex2html946" target="contents"
+  HREF="node46.html#deJuan2013">de&nbsp;Juan <EM>et&nbsp;al.</EM>, 2013</A>; <A NAME="tex2html947" target="contents"
+  HREF="node46.html#Gobel1994">Gobel <EM>et&nbsp;al.</EM>, 1994</A>).
 
 <P>
 La informaci&#243;n evolutiva en cuesti&#243;n es normalmente un alineamiento m&#250;ltiple de secuencias hom&#243;logas, que se espera
 capturen de forma impl&#237;cita las limitaciones que impone la estructura terciaria de un dominio a las sustituciones de amino&#225;cidos
 que contactan. La funci&#243;n matem&#225;tica que se emplea habitualmente para estudiar esto es la 
-<A NAME="tex2html280"
+<A NAME="tex2html283"
   HREF="http://es.wikipedia.org/wiki/Informaci%C3%B3n_mutua">informaci&#243;n mutua</A>
 (MI), 
 que mide la dependencia entre dos variables, en este caso columnas de un alineamiento.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:EVfold1"></A><A NAME="3039"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold1"></A><A NAME="3123"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.9:</STRONG>
 
 Definici&#243;n de mutaciones correlacionadas en columnas de un alineamiento.
 Figura tomada de <A
- HREF="node44.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>.
+ HREF="node46.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -133,30 +133,31 @@ Figura tomada de <A
 Por tanto, el problema de la predicci&#243;n de contactos se puede plantear as&#237;:
 
 <UL>
-<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> conocemos la secuencia de una prote&#237;na y la de muchos hom&#243;logos
+<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> conocemos las secuencias de una prote&#237;na y las de muchos hom&#243;logos
 </LI>
-<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> alineamos las secuencias y buscamos posiciones que muestren evidencia de coevoluci&#243;n
+<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> alineamos las secuencias, buscamos posiciones que muestren evidencia de coevoluci&#243;n 
+y buscamos plegamientos compatibles con esos contactos
 </LI>
 </UL>
 
 <P>
-El algoritmo <A NAME="tex2html281"
+El algoritmo <A NAME="tex2html284"
   HREF="http://EVfold.org">EVfold</A>, publicado originalmente en (<A
- HREF="node44.html#Marks2011">Marks <EM>et&nbsp;al.</EM>, 2011</A>), emplea estos elementos
+ HREF="node46.html#Marks2011">Marks <EM>et&nbsp;al.</EM>, 2011</A>), emplea estos elementos
 para hacer predicciones de contactos de alta calidad, ya que por primera vez es capaz de distinguir entre posiciones de la secuencia
 que directamente contactan de las que correlacionan simplemente porque contactan con un mismo residuo. Usando su terminolog&#237;a,
-MI es un modelo 'local' de probabilidad de concactos, que ellos son capaces de corregir y convertir en un modelo 'global' usando conceptos 
+MI es un modelo 'local' de probabilidad de contactos, que ellos son capaces de corregir y convertir en un modelo 'global' usando conceptos 
 de la mec&#225;nica estad&#237;stica y la maximizaci&#243;n de la entrop&#237;a.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:EVfold1"></A><A NAME="3041"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold1"></A><A NAME="3125"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.10:</STRONG>
 
 Definici&#243;n de contactos entre residuos y correlaciones directas y transitivas.
 Figura tomada de <A
- HREF="node44.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>.
+ HREF="node46.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -171,13 +172,13 @@ Figura tomada de <A
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:EVfold2"></A><A NAME="3042"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold2"></A><A NAME="3126"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.11:</STRONG>
 
 Matrices de contactos obtenidos con modelos locales y globales y coincidencia con los observados en una estructura cristalina. 
 Figura tomada de <A
- HREF="node44.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>.
+ HREF="node46.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -191,22 +192,22 @@ Figura tomada de <A
 </DIV>
 
 <P>
-La siguiente figura muestra el diagrama de flujo completo del m&#233;todo <A NAME="tex2html282"
+La siguiente figura muestra el diagrama de flujo completo del m&#233;todo <A NAME="tex2html285"
   HREF="http://EVfold.org">EVfold</A>, 
 que ha sido posteriormente adaptado para prote&#237;nas transmembrana (<A
- HREF="node44.html#Hopf2012">Hopf <EM>et&nbsp;al.</EM>, 2012</A>) y 
+ HREF="node46.html#Hopf2012">Hopf <EM>et&nbsp;al.</EM>, 2012</A>) y 
 tambi&#233;n para complejos cuaternarios (<A
- HREF="node44.html#Hopf2014">Hopf <EM>et&nbsp;al.</EM>, 2014</A>):
+ HREF="node46.html#Hopf2014">Hopf <EM>et&nbsp;al.</EM>, 2014</A>):
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:EVfold3"></A><A NAME="3043"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold3"></A><A NAME="3127"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.12:</STRONG>
 
 Algoritmo de plegamiento de prote&#237;nas en base a observaciones de mutaciones correlacionadas,
 que se transforman en predicciones de contactos, tomado de <A
- HREF="node44.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>.
+ HREF="node46.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -224,12 +225,12 @@ La siguiente figura muestra los resultados de la validaci&#243;n de EVfold sobre
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:EVfold4"></A><A NAME="3044"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold4"></A><A NAME="3128"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.13:</STRONG>
 
 Figura tomada de <A
- HREF="node44.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>.
+ HREF="node46.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -243,12 +244,54 @@ Figura tomada de <A
 </DIV>
 
 <P>
+Esta familia de m&#233;todos  se est&#225; desarrollando ahora y sigue habiendo avances importantes.
+El m&#225;s reciente es que el uso de secuencias metagen&#243;micas permite ampliar el universo de secuencias lo suficiente 
+para mejorar las predicciones de contactos (usando <A NAME="tex2html286"
+  HREF="http://gremlin.bakerlab.org/submit.php">GREMLIN</A>) 
+y obtener as&#237; estructuras, de momento bacterianas, de numerosos plegamientos desconocidos (<A
+ HREF="node46.html#Ovchinnikov2017">Ovchinnikov <EM>et&nbsp;al.</EM>, 2017</A>). 
+Adem&#225;s, <A
+ HREF="node46.html#Ovchinnikov2017">Ovchinnikov <EM>et&nbsp;al.</EM> (2017)</A> proponen una funci&#243;n para estimar la calidad de los modelos si hay suficientes secuencias para abordar
+este tipo de modelado:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+N_{f} = \frac{clusters_{nr80}}{\sqrt L}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="124" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\displaystyle N_{f} = \frac{clusters_{nr80}}{\sqrt L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> 
+
+<P>
+En esta funci&#243;n el numerador representa el total de clusters de secuencias hom&#243;logas no redundantes al 80% 
+encontradas con <A NAME="tex2html287"
+  HREF="https://toolkit.tuebingen.mpg.de/hhblits">HHblits</A>
+y el numerador es la longitud de la secuencia problema. 
+Cuando <!-- MATH
+ $N_{f} > 64$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$ N_{f} &gt; 64$"></SPAN> se obtienen modelos de buena calidad. 
+
+<P>
 Para poner en pr&#225;ctica estos algoritmos sugiero hacer este ejercicio:
 
 <P>
 
 <UL>
-<LI>Visita <A NAME="tex2html283"
+<LI>Visita <A NAME="tex2html288"
   HREF="http://www.uniprot.org/">UniProt</A>, elige una prote&#237;na y extrae su secuencia S.
 
 <P>
@@ -263,14 +306,14 @@ guarda el resultado en un fichero FASTA.
 <P>
 </LI>
 <LI>Con ayuda de los 
-<A NAME="tex2html284"
+<A NAME="tex2html289"
   HREF="./files/journal.pone.0028766.s017.pdf">m&#233;todos suplementarios</A>
 de <A
- HREF="node44.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>
+ HREF="node46.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>
 modifica el c&#243;digo fuente del programa 3.4 para calcular el peso de las secuencias en base a su identidad
 y sumar pseudoconteos y de esa manera calcular con mayor precisi&#243;n MI en tu alineamiento A.
-Hay tambi&#233;n codigo fuente disponible en 
-<A NAME="tex2html285"
+Hay tambi&#233;n c&#243;digo fuente disponible en 
+<A NAME="tex2html290"
   HREF="http://evfold.org/evfold-web/code.do">http://evfold.org/evfold-web/code.do</A>.
 
 <P>
@@ -471,15 +514,15 @@ sub read_FASTA_file_array
 }
 </PRE>
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html916"
+<A NAME="tex2html936"
   HREF="node34.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html922"
+<A NAME="tex2html942"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html924"
+<A NAME="tex2html944"
   HREF="node36.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>

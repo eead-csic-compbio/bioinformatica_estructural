@@ -39,20 +39,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1002"
+<A NAME="tex2html1022"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1006"
+<A NAME="tex2html1026"
   HREF="node37.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1008"
+<A NAME="tex2html1028"
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1009"
-  HREF="node44.html">Bibliograf&#237;a</A></b>  Arriba: <b><A NAME="tex2html1007"
-  HREF="node37.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html1003"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1029"
+  HREF="node44.html">Ap&#233;ndices</A></b>  Arriba: <b><A NAME="tex2html1027"
+  HREF="node37.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html1023"
   HREF="node42.html">Modelando interfaces moleculares por homolog&#237;a</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -66,15 +66,15 @@ para aproximar la interfaz de una secuencia hom&#243;loga. Cuando no disponemos 
 de referencia, el estudio de las conformaciones que adoptan las macromol&#233;culas cuando interaccionan 
 de forma transitoria es aun m&#225;s dif&#237;cil, con costes computacionales alt&#237;simos.
 La raz&#243;n de esto es que hay muchos grados de libertad y un gran n&#250;mero de &#225;tomos del sistema pueden moverse. 
-Por tanto, los algoritmos de <A NAME="tex2html346"
+Por tanto, los algoritmos de <A NAME="tex2html351"
   HREF="http://en.wikipedia.org/wiki/Macromolecular_docking"> <i> docking  </i></A>
 suelen emplear estrategias para ahorrar recursos, como por ejemplo el uso de transformadas de Fourier en vez del empleo 
 expl&#237;cito de matrices de rotaci&#243;n y traslaci&#243;n (<A
- HREF="node44.html#Katchalski1992">Katchalski-Katzir <EM>et&nbsp;al.</EM>, 1992</A>).
+ HREF="node46.html#Katchalski1992">Katchalski-Katzir <EM>et&nbsp;al.</EM>, 1992</A>).
 
 <P>
 Desde el a&#241;o 2001 se ha puesto en marcha un experimento colectivo 
-(<A NAME="tex2html347"
+(<A NAME="tex2html352"
   HREF="http://www.ebi.ac.uk/msd-srv/capri">CAPRI</A>) donde regularmente se ponen a prueba los diferentes algoritmos existentes
 para predecir, antes de su publicaci&#243;n, las poses de complejos proteicos cuyas estructuras se han resuelto experimentalmente 
 (normalmente por cristalograf&#237;a).  
@@ -86,18 +86,18 @@ hechos por definici&#243;n para usuarios avanzados, que requieren de cierta expe
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:docking"></A><A NAME="3631"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:docking"></A><A NAME="3730"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.9:</STRONG>
 
-A: Problema de docking de <A NAME="tex2html336"
+A: Problema de docking de <A NAME="tex2html341"
   HREF="http://www.ebi.ac.uk/msd-srv/capri/">CAPRI</A>,
 mostrando las coordenadas del ligando en estado libre (azul oscuro) superpuestas con las coordenadas finales (azul claro).
 B: Ejemplo de docking entre prote&#237;nas y DNA con el algoritmo 
-<A NAME="tex2html337"
+<A NAME="tex2html342"
   HREF="http://www.nmr.chem.uu.nl/Software/haddock">HADDOCK</A>
 (<A
- HREF="node44.html#vanDijk2006">van Dijk <EM>et&nbsp;al.</EM>, 2006</A>).
+ HREF="node46.html#vanDijk2006">van Dijk <EM>et&nbsp;al.</EM>, 2006</A>).
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -112,10 +112,10 @@ B: Ejemplo de docking entre prote&#237;nas y DNA con el algoritmo
 
 <P>
 Una buena manera de empezar a jugar con software de  <i> docking  </i> puede ser instalando el software 
-<A NAME="tex2html348"
+<A NAME="tex2html353"
   HREF="http://pyrosetta.org">PyRosetta</A>
 (<A
- HREF="node44.html#Chaudhury2010">Chaudhury <EM>et&nbsp;al.</EM>, 2010</A>). Este software nos permite hacer,
+ HREF="node46.html#Chaudhury2010">Chaudhury <EM>et&nbsp;al.</EM>, 2010</A>). Este software nos permite hacer,
 de forma program&#225;tica, una simulaci&#243;n  <i> docking  </i> en miniatura, en este caso entre un d&#250;plex de ADN y 
 el factor de transcripci&#243;n DnaA , algo que puede plantearse simult&#225;neamente como un problema cl&#225;sico 
 de  <i> docking  </i> y como un problema de especificidad de reconocimiento:
@@ -285,21 +285,21 @@ mostrar interfaces relevantes en t&#233;rminos biol&#243;gicos, dependiendo de l
 y el an&#225;lisis posterior de los resultados, que obviamente requiere de cierta experiencia y sobre todo conocimiento
 de las mol&#233;culas implicadas. 
 En concreto en el ejemplo 4.3, posiblemente como consecuencia del limitado muestreo (N=10), ninguna de las 
-interfaces resultantes de mis simulaciones <A NAME="tex2html349"
+interfaces resultantes de mis simulaciones <A NAME="tex2html354"
   HREF="./files/docking_output.tgz">docking_output.tgz</A>
 consigue
 reconstruir la interfaz descrita experimentalmente:
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:dnaA_intf"></A><A NAME="3632"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:dnaA_intf"></A><A NAME="3731"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.10:</STRONG>
 
 Esquema del reconocimiento espec&#237;fico de ADN en la interfaz de DnaA 
-(<A NAME="tex2html341"
+(<A NAME="tex2html346"
   HREF="http://www.rcsb.org/pdb/explore.do?structureId=1j1v">PDB 1J1V</A>), tomado del repositorio
-<A NAME="tex2html342"
+<A NAME="tex2html347"
   HREF="http://floresta.eead.csic.es/3dfootprint/complexes/1j1v_A.html">3D-footprint</A>.
 </CAPTION>
 <TR><TD>
@@ -317,17 +317,16 @@ Esquema del reconocimiento espec&#237;fico de ADN en la interfaz de DnaA
 
 <P>
 
-
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1002"
+<A NAME="tex2html1022"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1006"
+<A NAME="tex2html1026"
   HREF="node37.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1008"
+<A NAME="tex2html1028"
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
