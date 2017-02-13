@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Sobre este documento...</TITLE>
-<META NAME="description" CONTENT="Sobre este documento...">
+<TITLE>Muestra de R Markdown para tus trabajos</TITLE>
+<META NAME="description" CONTENT="Muestra de R Markdown para tus trabajos">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,7 +19,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
 <LINK REL="previous" HREF="node44.html">
-<LINK REL="up" HREF="algoritmos3D.html">
+<LINK REL="up" HREF="node44.html">
+<LINK REL="next" HREF="node46.html">
 <!--google-->
 <script type="text/javascript">
 
@@ -38,50 +39,86 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1020"
+<A NAME="tex2html1041"
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1024"
-  HREF="algoritmos3D.html">
+<A NAME="tex2html1045"
+  HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
+<A NAME="tex2html1047"
+  HREF="node46.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next_g.png"> <div><fieldset>Arriba: <b><A NAME="tex2html1025"
-  HREF="algoritmos3D.html">Algoritmos en bioinform&#225;tica estructural</A></b>  Anterior: <b><A NAME="tex2html1021"
-  HREF="node44.html">Bibliograf&#237;a</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1048"
+  HREF="node46.html">Bibliograf&#237;a</A></b>  Arriba: <b><A NAME="tex2html1046"
+  HREF="node44.html">Ap&#233;ndices</A></b>  Anterior: <b><A NAME="tex2html1042"
+  HREF="node44.html">Ap&#233;ndices</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00800000000000000000">
-Sobre este documento...</A>
-</H1><SMALL CLASS="SMALL">
- </SMALL><STRONG>Algoritmos en bioinform&#225;tica estructural</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2008 (1.71)
-<P>
-Copyright &#169; 1993, 1994, 1995, 1996,
-Nikos Drakos, 
-Computer Based Learning Unit, University of Leeds.
+<H1><A NAME="SECTION00710000000000000000">
+Muestra de R  <i> Markdown  </i> para tus trabajos</A>
+</H1>
 <BR>
-Copyright &#169; 1997, 1998, 1999,
-<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
-Mathematics Department, Macquarie University, Sydney.
+<PRE  CLASS="verbatim">---
+title: 'informe de bioinfo 3D'
+author: "Nombre de componentes del equipo"
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    fig_caption: yes
+    highlight: zenburn
+    theme: cerulean
+    toc: yes
+    toc_depth: 4
+  pdf_document:
+    fig_caption: yes
+    highlight: zenburn
+    toc: yes
+    toc_depth: 4
+---
+
+```{r knitr setup, include=FALSE,  eval=TRUE, echo=FALSE, warning=FALSE}
+library(knitr)
+knitr::opts_chunk$set(eval=TRUE, cache=FALSE, message=FALSE, warning=FALSE, 
+                      comment = "", results="markup")
+```
+Ejemplo de operaciones con el *shell*:
+```{r, engine='bash'}
+ls -ltr | head
+```
+
+Ejemplos de código Perl:
+
+```{perl, engine.path='perl'}
+my $test = "hello world";
+$test =~ s/h/H/;
+print $test
+```
+	 	 	 		
+Ejemplos con python3:
+
+```{python, engine.path='python3'}
+x = 'hello, python3 world!'
+print(x.split(' '))
+```
+</PRE>
 <P>
-The command line arguments were: <BR>
- <STRONG>latex2html</STRONG> <TT>-no_antialias_text algoritmos3D</TT>
-<P>
-The translation was initiated by Bruno Contreras Moreira on 2016-02-15
+
+
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1020"
+<A NAME="tex2html1041"
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1024"
-  HREF="algoritmos3D.html">
+<A NAME="tex2html1045"
+  HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
+<A NAME="tex2html1047"
+  HREF="node46.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next_g.png"> </DIV>
+ SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 <a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>

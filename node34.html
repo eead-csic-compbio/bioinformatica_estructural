@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html906"
+<A NAME="tex2html926"
   HREF="node33.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html912"
+<A NAME="tex2html932"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html914"
+<A NAME="tex2html934"
   HREF="node35.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html915"
-  HREF="node35.html">Modelado de prote&#237;nas por predicci&#243;n</A></b>  Arriba: <b><A NAME="tex2html913"
-  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html907"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html935"
+  HREF="node35.html">Modelado de prote&#237;nas por predicci&#243;n</A></b>  Arriba: <b><A NAME="tex2html933"
+  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html927"
   HREF="node33.html">Protein fold recognition</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -67,9 +67,9 @@ Con las herramientas que hemos estado manejando ya estamos preparados para model
 En este contexto modelar significa hacer una predicci&#243;n de c&#243;mo se disponen los &#225;tomos 
 de una prote&#237;na conocida su secuencia, con el fin de estudiar su funci&#243;n molecular, su historia evolutiva o, 
 si el modelo es bueno, dise&#241;ar o muestrear ligandos e incluso calcular sus afinidades (<A
- HREF="node44.html#Singh2010">Singh &amp; Dominy, 2010</A>). 
+ HREF="node46.html#Singh2010">Singh &amp; Dominy, 2010</A>). 
 Asimismo este tipo de modelos se usan mucho para estudiar el efecto de mutaciones puntuales (<A
- HREF="node44.html#Kellogg2011">Kellogg <EM>et&nbsp;al.</EM>, 2011</A>).
+ HREF="node46.html#Kellogg2011">Kellogg <EM>et&nbsp;al.</EM>, 2011</A>).
 
 <P>
 
@@ -83,22 +83,22 @@ Asimismo este tipo de modelos se usan mucho para estudiar el efecto de mutacione
 <P>
 Esta metodolog&#237;a se llama modelado comparativo o por homolog&#237;a y se describe en profundidad en este
 art&#237;culo de <A
- HREF="node44.html#Fiser2003">Fiser &amp; Sali (2003)</A>. Hay fundamentalmente dos estrategias, que en general requieren alineamientos entre la secuencia problema y los posibles moldes:
+ HREF="node46.html#Fiser2003">Fiser &amp; Sali (2003)</A>. Hay fundamentalmente dos estrategias, que en general requieren alineamientos entre la secuencia problema y los posibles moldes:
 
 <UL>
-<LI>ensamblado de fragmentos r&#237;gidos obtenidos de estructuras similares alineadas (<A NAME="tex2html255"
+<LI>ensamblado de fragmentos r&#237;gidos obtenidos de estructuras similares alineadas (<A NAME="tex2html258"
   HREF="http://swissmodel.expasy.org">SWISS-MODEL</A>, 
-<A NAME="tex2html256"
-  HREF="http://robetta.bakerlab.org">ROBETTA</A>, <A NAME="tex2html257"
+<A NAME="tex2html259"
+  HREF="http://robetta.bakerlab.org">ROBETTA</A>, <A NAME="tex2html260"
   HREF="http://bmm.cancerresearchuk.org/~3djigsaw">3D-JIGSAW</A>
 o 
-<A NAME="tex2html258"
-  HREF="http://www.stats.ox.ac.uk/~kelm/medeller">MEDELLER</A>
+<A NAME="tex2html261"
+  HREF="http://opig.stats.ox.ac.uk/webapps/medeller/home.pl?app=MEDELLER">MEDELLER</A>
 para prote&#237;nas transmembrana).
 </LI>
 <LI>modelado por satisfacci&#243;n de restricciones (distancias, &#225;ngulos, potenciales) moleculares extra&#237;das de bases de datos y estructuras similares
-(moldes) alineadas (<A NAME="tex2html259"
-  HREF="http://salilab.org/modeller/">MODELLER</A>,<A NAME="tex2html260"
+(moldes) alineadas (<A NAME="tex2html262"
+  HREF="http://salilab.org/modeller/">MODELLER</A>,<A NAME="tex2html263"
   HREF="http://mordred.bioc.cam.ac.uk/~rapper">RAPPER</A>)
 </LI>
 </UL>
@@ -109,23 +109,23 @@ El algoritmo gen&#233;rico de modelado comparativo puede dividirse en varios pas
 <UL>
 <LI>1. Identificar dominios <SPAN CLASS="MATH"><IMG
  WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img53.png"
+ SRC="img55.png"
  ALT="$ D_{1..d}$"></SPAN> en la secuencia <SPAN CLASS="MATH"><IMG
  WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img54.png"
+ SRC="img56.png"
  ALT="$ S$"></SPAN> que queremos modelar.
 </LI>
 <LI>2. Buscar y alinear estructuras molde <SPAN CLASS="MATH"><IMG
  WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img55.png"
+ SRC="img57.png"
  ALT="$ M_{1..m}$"></SPAN> que nos sirvan para modelar uno o m&#225;s dominios de <SPAN CLASS="MATH"><IMG
  WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img54.png"
+ SRC="img56.png"
  ALT="$ S$"></SPAN>. 
 </LI>
 <LI>3. Para cada dominio <SPAN CLASS="MATH"><IMG
  WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img56.png"
+ SRC="img58.png"
  ALT="$ D_{i}$"></SPAN> modelable:
 
 <UL>
@@ -133,14 +133,14 @@ El algoritmo gen&#233;rico de modelado comparativo puede dividirse en varios pas
 </LI>
 <LI>3.2. Tomar las coordenadas pept&#237;dicas (o descriptores moleculares) de la estructura molde alineada.
 </LI>
-<LI>3.3. Copiar los <A NAME="tex2html261"
+<LI>3.3. Copiar los <A NAME="tex2html264"
   HREF="http://kinemage.biochem.duke.edu/databases/rotamer.php">rot&#225;meros</A>
 de las cadenas laterales de los amino&#225;cidos conservados en el alineamiento.
 </LI>
-<LI>3.4. Modelar los rot&#225;meros de los residuos que mutan, con ayuda de una <A NAME="tex2html262"
+<LI>3.4. Modelar los rot&#225;meros de los residuos que mutan, con ayuda de una <A NAME="tex2html265"
   HREF="http://dunbrack.fccc.edu/bbdep2010">biblioteca</A>.
 
-<DIV ALIGN="CENTER"><A NAME="fig:rotamer"></A><A NAME="2855"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:rotamer"></A><A NAME="2917"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.6:</STRONG>
 
@@ -158,23 +158,23 @@ de las cadenas laterales de los amino&#225;cidos conservados en el alineamiento.
 </DIV>
 
 </LI>
-<LI>3.4. A&#241;adir los segmentos, normalmente <A NAME="tex2html263"
+<LI>3.4. A&#241;adir los segmentos, normalmente <A NAME="tex2html266"
   HREF="http://bmm.cancerresearchuk.org/loop"> <i> loops  </i></A>, 
 correspondientes a  <i> gaps  </i> en la secuencia alineada del molde.
 </LI>
 <LI>3.5. Refinar 1 &#243; m&#225;s modelos completos <SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img57.png"
+ SRC="img59.png"
  ALT="$ P_{n}$"></SPAN> con el objeto de eliminar errores obvios de estructura, como impedimentos o choques est&#233;ricos.
 </LI>
 <LI>3.6. Evaluar los modelos <SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img57.png"
+ SRC="img59.png"
  ALT="$ P_{n}$"></SPAN> y estimar su calidad, por medio de aplicaciones como 
-<A NAME="tex2html264"
+<A NAME="tex2html267"
   HREF="http://nihserver.mbi.ucla.edu/Verify_3D">Verify3D</A>
 o 
-<A NAME="tex2html265"
+<A NAME="tex2html268"
   HREF="http://filtrest3d.genesilico.pl/filtrest3d/index.html">FiltRest3D</A>.
 </LI>
 </UL>
@@ -184,16 +184,16 @@ o
 <P>
 El paso 2 es el m&#225;s determinante sobre la calidad del modelo y de hecho marca el techo de precisi&#243;n de la metodolog&#237;a 
 (<A
- HREF="node44.html#ContrerasMoreira2005">Contreras-Moreira <EM>et&nbsp;al.</EM>, 2005</A>). Es adem&#225;s un paso cr&#237;tico en el sentido de que si el alineamiento <SPAN CLASS="MATH"><IMG
+ HREF="node46.html#ContrerasMoreira2005">Contreras-Moreira <EM>et&nbsp;al.</EM>, 2005</A>). Es adem&#225;s un paso cr&#237;tico en el sentido de que si el alineamiento <SPAN CLASS="MATH"><IMG
  WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img58.png"
+ SRC="img60.png"
  ALT="$ M_{i}$"></SPAN> es malo, 
 el modelo resultante ser&#225; malo, como ya vislumbramos en la secci&#243;n <A HREF="node31.html#3dcons">5.1</A>. Para modelos complicados ser&#225; 
 necesario explorar diferentes combinaciones de moldes y alineamientos para encontrar la mejor soluci&#243;n. 
 <P>
 Con el objeto de explicar en mayor detalle el algoritmo, el siguiente c&#243;digo implementa los pasos 3.1 y 3.2, quiz&#225;s
 los m&#225;s fundamentales tras el el paso 2. El programa usa como ejemplo secuencias
-y estructuras ya utilizadas en el apartado <A HREF="node31.html#3dcons">5.1</A> (<A NAME="tex2html266"
+y estructuras ya utilizadas en el apartado <A HREF="node31.html#3dcons">5.1</A> (<A NAME="tex2html269"
   HREF="./files/1gd6.pdb">1gd6.pdb</A>):
 <BR>
 <PRE  CLASS="verbatim">#!/usr/bin/env python
@@ -307,18 +307,18 @@ print "# identidad = %1.0f%% RMSD estimado = %1.2f ansgtrom\n" % (100*identidad,
 Como en otros campos de la biolog&#237;a computacional, el repertorio de software para modelar prote&#237;nas es muy extenso,
 y constantemente incluye nuevas herramientas que sustituyen a otras que envejecen.
 Un buen punto de partida para elegir la mejor soluci&#243;n son los  <i> rankings  </i> que actualiza cada dos a&#241;os 
-<A NAME="tex2html267"
+<A NAME="tex2html270"
   HREF="http://predictioncenter.org/index.cgi?page=public_serv">CASP</A>, aunque probablemente los 
 programas de modelado preferidos por los usuarios son probablemente SWISS-MODEL en la web y MODELLER como instalable.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:CMflow"></A><A NAME="2857"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:CMflow"></A><A NAME="2919"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.7:</STRONG>
 
 Algoritmo gen&#233;rico de modelado comparativo, tomado de <A
- HREF="node44.html#Fiser2003">Fiser &amp; Sali (2003)</A>.
+ HREF="node46.html#Fiser2003">Fiser &amp; Sali (2003)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -333,18 +333,18 @@ Algoritmo gen&#233;rico de modelado comparativo, tomado de <A
 
 <P>
 En la pr&#225;ctica podemos hacer nuestros modelos por homolog&#237;a, con la opci&#243;n de controlar todos los pasos
-del procedimiento, por medio del programa <A NAME="tex2html268"
+del procedimiento, por medio del programa <A NAME="tex2html271"
   HREF="http://salilab.org/modeller/">MODELLER</A>
 (<A
- HREF="node44.html#Sali1993">Sali &amp; Blundell, 1993</A>), 
-disponible sin costo para usuarios acad&#233;micos. El programa tiene <A NAME="tex2html269"
+ HREF="node46.html#Sali1993">Sali &amp; Blundell, 1993</A>), 
+disponible sin costo para usuarios acad&#233;micos. El programa tiene <A NAME="tex2html272"
   HREF="http://salilab.org/modeller/tutorial/">m&#250;ltiples posibilidades</A>, pero en este ejemplo
 nos centramos en el caso m&#225;s sencillo de c&#243;mo hacer un modelo a partir de un s&#243;lo molde o  <i> template  </i>,
 estimando su calidad del modelo por medio de la funci&#243;n DOPE (<A
- HREF="node44.html#Shen2006">Shen &amp; Sali, 2006</A>):
+ HREF="node46.html#Shen2006">Shen &amp; Sali, 2006</A>):
 
 <UL>
-<LI>Secuencia problema: <A NAME="tex2html270"
+<LI>Secuencia problema: <A NAME="tex2html273"
   HREF="http://www.expasy.org/uniprot/FNR_ECOLI">FNR</A>, 
 regulador transcripcional de  <i> Escherichia coli  </i>.
 
@@ -358,7 +358,7 @@ cuya estructura est&#233; en el PDB (moldes o  <i> templates  </i>).
 <LI>Para cada uno de los  <i> templates  </i> interesantes sigue estos pasos:
 
 <UL>
-<LI>descarga el fichero de coordenadas del <A NAME="tex2html271"
+<LI>descarga el fichero de coordenadas del <A NAME="tex2html274"
   HREF="http://www.rcsb.org/pdb">PDB</A>
 y extrae la secuencia S contenida en los campos <code>ATOM</code>
 
@@ -423,15 +423,15 @@ a.make()
 </UL>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html906"
+<A NAME="tex2html926"
   HREF="node33.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html912"
+<A NAME="tex2html932"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html914"
+<A NAME="tex2html934"
   HREF="node35.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>

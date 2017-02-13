@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html982"
+<A NAME="tex2html1002"
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html988"
+<A NAME="tex2html1008"
   HREF="node37.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html990"
+<A NAME="tex2html1010"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html991"
-  HREF="node42.html">Modelando interfaces moleculares por homolog&#237;a</A></b>  Arriba: <b><A NAME="tex2html989"
-  HREF="node37.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html983"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1011"
+  HREF="node42.html">Modelando interfaces moleculares por homolog&#237;a</A></b>  Arriba: <b><A NAME="tex2html1009"
+  HREF="node37.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html1003"
   HREF="node40.html">Modelando nucle&#243;tidos dentro de una</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -64,25 +64,25 @@ Interacciones no covalentes: puentes de hidr&#243;geno en la interfaz
 
 <P>
 El estudio experimental y te&#243;rico de las interacciones entre prote&#237;nas 
-(<A NAME="tex2html313"
+(<A NAME="tex2html318"
   HREF="http://en.wikipedia.org/wiki/Protein-protein_interaction"> <i> protein-protein interactions  </i></A>)
 sembr&#243; el inter&#233;s por entender los mecanismos que explicaban la especificidad de su reconocimiento.
 Obviamente &#233;ste es un proceso termodin&#225;mico complejo, donde se conjugan 
-<A NAME="tex2html314"
+<A NAME="tex2html319"
   HREF="http://en.wikipedia.org/wiki/Chemical_affinity">afinidades</A>
 y especificidades, pero en muchas ocasiones los 
 protagonistas son los puentes de hidr&#243;geno de la interfaz, que naturalmente dependen de la secuencia o estructura primaria, 
 puesto que no todos los amino&#225;cidos pueden actuar como donadores o aceptores (<A
- HREF="node44.html#Kortemme2003">Kortemme <EM>et&nbsp;al.</EM>, 2003</A>).
+ HREF="node46.html#Kortemme2003">Kortemme <EM>et&nbsp;al.</EM>, 2003</A>).
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:Hbondgeo"></A><A NAME="3626"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:Hbondgeo"></A><A NAME="3725"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.7:</STRONG>
 
 Geometr&#237;a ideal de un puente de hidr&#243;geno, donde A es el grupo aceptor y D el donador, seg&#250;n <A
- HREF="node44.html#McDonald1994">McDonald &amp; Thornton (1994)</A>.
+ HREF="node46.html#McDonald1994">McDonald &amp; Thornton (1994)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -105,15 +105,15 @@ por ejemplo estimando la formaci&#243;n de puentes de hidr&#243;geno.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:dnaA"></A><A NAME="3627"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:dnaA"></A><A NAME="3726"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.8:</STRONG>
 
-La prote&#237;na <A NAME="tex2html310"
+La prote&#237;na <A NAME="tex2html315"
   HREF="http://floresta.eead.csic.es/3dpwm/complexes/1j1v_A.html">dnaA</A>
 en complejo 
 con ADN, tomada de <A
- HREF="node44.html#Fujikawa2003">Fujikawa <EM>et&nbsp;al.</EM> (2003)</A>.
+ HREF="node46.html#Fujikawa2003">Fujikawa <EM>et&nbsp;al.</EM> (2003)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -128,21 +128,21 @@ con ADN, tomada de <A
 
 <P>
 El punto de partida para presentar este algoritmo es la estructura del complejo de dnaA y su sitio operador, tras a&#241;adir con
-<A NAME="tex2html315"
+<A NAME="tex2html320"
   HREF="http://openbabel.org/wiki/Main_Page">Open Babel</A>
 los &#225;tomos de hidr&#243;geno que puedan faltar de un fichero
-en formato PDB (ver <A NAME="tex2html316"
+en formato PDB (ver <A NAME="tex2html321"
   HREF="./files/add_hydrogens.py"> <i> script  </i></A>).
-Por ejemplo, partiendo del complejo capturado en el archivo <A NAME="tex2html317"
+Por ejemplo, partiendo del complejo capturado en el archivo <A NAME="tex2html322"
   HREF="http://www.rcsb.org/pdb/explore.do?structureId=1j1v">PDB 1J1V</A>, 
-que ya usamos en el apartado <A HREF="node40.html#modelnt">6.3</A>, obtenemos <A NAME="tex2html318"
+que ya usamos en el apartado <A HREF="node40.html#modelnt">6.3</A>, obtenemos <A NAME="tex2html323"
   HREF="./files/1j1v_withH.pdb">1j1v_withH.pdb</A>. 
 Una vez realizado este paso preliminar,
 por medio del siguiente c&#243;digo podemos identificar los puentes de la interfaz prote&#237;na-DNA, como har&#237;amos con el programa
-<A NAME="tex2html319"
+<A NAME="tex2html324"
   HREF="http://www.biochem.ucl.ac.uk/bsm/hbplus/home.html">HBPLUS</A>
 (<A
- HREF="node44.html#McDonald1994">McDonald &amp; Thornton, 1994</A>):
+ HREF="node46.html#McDonald1994">McDonald &amp; Thornton, 1994</A>):
 <BR>
 <PRE  CLASS="verbatim">#!/usr/bin/env python
 """ prog4.2 Toma un complejo proteina-DNA en formato PDB y enumera los puentes de hidrogeno
@@ -342,15 +342,15 @@ for HB in puentesH:
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html982"
+<A NAME="tex2html1002"
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html988"
+<A NAME="tex2html1008"
   HREF="node37.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html990"
+<A NAME="tex2html1010"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
