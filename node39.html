@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html982"
+<A NAME="tex2html1059"
   HREF="node38.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html988"
+<A NAME="tex2html1065"
   HREF="node37.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html990"
+<A NAME="tex2html1067"
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html991"
-  HREF="node40.html">Modelando nucle&#243;tidos dentro de una</A></b>  Arriba: <b><A NAME="tex2html989"
-  HREF="node37.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html983"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1068"
+  HREF="node40.html">Modelando nucle&#243;tidos dentro de una</A></b>  Arriba: <b><A NAME="tex2html1066"
+  HREF="node37.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html1060"
   HREF="node38.html">Interfaces moleculares</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -63,22 +63,23 @@ Optimizaci&#243;n de cadenas laterales en interfaces
 </H1>
 
 <P>
-En ocasiones podemos asumir que el esqueleto pept&#237;dico de una prote&#237;na no va a variar mucho al cambiar su secuencia, en particular cuando la similitud global de secuencia es alta.
+En ocasiones podemos asumir que el esqueleto pept&#237;dico de una prote&#237;na 
+no va a variar mucho al cambiar su secuencia, en particular cuando la similitud global de secuencia es alta.
 Si se cumple esta condici&#243;n es posible tratar de optimizar una secuencia de amino&#225;cidos con
 el fin de modificar su estabilidad, su actividad enzim&#225;tica o su especificidad. Por ejemplo, 
 en este art&#237;culo de <A
- HREF="node46.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>, los autores redise&#241;an una prote&#237;na para cambiar su afinidad por un ligando. En este caso, el algoritmo de 
+ HREF="node47.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>, 
+los autores redise&#241;an una prote&#237;na para cambiar su afinidad por un ligando. En este caso, el algoritmo de 
 dise&#241;o se basa en sustituir(mutar) de manera exhaustiva ciertas posiciones de la secuencia, por medio de
 una biblioteca de rot&#225;meros, que son posteriormente evaluadas.
-
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:PDZ"></A><A NAME="3720"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:PDZ"></A><A NAME="3987"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.5:</STRONG>
 
 Diagrama mostrando los rot&#225;meros m&#225;s importantes para el reconocimiento PDZ-p&#233;ptido, tomado de <A
- HREF="node46.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>.
+ HREF="node47.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -93,10 +94,10 @@ Diagrama mostrando los rot&#225;meros m&#225;s importantes para el reconocimient
 
 <P>
 Para entender en mayor detalle este experimento podemos aprender a utilizar el programa 
-<A NAME="tex2html306"
+<A NAME="tex2html325"
   HREF="http://dunbrack.fccc.edu/scwrl4">SCWRL</A>
 (<A
- HREF="node46.html#Bower1997">Bower <EM>et&nbsp;al.</EM>, 1997</A>)   
+ HREF="node47.html#Bower1997">Bower <EM>et&nbsp;al.</EM>, 1997</A>)   
 (en ingl&#233;s se pronuncia algo as&#237; como 'ardilla') 
 que calcula las conformaciones de cadenas laterales (rot&#225;meros) de una prote&#237;na dada la geometr&#237;a 
 local (<SPAN CLASS="MATH"><IMG
@@ -112,7 +113,7 @@ extra&#237;das del Protein Data Bank.
 
 <UL>
 <LI>Identifica y descarga las estructuras PDB utilizadas en el art&#237;culo de <A
- HREF="node46.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>,
+ HREF="node47.html#Reina2002">Reina <EM>et&nbsp;al.</EM> (2002)</A>,
 cu&#225;l de ellas incluye las coordenadas de un p&#233;ptido? Selecciona &#233;sa.
 </LI>
 <LI>Mediante SCWRL calcula los rot&#225;meros m&#225;s adecuados para el p&#233;ptido y comp&#225;ralos con
@@ -121,7 +122,7 @@ los de las coordenadas experimentales obtenidas del PDB.
 <LI>Con SCWRL muta el p&#233;ptido ligando usando algunas de las secuencias del art&#237;culo (opci&#243;n <code>-s</code>).
 </LI>
 <LI>Para cada p&#233;ptido mutante calcula usando SCWRL los rot&#225;meros m&#225;s
-adecuados de los residuos del dominio <A NAME="tex2html307"
+adecuados de los residuos del dominio <A NAME="tex2html326"
   HREF="http://pfam.xfam.org/family/PF00595">PDZ</A>
 que lo reconoce. Ves qu&#233; residuos han cambiado de rot&#225;mero?
 </LI>
@@ -132,20 +133,20 @@ Puede parecer razonable asumir que la geometr&#237;a del esqueleto de la prote&#
 aleatoria rot&#225;meros. Sin embargo, hay estudios que observan que al muestrear cadenas laterales de 
 amino&#225;cidos se producen peque&#241;os cambios conformacionales locales, que se pueden reproducir 
 usando el algoritmo de  <i> backrub  </i> de <A
- HREF="node46.html#Davis2006">Davis <EM>et&nbsp;al.</EM> (2006)</A>.
+ HREF="node47.html#Davis2006">Davis <EM>et&nbsp;al.</EM> (2006)</A>.
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html982"
+<A NAME="tex2html1059"
   HREF="node38.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html988"
+<A NAME="tex2html1065"
   HREF="node37.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html990"
+<A NAME="tex2html1067"
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>

@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html824"
+<A NAME="tex2html898"
   HREF="node24.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html830"
+<A NAME="tex2html904"
   HREF="node24.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html832"
+<A NAME="tex2html906"
   HREF="node26.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html833"
-  HREF="node26.html">Dise&#241;o de primers para PCR</A></b>  Arriba: <b><A NAME="tex2html831"
-  HREF="node24.html">Estructura primaria o secuencia</A></b>  Anterior: <b><A NAME="tex2html825"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html907"
+  HREF="node26.html">Dise&#241;o de primers para PCR</A></b>  Arriba: <b><A NAME="tex2html905"
+  HREF="node24.html">Estructura primaria o secuencia</A></b>  Anterior: <b><A NAME="tex2html899"
   HREF="node24.html">Estructura primaria o secuencia</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -65,13 +65,13 @@ Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de prom
 <P>
 El modelo  <i> Nearest Neighbor  </i> (NN) aproxima la estabilidad molecular de un &#225;cido nucleico en disoluci&#243;n
 a partir de su secuencia, que se analiza como una secuencia de dinucle&#243;tidos solapantes 
-de interacciones aditivas, cuyas energ&#237;as se han determinado experimentalmente (<A NAME="tex2html834" target="contents"
-  HREF="node46.html#Breslauer1986">Breslauer <EM>et&nbsp;al.</EM>, 1986</A>; <A NAME="tex2html835" target="contents"
-  HREF="node46.html#SantaLucia1998">SantaLucia, 1998</A>).
+de interacciones aditivas, cuyas energ&#237;as se han determinado experimentalmente (<A NAME="tex2html908" target="contents"
+  HREF="node47.html#Breslauer1986">Breslauer <EM>et&nbsp;al.</EM>, 1986</A>; <A NAME="tex2html909" target="contents"
+  HREF="node47.html#SantaLucia1998">SantaLucia, 1998</A>).
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:NN"></A><A NAME="1703"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:NN"></A><A NAME="1827"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.1:</STRONG>
 C&#225;lculo de estabilidad (energ&#237;a libre de Gibbs, <SPAN CLASS="MATH"><IMG
@@ -79,7 +79,7 @@ C&#225;lculo de estabilidad (energ&#237;a libre de Gibbs, <SPAN CLASS="MATH"><IM
  SRC="img2.png"
  ALT="$ \Delta G$"></SPAN>) a temperatura fisiol&#243;gica en base al modelo NN, 
 incluyendo un t&#233;rmino de iniciaci&#243;n de d&#250;plex, tomado de (<A
- HREF="node46.html#SantaLucia1998">SantaLucia, 1998</A>).</CAPTION>
+ HREF="node47.html#SantaLucia1998">SantaLucia, 1998</A>).</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
@@ -92,19 +92,44 @@ incluyendo un t&#233;rmino de iniciaci&#243;n de d&#250;plex, tomado de (<A
 </DIV>
 
 <P>
-Modelos recientes ampl&#237;an la vecindad hasta usar por ejemplo pent&#225;meros:
+Este tipo de modelos se emplean a menudo para describir la lectura indirecta del DNA, por su forma, 
+por parte de factores de nucleosomas (<A
+ HREF="node47.html#Heijden2012">van&nbsp;der Heijden <EM>et&nbsp;al.</EM>, 2012</A>) o transcripci&#243;n (<A NAME="tex2html910" target="contents"
+  HREF="node47.html#Espinosa2008">Espinosa&nbsp;Angarica <EM>et&nbsp;al.</EM>, 2008</A>; <A NAME="tex2html911" target="contents"
+  HREF="node47.html#Gromiha2004">Michael&nbsp;Gromiha <EM>et&nbsp;al.</EM>, 2004</A>):
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:NN5"></A><A NAME="1704"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:DNAshape13"></A><A NAME="1828"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.2:</STRONG>
+Propiedades de pares de bases y dinucle&#243;tidos que se pueden estimar a partir de la estructura (<A
+ HREF="node47.html#Li2017">Li <EM>et&nbsp;al.</EM>, 2017</A>).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="520" HEIGHT="406" ALIGN="BOTTOM" BORDER="0"
+ SRC="./DNAshape13.jpg"
+ ALT="Image DNAshape13">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Otros modelos ampl&#237;an la vecindad hasta usar por ejemplo pent&#225;meros:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:NN5"></A><A NAME="1829"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.3:</STRONG>
 Aproximaci&#243;n de propiedades estructurales de un d&#250;plex de ADN por solapamiento de pent&#225;meros, 
-base del algoritmo <A NAME="tex2html143"
+base del algoritmo <A NAME="tex2html153"
   HREF="http://rohslab.cmb.usc.edu/DNAshape/">DNAshape</A>, adaptado de (<A
- HREF="node46.html#Zhou2013">Zhou <EM>et&nbsp;al.</EM>, 2013</A>).
+ HREF="node47.html#Zhou2013">Zhou <EM>et&nbsp;al.</EM>, 2013</A>).
 Este tipo de aproximaciones se est&#225;n usando para enriquecer motivos de DNA reconocidos por factores de transcripci&#243;n (<A
- HREF="node46.html#Yang2015">Yang &amp; Ramsey, 2015</A>)</CAPTION>
+ HREF="node47.html#Yang2015">Yang &amp; Ramsey, 2015</A>)</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
@@ -123,7 +148,7 @@ En esta secci&#243;n aplicaremos el modelo NN a la predicci&#243;n de promotores
 
 <UL>
 <LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> disponemos de coordenadas de una colecci&#243;n de marcos de lectura 
-(<A NAME="tex2html148"
+(<A NAME="tex2html158"
   HREF="http://es.wikipedia.org/wiki/Marco_abierto_de_lectura"> <i> ORFs  </i></A>), 
 pero desconocemos la posici&#243;n de sus secuencias promotoras
 </LI>
@@ -134,7 +159,7 @@ pero desconocemos la posici&#243;n de sus secuencias promotoras
 <P>
 Este problema ha tenido mayor importancia en procariotas por la gran velocidad con que se han ido obteniendo sus secuencias gen&#243;micas, 
 y el algoritmo de <A
- HREF="node46.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A> es un ejemplo de como emplear una estrategia estructural para atacar este problema. 
+ HREF="node47.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A> es un ejemplo de como emplear una estrategia estructural para atacar este problema. 
 El algoritmo consiste en estimar la estabilidad helicoidal del ADN cromos&#243;mico, que se supone es menor en
 las regiones promotoras, donde la maquinaria transcripcional se asienta para comenzar la s&#237;ntesis de ARN. 
 En concreto este m&#233;todo estima la estabilidad de una (ventana de) secuencia de ADN a ambos lados de una coordenada y define como posibles
@@ -142,9 +167,9 @@ posiciones promotores aquellas donde la diferencia de estabilidad en torno a una
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:window"></A><A NAME="1707"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:window"></A><A NAME="1832"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.3:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.4:</STRONG>
 Ejemplos de ventanas de 6 y 11 nucle&#243;tidos, que sirven para promediar propiedades a lo largo de la secuencia.</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
@@ -162,11 +187,11 @@ Este algoritmo incluye varios par&#225;metros libres y en el art&#237;culo origi
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:Kanhere"></A><A NAME="1708"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:Kanhere"></A><A NAME="1833"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.4:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.5:</STRONG>
 Algoritmo de <A
- HREF="node46.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A>, que se basa en calcular la diferencia de <SPAN CLASS="MATH"><IMG
+ HREF="node47.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A>, que se basa en calcular la diferencia de <SPAN CLASS="MATH"><IMG
  WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
  SRC="img2.png"
  ALT="$ \Delta G$"></SPAN> entre dos ventanas en torno a una posici&#243;n <SPAN CLASS="MATH"><IMG
@@ -186,23 +211,21 @@ Algoritmo de <A
 
 <P>
 Se han propuesto otras aproximaciones estructurales, como la de <A
- HREF="node46.html#Gogni2007">Go&#241;i <EM>et&nbsp;al.</EM> (2007)</A>, que identifica regiones promotoras en base a la capacidad de deformaci&#243;n de los 
-<A NAME="tex2html149"
+ HREF="node47.html#Gogni2007">Go&#241;i <EM>et&nbsp;al.</EM> (2007)</A>, que identifica regiones promotoras en base a la capacidad de deformaci&#243;n de los 
+<A NAME="tex2html159"
   HREF="http://nar.oxfordjournals.org/content/31/17/5108/F1.large.jpg">pares de bases</A>,
 estimada por medio de extensas simulaciones moleculares precalculadas. 
-
 <P>
 El repertorio de m&#233;todos para predicci&#243;n de promotores en base a inferencias estructurales es limitado, pero incluye al menos: 
-<A NAME="tex2html150"
-  HREF="http://mmb.pcb.ub.es/proStar/">proStar</A>, <A NAME="tex2html151"
-  HREF="http://bioinformatics.psb.ugent.be/software/details/ProSOM">ProSOM</A>
-o el algoritmo de <A
- HREF="node46.html#Song2012">Song (2012)</A>. Otras opciones recientes se basan en combinar diferentes fuentes por medio de algoritmos de aprendizaje (<A
- HREF="node46.html#Eser2016">Eser &amp; Churchman, 2016</A>).
+<A NAME="tex2html160"
+  HREF="http://mmb.pcb.ub.es/proStar/">proStar</A>, <A NAME="tex2html161"
+  HREF="http://bioinformatics.psb.ugent.be/software/details/ProSOM">ProSOM</A>o el algoritmo de <A
+ HREF="node47.html#Song2012">Song (2012)</A>. Otras opciones recientes se basan en combinar diferentes fuentes por medio de algoritmos de aprendizaje (<A
+ HREF="node47.html#Eser2016">Eser &amp; Churchman, 2016</A>).
 
 <P>
 El ejercicio de esta secci&#243;n consiste en completar el siguiente programa, usando los par&#225;metros unificados de <A
- HREF="node46.html#SantaLucia1998">SantaLucia (1998)</A>,
+ HREF="node47.html#SantaLucia1998">SantaLucia (1998)</A>,
 para calcular la funci&#243;n 
 <P></P>
 <DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
@@ -223,7 +246,7 @@ D(n) = E1(n) - E2(n)
 
 <P>
 del art&#237;culo de <A
- HREF="node46.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A>, calculada sobre ventanas de longitud 15, donde 
+ HREF="node47.html#Kanhere2005">Kanhere &amp; Bansal (2005)</A>, calculada sobre ventanas de longitud 15, donde 
 <P></P>
 <DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
  \begin{equation}
@@ -259,7 +282,7 @@ E2(n) = \frac{\sum_{n+99}^{n+199}\Delta G}{100}
 <BR CLEAR="ALL"><P></P>
 
 <P>
-Como conjunto de datos para la predicci&#243;n de promotores usaremos las secuencias del fichero <A NAME="tex2html152"
+Como conjunto de datos para la predicci&#243;n de promotores usaremos las secuencias del fichero <A NAME="tex2html162"
   HREF="./files/K12_400_50_sites">K12_400_50_sites</A>, 
 que contiene coordenadas de ORFs de  <i> Escherichia coli  </i> con coordenadas -400,+50, con el 0 centrado cerca del cod&#243;n de inicio.
 Qu&#233; observas al cambiar el tama&#241;o de la ventana?
@@ -368,15 +391,15 @@ sub duplex_deltaG
 
 </PRE>
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html824"
+<A NAME="tex2html898"
   HREF="node24.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html830"
+<A NAME="tex2html904"
   HREF="node24.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html832"
+<A NAME="tex2html906"
   HREF="node26.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
