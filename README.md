@@ -1,4 +1,3 @@
-\newcommand{\tex}[1]{#1}
 
 # Algoritmos en bioinformática estructural
 
