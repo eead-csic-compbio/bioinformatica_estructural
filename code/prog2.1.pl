@@ -64,7 +64,7 @@ sub prog_dinamica
 	{
 		for $i (1 .. $long-$l) 
 		{
-	    		$j = $i+$l; 
+      $j = $i+$l; 
 			$par = $sec[$i].$sec[$j]; 
 			$bonds = $ref_funcion_eval->($par); 
 			$alignmat[$i][$j]{'eval'} = $bonds; 
@@ -78,8 +78,7 @@ sub prog_dinamica
 							       #      (observa que no hay gap penalty)
 			
 			$caso4 = 100;               
-                        if($j > $i+3+($minstem*2))  # 4: bifurcacion en base k si hay distancia suficiente            
-		        #if($j > $i+9)
+      if($j > $i+3+($minstem*2))  # 4: bifurcacion en base k si hay distancia suficiente            
 			{     
 				# ._i k_.-._. j_.                      i____k.....j
 				#   . .     . .                         ...........
@@ -102,7 +101,7 @@ sub prog_dinamica
 						$alignmat[$i][$j]{'k'} = $k;
 					}	
 				}
-	    		} 
+	   	} 
 			
 			# 3.2) elige la mejor en esta posicion, actualizando $min
 			if($caso1 < $min && $bonds < 0)
