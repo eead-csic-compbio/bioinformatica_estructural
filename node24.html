@@ -1,26 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Estructura primaria o secuencia</TITLE>
-<META NAME="description" CONTENT="Estructura primaria o secuencia">
+<TITLE>Modelos aproximados</TITLE>
+<META NAME="description" CONTENT="Modelos aproximados">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
-<LINK REL="next" HREF="node27.html">
-<LINK REL="previous" HREF="node13.html">
-<LINK REL="up" HREF="algoritmos3D.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node21.html">
 <LINK REL="next" HREF="node25.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,61 +35,157 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html886"
+<A NAME="tex2html930"
   HREF="node23.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html892"
-  HREF="algoritmos3D.html">
+<A NAME="tex2html934"
+  HREF="node21.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html894"
+<A NAME="tex2html936"
   HREF="node25.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html895"
-  HREF="node25.html">Estabilidad y deformaci&#243;n de un</A></b>  Arriba: <b><A NAME="tex2html893"
-  HREF="algoritmos3D.html">Algoritmos en bioinform&#225;tica estructural</A></b>  Anterior: <b><A NAME="tex2html887"
-  HREF="node23.html">Foldit: jugando a plegar prote&#237;nas</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html937"
+  HREF="node25.html">Foldit: jugando a plegar prote&#237;nas</A></b>  Arriba: <b><A NAME="tex2html935"
+  HREF="node21.html">Algoritmos de din&#225;mica molecular y</A></b>  Anterior: <b><A NAME="tex2html931"
+  HREF="node23.html">Modelos tridimensionales de mec&#225;nica molecular</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00300000000000000000"></A> <A NAME="secuencia"></A>
-<BR>
-Estructura primaria o secuencia
-</H1>
+<H2><A NAME="SECTION00263000000000000000">
+Modelos aproximados</A>
+</H2>
 
 <P>
-En estas dos secciones veremos dos ejemplos de algoritmos que utilizan secuencias de DNA y prote&#237;nas 
-con el objeto de estudiar procesos que dependen de propiedades estructurales.
+En contraste con los algoritmos de din&#225;mica molecular, que no se pueden ejecutar en cualquier hardware,
+tenemos a nuestro alcance otros m&#233;todos m&#225;s simples  
+que no modelan necesariamente el proceso de plegamiento pero permiten obtener inferencias estructurales, 
+a partir de la secuencia, de calidad suficiente para muchas aplicaciones biol&#243;gicas. 
+Al ser heur&#237;sticas, estas estrategias suelen tener un nicho
+de aplicaci&#243;n muy restringido, y su validaci&#243;n es normalmente emp&#237;rica. 
+A pesar de ello muchos de estos m&#233;todos han tenido y tienen un gran impacto y 
+tienen la ventaja de que, en general, se pueden realizar en cualquier computador. 
+Los siguientes cap&#237;tulos del curso se centran en algunos de estos m&#233;todos.
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+Para prote&#237;nas podemos mencionar algunos ejemplos:
 
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html896"
-  HREF="node25.html">Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de promotores</A>
-<LI><A NAME="tex2html897"
-  HREF="node26.html">Dise&#241;o de primers para PCR</A>
+<UL>
+<LI>Observaci&#243;n de los patrones de sustituci&#243;n de amino&#225;cidos en familias de prote&#237;nas a lo largo de la evoluci&#243;n,
+que pueden explotarse para aplicaciones tan variadas como:
+
+<P>
+
+<UL>
+<LI>Predicci&#243;n de estructura secundaria por aprendizaje autom&#225;tico, normalmente por medio de redes neuronales (<A
+ HREF="node50.html#Jurtz2017">Jurtz <EM>et&nbsp;al.</EM>, 2017</A>), 
+como se describe en la secci&#243;n <A HREF="node31.html#protSS">4.2</A>.
+
+<P>
+</LI>
+<LI>Algoritmos de predicci&#243;n de regiones intr&#237;nsecamente desordenadas (<A
+ HREF="node50.html#Dunker2008">Dunker <EM>et&nbsp;al.</EM>, 2008</A>) y de amiloides (<A NAME="tex2html938" target="contents"
+  HREF="node50.html#Agostini2012">Agostini <EM>et&nbsp;al.</EM>, 2012</A>; <A NAME="tex2html939" target="contents"
+  HREF="node50.html#Bryan2011">Bryan <EM>et&nbsp;al.</EM>, 2011</A>).
+Se mencionan en la secci&#243;n <A HREF="node31.html#protSS">4.2</A>.
+
+<P>
+</LI>
+<LI>Modelos topol&#243;gicos de prote&#237;nas de membrana, que predicen h&#233;lices transmembrana 
+e infieren qu&#233; partes de la secuencia son citopl&#225;smicas y exteriores (<A NAME="tex2html940" target="contents"
+  HREF="node50.html#PerezAguilar2012">Perez-Aguilar &amp; Saven, 2012</A>; <A NAME="tex2html941" target="contents"
+  HREF="node50.html#Nugent2012">Nugent &amp; Jones, 2012</A>).
+
+<P>
+</LI>
+<LI>Predicci&#243;n de efectos y fenotipos de mutaciones no sin&#243;nimas en prote&#237;nas (secci&#243;n <A HREF="node38.html#pointmut">5.6</A>).
+
+<P>
+</LI>
+<LI>Definici&#243;n de modelos evolutivos espec&#237;ficos de familias de prote&#237;nas (<A
+ HREF="node50.html#Arenas2017">Arenas <EM>et&nbsp;al.</EM>, 2017</A>), 
+que son la base de los protocolos de  <i> fold recognition  </i> de la secci&#243;n <A HREF="node34.html#FRsection">5.2</A> y de predicci&#243;n de contactos 
+de la secci&#243;n <A HREF="node37.html#contactosPred">5.5</A>. 
+Estos algoritmos est&#225;n a medio camino de los de modelado estructural que se mencionan a continuaci&#243;n.
+
+<P>
+</LI>
 </UL>
-<!--End of Table of Child-Links-->
+
+<P>
+</LI>
+<LI>Aproximaci&#243;n a la estructura nativa, y a su funci&#243;n, a partir de otras estructuras conocidas:
+
+<P>
+
+<UL>
+<LI>modelado de estructura terciaria por comparaci&#243;n con prote&#237;nas de estructura conocida (secci&#243;n <A HREF="node35.html#CM">5.3</A>). 
+<P>
+</LI>
+<LI>protocolos de modelado de estructura terciaria a base de fragmentos, que simulan el proceso de 
+plegamiento (normalmente denominados  <i> ab initio  </i>, secci&#243;n <A HREF="node36.html#abinitio">5.4</A>)
+
+<P>
+</LI>
+</UL>
+
+<P>
+</LI>
+</UL>
+
+<P>
+Dentro del &#225;mbito de los &#225;cidos nucleicos:
+
+<UL>
+<LI>Algoritmos de predicci&#243;n de estructura secundaria de ARN (secci&#243;n <A HREF="node30.html#SSRNA">4.1</A>).
+
+<P>
+</LI>
+<LI>M&#233;todos de predicci&#243;n de estabilidad de la doble h&#233;lice de ADN y predicci&#243;n de promotores (secci&#243;n <A HREF="node27.html#dna1">3.1</A>).
+
+<P>
+</LI>
+<LI>Predicci&#243;n de la estructura tridimensional de un genoma (secci&#243;n <A HREF="node13.html#metodosExp">1.4</A>).
+</LI>
+</UL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DNApapel"></A><A NAME="1935"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.9:</STRONG>
+
+Modelo recortable de la doble h&#233;lice de ADN.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="650" HEIGHT="495" ALIGN="BOTTOM" BORDER="0"
+ SRC="./DNApapel.png"
+ ALT="Image DNApapel">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html886"
+<A NAME="tex2html930"
   HREF="node23.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html892"
-  HREF="algoritmos3D.html">
+<A NAME="tex2html934"
+  HREF="node21.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html894"
+<A NAME="tex2html936"
   HREF="node25.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

@@ -1,26 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Complejidad algor&#237;tmica del plegamiento</TITLE>
-<META NAME="description" CONTENT="Complejidad algor&#237;tmica del plegamiento">
+<TITLE>Plegamiento y desnaturalizaci&#243;n</TITLE>
+<META NAME="description" CONTENT="Plegamiento y desnaturalizaci&#243;n">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
 <LINK REL="next" HREF="node17.html">
 <LINK REL="previous" HREF="node15.html">
-<LINK REL="up" HREF="node13.html">
+<LINK REL="up" HREF="node15.html">
 <LINK REL="next" HREF="node17.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,136 +36,107 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html796"
+<A NAME="tex2html838"
   HREF="node15.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html802"
-  HREF="node13.html">
+<A NAME="tex2html844"
+  HREF="node15.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html804"
+<A NAME="tex2html846"
   HREF="node17.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html805"
-  HREF="node17.html">Paradoja de Levinthal</A></b>  Arriba: <b><A NAME="tex2html803"
-  HREF="node13.html">TEOR&#205;A: Plegamiento y din&#225;mica de</A></b>  Anterior: <b><A NAME="tex2html797"
-  HREF="node15.html">Fuerzas que influyen en el</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html847"
+  HREF="node17.html">Fuerzas que influyen en el</A></b>  Arriba: <b><A NAME="tex2html845"
+  HREF="node15.html">TEOR&#205;A: Plegamiento y din&#225;mica de</A></b>  Anterior: <b><A NAME="tex2html839"
+  HREF="node15.html">TEOR&#205;A: Plegamiento y din&#225;mica de</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00230000000000000000">
-Complejidad algor&#237;tmica del plegamiento</A>
+<H1><A NAME="SECTION00210000000000000000"></A> <A NAME="desnat"></A>
+<BR>
+Plegamiento y desnaturalizaci&#243;n
 </H1>
 
 <P>
-Sabemos que bajo condiciones fisiol&#243;gicas el proceso de plegamiento es termodin&#225;micamente
-favorable, es decir, que las macromol&#233;culas son m&#225;s estables en su conformaci&#243;n nativa que en
-otras posibles conformaciones. Y conocemos al menos los factores m&#225;s importantes que afectan
-y gu&#237;an al proceso de plegamiento. Por &#250;ltimo, sabemos que el plegamiento es un proceso r&#225;pido,
-que tarda a lo sumo tiempos del orden de segundos. A pesar de esto, a d&#237;a de hoy no sabemos 
-predecir de forma precisa c&#243;mo se plegar&#225; una prote&#237;na o un &#225;cido nucleico partiendo solamente 
-de su secuencia. 
+El inter&#233;s sobre el plegamiento de las macromol&#233;culas se despert&#243; al estudiar sus reacciones
+de desnaturalizaci&#243;n. Si tenemos prote&#237;nas o &#225;cidos nucleicos en disoluci&#243;n y cambiamos de 
+forma notable las condiciones en que suelen encontrarse en su medio biol&#243;gico, pierden su 
+estructura y funci&#243;n nativas. Este proceso, llamado reacci&#243;n de desnaturalizaci&#243;n, puede ser 
+reversible en ciertas condiciones y los cambios pueden ser por ejemplo de temperatura, por 
+encima de su temperatura de fusi&#243;n (<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN>), o en la naturaleza del solvente.
+<BR>
+<P>
+<A
+ HREF="node50.html#Anfinsen1961">Anfinsen <EM>et&nbsp;al.</EM> (1961)</A> mostr&#243; experimentalmente que la desnaturalizaci&#243;n es reversible al menos para 
+prote&#237;nas peque&#241;as, a&#241;adiendo y retirando agentes desnaturalizantes a disoluciones de enzimas 
+que ganaban y perd&#237;an su actividad. As&#237; demostr&#243; que el plegamiento de una prote&#237;na depende 
+exclusivamente de su secuencia, aunque hoy sabemos que algunas necesitan la ayuda de 
+chaperoninas (<A
+ HREF="node50.html#Hartl2002">Hartl &amp; Hayer-Hartl, 2002</A>).
+<BR>
+<P>
+Todav&#237;a hoy el proceso de plegamiento no se comprende bien debido a su complejidad 
+(ver secciones <A HREF="node18.html#complejidad">2.3</A> y <A HREF="node19.html#complejidad2">2.4</A>), aunque llevemos 50 a&#241;os estudi&#225;ndolo (<A
+ HREF="node50.html#Dill2012">Dill &amp; MacCallum, 2012</A>).
 
 <P>
-Cu&#225;les son las dificultades? Esto lo veremos tomando como ejemplo las prote&#237;nas, que se han estudiado
-mucho m&#225;s a este nivel. Son fundamentalmente dos:
 
-<UL>
-<LI>el enorme n&#250;mero de posibles conformaciones que puede tomar una cadena polipept&#237;dica
-</LI>
-<LI>la necesidad de cuantificar la estabilidad fisiol&#243;gica de cada una de ellas
-</LI>
-</UL>
-
-<P>
-El proceso de plegamiento puede entonces verse como una exploraci&#243;n en un horizonte como el de la figura
-<A HREF="#fig:foldfunnel">2.2</A>, donde observamos un m&#225;ximo de estabilidad que se corresponde con 
-la familia de conformaciones nativas, y otros m&#225;ximos secundarios o locales que hay que descartar en la b&#250;squeda,
-puesto que no se corresponden con la estructura nativa.
-
-<P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:foldfunnel"></A><A NAME="1482"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:desnatADN"></A><A NAME="1917"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.2:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.1:</STRONG>
 
-Superficie energ&#233;tica del plegamiento de prote&#237;nas, tomada de (<A
- HREF="node47.html#Dill2012">Dill &amp; MacCallum, 2012</A>).
+Reacci&#243;n de desnaturalizaci&#243;n y renaturalizaci&#243;n (hibridaci&#243;n) de una mol&#233;cula de ADN,
+tomada de <A
+ HREF="node50.html#HernandezLemus2012">Hernandez-Lemus <EM>et&nbsp;al.</EM> (2012)</A> y reproducido con permiso de los autores.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
-  WIDTH="448" HEIGHT="377" ALIGN="BOTTOM" BORDER="0"
- SRC="./funnel.png"
- ALT="Image funnel">
+  WIDTH="694" HEIGHT="280" ALIGN="BOTTOM" BORDER="0"
+ SRC="./desnatADN.png"
+ ALT="Image desnatADN">
 
 </DIV></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:per_residue_folding"></A><A NAME="1483"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.3:</STRONG>
-
-Contribuciones al plegamiento de cada uno de los residuos de una prote&#237;na, tomada de (<A
- HREF="node47.html#Roy2014">Roy <EM>et&nbsp;al.</EM>, 2014</A>).
-</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
-  WIDTH="374" HEIGHT="612" ALIGN="BOTTOM" BORDER="0"
- SRC="./per_residue_folding.jpg"
- ALT="Image per_residue_folding">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:foldfunnelRNA"></A><A NAME="1484"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.4:</STRONG>
-
-Embudo de plegamiento de una ribozima,
-tomado de <A
- HREF="node47.html#Behrouzi2012">Behrouzi <EM>et&nbsp;al.</EM> (2012)</A>.
-</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
-  WIDTH="375" HEIGHT="375" ALIGN="BOTTOM" BORDER="0"
- SRC="./ribozymeFolding.png"
- ALT="Image ribozymeFolding">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-Desde este punto de vista, la b&#250;squeda de la conformaci&#243;n nativa es como buscar una aguja en un pajar. 
-C&#243;mo es el espacio de conformaciones? Lo veremos por medio de la paradoja de Levinthal.
-
+La <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN> de los &#225;cidos nucleicos es proporcional al contenido en bases GC de su secuencia, 
+ya que estos pares de bases (ver figura <A HREF="node9.html#fig:est2adn">1.17</A>) establecen entre s&#237; 3 puentes de hidr&#243;geno, 
+mientras que los AT/AU s&#243;lo 2. Si la temperatura supera <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN>, las mol&#233;culas de ADN se separan 
+en dos hebras polinucleot&#237;dicas (como se muestra en la figura <A HREF="#fig:desnatADN">2.1</A>), pero si la 
+bajamos lentamente ambas hebras vuelven a unirse de forma complementaria en una reacci&#243;n llamada 
+hibridaci&#243;n. De nuevo vemos c&#243;mo en este caso la secuencia es suficiente para guiar el plegamiento, 
+al menos para mol&#233;culas peque&#241;as.
+<BR>
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html796"
+<A NAME="tex2html838"
   HREF="node15.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html802"
-  HREF="node13.html">
+<A NAME="tex2html844"
+  HREF="node15.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html804"
+<A NAME="tex2html846"
   HREF="node17.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

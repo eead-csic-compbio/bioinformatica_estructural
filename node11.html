@@ -1,10 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
 <TITLE>Estructura 3D de la cromatina</TITLE>
@@ -13,11 +9,12 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
+<LINK REL="next" HREF="node12.html">
 <LINK REL="previous" HREF="node10.html">
 <LINK REL="up" HREF="node7.html">
 <LINK REL="next" HREF="node12.html">
@@ -39,20 +36,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html729"
+<A NAME="tex2html772"
   HREF="node10.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html733"
+<A NAME="tex2html778"
   HREF="node7.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html735"
+<A NAME="tex2html780"
   HREF="node12.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html736"
-  HREF="node12.html">M&#233;todos experimentales para el estudio</A></b>  Arriba: <b><A NAME="tex2html734"
-  HREF="node7.html">An&#225;lisis jer&#225;rquico de la estructura</A></b>  Anterior: <b><A NAME="tex2html730"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html781"
+  HREF="node12.html">Relaci&#243;n entre estructura primaria y</A></b>  Arriba: <b><A NAME="tex2html779"
+  HREF="node7.html">An&#225;lisis jer&#225;rquico de la estructura</A></b>  Anterior: <b><A NAME="tex2html773"
   HREF="node10.html">Estructura terciaria y cuaternaria</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -64,24 +61,33 @@ Estructura 3D de la cromatina</A>
 La cromatina es una fibra formada por asociaci&#243;n de DNA gen&#243;mico y prote&#237;nas, no s&#243;lo histonas, y es el constituyente
 esencial del n&#250;cleo celular. Cada vez disponemos de m&#225;s evidencias de que la estructura de la cromatina es clave para entender 
 las funciones de genes, cromosomas e incluso del genoma entero. Algunos de los algoritmos fundamentales que veremos en este curso,
-ideados originalmente para el estudio individual de mol&#233;culas,
+ideados originalmente para el estudio de mol&#233;culas individuales,
 se est&#225;n reciclando en la actualidad para el estudio de la cromatina, puesto que en cierto modo podemos
-modelarla como si fuera una fibra lineal; algo parecido a un polip&#233;ptido al que s&#243;lo podemos acceder mediante t&#233;cnicas 
-de resoluci&#243;n limitada.
+modelarla como una fibra lineal; algo parecido a un polip&#233;ptido al que s&#243;lo podemos acceder mediante t&#233;cnicas 
+de resoluci&#243;n limitada. Se puede ampliar este tema en <A
+ HREF="node50.html#bau_davide_2014_1066356">Bau (2014)</A>.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:cromatin"></A><A NAME="734"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:cromatin"></A><A NAME="1010"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 1.24:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 1.27:</STRONG>
 
 Diagrama de flujo del proceso de modelado en 3D de la cromatina, tomado de (<A
- HREF="node47.html#Dekker2013">Dekker <EM>et&nbsp;al.</EM>, 2013</A>).
+ HREF="node50.html#Dekker2013">Dekker <EM>et&nbsp;al.</EM>, 2013</A>). 
+Los paneles, comenzando arriba a la izquierda, muestran etapas sucesivas del modelado de un cromosoma bacteriano.
+La primera etapa es la captura de datos, que concluye con una matriz de contactos gen&#243;micos.
+la segunda consiste en construir un primer modelo que integre los contactos observados con otros datos disponibles,
+por ejemplo evolutivos o f&#237;sicos. En la tercera etapa se prueban diferentes funciones con el fin de optimizar
+el modelo inicial que representa las conformaciones de la cromatina. 
+La cuarta etapa es el an&#225;lisis objetivo del modelo refinado. 
+Si los resultados no son satisfactorios es necesario comenzar de nuevo.
+Copyright (2013) Springer Nature. 
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
-  WIDTH="473" HEIGHT="551" ALIGN="BOTTOM" BORDER="0"
+  WIDTH="473" HEIGHT="286" ALIGN="BOTTOM" BORDER="0"
  SRC="./cromatin.png"
  ALT="Image cromatin">
 
@@ -92,21 +98,21 @@ Diagrama de flujo del proceso de modelado en 3D de la cromatina, tomado de (<A
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html729"
+<A NAME="tex2html772"
   HREF="node10.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html733"
+<A NAME="tex2html778"
   HREF="node7.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html735"
+<A NAME="tex2html780"
   HREF="node12.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

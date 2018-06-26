@@ -1,26 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Modelado de prote&#237;nas por homolog&#237;a</TITLE>
-<META NAME="description" CONTENT="Modelado de prote&#237;nas por homolog&#237;a">
+<TITLE>Protein fold recognition </TITLE>
+<META NAME="description" CONTENT="Protein fold recognition ">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
 <LINK REL="next" HREF="node35.html">
 <LINK REL="previous" HREF="node33.html">
-<LINK REL="up" HREF="node30.html">
+<LINK REL="up" HREF="node32.html">
 <LINK REL="next" HREF="node35.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,415 +36,347 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1002"
+<A NAME="tex2html1053"
   HREF="node33.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1008"
-  HREF="node30.html">
+<A NAME="tex2html1059"
+  HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1010"
+<A NAME="tex2html1061"
   HREF="node35.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1011"
-  HREF="node35.html">Modelado de prote&#237;nas por predicci&#243;n</A></b>  Arriba: <b><A NAME="tex2html1009"
-  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html1003"
-  HREF="node33.html">Protein fold recognition</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1062"
+  HREF="node35.html">Modelado de prote&#237;nas por homolog&#237;a</A></b>  Arriba: <b><A NAME="tex2html1060"
+  HREF="node32.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html1054"
+  HREF="node33.html">Comparaci&#243;n de estructura terciaria entre</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00540000000000000000"></A> <A NAME="CM"></A>
+<H1><A NAME="SECTION00520000000000000000"></A> <A NAME="FRsection"></A>
 <BR>
-Modelado de prote&#237;nas por homolog&#237;a
+ <i> Protein fold recognition  </i>
 </H1>
 
 <P>
-Con las herramientas que hemos estado manejando ya estamos preparados para modelar prote&#237;nas. 
-En este contexto modelar significa hacer una predicci&#243;n de c&#243;mo se disponen los &#225;tomos 
-de una prote&#237;na conocida su secuencia, con el fin de estudiar su funci&#243;n molecular, su historia evolutiva o, 
-si el modelo es bueno, dise&#241;ar o muestrear ligandos e incluso calcular sus afinidades (<A
- HREF="node47.html#Singh2010">Singh &amp; Dominy, 2010</A>). 
-Asimismo este tipo de modelos se usan mucho para estudiar el efecto de mutaciones puntuales (<A
- HREF="node47.html#Kellogg2011">Kellogg <EM>et&nbsp;al.</EM>, 2011</A>).
+Al analizar secuencias gen&#243;micas frecuentemente encontraremos marcos de lectura (te&#243;ricos) que codifican para prote&#237;nas que aparentemente no se parecen a ninguna otra (llamadas a veces  <i> orphans  </i> en la literatura), 
+o que s&#243;lo tienen similitudes obvias con prote&#237;nas de funci&#243;n desconocida. Esto puede deberse a que de veras son 
+mol&#233;culas observadas por primera vez, o como vimos en <A HREF="node12.html#3dcons">1.3.5</A>, a que la evoluci&#243;n ha conservado en mayor grado
+la estructura y topolog&#237;a de las prote&#237;nas hom&#243;logas que sus secuencias. 
 
 <P>
-
-<UL>
-<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> disponemos de la secuencia de una prote&#237;na A y quisi&#233;ramos conocer, aunque esa de manera aproximada, su estructura tridimensional
-</LI>
-<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> estimar coordenadas cartesianas para la mayor&#237;a de los &#225;tomos de A, en base a la estructura conocida de prote&#237;nas  similares, que llamamos moldes, templados o  <i> templates  </i>
-</LI>
-</UL>
-
-<P>
-Esta metodolog&#237;a se llama modelado comparativo o por homolog&#237;a y se describe en profundidad en este
-art&#237;culo de <A
- HREF="node47.html#Fiser2003">Fiser &amp; Sali (2003)</A>. Hay fundamentalmente dos estrategias, que en general requieren alineamientos entre la secuencia problema y los posibles moldes:
-
-<UL>
-<LI>ensamblado de fragmentos r&#237;gidos obtenidos de estructuras similares alineadas 
-(<A NAME="tex2html276"
-  HREF="http://swissmodel.expasy.org">SWISS-MODEL</A>, 
-<A NAME="tex2html277"
-  HREF="http://www.reading.ac.uk/bioinf/IntFOLD">IntFOLD</A>, 
-<A NAME="tex2html278"
-  HREF="http://robetta.bakerlab.org">ROBETTA</A>
-o <A NAME="tex2html279"
-  HREF="http://opig.stats.ox.ac.uk/webapps/medeller/home.pl?app=MEDELLER">MEDELLER</A>
-para prote&#237;nas transmembrana).
-</LI>
-<LI>modelado por satisfacci&#243;n de restricciones (distancias, &#225;ngulos, potenciales) moleculares extra&#237;das de bases de datos y estructuras similares
-(moldes) alineadas (<A NAME="tex2html280"
-  HREF="https://salilab.org/modeller/">MODELLER</A>) 
-</LI>
-</UL>
-
-<P>
-El algoritmo gen&#233;rico de modelado comparativo puede dividirse en varios pasos, ilustrados en la figura <A HREF="#fig:CMflow">5.8</A>:
-
-<UL>
-<LI>1. Identificar dominios <SPAN CLASS="MATH"><IMG
- WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img55.png"
- ALT="$ D_{1..d}$"></SPAN> en la secuencia <SPAN CLASS="MATH"><IMG
- WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img56.png"
- ALT="$ S$"></SPAN> que queremos modelar.
-</LI>
-<LI>2. Buscar y alinear estructuras molde <SPAN CLASS="MATH"><IMG
- WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img57.png"
- ALT="$ M_{1..m}$"></SPAN> que nos sirvan para modelar uno o m&#225;s dominios de <SPAN CLASS="MATH"><IMG
- WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img56.png"
- ALT="$ S$"></SPAN>. 
-</LI>
-<LI>3. Para cada dominio <SPAN CLASS="MATH"><IMG
- WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img58.png"
- ALT="$ D_{i}$"></SPAN> modelable:
-
-<UL>
-<LI>3.1. Refinar el alineamiento local de cada segmento alineado del molde.
-</LI>
-<LI>3.2. Tomar las coordenadas pept&#237;dicas (o descriptores moleculares) de la estructura molde alineada.
-</LI>
-<LI>3.3. Copiar los <A NAME="tex2html281"
-  HREF="http://kinemage.biochem.duke.edu/databases/rotamer.php">rot&#225;meros</A>
-de las cadenas laterales de los amino&#225;cidos conservados en el alineamiento.
-</LI>
-<LI>3.4. Modelar los rot&#225;meros de los residuos que mutan, con ayuda de una <A NAME="tex2html282"
-  HREF="http://dunbrack.fccc.edu/bbdep2010">biblioteca</A>.
-
-<DIV ALIGN="CENTER"><A NAME="fig:rotamer"></A><A NAME="3092"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.7:</STRONG>
-
-&#193;ngulos que definen los rot&#225;meros de las cadenas laterales.</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
-  WIDTH="280" HEIGHT="233" ALIGN="BOTTOM" BORDER="0"
- SRC="./rotamer.jpg"
- ALT="Image rotamer">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
-
-</LI>
-<LI>3.4. A&#241;adir los segmentos, normalmente <A NAME="tex2html283"
-  HREF="http://bmm.cancerresearchuk.org/loop"> <i> loops  </i></A>, 
-correspondientes a  <i> gaps  </i> en la secuencia alineada del molde.
-</LI>
-<LI>3.5. Refinar 1 &#243; m&#225;s modelos completos <SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img59.png"
- ALT="$ P_{n}$"></SPAN> con el objeto de eliminar errores obvios de estructura, como impedimentos o choques est&#233;ricos.
-</LI>
-<LI>3.6. Evaluar los modelos <SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img59.png"
- ALT="$ P_{n}$"></SPAN> y estimar su calidad, por medio de aplicaciones como 
-<A NAME="tex2html284"
-  HREF="http://proq3.bioinfo.se">ProQ3</A>,
-<A NAME="tex2html285"
-  HREF="http://services.mbi.ucla.edu/Verify_3D">Verify3D</A>
+La segunda posibilidad ha justificado una familia de m&#233;todos llamados gen&#233;ricamente de  <i> Fold Recognition  </i> (FR), 
+que tienen como objeto reconocer a qu&#233; tipo de plegamiento (de los conocidos) se debe asignar una secuencia problema, 
+especialmente cuando b&#250;squedas m&#225;s convencionales con 
+<A NAME="tex2html268"
+  HREF="http://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST</A>
 o 
-<A NAME="tex2html286"
-  HREF="http://filtrest3d.genesilico.pl/filtrest3d/index.html">FiltRest3D</A>.
-</LI>
-</UL>
-</LI>
-</UL>
-
-<P>
-El paso 2 es el m&#225;s determinante sobre la calidad del modelo y de hecho marca el techo de precisi&#243;n de la metodolog&#237;a 
-(<A
- HREF="node47.html#ContrerasMoreira2005">Contreras-Moreira <EM>et&nbsp;al.</EM>, 2005</A>). Es adem&#225;s un paso cr&#237;tico en el sentido de que si el alineamiento <SPAN CLASS="MATH"><IMG
- WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img60.png"
- ALT="$ M_{i}$"></SPAN> es malo, 
-el modelo resultante ser&#225; malo, como ya vislumbramos en la secci&#243;n <A HREF="node31.html#3dcons">5.1</A>. Para modelos complicados ser&#225; 
-necesario explorar diferentes combinaciones de moldes y alineamientos para encontrar la mejor soluci&#243;n. 
-Si la secuencia problema es multidominio o multim&#233;rica puede ser necesario modelar su estructura cuaternaria (<A
- HREF="node47.html#Tramontano2017">Tramontano, 2017</A>), 
-con herramientas especiales como
-<A NAME="tex2html287"
-  HREF="http://dunbrack.fccc.edu/BAM">BAM</A>
-o 
-<A NAME="tex2html288"
-  HREF="http://ffas.burnham.org/AIDA">AIDA</A>.
-
-<P>
-Con el objeto de explicar en mayor detalle el algoritmo, el siguiente c&#243;digo implementa los pasos 3.1 y 3.2, quiz&#225;s
-los m&#225;s fundamentales tras el el paso 2. El programa usa como ejemplo secuencias
-y estructuras ya utilizadas en el apartado <A HREF="node31.html#3dcons">5.1</A> (<A NAME="tex2html289"
-  HREF="./files/1gd6.pdb">1gd6.pdb</A>):
-<BR>
-<PRE  CLASS="verbatim">#!/usr/bin/env python
-""" prog3.3 Construye un modelo sin gaps ni rotameros una secuencia problema (query) 
-en base a las coordenadas del model (pdb2) en base a un alineamiento. 
-Genera un fichero PDB con el modelo comparativo resultante."""
-
-__author__  = 'Bruno Contreras-Moreira' 
-
-from math import exp
-
-# 0) parametros del algoritmo: 
-query = { 'align':'KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQIN' +
-	'SRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRDVRQYVQGCGV' };
-
-molde = { 'file':'./files/1gd6.pdb', 
-	'align':'KTFTRCGLVHELRKHGFEEN---LMRNWVCLVEHESSRDTSKTNTNR-NGSKDYGLFQIN' +
-	'DRYWCSKGASPG--KDCNVKCSDLLTDDITKAAKCAKKIYKR-HRFDAWYGWKNHCQG--SLPDISSC--' };
-
-# 1) subrutinas
-def lee_coordenadas_PDB(filename):
-	""" Devuelve una lista de residuos, cada uno con las coordenadas de sus atomos. 
-	Ejemplo de linea en formato PDB:
-	ATOM     42  CA  PHE X   3       6.981  22.274  18.887  1.00  6.72 """
-	
-	coords = []
-	pdbfile = open(filename,'r')
-	try:
-		res,prev_resID = '',''
-		for line in pdbfile:
-			if(line[0:3] == 'TER'): break
-			if(line[0:4] != 'ATOM'): continue
-			resID = line[17:26]
-			if(resID != prev_resID):
-				if(res != ''): coords.append(res)
-				res = line
-			else: res += line	
-			
-			prev_resID = resID
-		
-		if(res != ''): coords.append(res)		
-	finally:
-		pdbfile.close()	
-	return coords	
-
-def copia_coords_alineadas(align1,align2,coords_molde,PDBname):
-	""" Devuelve:
-	1) una lista con las coordenadas de coords_molde 
-	que se pueden copiar segun el alineamiento align1,align2. 
-	2) una estimacion del RMSD segun la curva RMSD(A) = 0.40 e^{l.87(1-ID)} 
-	de  Chothia &amp; Lesk (1986) """
-	
-	aanames = { "A":"ALA","C":"CYS","D":"ASP","E":"GLU","F":"PHE","G":"GLY",
-		"H":"HIS","I":"ILE","K":"LYS","L":"LEU","M":"MET","N":"ASN","P":"PRO",
-		"Q":"GLN","R":"ARG","S":"SER","T":"THR","V":"VAL","W":"TRP","Y":"TYR" }
-
-	rmsd,identical = 0,0
-	total1,total2,total_model = -1,-1,0
-	length = len(align1)
-	
-	if(length != len(align2)): 
-		print "# copia_coords_alineadas: alineamientos tienen != longitud",
-		return []
-	
-	pdbfile = open(PDBname, 'w')
-	print &gt;&gt; pdbfile, "HEADER comparative model\nREMARK alignment:\n",
-	print &gt;&gt; pdbfile, "REMARK query   : %s\n" % (align1),
-	print &gt;&gt; pdbfile, "REMARK template: %s\n" % (align2),
-	
-	for r in range(0, length):
-		conserved = False
-		res1 = align1[r:r+1]
-		res2 = align2[r:r+1]
-		if(res1 != '-'): total1+=1
-		if(res2 != '-'): total2+=1
-		if(res1 == '-' or res2 == '-'): continue # salta los gaps
-		total_model += 1.0;
-		if(res1 == res2): 
-			conserved = True
-			identical += 1.0
-		for atomo in coords_molde[total2].split("\n"):
-			if(atomo == ''): break
-			if(atomo[12:16] == ' CA ' or atomo[12:16] == ' C  ' or \
-				atomo[12:16] == ' N  ' or atomo[12:16] == ' O  ' \
-				or conserved):
-				print &gt;&gt; pdbfile, "%s%s%s%4d%s" % \
-				(atomo[0:17],aanames[res1],atomo[20:22],total1+1,atomo[26:])	
-		
-	print &gt;&gt; pdbfile, "TER\n",
-	pdbfile.close()	
-	
-	rmsd = 0.40 * exp(1.87*(1-(identical/total_model)))
-	identical = (identical/total_model)
-	
-	return (total_model,identical,rmsd)
-	
-# 2) programa principal 
-
-molde['coords'] = lee_coordenadas_PDB( molde['file'] )
-		
-print "# total residuos en estructura molde : %s\n" % (len(molde['coords'])),
-
-(long_modelo,identidad,rmsd) = copia_coords_alineadas(query['align'],
-				molde['align'],molde['coords'],'modelo.pdb' )
-
-print "# archivo PDB = modelo.pdb longitud modelo (residuos) = %d \n" % long_modelo,
-print "# identidad = %1.0f%% RMSD estimado = %1.2f ansgtrom\n" % (100*identidad,rmsd),
-
-</PRE>
-<P>
-Como en otros campos de la biolog&#237;a computacional, el repertorio de software para modelar prote&#237;nas es muy extenso,
-y constantemente incluye nuevas herramientas que sustituyen a otras que envejecen.
-Un buen punto de partida para elegir la mejor soluci&#243;n son los  <i> rankings  </i> que actualiza cada dos a&#241;os 
-<A NAME="tex2html290"
-  HREF="http://predictioncenter.org/index.cgi?page=public_serv">CASP</A>, aunque probablemente los 
-programas de modelado preferidos por los usuarios son probablemente SWISS-MODEL en la web y MODELLER como instalable.
+<A NAME="tex2html269"
+  HREF="http://www.ebi.ac.uk/Tools/fasta/index.html">FASTA</A>
+han fracasado.
+Hist&#243;ricamente algunos de estos m&#233;todos se han llamado de
+<A NAME="tex2html270"
+  HREF="http://en.wikipedia.org/wiki/Threading_%28protein_sequence%29"> <i> threading  </i></A>, 
+ya que ciertos algoritmos 
+literalmente enhebran la secuencia problema en patrones de coordenadas conocidas, normalmente un subconjunto no redundante
+del PDB, para ver si es compatible con alguno, como en la siguiente figura:
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:CMflow"></A><A NAME="3094"></A>
+<DIV ALIGN="CENTER"><A NAME="fig:threading"></A><A NAME="3353"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.8:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.4:</STRONG>
 
-Algoritmo gen&#233;rico de modelado comparativo, tomado de <A
- HREF="node47.html#Fiser2003">Fiser &amp; Sali (2003)</A>.
+Diagrama de flujo de los algoritmos de reconocimiento de plegamiento (FR).
+Figura tomada de <A
+ HREF="node50.html#Guo2008">Guo &amp; Xu (2008)</A>. Copyright (2008) Frontiers in Bioscience. 
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
-  WIDTH="608" HEIGHT="853" ALIGN="BOTTOM" BORDER="0"
- SRC="./CMflow.png"
- ALT="Image CMflow">
+  WIDTH="596" HEIGHT="438" ALIGN="BOTTOM" BORDER="0"
+ SRC="./threading.jpg"
+ ALT="Image threading">
 
 </DIV></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-En la pr&#225;ctica podemos hacer nuestros modelos por homolog&#237;a, con la opci&#243;n de controlar todos los pasos
-del procedimiento, por medio del programa <A NAME="tex2html291"
-  HREF="https://salilab.org/modeller">MODELLER</A>
+El problema de FR lo podemos plantear as&#237;:
+
+<UL>
+<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> conocemos la secuencia de una prote&#237;na, pero desconocemos su tipo de plegamiento y su funci&#243;n
+</LI>
+<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> comparar la secuencia con todos los plegamientos conocidos, calcular el grado de parecido/compatibilidad con cada uno de ellos y devolver una lista ordenada
+</LI>
+</UL>
+
+<P>
+Se han publicado muchos algoritmos diferentes de FR; en todos ellos de alguna manera se asigna una estructura T a una secuencia A:
+
+<UL>
+<LI>Por medio de b&#250;squedas PSI-BLAST bidireccionales transitivas (<A
+ HREF="node50.html#Koretke2002">Koretke <EM>et&nbsp;al.</EM>, 2002</A>). 
+La idea es que si buscamos secuencias hom&#243;logas a partir de A llegamos a encontrar, en alguna iteraci&#243;n, 
+la secuencia T entre los resultados con cierta significancia estad&#237;stica. De la misma manera, a partir de la secuencia de T llegamos a la secuencia A.
+
+<P>
+</LI>
+<LI>Representando cada plegamiento o  <i> fold  </i> por medio de las secuencias conocidas que se pliegan en esa conformaci&#243;n
+y comparten estructura secundaria. Esto se puede hacer por medio de perfiles de secuencia (<A
+ HREF="node50.html#Gribskov1987">Gribskov <EM>et&nbsp;al.</EM>, 1987</A>), 
+que son matrices sustituci&#243;n de amino&#225;cidos espec&#237;ficas de posici&#243;n, 
+o <A NAME="tex2html271"
+  HREF="http://en.wikipedia.org/wiki/Hidden_Markov_model">modelos ocultos de Markov</A>, 
+que modelan expl&#237;citamente con qu&#233; probabilidad se pueden emitir secuencias compatibles con ese plegamiento.
+
+<P>
+</LI>
+<LI>Por medio de alineamientos secuencia-perfil o los m&#225;s sensibles perfil-perfil (<A
+ HREF="node50.html#Soding2005">Soding, 2005</A>) que son la raz&#243;n del &#233;xito del servidor <A NAME="tex2html272"
+  HREF="https://toolkit.tuebingen.mpg.de/#/tools/hhpred">HHpred</A>.
+
+<P>
+</LI>
+<LI>Usando potenciales estad&#237;sticos para evaluar la cercan&#237;a de los residuos de una secuencia
+dado un plegamiento (lo que llamamos  <i> threading  </i> (<A
+ HREF="node50.html#Threader1992">Jones <EM>et&nbsp;al.</EM>, 1992</A>)). Estos m&#233;todos requieren precalcular,
+sobre una colecci&#243;n de plegamientos no redundantes, con qu&#233; frecuencia y a qu&#233; distancia se forman 
+parejas de residuos en las estructuras conocidas. 
+<P>
+</LI>
+</UL>
+
+<P>
+Probablemente la mejor manera de evaluar objetivamente y elegir un m&#233;todo de FR 
+son experimentos colectivos a ciegas con secuencias cuyas estructuras experimentales se hacen p&#250;blicas
+tras las entrega de las predicciones. Hay dos tipos de experimentos de estipo: 
+<A NAME="tex2html273"
+  HREF="http://predictioncenter.org/index.cgi?page=public_serv">CASP</A>, 
+que mide bianualmente la competencia de los algoritmos de los grupos participantes, y 
+<A NAME="tex2html274"
+  HREF="https://www.cameo3d.org">CAMEO</A>, que hace evaluaciones continuas no supervisadas.
+
+<P>
+En palabras de <A
+ HREF="node50.html#Kelley2015">Kelley <EM>et&nbsp;al.</EM> (2015)</A>, desarrollador principal de 
+<A NAME="tex2html275"
+  HREF="http://www.sbg.bio.ic.ac.uk/phyre2">Phyre2</A>, uno de los m&#225;s completos,
+los mejores predictores tienen resultados indistinguibles en la mayor parte de los casos,
+pero en los casos mas complejos desde hace tiempo destaca por su consistencia y 
+superiores resultados <A NAME="tex2html276"
+  HREF="http://zhanglab.ccmb.med.umich.edu/I-TASSER">I-TASSER</A>.
+
+<P>
+Estas herramientas web son adecuadas para estudiar unas pocas secuencias, pero si queremos hacer un experimento de FR 
+a gran escala, entonces buena idea instalar localmente el software elegido, como por ejemplo
+<A NAME="tex2html277"
+  HREF="https://github.com/soedinglab/hh-suite">hh-suite</A>, el software que da vida a 
+<A NAME="tex2html278"
+  HREF="https://toolkit.tuebingen.mpg.de/#/tools/hhpred">HHpred</A>.
+
+<P>
+El siguiente programa es un prototipo de alineamiento perfil-perfil que usa adem&#225;s predicciones de estructura secundaria (ver figura <A HREF="node31.html#fig:psipred">4.4</A>) 
+para guiar el alineamiento. Es un algoritmo de programaci&#243;n din&#225;mica, que puedes comprender mejor con ayuda 
+del <A NAME="tex2html279"
+  HREF="http://protein.bio.puc.cl/websoftware/web/?sid=3"> <i> Sequence Alignment Teacher  </i></A>
 (<A
- HREF="node47.html#Sali1993">Sali &amp; Blundell, 1993</A>), 
-disponible sin costo para usuarios acad&#233;micos. 
-El programa tiene <A NAME="tex2html292"
-  HREF="https://salilab.org/modeller/tutorial/">m&#250;ltiples posibilidades</A>, pero en este ejemplo
-nos centramos en el caso m&#225;s sencillo de c&#243;mo hacer un modelo a partir de un s&#243;lo molde o  <i> template  </i>,
-estimando su calidad del modelo por medio de la funci&#243;n DOPE (<A
- HREF="node47.html#Shen2006">Shen &amp; Sali, 2006</A>):
-
-<UL>
-<LI>Secuencia problema: <A NAME="tex2html293"
-  HREF="http://www.expasy.org/uniprot/FNR_ECOLI">FNR</A>, 
-regulador transcripcional de  <i> Escherichia coli  </i>.
+ HREF="node50.html#Ibarra2010">Ibarra &amp; Melo, 2010</A>).
 
 <P>
-</LI>
-<LI>Busca, por ejemplo usando PSI-BLAST, secuencias similares (probablemente hom&#243;logas)
-cuya estructura est&#233; en el PDB (moldes o  <i> templates  </i>).
+Para probarlo necesitaras descargar los archivos de entrada
+(<A NAME="tex2html280"
+  HREF="./files/1ngk_A.pssm">1ngk_A.pssm</A>,<A NAME="tex2html281"
+  HREF="./files/1s69_A.pssm">1s69_A.pssm</A>,
+<A NAME="tex2html282"
+  HREF="./files/1ngk_A.psipred">1ngk_A.psipred</A>,<A NAME="tex2html283"
+  HREF="./files/1s69_A.psipred">1s69_A.psipred</A>):
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/perl -w
 
-<P>
-</LI>
-<LI>Para cada uno de los  <i> templates  </i> interesantes sigue estos pasos:
+# programa 3.2 algoritmo de alineamiento global perfil-perfil
+# Bruno Contreras-Moreira
 
-<UL>
-<LI>descarga el fichero de coordenadas del <A NAME="tex2html294"
-  HREF="http://www.rcsb.org/pdb">PDB</A>
-y extrae la secuencia S contenida en los campos <code>ATOM</code>
+use strict;
 
-<P>
-</LI>
-<LI>alinea la secuencia S de las coordenadas con la secuencia problema (FNR, por ejemplo con clustal o usando el mismo alineamiento de BLAST) 
-	y crea un archivo con extensi&#243;n 
-	<code>.ali</code> con este formato, donde <code>structureX</code> es el molde, <code>sequence</code> es la secuencia problema o  <i> query  </i> 
-	y los dem&#225;s campos definen el rango de residuos alineados del  <i> template  </i>, y su resoluci&#243;n:
+my %AAORDER = ('A',1,'R',2,'N',3,'D',4,'C',5,'Q',6,'E',7,'G',8,'H',9,'I',10,'L',11,
+		'K',12,'M',13,'F',14,'P',15,'S',16,'T',17,'W',18,'Y',19,'V',20);
+my $GAPCOST = -8; # coste de un gap 
+my $SSBONUS = 2;  # premio por igual estructura secundaria
 
-<P>
-<PRE>
-C; Alineamiento de muestra en formato PIR
-&gt;P1;1PDB
-structureX:1PDB:1    :A:106  :A:nombre_template:: 1.90: 
-AFVVTDNCIKCKYTDCVEVCPVDCFYEGPNFLVIHPDECIDCALCEPECPAQAIFSEDEVPEDMQEFIQLNAELA
-EVWPNITEKKDPLPDAEDWDGVKGKLQHLER*
-&gt;P1;query
-sequence:query:::::::0.00: 0.00
-AYVINDSC--IACGACKPECPVNIIQGS--IYAIDADSCIDCGSCASVCPVGAPNPED-----------------
--------------------------------*
+## -1) archivos de entrada
+my $perfil1 = './files/1ngk_A.pssm'; # perfil generado con PSI-BLAST
+my $perfil2 = './files/1s69_A.pssm'; 
+my $SS1     = './files/1ngk_A.psipred'; # estructura secundaria predicha con PSIPRED
+my $SS2     = './files/1s69_A.psipred'; 
+
+print "# $0 input: $perfil1 $perfil2 $SS1 $SS2 params: $GAPCOST $SSBONUS\n\n";
+
+## 0) define variables y lee perfiles 
+my ($ID,$total,$gaps,@matrix,$l1,$l2,$i,$j,$aa1,$aa2,$par) = (0,0,0);
+my ($align1,$align2,$ss1,$ss2,$ruler,$gapi,$gapj,$score) = ('','','','','');
+
+my ($seq1,@perfil1) = lee_perfil($perfil1);
+my ($seq2,@perfil2) = lee_perfil($perfil2);
+my @SS1 = lee_SS($SS1);
+my @SS2 = lee_SS($SS2);
+
+$l1 = length($seq1);
+$l2 = length($seq2); 
+
+## 1) define e inicia matriz de programacion dinamica
+# http://es.wikipedia.org/wiki/Algoritmo_Needleman-Wunsch
+for($j=0;$j&lt;=$l1;$j++){ $matrix[0][$j]{'score'} = $j * $GAPCOST; }
+for($i=0;$i&lt;=$l2;$i++){ $matrix[$i][0]{'score'} = $i * $GAPCOST; }
+
+## 2) rellena la matriz fila a fila
+for($i=1;$i&lt;=$l2;$i++) 
+{
+	for($j=1;$j&lt;=$l1;$j++) 
+	{
+        	$score = evalua_par($perfil1[$j-1],$perfil2[$i-1]);
+		if($SS1[$j-1] eq $SS2[$i-1] &amp;&amp; $SS2[$i-1] ne 'C'){ $score += $SSBONUS }
+		
+		# calcula 3 posibles scores: diagonal y gaps
+        	$par = $matrix[$i-1][$j-1]{'score'} + $score;
+        	$gapi = $matrix[$i-1][$j]{'score'} + $GAPCOST;
+        	$gapj = $matrix[$i][$j-1]{'score'} + $GAPCOST;
+		
+		($matrix[$i][$j]{'score'},$matrix[$i][$j]{'dir'}) = max($par,$gapi,$gapj);
+	}
+}
+
+## 3) reconstruye alineamiento
+($i,$j) = ($l2,$l1); 
+$score = $matrix[$i][$j]{'score'};
+
+while (1) 
+{
+    last if(!$matrix[$i][$j]{'dir'});
+     
+    if ($matrix[$i][$j]{'dir'} eq 'diagonal') 
+    {
+    	$i--; $j--;
+	$aa1 = substr($seq1,$j,1);
+	$aa2 = substr($seq2,$i,1);
+        $align1 = $aa1 . $align1;
+        $align2 = $aa2 . $align2;
+	$ss1    = $SS1[$j] . $ss1;
+	$ss2    = $SS2[$i] . $ss2;
+	if($aa1 eq $aa2)
+	{ 
+		$ID++; 
+		$ruler = '|' . $ruler;
+	}
+	else{ $ruler = ' ' . $ruler; }
+	$total++;
+    }
+    elsif($matrix[$i][$j]{'dir'} eq 'gapj') 
+    {
+        $align1 = substr($seq1,$j-1,1) . $align1;
+        $align2 = '-' . $align2;
+	$ss1    = $SS1[$j-1] . $ss1;
+	$ss2    = '-' . $ss2;
+	$ruler = ' ' . $ruler;
+        $j--;
+    }
+    else 
+    {
+        $align1 = '-' . $align1;
+        $align2 = substr($seq2,$i-1,1) . $align2;
+	$ss1    = '-' . $ss1;
+	$ss2    = $SS2[$i-1] . $ss2;
+	$ruler = ' ' . $ruler;
+        $i--;
+	$gaps++; # en secuencia1
+    }   
+}
+
+print "# identical aligned residues = $ID/$total gaps = $gaps score = $score\n";
+print "$perfil1\n$ss1\n$align1\n$ruler\n$align2\n$ss2\n$perfil2\n";
+
+#####################################################
+
+# lee fichero PSSM generado por PSI-BLAST con opcion -Q
+sub lee_perfil
+{
+	my ($PSSMfile) = @_;
+	 
+	my ($secuencia,@perfil,$col,$aa,$weights) = ('');
+
+        # 1 K   -4  2 -3 -3 -6  6  1 -5 -3 -6 -5  4 -4 -6  5 -3 -4 -6 -5 -5     
+	open(PSSM,$PSSMfile) || die "# lee_perfil: no puedo leer $PSSMfile\n";
+	while(&lt;PSSM&gt;)
+	{
+		if(/^\s+(\d+)\s+(\w)\s+(.+?)\n/)
+		{
+			($col,$aa,$weights)=($1,$2,$3); 
+			$col -= 1; # cuenta desde 0
+			push(@{$perfil[$col]},$aa); # posicion 0: secuencia
+			push(@{$perfil[$col]},(split(/\s+/,$weights))); # pos 1..20: pesos
+			$secuencia .= $aa;
+		}
+	}
+	close(PSSM);
+
+	return ($secuencia,@perfil);    
+}
+    
+# evalua una pareja de aminoacidos consultando su vector de pesos/sustituciones
+# usa global: %AAORDER
+sub evalua_par
+{
+	my ($pssv1,$pssv2) = @_;
+	
+	my $score1 = $pssv2-&gt;[$AAORDER{$pssv1-&gt;[0]}];
+	my $score2 = $pssv1-&gt;[$AAORDER{$pssv2-&gt;[0]}];
+	return sprintf("%1.2f",($score1+$score2)/2);
+}
+
+# lee fichero de prediccion de estructura secundaria generado con PSIPRED
+sub lee_SS
+{
+	my($SSfile) = @_;
+	
+	my (@SS);
+
+	#Pred: CCHHHHHCCHHHHHHHHHHHHHHHHCCHHHHHHCCCCCHHHHHHHHHHHHHHHHCCCCCC
+	open(PSIPRED,$SSfile) || die "# lee_SS: no puedo leer $SSfile\n";
+	while(&lt;PSIPRED&gt;)
+	{
+		if(/^Pred: (\w+?)\n/){ push(@SS,(split(//,$1))); }
+	}
+	close(PSIPRED);
+
+	return (@SS);    
+}	
+
+sub max
+{
+	my ($par,$gapi,$gapj) = @_;
+	
+	if($gapi&gt;$gapj &amp;&amp; $gapi&gt;$par){ return($gapi,'gapi'); }
+	elsif($gapj &gt;= $par &amp;&amp; $gapj &gt;= $gapi){ return($gapj,'gapj'); }
+	else{ return($par,'diagonal'); }
+}            		
 </PRE>
-
-<P>
-</LI>
-<LI>genera un gui&#243;n o  <i> script  </i> para MODELLER como <code>guion_nombre_template.py</code>:
-
-<P>
-<PRE>
-from modeller.automodel import *   
-
-log.verbose()    
-env = environ() 
-
-# 1) directorio donde se encuentran los ficheros con coordenadas de moldes/templates, 
-# con extension .pdb,.atm,.ent
-env.io.atom_files_directory = './templates/'
-
-# 2) prepara el modelado
-a = automodel(env,
-              alnfile  = 'alineamiento.ali',  # fichero con el alineamiento
-              knowns   = '1PDB',              # nombre del template como aparece en alnfile
-              sequence = 'query',             # nombre de secuencia problema como aparece en alnfile
-	          assess_methods=(assess.DOPE))      
-
-a.starting_model= 1                           # define cuantos modelos diferentes quieres
-a.ending_model  = 2                 
-				  
-# 3) accion! 
-a.make()
-</PRE>
-
-<P>
-</LI>
-<LI>ahora ejecuta MODELLER (por ejemplo poniendo en el terminal: <code>$ mod9v8 guion_template.py</code> y al terminar revisa 
-	<code>guion_nombre_template.log</code> para comprobar la evaluaci&#243;n emp&#237;rica del modelo o modelos obtenidos
-
-<P>
-</LI>
-</UL>
-</LI>
-</UL>
-
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1002"
+<A NAME="tex2html1053"
   HREF="node33.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1008"
-  HREF="node30.html">
+<A NAME="tex2html1059"
+  HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1010"
+<A NAME="tex2html1061"
   HREF="node35.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

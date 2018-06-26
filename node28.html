@@ -1,26 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Estructura secundaria de RNA</TITLE>
-<META NAME="description" CONTENT="Estructura secundaria de RNA">
+<TITLE>Dise&#241;o de primers para PCR</TITLE>
+<META NAME="description" CONTENT="Dise&#241;o de primers para PCR">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
-<LINK REL="next" HREF="node29.html">
 <LINK REL="previous" HREF="node27.html">
-<LINK REL="up" HREF="node27.html">
+<LINK REL="up" HREF="node26.html">
 <LINK REL="next" HREF="node29.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,347 +35,770 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html932"
+<A NAME="tex2html979"
   HREF="node27.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html938"
-  HREF="node27.html">
+<A NAME="tex2html983"
+  HREF="node26.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html940"
+<A NAME="tex2html985"
   HREF="node29.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html941"
-  HREF="node29.html">(Des)estructura secundaria de prote&#237;nas</A></b>  Arriba: <b><A NAME="tex2html939"
-  HREF="node27.html">Estructura secundaria</A></b>  Anterior: <b><A NAME="tex2html933"
-  HREF="node27.html">Estructura secundaria</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html986"
+  HREF="node29.html">Estructura secundaria</A></b>  Arriba: <b><A NAME="tex2html984"
+  HREF="node26.html">Estructura primaria o secuencia</A></b>  Anterior: <b><A NAME="tex2html980"
+  HREF="node27.html">Estabilidad y deformaci&#243;n de un</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00410000000000000000">
-Estructura secundaria de RNA</A>
+<H1><A NAME="SECTION00320000000000000000"></A> <A NAME="dna2"></A>
+<BR>
+Dise&#241;o de primers para PCR
 </H1>
 
 <P>
-En contraste con las mol&#233;culas de DNA, que en sus papeles m&#225;s comunes act&#250;an como dobles h&#233;lices,
-las mol&#233;culas de RNA pueden adoptar una mayor variedad de conformaciones, igual de complejas que las de
-las prote&#237;nas, que a su vez les permiten tener diferentes funciones , ya sea mensajero, RNA de transferencia,
-ribosomal, regulador o enzima. Por primera vez en este curso vamos a ir un poco m&#225;s all&#225; de lo que expresa
-una secuencia lineal:
+La reacci&#243;n en cadena de la polimerasa 
+(<A NAME="tex2html195"
+  HREF="http://es.wikipedia.org/wiki/Reacci%C3%B3n_en_cadena_de_la_polimerasa">PCR</A>)
+es una metodolog&#237;a est&#225;ndar en cualquier laboratorio de biolog&#237;a molecular y consta fundamentalmente
+de 3 fases que se repiten un n&#250;mero de ciclos dentro de un tubo de ensayo que se encuentra en un ba&#241;o:
 
 <P>
 
+<DIV ALIGN="CENTER"><A NAME="fig:PCR"></A><A NAME="2513"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.7:</STRONG>
+Diagrama de flujo de una reacci&#243;n de PCR, 
+que consiste en ciclos donde se repiten 3 fases: desnaturalizaci&#243;n, apareamiento y elongaci&#243;n.
+En la primera el ADN se desnaturaliza separ&#225;ndose las dos hebras.
+En la segunda los cebadores o primers se hibridan con las hebras de ADN en posiciones donde las 
+secuencias son complementarias y se forman puentes de H entre bases enfrentadas. 
+Es una renaturalizaci&#243;n parcial que se hace ajustando la temperatura a la secuencia de los cebadores. 
+Finalmente, en la tercera etapa se ajusta la temperatura para favorecer la extensi&#243;n de la nueva hebra
+a partir de los cebadores por parte de la polimerasa. 
+El tiempo de extensi&#243;n es proporcional a la longitud del producto de PCR (o amplic&#243;n) esperado
+en funci&#243;n de los cebadores dise&#241;ados por el usuario y el genoma en cuesti&#243;n.
+Figura de <A
+ HREF="node50.html#Konietzny2003">Konietzny &amp; Greiner (2003)</A> reproducida con permiso de los autores.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="464" HEIGHT="575" ALIGN="BOTTOM" BORDER="0"
+ SRC="./PCR.gif"
+ ALT="Image PCR">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Para cada aplicaci&#243;n de la PCR es necesario ajustar las condiciones y el dise&#241;o de la reacci&#243;n,
+por ejemplo:
+
 <UL>
-<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> desconocemos la estructura de una mol&#233;cula de hebra sencilla de RNA pero conocemos su secuencia
+<LI>la duraci&#243;n de las fases de apareamiento y elongaci&#243;n
 </LI>
-<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> predecir su estructura secundaria en base a las subsecuencias complementarias que contiene
+<LI>el tipo de cebadores o  <i> primers  </i> empleados y sus temperaturas de fusi&#243;n <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN> (ver secci&#243;n <A HREF="node16.html#desnat">2.1</A>)
+</LI>
+<LI>el tipo de polimerasa utilizada
+</LI>
+<LI>las cantidad de los reactivos y de ADN molde
+</LI>
+<LI>la longitud del amplic&#243;n o producto de PCR obtenido
+</LI>
+</UL>
+
+<P>
+En esta secci&#243;n veremos algunos de los algoritmos habituales para el dise&#241;o de cebadores, 
+que deben cumplir al menos tres condiciones: 
+
+<P>
+
+ <A NAME="reqprimers"></A><UL>
+<LI>Una pareja de cebadores debe tener temperaturas de alineamiento muy cercanas para maximizar el rendimiento, 
+lo cual suele traducirse en un contenido en GC similar, entre 50% y 60%. 
+</LI>
+<LI>Los primers no deben favorecer horquillas ( <i> hairpins  </i>) ni ser complementarios. 
+El siguiente esquema muestra un cebador con una horquilla potencial a la izquierda y un par de cebadores que se aparean a la derecha:
+<PRE>
+          5'GGGAAA                    5' GGGAAAATTCCAGGATCTAT 3'
+             |||| )                       ||||  ||||
+ 3' TATCTAGGACCTTA            3' TATCTAGGACCTTAAAAGGG 5'
+</PRE>
+</LI>
+<LI>Tras analizar una gran colecci&#243;n de primers publicados en la literatura, parece que conviene evitar secuencias 
+que terminen en GGG,GGT,ATT,CGA,TAA o TTA (<A
+ HREF="node50.html#Onodera2007">Onodera, 2007</A>).
+</LI>
+</UL>
+
+<P>
+Hay muchos programas que pueden ayudar en el dise&#241;o de primers en la web, como por ejemplo:
+
+<UL>
+<LI><A NAME="tex2html196"
+  HREF="http://bioinfo.ut.ee/primer3/">primer3</A>
+</LI>
+<LI><A NAME="tex2html197"
+  HREF="http://en.wikipedia.org/wiki/Vector_NTI">Vector NTI</A>
+</LI>
+<LI><SPAN  CLASS="textit">in silico</SPAN> PCR en <A NAME="tex2html198"
+  HREF="http://insilico.ehu.es/PCR/">procariotas</A>
+y en <A NAME="tex2html199"
+  HREF="http://genome.ucsc.edu/cgi-bin/hgPcr">animales</A>
+</LI>
+</UL>
+
+<P>
+o estos otros para dise&#241;ar primers degenerados, que permiten reconocer y por tanto amplificar varias secuencias similares
+
+<UL>
+<LI><A NAME="tex2html200"
+  HREF="http://blocks.fhcrc.org/codehop.html">CODEHOP</A>
+(sin mantenimiento)</LI>
+<LI><A NAME="tex2html201"
+  HREF="http://amplicon.sourceforge.net/">amplicon</A>
+</LI>
+<LI><A NAME="tex2html202"
+  HREF="http://maya.ccg.unam.mx/primers4clades/">primers4clades</A>
+(espec&#237;fico para aplicaciones filogen&#233;ticas)
+</LI>
+</UL>
+
+<P>
+Sin embargo, m&#225;s all&#225; del software elegido, es importante saber c&#243;mo se calculan ciertas propiedades moleculares de los primers,
+para poder analizar con criterio los resultados obtenidos. 
+
+<P>
+Por ejemplo, nos puede interesar calcular la <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN>, 
+que es la temperatura a la que la mitad de los primers se han hibridado con el ADN molde, 
+o la cantidad de ADN bicatenario a cualquier temperatura, por ejemplo a la temperatura de apareamiento, 
+la m&#225;s cr&#237;tica, que a menudo se aproxima como <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$T_{m} - 5$"></SPAN>.
+
+<P>
+Una aproximaci&#243;n burda es llamada regla de Wallace, que se basa solamente en la secuencia,
+donde GC y AT son el n&#250;mero de nucle&#243;tidos G/C y A/T en la secuencia del cebador, respectivamente (<A
+ HREF="node50.html#Santalucia2007">SantaLucia, 2007</A>):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+T_{m} \sim 4GC + 2AT
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\displaystyle T_{m} \sim 4GC + 2AT$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Otra alternativa m&#225;s precisa es la siguiente ecuaci&#243;n, 
+que relaciona exactamente la temperatura con la proporci&#243;n de ADN bicatenario,
+donde <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$[A]$"></SPAN> es la concentraci&#243;n de hebras en exceso (los primers), <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$[B]$"></SPAN> el ADN molde que queremos amplificar,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$\Delta H$"></SPAN> el cambio de entalp&#237;a, <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\Delta S$"></SPAN> el cambio de entrop&#237;a y <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$R$"></SPAN> la 
+<A NAME="tex2html203"
+  HREF="http://en.wikipedia.org/wiki/Boltzmann_constant">constante de Boltzmann</A>
+(R=1.987 cal/mol K):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+T_{m} = \frac{1000 \Delta H}{\Delta S + Rln([A]-\frac{[B]}{2})} - 273.15
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="272" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\displaystyle T_{m} = \frac{1000 \Delta H}{\Delta S + Rln([A]-\frac{[B]}{2})} - 273.15$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+En la pr&#225;ctica combinamos esta ecuaci&#243;n con el modelo  <i> Nearest Neighbor  </i> (NN, secci&#243;n <A HREF="node27.html#dna1">3.1</A>), 
+usando valores experimentales de entalp&#237;a y entrop&#237;a obtenidos para dinucle&#243;tidos.
+
+<P>
+Con el objetivo de probar estas recetas el siguiente ejercicio incluye:
+
+<UL>
+<LI>usar cualquier software que conozcas (o de los citados arriba) para dise&#241;ar varios primers
+</LI>
+<LI>con ayuda del siguiente c&#243;digo Python evaluar parejas de primers teniendo en cuenta su <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN> 
+de fusi&#243;n y su potencial de formaci&#243;n de horquillas
+</LI>
+<LI>compara las <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$T_{m}$"></SPAN> obtenidas con las que resultan de aplicar la regla de Wallace
+</LI>
+<LI>prueba a modificar el c&#243;digo para calcular temperaturas de alineamiento donde la proporci&#243;n
+de primer hibridado sea por ejemplo del 95%
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/env python
+# prog1.2
+
+# adapted from Amplicon (Simon Neil Jarman, http://sourceforge.net/projects/amplicon/)
+
+import math,string,getopt,sys
+
+######################################################################################
+
+#Calculation of Tm with nearest-neighbor bas stacking parameters#
+def CalcTm(seq):
+	
+    cat=0.05
+    NearPairsPlus = ['AA','AC','AG','AT','CA','CC','CG','CT',
+                     'GA','GC','GG','GT','TA','TC','TG','TT']
+    DeltaH =        [7.9,8.4,7.8,7.2,8.5,8.0,10.6,7.8,
+                     8.2,9.8,8.0,8.4,7.2,8.2,8.5,7.9]
+    DeltaS =        [22.2,22.4,21.0,20.4,22.7,19.9,27.2,21.0,
+                     22.2,24.4,19.9,22.4,21.3,22.2,22.7,22,2]
+    dH = 0
+    dS = 0
+    seq = seq+ ' '
+    a = 0
+    while a &lt; len(seq):
+        b = 0
+        while b &lt; len(NearPairsPlus):
+            if seq[a-2:a] == NearPairsPlus[b]:
+                dH = dH + DeltaH[b]
+                dS = dS + DeltaS[b]
+            b = b + 1
+        a = a + 1
+    a = a -1
+    if seq[0]=='A' or seq[0]=='T' or seq[a] == 'A' or seq[a] == 'T':
+        dH = dH + 2.3
+        dS = dS + 4.1
+    if seq[0]=='C'or seq[0]=='G' or seq[a]=='C'or seq[a]=='G':
+        dH = dH + 0.1
+        dS = dS - 2.8
+	
+    Tm = -dH * 1000 /(10.8-dS+(1.987*(math.log(0.00025)))) - 273.15 + (12*math.log(cat))
+    return Tm
+
+######################################################################################
+
+#A nice function that returns a list of the component sequences from a string for a degenerate sequence#
+def regenerate(oligo):
+    inp =   'ACGTRYSWKMBDVHN'
+    deg = ['A','C','G','T','AG','CT','CG','AT','GT','AC','CGT','AGT','ACG','ACT','ACGT']
+    grow = ['']
+    newgrow = ['']
+    for a in range(0,len(oligo),1):
+        for b in range(0,15,1):
+            if oligo[a] == inp[b]:
+                if b &gt; 3:
+                    x = 0
+                    newgrow = grow
+                    while x &lt; len(deg[b])-1:
+                        newgrow = newgrow + grow
+                        x = x + 1
+                grow = newgrow
+                n = 0
+                x=0
+                for c in range(0,len(grow),1):
+                    grow[c] = grow[c]+deg[b][x]
+                    n = n + 1
+                    if n == len(grow)/len(deg[b]):
+                        n = 0
+                        x=x+1
+    return grow
+
+#######################################################################################
+
+#Assesses primers for hairpin loop formation#
+def checkhairpins(primerseqs,minhplen,maxhplen,hpthresh):
+
+    num = str(len(primerseqs))
+    max=len(primerseqs[0])*(int(maxhplen)/100.0)
+    numhp=0
+    maxHpotential=0
+    n=1
+    
+    for seq in primerseqs:
+	#print 'oligo number '+str(n)+': '+seq+'\n'
+	n=n+1
+	high=perfectmatch(seq)
+	thresh=(hpthresh/200.0)*high
+	l=minhplen
+	topcheck=0
+	while l&lt;max:
+	    tops,mids,bots,matches=hairpin(seq,l,thresh)
+	    tops=tops[:5]
+	    mids=mids[:5]
+	    bots=bots[:5]
+	    matches=matches[:5]
+	    a=0
+	    while a &lt; len(tops)-1:
+		print tops[a]
+		print mids[a]
+		print bots[a]+'\n'
+		print str(matches[a])+' / '+str(high/2-l)+ ' Potential H-Bonds\n'
+		if matches[a]/float(high/2-l) &gt; maxHpotential:
+		   maxHpotential = matches[a]/float(high/2-l) 
+		if tops[a]&lt;&gt;[]:
+		   topcheck=1
+		a=a+1
+	    l=l+1
+	    
+    return maxHpotential
+
+#####################################################################################
+
+#A function that scores strong and weak Watson-Crick base pairs as 3 and 2 in perfectly-matched d.s. DNA#
+def perfectmatch(inseq):
+    score=0
+    for a in inseq:
+        if a == 'A' or a =='T':
+            score=score+2
+        if a=='G'or a=='C':
+            score=score+3
+    return score
+
+#####################################################################################
+
+def hairpin(inseq,loopl,threshold):
+    l=len(inseq)
+    a=0
+    max=1
+    tops=[]
+    bots=[]
+    mids=[]
+    matches=[]
+    b=l
+    while b &gt;1:
+        match=0
+        mid=''
+        top = "5' "+ inseq[:b-1]
+        loop=inseq[b-1:b+loopl-1]
+        bot=inseq[b+loopl-1:l+1]
+        q=len(top)-len(bot)
+        if q&lt;0:
+            q=q*-1        
+        f=' '
+        for a in range(1,q,1):
+            f=f+' '
+        top=top+'-'+loop
+        revbot=''
+        for a in range(len(bot)-1,-1,-1):
+            revbot=revbot+bot[a]
+        if len(top)-len(loop)-1&gt;len(bot):
+            bot=f+revbot
+        if len(top)-len(loop)-1&lt;len(bot):
+            top=f+top
+        for a in range(0,loopl,1):
+            bot=bot+'-'
+        bot=bot+'+'
+        a=0
+        while a &lt;len(bot)-loopl:
+            inmatch=match
+            if top[a]=='C' and bot[a]=='G' or top[a]=='G' and bot[a]=='C':
+                match = match + 3
+                mid=mid+':'
+            if top[a]=='A' and bot[a]=='T' or top[a]=='T' and bot[a]=='A':
+                match = match + 2
+                mid=mid+'.'
+            if top[a]=='T' and bot[a]=='G' or top[a]=='G' and bot[a]=='T':
+                match = match + 2
+                mid=mid+'~'
+            if inmatch==match:
+                mid=mid+' '
+            a=a+1
+        for a in range(0,loopl-1,1):
+            mid=mid+' '
+        mid=mid+'|'
+        if match&gt;threshold:
+            tops=tops+[top]
+            bots=bots+[bot]
+            mids=mids+[mid]
+            matches=matches+[match]
+            if int(match)&gt;max:
+                max=int(match)
+        top=''
+        bot=''
+        b=b-1
+    newtops=[]
+    newbots=[]
+    newmids=[]
+    newmatches=[]
+    while max&gt;0:
+        for a in range(0,len(matches)-1,1):
+            if max==int(matches[a]):
+                newtops=newtops+[tops[a]]
+                newbots=newbots+[bots[a]]
+                newmids=newmids+[mids[a]]
+                newmatches=newmatches+[matches[a]]
+        max=max-1        
+    return newtops,newmids,newbots,newmatches
+
+########################################################################
+
+#Assesses primer sequences for self complementarity#
+def selfcomp(primerseqs,propcomp,numcomp):
+   
+   perfect=perfectmatch(primerseqs[0])
+   threshold=propcomp*perfect*0.01
+   maxHpotential = 0
+   
+   n=1
+   for a in primerseqs:
+       comps=complementarity(a,'',threshold)
+       comps=comps[:(numcomp*4)]
+       #if comps==[]:
+	#   print "\nNo self complementarity above threshold"
+       n=n+1
+       b=0
+       while b&lt;len(comps):
+	   print comps[b]
+	   print comps[b+1]
+	   print comps[b+2]
+	   per = perfectmatch(comps[b])
+	   print '\n ',comps[b+3]+' / '+str(per)+' Potential H-bonds\n'
+	   if float(comps[b+3])/per &gt; maxHpotential:
+              maxHpotential = float(comps[b+3])/per
+	   b=b+4
+   if len(primerseqs)&gt;1:
+       #print "primer multiple sequence complementarities\n"
+       n=1
+       dmin=1
+       for a in primerseqs:
+	   d=dmin
+	   while d &lt; len(primerseqs):
+	       comps=complementarity(a,primerseqs[d],threshold)
+	       comps=comps[:(numcomp*4)]
+	       #print 'oligo combination '+str(n)+': '+a+' + '+primerseqs[d]
+	       #if comps==[]:
+		#   print "\n\nNo self complementarity above current threshold\n"
+	       n=n+1
+	       b=0
+	       while b&lt;len(comps):
+		   print comps[b]
+		   print comps[b+1] 
+		   print comps[b+2]
+		   per = perfectmatch(comps[b])
+		   print '\n '+comps[b+3]+' / '+str(per)+' Potential H-bonds\n'
+		   if float(comps[b+3])/per &gt; maxHpotential:
+		      maxHpotential = float(comps[b+3])/per
+		   b=b+4
+	       d=d+1
+	   dmin=dmin+1
+   return maxHpotential
+	
+############################################################################	
+
+#A function for identifying complementarity between two sequences and returning lists of complementary pairs above a given threshold#
+def complementarity(inseq,inseq2,threshold):
+  
+    matches = []
+    max=1
+    threshold=int(threshold)
+    oligo="5' "+ inseq+" 3'"
+    oligorev="3' "+reverse(inseq2)+" 5'"
+    if inseq2=='':
+        oligorev = ''
+        a = len(oligo)-4
+        while a &gt; 1:
+            oligorev = oligorev + oligo[a]
+            a = a - 1
+        oligorev="3' "+oligorev+" 5'"
+    if len(oligo)&gt;len(oligorev):
+        d=len(oligo)-len(oligorev)
+        while d&gt;0:
+            oligorev=oligorev+' '
+            d=d-1
+    if len(oligo)&lt;len(oligorev):
+        d=len(oligorev)-len(oligo)
+        while d&gt;0:
+            oligo=' '+oligo
+            d=d-1
+    Toligo = oligo
+    mid=u''
+    for a in range(len(Toligo),0,-1):
+        match = 0
+        mid=''
+        for b in range(0,len(oligorev)-3,1):
+            inmatch=match
+            if Toligo[b]=='C' and oligorev[b] =='G' or Toligo[b]=='G' and oligorev[b] =='C':
+                match = match + 3
+                mid=mid+':'
+            if Toligo[b]=='A' and oligorev[b] =='T' or Toligo[b]=='T' and oligorev[b] =='A':
+                match = match + 2
+                mid=mid+'.'
+            if Toligo[b]=='G' and oligorev[b] =='T' or Toligo[b]=='T' and oligorev[b] =='G':
+                match = match + 2
+                mid=mid+'~'
+            if inmatch==match:
+                mid=mid+' '
+        if match &gt; threshold:
+            smatch = str(match)
+            matches = matches+[Toligo]+[mid]+[oligorev]+[smatch]
+            if int(match)&gt;max:
+                max=int(match)
+        Toligo = ' '+ Toligo 
+    Toligorev = oligorev
+    for a in range(len(oligo),0,-1):
+        match = 0
+        mid=u''
+        for b in range(0,len(oligorev)-3,1):
+            inmatch=match
+            if oligo[b]=='C' and Toligorev[b] =='G' or oligo[b]=='G' and Toligorev[b] =='C':
+                match = match + 3
+                mid=mid+':'
+            if oligo[b]=='A' and Toligorev[b] =='T' or oligo[b]=='T' and Toligorev[b] =='A':
+                match = match + 2
+                mid=mid+'.'
+            if oligo[b]=='G' and Toligorev[b] =='T' or oligo[b]=='T' and Toligorev[b] =='G':
+                match = match + 2
+                mid=mid+'~'
+            if inmatch==match:
+                mid=mid+' '
+        if match &gt; threshold:
+            f=0
+            for e in matches:
+                if e == mid:
+                    f=1
+            if f &lt;&gt;1:
+                smatch = str(match)
+                matches = matches+[oligo]+[mid]+[Toligorev]+[smatch]
+                if int(match) &gt; max:
+                    max=match
+            Toligorev = ' '+ Toligorev 
+    newmatches=[]
+    while max&gt;0:
+        for a in range(3,len(matches)-1,4):
+            if max==int(matches[a]):
+                one=matches[a-3]
+                two=matches[a-2]
+                thr=matches[a-1]
+                fou=matches[a]
+                fou=str(fou)
+                newmatches=newmatches+[one]+[two]+[thr]+[fou]
+        max=max-1
+    return newmatches
+
+################################################################################
+    
+#A function that returns the reverse of a given sequence#
+def reverse(inseq):
+    reversed=''
+    l=len(inseq)-1
+    for a in range(l,-1,-1):
+        reversed=reversed+inseq[a]
+    return reversed
+    
+#################################################################################    
+
+#Checks forward and reverse primers for complementarity with each other#
+def crosscomp(fprimer,rprimer,propcomp,numcomp):
+    
+    growF=regenerate(fprimer)
+    growR=regenerate(rprimer)
+    perfect1=perfectmatch(fprimer)
+    perfect2=perfectmatch(rprimer)
+    if perfect2&lt;perfect1:
+	perfect1=perfect2
+    threshold=propcomp*perfect1*0.01
+    
+    crossHpotential = 0
+    n=1
+    q=0
+    while q &lt;len(growR):
+	for a in growF:
+	    comps=complementarity(a,growR[q],threshold)
+	    comps=comps[:(numcomp*4)]
+	    #print 'oligo '+str(n)+' f: '+a+' r: '+growR[q]
+	    #if comps==[]:
+		#print "\n\nNo complementarity above current threshold\n"
+	    n=n+1
+	    b=0
+	    while b&lt;len(comps):
+		print comps[b]
+		print comps[b+1]
+		print comps[b+2]
+		per=perfectmatch(comps[b])
+		print '\n '+comps[b+3]+' / '+str(per)+' Potential H-bonds'
+		if float(comps[b+3])/per &gt; crossHpotential:
+		   crossHpotential = float(comps[b+3])/per
+		b=b+4
+	q=q+1
+    
+    return crossHpotential
+
+#################################################################################
+
+#Function that returns degree of degeneracy of a given sequence#
+def degeneracy(inseq):
+    score=1
+    for a in inseq:
+        if a=='R' or a=='Y' or a=='S' or a=='W' or a=='M' or a=='K':
+            score=score*2
+        if a=='V' or a=='H' or a=='D' or a=='B':
+            score=score*3
+        if a=='N':
+            score=score*4
+    return score
+
+#################################################################################
+
+def main(argv):
+
+    maxdegen = 128
+
+    if len(sys.argv) &lt; 3:
+        print "usage: python check_primers.py 5'forward_primer3' 5'reverse primer3'"
+	sys.exit(-1)
+	
+    fprimer = string.upper(sys.argv[1])
+    rprimer = string.upper(sys.argv[2])
+    
+    flowtm = rlowtm = 100
+    fhightm = rhightm = 0
+    fhpinHpotential = fselfHpotentail = 0
+    rhpinHpotential = rselfHpotentail = 0
+    crossHpotential = 0
+    fdegen = rdegen = 0
+    
+    ## 1) take care of forward primer		    
+    print "# forward primer "+fprimer+'\n'	                   
+
+    fdegen = degeneracy(fprimer)
+    
+    print "# fdegen= %g\n" % fdegen
+    
+    if fdegen &lt;= maxdegen :
+ 
+       fprimerseqs = regenerate(fprimer)
+
+       # 1.0) print each regenerated foligo
+       for s in fprimerseqs:
+         print "# fundegseq ", s
+       print "\n"
+        
+       # 1.1) calculate tms
+       for s in fprimerseqs:
+          tm= CalcTm(s)
+          if tm&lt;flowtm:
+             flowtm=tm
+          if tm&gt;fhightm:
+             fhightm=tm
+
+       # 1.2) calculate hairpins
+       fhpinHpotential = checkhairpins(fprimerseqs,2,40,35)
+    
+       # 1.3) calculate self-complementarities
+       fselfHpotentail = selfcomp(fprimerseqs,40,4)
+    
+       # 1.4) report results
+       print "# flowTm= %1.1f\n# fhighTm= %1.1f" % (flowtm,fhightm) 
+       print "# fhairpin potential= %1.2f\n# fselfcompl potential= %1.2f\n" % (fhpinHpotential,fselfHpotentail)
+    
+    else :
+       print "primer skipped, too degenerated (&gt; ",maxdegen,")\n"    
+
+    ## 2) now do reverse primer
+    print "# reverse primer "+rprimer+'\n'	    
+
+    rdegen = degeneracy(rprimer)
+
+    print "# rdegen= %g\n" % rdegen
+
+    if rdegen &lt;= maxdegen :
+
+       rprimerseqs = regenerate(rprimer)
+       
+       # 2.0) print each regenerated roligo
+       for s in rprimerseqs:
+         print "# rundegseq ", s
+       print "\n"
+
+       # 2.1) calculate tms
+       for s in rprimerseqs:
+          tm= CalcTm(s)
+          if tm&lt;rlowtm:
+             rlowtm=tm
+          if tm&gt;rhightm:
+             rhightm=tm
+            
+       # 2.2) calculate hairpins
+       rhpinHpotential = checkhairpins(rprimerseqs,2,40,35)
+    
+       # 2.3) calculate self-complementarities
+       rselfHpotentail = selfcomp(rprimerseqs,40,4)
+    
+       # 2.4) report results
+       print "# rlowTm= %1.1f\n# rhighTm= %1.1f" % (rlowtm,rhightm) 
+       print "# rhairpin potential= %1.2f\n# rselfcompl potential= %1.2f\n" % (rhpinHpotential,rselfHpotentail)
+    
+    else :
+       print "primer skipped, too degenerated (&gt; ",maxdegen,")\n"    
+
+    ## 3) finally chech cross-complementarities
+    if fdegen &lt;= maxdegen and rdegen &lt;= maxdegen :
+       crossHpotential = crosscomp(fprimer,rprimer,40,4)
+       print "\n# cross-compl potential= %1.1f" % crossHpotential
+
+
+########################### MAIN ################################################
+
+main(sys.argv)
+</PRE>
 </LI>
 </UL>
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="fig:RNAss"></A><A NAME="2157"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.1:</STRONG>
-
-Estructura secundaria de un RNA (A) correspondiente a la estructura (B), tomada de <A
- HREF="node47.html#Noller2004">Noller (2004)</A>.
-</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
-  WIDTH="593" HEIGHT="386" ALIGN="BOTTOM" BORDER="0"
- SRC="./RNAss.png"
- ALT="Image RNAss">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-La estructura secundaria de una mol&#233;cula de RNA, sostenida por medio de 
-puentes de hidr&#243;geno (de tipo Watson-Crick y<A NAME="tex2html184"
-  HREF="http://en.wikipedia.org/wiki/Hoogsteen_base_pair">Hoogsteen</A>) entre nucle&#243;tidos,
-puede aproximarse a partir del conocimiento de la secuencia, aunque obviamente se pierde parte de la complejidad
-del plegamiento, como sugiere la figura <A HREF="#fig:RNAss">4.1</A>. Para qu&#233; sirven este tipo de predicciones? 
-Por ejemplo, para descubrir RNAs no codificantes, que a menudo tienen funciones biol&#243;gicas importantes, 
-como se discute en el art&#237;culo de <A
- HREF="node47.html#Washietl2005">Washietl <EM>et&nbsp;al.</EM> (2005)</A>.Hay muchos programas disponibles que pueden ayudarnos en este tipo de tareas, como 
-<A NAME="tex2html185"
-  HREF="http://www.major.iric.ca/MC-Pipeline">MC-Fold | MC-Sym</A>,
-<A NAME="tex2html186"
-  HREF="http://mfold.rna.albany.edu/?q=mfold">Mfold</A>,<A NAME="tex2html187"
-  HREF="http://www.tbi.univie.ac.at/~ivo/RNA/">Vienna</A>,
-<A NAME="tex2html188"
-  HREF="http://www.tbi.univie.ac.at/~wash/RNAz/">RNAz</A>, 
-<A NAME="tex2html189"
-  HREF="http://infernal.janelia.org/">infernal</A>
-o
-<A NAME="tex2html190"
-  HREF="http://www.bioinf.uni-freiburg.de/~costa/EDeN.tgz">EDeN</A>, especializado en ncRNAs.
-
-<P>
-Un programa complementario, que asigna elementos de estructura secundaria dadas unas coordenadas en formato PDB, es 
-<A NAME="tex2html191"
-  HREF="http://web.x3dna.org/dssr">DSSR</A>.
-
-<P>
-Aqu&#237; nos vamos a centrar en ilustrar el algoritmo de <A
- HREF="node47.html#Nussinov1978">Nussinov <EM>et&nbsp;al.</EM> (1978)</A> para predecir estructura secundaria de RNA 
-por medio de alineamientos, que ya vimos de pasada en el programa de la secci&#243;n <A HREF="node26.html#dna2">3.2</A>, que usa una estrategia de 
-<A NAME="tex2html192"
-  HREF="http://es.wikipedia.org/wiki/Programaci%C3%B3n_din%C3%A1mica_(inform%C3%A1tica)">programaci&#243;n din&#225;mica</A>
-para maximizar el n&#250;mero de puentes de hidr&#243;geno que se forman dentro de la secuencia. Este puede decirse que es
-el algoritmo pionero para resolver este problema y tiene algunas limitaciones. Por ejemplo, no considera la posibilidad de 
-pseudonudos (<A NAME="tex2html193"
-  HREF="http://en.wikipedia.org/wiki/Pseudoknot"> <i> pseudoknots  </i></A>) ni tiene en cuenta el 
-apilamiento de bases ( <i> base stacking  </i>), 
-un tipo de interacci&#243;n que favorece la estabilidad de estas estructuras, elementos que s&#237; son proyectados en el
-<A NAME="tex2html194"
-  HREF="http://en.wikipedia.org/wiki/List_of_RNA_structure_prediction_software">software actual</A>:
-<BR>
-<PRE  CLASS="verbatim">#!/usr/bin/perl -w
-
-# prog2.1 algoritmo tipo Nussinov de prediccion de estructura secundaria de RNA,
-# adaptado de:
-# F Burkowski (2009) Structural Bioinformatics, an algorithmic approach, CRC Press
-# Rex A Dwyer (2002) Genomic Perl, Cambrige University Press
-
-use strict;
-
-## 0) parametros del algoritmo: 
-my %HBonds  = ( 'GU'=&gt;-1, 'UG'=&gt;-1, 'AU'=&gt;-2, 'UA'=&gt;-2, 'CG'=&gt;-3, 'GC'=&gt;-3 ); # puentes H en ~kcal/mol
-my $MINSEP  = 3; # min separacion en secuencia para definir un par de bases: un loop contiene 3+ bases
-my $MINSTEM = 2; # longitud minima de region complementaria para tallos bifurcados
-my $DEBUG   = 1; 
-
-print "# params: MINSEP=$MINSEP MINSTEM=$MINSTEM DEBUG=$DEBUG\n\n";
-
-# 0.1) secuencia de RNA de partida, comenta  
-my $RNA = 'GCUCAAAGUATACCAGGAGG'; #'CCCCUUUUGGGG'; 'CUGUCUGUCUUGAGACA'; 'GCUCAAAGUATACCAGGAGG';
-
-## 1) rellena la matriz o tabla de programacion dinamica
-my @matriz_align = prog_dinamica( $DEBUG, $MINSEP, $MINSTEM, \&amp;evalfunc, $RNA );
-
-## 2) muestra energia libre de la estructura secundaria encontrada
-print "# energia libre derivada del alineamiento = ".$matriz_align[1][length($RNA)]{'matriz'}." kcal/mol\n";
-
-## 2) calcula el mejor camino o alineamiento
-print "$RNA\n" . reconstruye_alineamiento(1,length($RNA),\@matriz_align) . "\n";
-
-###############################################################################
-
-# devuelve un entero
-# funcion que evalua un par de bases recurriendo al hash global %HBonds
-sub evalfunc 
-{
-	my ($par) = @_;
-	return $HBonds{$par} || 0; 
-}
-
-# devuelve @alignmat[][]{}, con llaves 'eval','matriz','caso','k'
-sub prog_dinamica 
-{
-	my ($print_matrix,$minsep,$minstem,$ref_funcion_eval,$secuencia) = @_;  
-	
-	my $long = length($secuencia); 
-	my @sec = (' ', split(//, $secuencia)); # primera posicion vacia ' ' para contar desde 1
-	my ($l,$i,$j,$k,$par,$bonds,$min,$minbif,$caso1,$caso2,$caso3,$caso4,@matriz,@alignmat);
-	
-	# 1) inicia la matriz marcando la diagonal de pares prohibidos &lt; $minsep
-	for $i (1 .. $long-$minsep){ $matriz[$i][$i+$minsep] = 0; } 
-	
-	# 2) inicia la primera diagonal permitida
-	for $i (1 .. $long-$minsep-1)
-	{ 
-		$par = $sec[$i].$sec[$i+$minsep+1]; 
-		$matriz[$i][$i+$minsep+1] = $ref_funcion_eval-&gt;($par);  
-		$alignmat[$i][$i+$minsep+1]{'eval'} = $ref_funcion_eval-&gt;($par); 
-		$alignmat[$i][$i+$minsep+1]{'caso'} = 1; 
-	}	
-
-	# 3) rellena recursivamente $long-5 diagonales restantes en la matriz de prog dinamica
-	# $i extremo izquierdo, $j extremo derecho 
-	for $l (5 .. $long-1)
-	{
-		for $i (1 .. $long-$l) 
-		{
-	    		$j = $i+$l; 
-			$par = $sec[$i].$sec[$j]; 
-			$bonds = $ref_funcion_eval-&gt;($par); 
-			$alignmat[$i][$j]{'eval'} = $bonds; 
-			$min = 100;
-			
-			# 3.1) prueba las 4 situaciones posibles dados i,j
-			$caso1 = $matriz[$i+1][$j-1] + $bonds; # 1: nuevo par de bases alineados
-			
-			$caso2 = $matriz[$i+1][$j]; # 2: gap en un extremo, se conserva evaluacion anterior
-			$caso3 = $matriz[$i][$j-1]; # 3: gap en extremo opuesto, se conserva evaluacion
-							       #      (observa que no hay gap penalty)
-			
-			$caso4 = 100;               
-                        if($j &gt; $i+3+($minstem*2))  # 4: bifurcacion en base k si hay distancia suficiente            
-		        #if($j &gt; $i+9)
-			{     
-				# ._i k_.-._. j_.                      i____k.....j
-				#   . .     . .                         ...........
-				#   . .      *                           .......... 
-				#    *                                    .........
-				#                                          ........
-				#                                           .______
-				#                                            ......
-				#                                             .....
-				#     (*=loop de $minsep)                      ....
-				#                                               ...
-				#                                                ..
-				#                                                 .
-				for $k ($i+2+($minstem*2) .. $j-3-($minstem*2))
-				{
-					$minbif = $matriz[$i][$k] + $matriz[$k+1][$j];
-					if($minbif &lt; $caso4)  
-					{
-						$caso4 = $minbif;
-						$alignmat[$i][$j]{'k'} = $k;
-					}	
-				}
-	    		} 
-			
-			# 3.2) elige la mejor en esta posicion, actualizando $min
-			if($caso1 &lt; $min &amp;&amp; $bonds &lt; 0)
-			{
-				$min = $caso1;
-				$alignmat[$i][$j]{'caso'} = 1;
-			}
-			if($caso2 &lt; $min)
-			{
-				$min = $caso2;
-				$alignmat[$i][$j]{'caso'} = 2;
-			}
-			if($caso3 &lt; $min)
-			{
-				$min = $caso3;
-				$alignmat[$i][$j]{'caso'} = 3;
-			}
-			if($caso4 &lt; $min)
-			{
-				$min = $caso4;
-				$alignmat[$i][$j]{'caso'} = 4;
-			}
-			
-			# 3.3) anota la opcion mas favorecida en esta posicion
-			$matriz[$i][$j] = $min;
-			$alignmat[$i][$j]{'matriz'} = $min; 
-		}
-    }
-	
-	# 4) imprime la matriz si se require
-	if($print_matrix)
-	{
-		for $i (1 .. $long)
-		{
-			for $j (1 .. $long)
-			{ 
-				$bonds = $matriz[$i][$j] || 0; 
-				if($i == $j){ $bonds = $sec[$i] }
-				elsif($i==$long){ $bonds = $j }
-				elsif($j==1){ $bonds = $i }
-				elsif($j-$i &lt;= $minsep){ $bonds = '.' }
-				printf("%4s",$bonds);
-			}print "\n";
-		}print "\n";	
-	}
-	
-	return @alignmat;
-}
-
-# Devuelve una cadena de caracteres que codifican un alineamiento o estructura secundaria con pares
-# alineados marcados como ()
-sub reconstruye_alineamiento
-{
-	my ($i,$j,$ref_align_matrix) = @_;  # i,j coordenadas en la matriz $ref_align_matrix
-
-	my $caso = $ref_align_matrix-&gt;[$i][$j]{'caso'} || 0;
-
-   if($caso == 1)
-	{ 
-		return '(' . reconstruye_alineamiento($i+1,$j-1,$ref_align_matrix) . ')';
-	}
-	elsif($caso == 2)
-	{ 
-		return '.' . reconstruye_alineamiento($i+1,$j,$ref_align_matrix);
-	}
-	elsif($caso == 3)
-	{ 
-		return reconstruye_alineamiento($i,$j-1,$ref_align_matrix);
-	}
-	elsif($caso == 4)
-	{ 
-		my $k = $ref_align_matrix-&gt;[$i][$j]{'k'}; 
-		return reconstruye_alineamiento($i,$k,$ref_align_matrix) . 
-			reconstruye_alineamiento($k+1,$j,$ref_align_matrix);
-	}
-	else{ return ' ' x ($j-$i+1); }
-}
-</PRE>
-<P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:RNAdp"></A><A NAME="2160"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.2:</STRONG>
-
-Recursiones y etapas de programaci&#243;n din&#225;mica para el estudio de la estructura secundaria de una secuencia RNA,
-tomadas de <A
- HREF="node47.html#Eddy2004b">Eddy (2004)</A>. 
-</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
-  WIDTH="600" HEIGHT="430" ALIGN="BOTTOM" BORDER="0"
- SRC="./RNAdp.png"
- ALT="Image RNAdp">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:RNAdotplot"></A><A NAME="2161"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.3:</STRONG>
-
-Estructura secundaria de un RNA y matriz (dot plot) que esquematiza sus puentes de hidr&#243;geno,
-tomada de <A
- HREF="node47.html#Bernhart2006">Bernhart <EM>et&nbsp;al.</EM> (2006)</A>. 
-</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
-  WIDTH="600" HEIGHT="386" ALIGN="BOTTOM" BORDER="0"
- SRC="./RNAdotplot.jpg"
- ALT="Image RNAdotplot">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
-
-
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html932"
+<A NAME="tex2html979"
   HREF="node27.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html938"
-  HREF="node27.html">
+<A NAME="tex2html983"
+  HREF="node26.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html940"
+<A NAME="tex2html985"
   HREF="node29.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

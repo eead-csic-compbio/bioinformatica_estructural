@@ -1,25 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Muestra de R Markdown para tus trabajos</TITLE>
-<META NAME="description" CONTENT="Muestra de R Markdown para tus trabajos">
+<TITLE>Modelando interfaces moleculares mediante docking</TITLE>
+<META NAME="description" CONTENT="Modelando interfaces moleculares mediante docking">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
 <LINK REL="previous" HREF="node45.html">
-<LINK REL="up" HREF="node45.html">
+<LINK REL="up" HREF="node39.html">
 <LINK REL="next" HREF="node47.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,89 +35,304 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1134"
+<A NAME="tex2html1186"
   HREF="node45.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1138"
-  HREF="node45.html">
+<A NAME="tex2html1190"
+  HREF="node39.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1140"
+<A NAME="tex2html1192"
   HREF="node47.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1141"
-  HREF="node47.html">Bibliograf&#237;a</A></b>  Arriba: <b><A NAME="tex2html1139"
-  HREF="node45.html">Ap&#233;ndices</A></b>  Anterior: <b><A NAME="tex2html1135"
-  HREF="node45.html">Ap&#233;ndices</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1193"
+  HREF="node47.html">Ap&#233;ndices</A></b>  Arriba: <b><A NAME="tex2html1191"
+  HREF="node39.html">Estructura cuaternaria</A></b>  Anterior: <b><A NAME="tex2html1187"
+  HREF="node45.html">Modelando interfaces moleculares por homolog&#237;a</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00710000000000000000">
-Muestra de R  <i> Markdown  </i> para tus trabajos</A>
+<H1><A NAME="SECTION00670000000000000000">
+Modelando interfaces moleculares mediante docking</A>
 </H1>
-<BR>
-<PRE  CLASS="verbatim">---
-title: 'informe de bioinfo 3D'
-author: "Nombre de componentes del equipo"
-date: '`r Sys.Date()`'
-output:
-  html_document:
-    fig_caption: yes
-    highlight: zenburn
-    theme: cerulean
-    toc: yes
-    toc_depth: 4
-  pdf_document:
-    fig_caption: yes
-    highlight: zenburn
-    toc: yes
-    toc_depth: 4
----
 
-```{r knitr setup, include=FALSE,  eval=TRUE, echo=FALSE, warning=FALSE}
-library(knitr)
-knitr::opts_chunk$set(eval=TRUE, cache=FALSE, message=FALSE, warning=FALSE, 
-                      comment = "", results="markup")
-```
-Ejemplo de operaciones con el *shell*:
-```{r, engine='bash'}
-ls -ltr | head
-```
+<P>
+En la secci&#243;n <A HREF="node45.html#dockhom">6.6</A> aprovech&#225;bamos las coordenadas de un complejo molecular conocido
+para aproximar la interfaz de una secuencia hom&#243;loga. Cuando no disponemos de estructuras 
+de referencia, el estudio de las conformaciones que adoptan las macromol&#233;culas cuando interaccionan 
+de forma transitoria es aun m&#225;s dif&#237;cil, con costes computacionales poco asumibles.
+La raz&#243;n de esto es que hay muchos grados de libertad y un gran n&#250;mero de &#225;tomos del sistema pueden moverse. 
+Por tanto, los algoritmos de <A NAME="tex2html387"
+  HREF="http://en.wikipedia.org/wiki/Macromolecular_docking"> <i> docking  </i></A>
+suelen emplear estrategias para ahorrar recursos, como por ejemplo el uso de transformadas de Fourier en vez del empleo 
+expl&#237;cito de matrices de rotaci&#243;n y traslaci&#243;n (<A
+ HREF="node50.html#Katchalski1992">Katchalski-Katzir <EM>et&nbsp;al.</EM>, 1992</A>).
 
-Ejemplos de código Perl:
+<P>
+Un subproblema espec&#237;fico es el acoplamiento entre una enzima y su sustrato, una tarea para la que la informaci&#243;n
+gen&#243;mica (operones) puede ser muy valiosa (<A
+ HREF="node50.html#Zhao2013">Zhao <EM>et&nbsp;al.</EM>, 2013</A>).
 
-```{perl, engine.path='perl'}
-my $test = "hello world";
-$test =~ s/h/H/;
-print $test
-```
-	 	 	 		
-Ejemplos con python3:
+<P>
+Adem&#225;s de bancos de pruebas publicados por algunos desarrolladores (<A
+ HREF="node50.html#Yu2016">Yu &amp; Guerois, 2016</A>), 
+desde el a&#241;o 2001 hay en marcha un experimento colectivo (<A NAME="tex2html388"
+  HREF="http://www.ebi.ac.uk/msd-srv/capri">CAPRI</A>) 
+donde regularmente se ponen a prueba los diferentes algoritmos existentes
+para predecir, antes de su publicaci&#243;n, las poses de complejos proteicos cuyas estructuras se han resuelto experimentalmente 
+(normalmente por cristalograf&#237;a).  
 
-```{python, engine.path='python3'}
-x = 'hello, python3 world!'
-print(x.split(' '))
-```
-</PRE>
+<P>
+La lista de programas de acoplamiento molecular o  <i> docking  </i> es muy amplia, por lo que puede ser buena idea consultar los resultados recientes de CAPRI para seleccionar el software adecuado 
+para nuestras necesidades. Un problema a&#241;adido es que en mi experiencia &#233;stos son programas 
+hechos por definici&#243;n para usuarios avanzados, que requieren de cierta experiencia sobre todo a la hora de interpretar los resultados.
+
 <P>
 
+<DIV ALIGN="CENTER"><A NAME="fig:docking"></A><A NAME="4555"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.11:</STRONG>
+
+Algunas predicciones de d&#237;meros en CAPRI. 
+Se muestran superposiciones de complejos predichos (azul) y resueltos experimentalmente por rayos X (rojo y naranja). 
+En verde se destaca una cadena lateral que se reorienta al formarse el complejo. 
+Figura tomada de <A NAME="tex2html379"
+  HREF="https://boinc.bakerlab.org/rosetta/rah/rah_docking.php">https://boinc.bakerlab.org</A>. 
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="610" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="./docking3.gif"
+ ALT="Image docking3">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Una buena manera de empezar a jugar con software de  <i> docking  </i> puede ser instalando el software 
+<A NAME="tex2html389"
+  HREF="http://pyrosetta.org">PyRosetta</A>
+(<A
+ HREF="node50.html#Chaudhury2010">Chaudhury <EM>et&nbsp;al.</EM>, 2010</A>). Este software nos permite hacer,
+de forma program&#225;tica, una simulaci&#243;n  <i> docking  </i> en miniatura, en este caso entre un d&#250;plex de ADN y 
+el factor de transcripci&#243;n DnaA , algo que puede plantearse simult&#225;neamente como un problema cl&#225;sico 
+de  <i> docking  </i> y como un problema de especificidad de reconocimiento:
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/env python2.6
+""" prog4.3 Toma un complejo proteina-DNA en formato PDB y hace una simulacion de docking,
+	devolviendo un archivo PDB, inspirado en codigo de http://graylab.jhu.edu/pyrosetta/scripts.html
+	Para mas detalles ver: http://pyrosetta.org/downloads/documentation/Reference_Appendix_A.pdf """
+
+__author__  = 'Bruno Contreras-Moreira' 
+
+import os,re
+from rosetta import *
+
+complexfile    = './files/1j1v_withH.pdb'
+tmpfile        = 'tmp.rosetta'
+prefijo_salida = 'docking_output' # define nombre de archivos generados, ver 2.5
+intentos       = 10
+
+## 1) subrutinas
+def PDB2Rosetta(ficheroPDB,ficheroRosetta):
+	"""Lee un fichero PDB y crea otro con el formato adecuado para Rosetta.
+	ATOM    508  OP1 DA    213       0.287  26.129   7.841  1.00  0.00 # original
+	ATOM   5389  O5*   A C -10      30.936 109.878 105.387  1.00  0.00 # Rosetta """
+	
+	coords,num_cambios = [],0
+	
+	# 1) lee coordenadas PDB
+	pdbfile = open(ficheroPDB,'r')
+	try:
+		for line in pdbfile:
+			if(line[0:4] == 'ATOM'):
+				if(line[15:16] == "\'"): 
+					line = line[0:15] + '*' + line[16:]
+					num_cambios += 1
+				if(line[17:19] == " D"): 
+					line = line[0:18] + ' ' + line[19:]
+					num_cambios += 1
+				coords.append(line)
+			else: coords.append(line)
+			
+			
+	finally:
+		pdbfile.close()	
+		
+	# 2) escribe archivo en formato corregido
+	rfile = open(ficheroRosetta, 'w')
+	for line in coords: 
+		if(line[0:6] == 'HEADER'):
+			line += "REMARK reformatted for Rosetta\n"	
+		print &gt;&gt; rfile, "%s" % (line),
+	rfile.close()	
+
+	return num_cambios
+
+def Rosetta2PDB(ficheroRosetta,ficheroPDB):
+	"""Lee un fichero Rosetta y crea otro con formato PDB.
+	ATOM    508  OP1 DA    213       0.287  26.129   7.841  1.00  0.00 # original
+	ATOM   5389  O5*   A C -10      30.936 109.878 105.387  1.00  0.00 # Rosetta """
+	
+	coords,num_cambios = [],0
+	
+	# 1) lee coordenadas de Rosetta
+	patronNT = re.compile('  ([A|C|G|T|U])')
+	rfile = open(ficheroRosetta,'r')
+	try:
+		for line in rfile:
+			if(line[0:4] == 'ATOM'):
+				if(line[15:16] == "*"): 
+					line = line[0:15] + "'" + line[16:]
+					num_cambios += 1
+				
+				match = patronNT.match(line[17:20]) 
+        			if match: 
+						line = line[0:18] + 'D' + line[19:]
+						num_cambios += 1
+				coords.append(line)
+			else: coords.append(line)
+	finally:
+		rfile.close()	
+		
+	# 2) escribe archivo en formato PDB
+	pdbfile = open(ficheroPDB, 'w')
+	for line in coords: 
+		if(line[0:6] == 'HEADER'):
+			line += "REMARK PDB reformatted from Rosetta coordinates\n"	
+		print &gt;&gt; pdbfile, "%s" % (line),
+	pdbfile.close()	
+
+	return num_cambios
+
+
+## 2) programa principal 
+num_cambios = PDB2Rosetta( complexfile, tmpfile )
+print "# convierto complejo %s en %s (%d cambios)\n\n" % (complexfile,tmpfile,num_cambios),
+
+	
+# 2.1) inicia Rosetta y lee conformacion de partida
+init()
+p = Pose()
+pose_from_pdb(p,tmpfile)
+
+# 2.2) prepara docking y guarda pose inicial
+DockingProtocol().setup_foldtree(p, 'A_BC')
+dock_jump = 2 # en las coordenadas la proteina A aparece en tercera posicion,
+              # asi especificamos que trate como un todo al DNA (BC) para hacer
+			  # docking contra A		
+p_entrada = Pose()
+p_entrada.assign(p)
+
+# 2.3) define esquema de evaluacion de mecanica molecular
+funcion_eval = create_score_function('dna')
+
+# 2.4) calcula perturbacion rigida arbitraria e inicia motores de giro y movimiento
+perturbacion = RigidBodyPerturbMover(dock_jump, 2, 15) #traslacion de 3Ansgtrom y rotacion de 8 grados
+spin = RigidBodySpinMover( dock_jump )
+slide_into_contact = FaDockingSlideTogether( dock_jump )
+
+# 2.5) inicia motor de docking y ejecuta N simulaciones
+# docking de alta resolucion, para parejas cercanas en el espacio:
+#High-resolution, all-atom based MCM search with rigid-body moves, side-chain packing and minimization
+# en contraste con docking de baja resolucion:
+# Low-resolution, centroid based MC search (50 RigidBodyPerturbMoves with adaptable step sizes)
+
+print "comienzo docking (%d simulaciones MonteCarlo)..." % (intentos)
+docking_highres = DockingHighRes(funcion_eval, dock_jump)
+jd = PyJobDistributor(prefijo_salida, intentos, funcion_eval) 
+while (jd.job_complete == False):
+	
+	p.assign(p_entrada) # copia conformacion/pose inicial
+
+	perturbacion.apply(p) # aplica perturbacion rigida calculada en 2.4
+	spin.apply(p)
+	slide_into_contact.apply(p)
+	
+	docking_highres.apply(p) # ejecuta algoritmo de docking
+
+	jd.output_decoy(p) # imprime PDB de esta simulacion de docking 
+
+
+# 2.6) comprueba resultados y reformatea coordenadas generadas a PDb
+patron = re.compile('filename:\s+(\S+)\s+total_score:\s+(\S+)')
+fichero_resumen = prefijo_salida + '.fasc'
+
+if(os.path.isfile(fichero_resumen) == True):
+
+	print "\n# resultados en %s :\n\n" % (fichero_resumen),
+
+	salida = open(fichero_resumen,'r')
+	for line in salida: 
+		match = patron.match(line) 
+        	if match: 
+				rosetta_outfile = match.group(1)
+				pdb_outfile = rosetta_outfile # sobreescribe archivo de salida de Rosetta
+				Rosetta2PDB(rosetta_outfile,pdb_outfile)
+				print "&gt; %s valoracion: %f\n" % (pdb_outfile,float(match.group(2))),
+			
+	salida.close()	
+
+
+# 2.7) limpieza
+os.unlink(tmpfile)
+</PRE>
+<P>
+Como resultado de las simulaciones de  <i> docking  </i> tendremos una serie de complejos, que pueden o no
+mostrar interfaces relevantes en t&#233;rminos biol&#243;gicos, dependiendo de la profundidad del muestreo realizado
+y el an&#225;lisis posterior de los resultados, que obviamente requiere de cierta experiencia y sobre todo conocimiento
+de las mol&#233;culas implicadas. 
+En concreto en el ejemplo 4.3, posiblemente como consecuencia del limitado muestreo (N=10), ninguna de las 
+interfaces resultantes de mis simulaciones <A NAME="tex2html390"
+  HREF="./files/docking_output.tgz">docking_output.tgz</A>
+consigue
+reconstruir la interfaz descrita experimentalmente:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:dnaA_intf"></A><A NAME="4556"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 6.12:</STRONG>
+
+Esquema del reconocimiento espec&#237;fico de ADN en la interfaz de DnaA 
+(<A NAME="tex2html382"
+  HREF="http://www.rcsb.org/pdb/explore.do?structureId=1j1v">PDB 1J1V</A>), tomado del repositorio
+<A NAME="tex2html383"
+  HREF="http://floresta.eead.csic.es/3dfootprint/complexes/1j1v_A.html">3D-footprint</A>.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="900" HEIGHT="296" ALIGN="BOTTOM" BORDER="0"
+ SRC="./1j1v_A_interface_thumb.png"
+ ALT="Image 1j1v_A_interface_thumb">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1134"
+<A NAME="tex2html1186"
   HREF="node45.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1138"
-  HREF="node45.html">
+<A NAME="tex2html1190"
+  HREF="node39.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1140"
+<A NAME="tex2html1192"
   HREF="node47.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

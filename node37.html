@@ -1,26 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Estructura cuaternaria</TITLE>
-<META NAME="description" CONTENT="Estructura cuaternaria">
+<TITLE>Modelado de prote&#237;nas por predicci&#243;n de contactos</TITLE>
+<META NAME="description" CONTENT="Modelado de prote&#237;nas por predicci&#243;n de contactos">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
-<LINK REL="next" HREF="node45.html">
-<LINK REL="previous" HREF="node30.html">
-<LINK REL="up" HREF="algoritmos3D.html">
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node32.html">
 <LINK REL="next" HREF="node38.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,65 +36,475 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1032"
+<A NAME="tex2html1083"
   HREF="node36.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1038"
-  HREF="algoritmos3D.html">
+<A NAME="tex2html1089"
+  HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1040"
+<A NAME="tex2html1091"
   HREF="node38.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1041"
-  HREF="node38.html">Interfaces moleculares</A></b>  Arriba: <b><A NAME="tex2html1039"
-  HREF="algoritmos3D.html">Algoritmos en bioinform&#225;tica estructural</A></b>  Anterior: <b><A NAME="tex2html1033"
-  HREF="node36.html">Mutaciones puntuales de prote&#237;nas</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1092"
+  HREF="node38.html">Mutaciones puntuales de prote&#237;nas</A></b>  Arriba: <b><A NAME="tex2html1090"
+  HREF="node32.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html1084"
+  HREF="node36.html">Modelado de prote&#237;nas ab initio</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00600000000000000000"></A> <A NAME="s4"></A>
+<H1><A NAME="SECTION00550000000000000000"></A> <A NAME="contactosPred"></A>
 <BR>
-Estructura cuaternaria
+Modelado de prote&#237;nas por predicci&#243;n de contactos
 </H1>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html1042"
-  HREF="node38.html">Interfaces moleculares</A>
-<LI><A NAME="tex2html1043"
-  HREF="node39.html">Optimizaci&#243;n de cadenas laterales en interfaces</A>
-<LI><A NAME="tex2html1044"
-  HREF="node40.html">Modelando nucle&#243;tidos dentro de una doble h&#233;lice de DNA</A>
-<LI><A NAME="tex2html1045"
-  HREF="node41.html">Interacciones no covalentes: puentes de hidr&#243;geno en la interfaz</A>
-<LI><A NAME="tex2html1046"
-  HREF="node42.html">Interfaces entre prote&#237;na, DNA y RNA: endonucleasas CRISPR-Cas guiadas por RNA</A>
-<LI><A NAME="tex2html1047"
-  HREF="node43.html">Modelando interfaces moleculares por homolog&#237;a</A>
-<LI><A NAME="tex2html1048"
-  HREF="node44.html">Modelando interfaces moleculares mediante docking</A>
+<P>
+Las matrices de contactos (ver secci&#243;n <A HREF="node10.html#estr34">1.3.3</A>)  han sido durante mucho tiempo una fuente de inspiraci&#243;n de m&#233;todos 
+de predicci&#243;n estructural, con la idea subyacente de 'si somos capaces de predecir con informaci&#243;n evolutiva qu&#233; residuos de 
+una secuencia contactan, entonces podremos resolver su estructura' (<A NAME="tex2html1093" target="contents"
+  HREF="node50.html#deJuan2013">de&nbsp;Juan <EM>et&nbsp;al.</EM>, 2013</A>; <A NAME="tex2html1094" target="contents"
+  HREF="node50.html#Gobel1994">Gobel <EM>et&nbsp;al.</EM>, 1994</A>).
+
+<P>
+La informaci&#243;n evolutiva en cuesti&#243;n es normalmente un alineamiento m&#250;ltiple de secuencias hom&#243;logas, que se espera
+capturen de forma impl&#237;cita las limitaciones que impone la estructura terciaria de un dominio a las sustituciones de amino&#225;cidos
+que contactan. La funci&#243;n matem&#225;tica que se emplea habitualmente para estudiar esto es la 
+<A NAME="tex2html316"
+  HREF="http://es.wikipedia.org/wiki/Informaci%C3%B3n_mutua">informaci&#243;n mutua</A>
+(MI), 
+que mide la dependencia entre dos variables, en este caso columnas de un alineamiento.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold1"></A><A NAME="3863"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.10:</STRONG>
+
+Las mutaciones correlacionadas entre columnas de un alineamiento m&#250;ltiple se pueden emplear para predecir contactos entre residuos en el plegamiento.
+Figura tomada de <A
+ HREF="node50.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A> y reproducida con permiso de los autores.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="679" HEIGHT="272" ALIGN="BOTTOM" BORDER="0"
+ SRC="./EVfoldcorr.png"
+ ALT="Image EVfoldcorr">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Por tanto, el problema de la predicci&#243;n de contactos se puede plantear as&#237;:
+
+<UL>
+<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> conocemos la secuencia de una prote&#237;na y las de muchas secuencias hom&#243;logas
+</LI>
+<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> alineamos las secuencias, buscamos posiciones que muestren evidencia de coevoluci&#243;n 
+y buscamos plegamientos compatibles con esos contactos
+</LI>
 </UL>
-<!--End of Table of Child-Links-->
 
+<P>
+El algoritmo <A NAME="tex2html317"
+  HREF="http://EVfold.org">EVfold</A>
+emplea estos elementos
+para hacer predicciones de contactos de alta calidad, ya que es capaz de distinguir entre posiciones de la secuencia
+que directamente contactan (causativas) de las que correlacionan simplemente porque contactan con un mismo residuo (transitivas). 
+Usando su terminolog&#237;a,
+MI es un modelo local de probabilidad de contactos, que ellos son capaces de corregir y convertir en un modelo global usando conceptos 
+de la mec&#225;nica estad&#237;stica y la maximizaci&#243;n de la entrop&#237;a. El modelo global se llama de Informaci&#243;n Directa (DI)
+(<A
+ HREF="node50.html#Marks2011">Marks <EM>et&nbsp;al.</EM>, 2011</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold1.1"></A><A NAME="3865"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.11:</STRONG>
+
+Definici&#243;n de contactos entre residuos (A,B,C,D) y de correlaciones directas y transitivas.
+Figura tomada de <A
+ HREF="node50.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>. Copyright (2012) Nature Biotechnology.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="508" HEIGHT="228" ALIGN="BOTTOM" BORDER="0"
+ SRC="./EVfold22.jpg"
+ ALT="Image EVfold22">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+ 
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold2"></A><A NAME="3866"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.12:</STRONG>
+
+La inferencia de contactos entre residuos es mejor con el modelo global (DI, ver texto) que con el modelo local MI.
+La figura muestra predicciones de contactos para las prote&#237;nas ELAV4 (derecha) y RAS (izquierda).
+Las predicciones globales se reparten uniformemente por la secuencia y se solapan mejor con los contactos observados en estructuras experimentales.
+Figura tomada de <A
+ HREF="node50.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A> y reproducida con permiso de los autores.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="563" HEIGHT="408" ALIGN="BOTTOM" BORDER="0"
+ SRC="./EVfold3.jpg"
+ ALT="Image EVfold3">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+La siguiente figura muestra el diagrama de flujo completo del m&#233;todo <A NAME="tex2html318"
+  HREF="http://EVfold.org">EVfold</A>, 
+que ha sido posteriormente adaptado para prote&#237;nas transmembrana (<A
+ HREF="node50.html#Hopf2012">Hopf <EM>et&nbsp;al.</EM>, 2012</A>) y 
+tambi&#233;n para complejos cuaternarios (<A
+ HREF="node50.html#Hopf2014">Hopf <EM>et&nbsp;al.</EM>, 2014</A>):
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold3"></A><A NAME="3867"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.13:</STRONG>
+
+Algoritmo de plegamiento de prote&#237;nas en base a observaciones de mutaciones correlacionadas,
+que se transforman en predicciones de contactos, tomado de <A
+ HREF="node50.html#Marks2012">Marks <EM>et&nbsp;al.</EM> (2012)</A>. Copyright (2012) Nature Biotechnology.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="473" HEIGHT="888" ALIGN="BOTTOM" BORDER="0"
+ SRC="./EVfold21.jpg"
+ ALT="Image EVfold21">
+
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+La siguiente figura muestra los resultados de un experimento de validaci&#243;n de EVfold:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:EVfold4"></A><A NAME="3868"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.14:</STRONG>
+
+Calidad de las mejores predicciones de EVfold en un conjunto de 15 prote&#237;nas con diferentes composiciones de estructuras secundaria.
+Entre par&#233;ntesis se muestran el n&#250;mero de residuos del dominio modelado y 
+el n&#250;mero de residuos sobre los que se calcul&#243; el RMSD entre el modelo y la estructura experimental.
+Figura tomada de <A
+ HREF="node50.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A> y reproducida con permiso de los autores.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="598" HEIGHT="397" ALIGN="BOTTOM" BORDER="0"
+ SRC="./EVfoldbenchA.png"
+ ALT="Image EVfoldbenchA">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Esta familia de m&#233;todos  se est&#225; desarrollando todav&#237;a y sigue habiendo avances importantes (<A
+ HREF="node50.html#Buchan2017">Buchan &amp; Jones, 2017</A>).
+El m&#225;s notable es que el uso de secuencias metagen&#243;micas permite ampliar el universo de secuencias lo suficiente 
+para mejorar las predicciones de contactos (usando por ejemplo <A NAME="tex2html319"
+  HREF="http://gremlin.bakerlab.org/submit.php">GREMLIN</A>) 
+y obtener as&#237; estructuras, de momento bacterianas, de numerosos plegamientos desconocidos (<A
+ HREF="node50.html#Ovchinnikov2017">Ovchinnikov <EM>et&nbsp;al.</EM>, 2017</A>). 
+Adem&#225;s, <A
+ HREF="node50.html#Ovchinnikov2017">Ovchinnikov <EM>et&nbsp;al.</EM> (2017)</A> proponen una funci&#243;n para estimar la calidad de los modelos si hay suficientes secuencias para abordar
+este tipo de modelado:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+N_{f} = \frac{clusters_{nr80}}{\sqrt L}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle N_{f} = \frac{clusters_{nr80}}{\sqrt L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> 
+
+<P>
+En esta funci&#243;n el numerador representa el total de clusters de secuencias hom&#243;logas no redundantes al 80% 
+encontradas con <A NAME="tex2html320"
+  HREF="https://toolkit.tuebingen.mpg.de/#/tools/hhblits">HHblits</A>
+y el numerador es la longitud de la secuencia problema. 
+Cuando <!-- MATH
+ $N_{f} > 64$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$N_{f} &gt; 64$"></SPAN> se obtienen modelos de buena calidad. 
+
+<P>
+Para poner en pr&#225;ctica estos algoritmos se puede realizar el siguiente ejercicio:
+
+<P>
+
+<UL>
+<LI>Visita <A NAME="tex2html321"
+  HREF="http://www.uniprot.org/">UniProt</A>, elige una prote&#237;na y extrae su secuencia S.
+
+<P>
+</LI>
+<LI>Busca secuencias similares a S y gu&#225;rdalas en un archivo.
+
+<P>
+</LI>
+<LI>Calcula un alineamiento m&#250;ltiple A que incluya a S con sus hom&#243;logos, elimina las secuencias muy cortas y 
+guarda el resultado en un fichero FASTA.
+
+<P>
+</LI>
+<LI>Con ayuda de los 
+<A NAME="tex2html322"
+  HREF="./files/journal.pone.0028766.s017.pdf">m&#233;todos suplementarios</A>
+de <A
+ HREF="node50.html#Marks2011">Marks <EM>et&nbsp;al.</EM> (2011)</A>
+modifica el c&#243;digo fuente del programa 3.4 para calcular el peso de las secuencias en base a su identidad
+y sumar pseudoconteos y de esa manera calcular con mayor precisi&#243;n MI en tu alineamiento A.
+Hay tambi&#233;n c&#243;digo fuente disponible en 
+<A NAME="tex2html323"
+  HREF="http://evfold.org/evfold-web/code.do">http://evfold.org/evfold-web/code.do</A>.
+
+<P>
+</LI>
+<LI>Construye un modelo 3D para S.
+
+<P>
+</LI>
+<LI>Edita el archivo PDB del modelo y marca algunas parejas de residuos con valores altos de MI. Para ello puedes usar la columna del factor B,
+dejando a '00.00' el resto de residuos. 
+
+<P>
+</LI>
+<LI>Visualiza el modelo editado y discute los resultados obtenidos.
+
+<P>
+</LI>
+</UL>
+
+<P>
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/perl -w
+
+# prog3.4 
+# Bruno Contreras-Moreira
+# prototype of Mutual Information (MI) among columns of FASTA multiple alignment,
+# partial version of that formulated in doi:10.1371/journal.pone.0028766
+
+use strict;
+$|=1;
+
+use constant NAME =&gt; 0;
+use constant SEQ  =&gt; 1;
+
+my ($length,$last_seq,$seq,$posi,$posj,$tot,$aai,$aaj,$aapair,$i,$j) = (0,0);
+my ($alphabet_size,$term,$MI,@MSA,@freq,@cofreq,@aas,%valid_aas) = (0);
+
+# define accepted alignment chars (sorted, gaps + standard amino acids)
+@aas = qw( - A C D E F G H I K L M N P Q R S T V W Y );
+$alphabet_size = scalar(@aas);
+foreach $aai (@aas){ $valid_aas{$aai} = 1 }
+
+#################################################################################
+
+my $inMSA = $ARGV[0] || die "# usage: $0 &lt;alignment.faa&gt;\n";
+
+my $fasta_ref = read_FASTA_file_array($inMSA);
+$last_seq = $#{$fasta_ref};
+
+# fill @MSA matrix with sequence of each input sequence
+foreach $seq ( 0 .. $last_seq )
+{
+	if($length &gt; 0 &amp;&amp; length($fasta_ref-&gt;[$seq][SEQ]) != $length)
+	{
+		die "# $0 : input aligned sequences	differ in length\n";
+	}
+	else{ $length = length($fasta_ref-&gt;[$seq][SEQ]) }
+	
+	push(@MSA,[ split(//,$fasta_ref-&gt;[$seq][SEQ]) ]);
+}	
+
+printf("# alphabet(%d): %s\n",$alphabet_size,join(',',@aas));
+printf("# total sequences: %d (in %s)\n",$last_seq+1,$inMSA);
+printf("# alignment length: %d\n",$length);
+
+# calculate amino acid frequency per position/column
+print "# estimating amino acid frequencies per position...\n";
+foreach $posi ( 0 .. $length-1)
+{
+	my %counts;
+	$tot = 0;
+	foreach $seq ( 0 .. $last_seq )
+	{
+		$aai = $MSA[$seq][$posi];
+		next if(!$valid_aas{$aai}); # skip undefined residues
+		$counts{$aai}++; 
+		$tot++;
+	}
+	
+	foreach $aai (@aas){ $freq[$posi]{$aai} = ($counts{$aai}) ? $counts{$aai}/$tot : 0 }
+}
+
+# calculate occurrence of pairs of residues on positions i,j
+print "# estimating co-occurring frequencies over all pairs of positions...\n";
+foreach $posi ( 0 .. $length-1)
+{
+	foreach $posj ( $posi+1 .. $length-1)
+	{
+		my %counts;
+		$tot = 0;
+		foreach $seq ( 0 .. $last_seq )
+		{
+			$aai = $MSA[$seq][$posi];
+			next if(!$valid_aas{$aai});
+		
+			$aaj = $MSA[$seq][$posj];
+			next if(!$valid_aas{$aaj});
+			
+			if($aai lt $aaj){ $aapair = $aai.$aaj }
+			else{ $aapair = $aaj.$aai }
+		
+			$counts{$aapair}++; 
+			$tot++;
+		}	
+		
+		foreach $i (0 .. $#aas)
+		{
+			$aai = $aas[$i];
+			foreach $j ($i .. $#aas)
+			{ 
+				$aaj = $aas[$j];
+				$aapair = $aai.$aaj;	
+				$cofreq[$posi][$posj]{$aapair} = ($counts{$aapair}) ? $counts{$aapair}/$tot : 0; 
+			}
+		}			
+	}
+}	
+
+# calculate mutual information of columns i,j
+print "# calculating MI over all pairs of positions...\n";
+print "# i\tj\tMI\n";
+foreach $posi ( 0 .. $length-1)
+{
+	foreach $posj ( $posi+1 .. $length-1)
+	{
+		$MI = 0;
+		foreach $i (0 .. $#aas)
+		{
+			$aai = $aas[$i];
+			next if(!$freq[$posi]{$aai});
+			
+			foreach $j ($i .. $#aas)
+			{
+				$aaj = $aas[$j];
+				next if(!$freq[$posj]{$aaj});
+				
+				$aapair = $aai.$aaj;
+
+				next if(!$cofreq[$posi][$posj]{$aapair});
+				
+				$term = $cofreq[$posi][$posj]{$aapair} *
+					log($cofreq[$posi][$posj]{$aapair} / 
+						($freq[$posi]{$aai}*$freq[$posj]{$aaj}));
+						
+				$MI += $term;	
+			} 
+		} 
+	
+		printf("%d\t%d\t%1.5f\n",$posi+1,$posj+1,$MI) if($MI &gt; 0);
+	}
+}		
+
+
+sub read_FASTA_file_array
+{
+	# in FASTA format
+	# returns a reference to a 2D array for 2 secondary indexes: NAME,SEQ
+	# first valid index (first sequence) is '0'
+	# '.' gaps are convert t '-', sequences to upper-case
+	 
+	my ( $infile ) = @_;
+	my ($n_of_sequences,@FASTA,$name,$seq,$magic) = (-1);
+
+	# check input file format and open it accordingly 
+	open(INFILE,$infile) || die "# read_FASTA_sequence_array: cannot read $infile, exit\n";
+	sysread(INFILE,$magic,2);
+	close(INFILE);
+
+	if($infile =~ /\.gz$/ || $magic eq "\x1f\x8b") # GZIP compressed input
+	{
+		if(!open(FASTA,"gzip -dc $infile |"))
+		{
+			die "# read_FASTA_sequence_array: cannot read GZIP compressed $infile $!\n"
+				."# please check gzip in installed\n";
+		} 			 	
+   } 
+	else{ open(FASTA,"&lt;$infile") }
+
+	while(&lt;FASTA&gt;)
+	{	
+		next if(/^$/ || /^#/);
+		if(/^\&gt;(.*?)[\n\r]/)
+		{
+			$n_of_sequences++; # first sequence ID is 0
+			$name = $1; 
+			$FASTA[$n_of_sequences][NAME] = $name;
+		}
+		elsif($n_of_sequences&gt;-1)
+		{
+			$_ =~ s/\n//g;
+			$_ =~ s/\./-/g; 
+			$FASTA[$n_of_sequences][SEQ] .= uc($_); 
+		}	
+	}
+	close(FASTA);
+	 
+	return \@FASTA;
+}
+</PRE>
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1032"
+<A NAME="tex2html1083"
   HREF="node36.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1038"
-  HREF="algoritmos3D.html">
+<A NAME="tex2html1089"
+  HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1040"
+<A NAME="tex2html1091"
   HREF="node38.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

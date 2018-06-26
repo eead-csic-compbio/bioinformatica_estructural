@@ -1,26 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Relaci&#243;n entre estructura primaria y terciaria</TITLE>
-<META NAME="description" CONTENT="Relaci&#243;n entre estructura primaria y terciaria">
+<TITLE>(Des)estructura secundaria de prote&#237;nas</TITLE>
+<META NAME="description" CONTENT="(Des)estructura secundaria de prote&#237;nas">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
-<LINK REL="next" HREF="node32.html">
 <LINK REL="previous" HREF="node30.html">
-<LINK REL="up" HREF="node30.html">
+<LINK REL="up" HREF="node29.html">
 <LINK REL="next" HREF="node32.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,375 +35,454 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html968"
+<A NAME="tex2html1009"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html974"
-  HREF="node30.html">
+<A NAME="tex2html1013"
+  HREF="node29.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html976"
+<A NAME="tex2html1015"
   HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html977"
-  HREF="node32.html">Comparaci&#243;n de estructura terciaria entre</A></b>  Arriba: <b><A NAME="tex2html975"
-  HREF="node30.html">Estructura terciaria</A></b>  Anterior: <b><A NAME="tex2html969"
-  HREF="node30.html">Estructura terciaria</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html1016"
+  HREF="node32.html">Estructura terciaria</A></b>  Arriba: <b><A NAME="tex2html1014"
+  HREF="node29.html">Estructura secundaria</A></b>  Anterior: <b><A NAME="tex2html1010"
+  HREF="node30.html">Estructura secundaria de RNA</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00510000000000000000"></A> <A NAME="3dcons"></A>
+<H1><A NAME="SECTION00420000000000000000"></A> <A NAME="protSS"></A>
 <BR>
-Relaci&#243;n entre estructura primaria y terciaria
+(Des)estructura secundaria de prote&#237;nas
 </H1>
 
 <P>
-<A
- HREF="node47.html#Chothia1986">Chothia &amp; Lesk (1986)</A> analizaron por vez primera la relaci&#243;n entre la secuencia y la estructura de las prote&#237;nas, 
-que se puede resumir en esta figura:
+La estructura secundaria es una propiedad de las prote&#237;nas naturales en soluci&#243;n, 
+que se explica por medio de una red (din&#225;mica) de puentes de hidr&#243;geno que conectan diferentes partes del polip&#233;ptido 
+a escala m&#225;s o menos local, formando h&#233;lices y l&#225;minas que quedan conectadas por lazos ( <i> loops  </i>) y regiones 
+desordenadas, como ya recordamos en la secci&#243;n <A HREF="node9.html#SS">1.3.2</A> 
+(y en este <A NAME="tex2html226"
+  HREF="http://www.eead.csic.es/compbio/material/modelado_comparativo/node5.html">otro curso</A>). 
 
 <P>
+Si disponemos de las coordenadas at&#243;micas de una prote&#237;na podemos medir sus &#225;ngulos diedros 
+para generar nuestros propios diagramas de Ramachandran, como hace 
+<A NAME="tex2html227"
+  HREF="http://dicsoft1.physics.iisc.ernet.in/rp/">esta herramienta web</A>, con dos fines:
 
-<DIV ALIGN="CENTER"><A NAME="fig:chothia_lesk"></A><A NAME="2690"></A>
+<UL>
+<LI>Comprobar qu&#233; residuos de la secuencia se encuentran en conformaciones (regiones) favorables, como medida de calidad
+de la estructura. 
+</LI>
+<LI>Averiguar en base a la geometr&#237;a del esqueleto proteico el estado de estructura secundaria de segmentos de residuos
+(como en este <A NAME="tex2html228"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node53.html">ejercicio</A>). 
+</LI>
+</UL>
+
+<P>
+El procedimiento, dado unas coordenadas en formato PDB (<A NAME="tex2html229"
+  HREF="./files/1lfu.html">1LFU</A>),
+es relativamente sencillo, recurriendo a programas como <A NAME="tex2html230"
+  HREF="http://kinemage.biochem.duke.edu/software/dangle.php">DANGLE</A>
+o haciendo un poco de &#225;lgebra y trigonometr&#237;a:
+<BR>
+<PRE  CLASS="verbatim">#!/usr/bin/perl -w
+
+# prog2.2 calcula los angulos diedros de una proteina en formato PDB
+# Bruno Contreras-Moreira, adaptado de http://praveenvijay.netfirms.com/scripts.htm#backbone
+
+use strict;
+use Math::Trig;
+
+my ($PDBfile,@coordenadas,@atomo,@residuo,@cadena,@res_id,@x,@y,@z);
+my ($total,$j,$i) = (0,1);
+
+if(!$ARGV[0]){ die "# usage: $0 &lt;PDB file&gt;\n"; }
+else{ $PDBfile = $ARGV[0] }
+
+## 1) lee coordenadas atomicas en formato PDB
+open(PDB,$PDBfile)|| die "# $0 : no puedo leer $PDBfile\n";
+while(&lt;PDB&gt;)
+{
+	last if(/^ENDMDL/); # para estructuras NMR como 1lfu, TER es otra opcion
+	next if not(/^ATOM/);
+	push(@coordenadas,$_);
+}
+close(PDB);
+
+## 2) recorre secuencia buscando atomos N,CA,C consecutivos
+for $i (0..$#coordenadas-2)
+{
+	#ATOM   2231  N   ALA P  78     -14.689   7.253 -23.476
+	$residuo[$j] = substr($coordenadas[$i],17,3);
+	$cadena[$j] = substr($coordenadas[$i],21,1);
+	$res_id[$j]  = substr($coordenadas[$i],23,3);
+	$atomo[$j]   = substr($coordenadas[$i],12,4);
+	$atomo[$j+1] = substr($coordenadas[$i+1],12,4);
+	$atomo[$j+2] = substr($coordenadas[$i+2],12,4); 
+
+	if($atomo[$j] eq ' N  ' &amp;&amp; $atomo[$j+1] eq ' CA ' &amp;&amp; $atomo[$j+2] eq ' C  ')
+	{
+		$x[$j]{'N'} = substr($coordenadas[$i],30,8);   
+		$y[$j]{'N'} = substr($coordenadas[$i],38,8);   
+		$z[$j]{'N'} = substr($coordenadas[$i],46,8);   
+                                                               
+		$x[$j]{'CA'} = substr($coordenadas[$i+1],30,8);
+		$y[$j]{'CA'} = substr($coordenadas[$i+1],38,8);
+		$z[$j]{'CA'} = substr($coordenadas[$i+1],46,8); 
+
+		$x[$j]{'C'} = substr($coordenadas[$i+2],30,8); 
+		$y[$j]{'C'} = substr($coordenadas[$i+2],38,8);
+		$z[$j]{'C'} = substr($coordenadas[$i+2],46,8);
+		$j++;
+		$total++;
+	}
+}
+print "# $0 : fichero PDB: $PDBfile ($total residuos)\n\n";
+
+## 3) calcula e imprime angulos diedros
+print "#  residuo      phi      psi    omega\n";
+for $j (2..$total-1)
+{ 
+	my ($x1,$y1,$z1,$x2,$y2,$z2,$x3,$y3,$z3,$x4,$y4,$z4,$x5,$y5,$z5,$x6,$y6,$z6); # puntos
+	my (@v1,@v2,@v3,@v4,@v5,@v6,@v7,@v8);        # vectores directores
+	my ($phi,$psi,$omega) = (-9999,-9999,-9999); # valores nulos por defecto
+
+	# toma atomos en residuos j-1,j y j+1 para definir planos y calcular angulos diedros
+	($x1,$y1,$z1) = ( $x[$j-1]{'C'} , $y[$j-1]{'C'} , $z[$j-1]{'C'} ); 
+	($x2,$y2,$z2) = ( $x[$j]{'N'}   , $y[$j]{'N'}   , $z[$j]{'N'} );   # Cj-1 - Nj 
+	($x3,$y3,$z3) = ( $x[$j]{'CA'}  , $y[$j]{'CA'}  , $z[$j]{'CA'} );  #         \
+	($x4,$y4,$z4) = ( $x[$j]{'C'}   , $y[$j]{'C'}   , $z[$j]{'C'} );   #         CAj - Cj
+	($x5,$y5,$z5) = ( $x[$j+1]{'N'} , $y[$j+1]{'N'} , $z[$j+1]{'N'} ); #                \ 
+	($x6,$y6,$z6) = ( $x[$j+1]{'CA'}, $y[$j+1]{'CA'}, $z[$j+1]{'CA'} );#                 Nj+1 - CAj+1
+
+	@v1 = ( $x2-$x1 , $y2-$y1 , $z2-$z1 ); # plano definido por Cj-1, Nj and CAj (para medir phi)
+	@v2 = ( $x3-$x1 , $y3-$y1 , $z3-$z1 );
+
+	@v3 = ( $x3-$x2 , $y3-$y2 , $z3-$z2 ); # plano Nj, CAj and Cj (para medir phi y psi)
+	@v4 = ( $x4-$x2 , $y4-$y2 , $z4-$z2 );
+	
+	@v5 = ( $x4-$x3 , $y4-$y3 , $z4-$z3 ); # plano CAj, Cj and Nj+1 (para medir psi)
+	@v6 = ( $x5-$x3 , $y5-$y3 , $z5-$z3 );
+
+	@v7 = ( $x5-$x4 , $y5-$y4 , $z5-$z4 ); # plano Cj, Nj+1 and CAj+1 (para medir psi y omega)
+	@v8 = ( $x6-$x4 , $y6-$y4 , $z6-$z4 );
+
+	$phi = angulo_diedro( @v1, @v2, @v3, @v4, $x3, $y3, $z3, $x2, $y2, $z2 );  # entre Nj y CAj (2Cs)
+	$psi = angulo_diedro( @v3, @v4, @v5, @v6, $x4, $y4, $z4, $x3, $y3, $z3 );  # entre CAj y Cj (2Ns)
+	$omega = angulo_diedro( @v5, @v6, @v7, @v8, $x5, $y5, $z5, $x4, $y4, $z4 );# entre Nj+1 y Cj (2CAs)
+
+	printf("%4d %3s %s %8.1f %8.1f %8.1f\n",$res_id[$j],$residuo[$j],$cadena[$j],$phi,$psi,$omega);
+}
+print "#  residuo      phi      psi    omega\n";
+
+sub angulo_diedro 
+{
+	my (@p) = @_; #parametros ( v_plano1,v_plano2, v_plano3, v_plano4, enlace1, enlace2 )
+	
+	my (@v1,@v2,$modulo1,$modulo2,$prod_escalar,@normal,$cos,$ang,$signo);
+
+	## 1) determina el angulo entre ambos planos
+	# calcula vector perpendicular a cada plano por producto vectorial
+	@v1 = ( ($p[1]*$p[5])-($p[2]*$p[4])     , ($p[2]*$p[3])-($p[0]*$p[5])     , ($p[0]*$p[4])-($p[3]*$p[1]) );
+	@v2 = ( ($p[7]*$p[11])-($p[8]*$p[10]) , ($p[8]*$p[9])-($p[6]*$p[11]) , ($p[6]*$p[10])-($p[9]*$p[7]) );
+
+	# calcula producto escalar de vectores perpendiculares para estimar cos(angulo)
+	$prod_escalar = ($v1[0]*$v2[0]+$v1[1]*$v2[1]+$v1[2]*$v2[2]);
+	$modulo1 = ((($v1[0]*$v1[0])+($v1[1]*$v1[1])+($v1[2]*$v1[2]))**0.5);
+	$modulo2 = ((($v2[0]*$v2[0])+($v2[1]*$v2[1])+($v2[2]*$v2[2]))**0.5);	
+	$cos = ($prod_escalar/($modulo1*$modulo2));
+	$ang = (Math::Trig::acos($cos))/(Math::Trig::pi/180);
+	
+	## 2) determina el signo del angulo diedro
+	# calcula vector normal a ambos vectores perpendiculares por producto vectorial
+	@normal = ( ($v1[1]*$v2[2])-($v1[2]*$v2[1]) , ($v1[2]*$v2[0])-($v1[0]*$v2[2]) , ($v1[0]*$v2[1])-($v1[1]*$v2[0]) );
+	
+	# calcula producto escalar de vector normal y vector del enlace donde se da el angulo
+	$signo = ((($p[12]-$p[15])*($normal[0]))+(($p[13]-$p[16])*($normal[1]))+(($p[14]-$p[17])*($normal[2])));
+	if($signo &lt; 0){ $ang=-$ang } # agudo si es positivo
+	
+	return $ang;
+}
+</PRE>
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:signo_diedro1"></A><A NAME="2869"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.1:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.3:</STRONG>
 
-Correlaci&#243;n no lineal entre la conservaci&#243;n de secuencia y estructura de las prote&#237;nas,
-tomada de <A
- HREF="node47.html#Chothia1986">Chothia &amp; Lesk (1986)</A>.
-</CAPTION>
-<TR><TD><IMG
- WIDTH="380" HEIGHT="356" BORDER="0"
- SRC="img51.png"
- ALT="\begin{figure}\begin{center}
-\includegraphics{chothia_lesk}\end{center}\end{figure}"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-Este art&#237;culo pionero publica la observaci&#243;n de que a una determinada conservaci&#243;n entre las secuencias A y B,
-calculada por medio de un alineamiento, le corresponde una mayor o menor divergencia en la comparaci&#243;n de sus estructuras
-terciarias, medida en t&#233;rminos de <A NAME="tex2html223"
-  HREF="http://en.wikipedia.org/wiki/Root_mean_square_deviation">desviaciones (RMSD)</A>
-en las posiciones de sus residuos, dependiendo de si las mutaciones ocurren en el interior ( <i> core  </i>) o exterior del plegamiento. 
-
-<P>
-<P></P>
-<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-RMSD = \sqrt \frac{\sum_{i=1}^n (equiv_{i}^A - equiv_{i}^B)}{n}
-\end{equation}
- -->
-<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
-<TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
- WIDTH="242" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
- SRC="img52.png"
- ALT="$\displaystyle RMSD = \sqrt \frac{\sum_{i=1}^n (equiv_{i}^A - equiv_{i}^B)}{n}$"></SPAN></TD>
-<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
-(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
-</TABLE></DIV>
-<BR CLEAR="ALL"><P></P> 
-
-<P>
-Adem&#225;s, &#233;ste y otros trabajos posteriores, como el de <A
- HREF="node47.html#Illergard2009">Illergard <EM>et&nbsp;al.</EM> (2009)</A>,
-sugieren que la estructura es una propiedad de las prote&#237;nas que se conserva en mayor medida que la secuencia
-durante la historia evolutiva.Lo excepcional es que secuencias similares tengan grandes diferencias estructurales (<A
- HREF="node47.html#Kosloff2008">Kosloff &amp; Kolodny, 2008</A>).
-
-<P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:thioredoxins"></A><A NAME="2692"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.2:</STRONG>
-
-Conservaci&#243;n de la estructura de tioredoxinas separadas 4 mil millones de a&#241;os, de <A
- HREF="node47.html#InglesPrieto2013">Ingles-Prieto <EM>et&nbsp;al.</EM> (2013)</A>.
+Definici&#243;n de &#225;ngulo diedro, 
+figura tomada de <A NAME="tex2html217"
+  HREF="http://structuralbioinformatics.com">http://structuralbioinformatics.com</A>.
 </CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
-  WIDTH="769" HEIGHT="588" ALIGN="BOTTOM" BORDER="0"
- SRC="./thioredoxins.jpg"
- ALT="Image thioredoxins">
+  WIDTH="300" HEIGHT="264" ALIGN="BOTTOM" BORDER="0"
+ SRC="./signo_diedro1.jpg"
+ ALT="Image signo_diedro1">
 
 </DIV></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-Volveremos a esta observaci&#243;n muy pronto, pero antes quiero hacer hincapi&#233;
-en la correspondencia entre un alineamiento de secuencias de prote&#237;nas, generalmente obtenido mediante programaci&#243;n 
-din&#225;mica, y la superposici&#243;n de sus estructuras. Tomemos por ejemplo las coordenadas de dos <A NAME="tex2html224"
-  HREF="http://scop.berkeley.edu/sunid=53955">lisozimas</A>
-del PDB, como
-<A NAME="tex2html225"
-  HREF="http://www.rcsb.org/pdb/explore/explore.do?structureId=2NWD">2NWD</A>
+Otras definiciones de estructura secundaria se basan en encontrar patrones de puentes de 
+hidr&#243;geno entre grupos <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$-CO$"></SPAN> y <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$-NH$"></SPAN> del esqueleto pept&#237;dico, 
+como por ejemplo hace el software <A NAME="tex2html231"
+  HREF="http://swift.cmbi.ru.nl/gv/dssp/">DSSP</A>
+(<A
+ HREF="node50.html#Kabsch1983">Kabsch &amp; Sander, 1983</A>)
+de acuerdo con esta definici&#243;n energ&#233;tica, donde un puente v&#225;lido debe tener <!-- MATH
+ $E<-0{.}5 kcal/mol$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$E&lt;-0{.}5 kcal/mol$"></SPAN>, 
+<!-- MATH
+ $q_{1}=0.42e$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$q_{1}=0.42e$"></SPAN>, <!-- MATH
+ $q_{2}=0.20e$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$q_{2}=0.20e$"></SPAN> y <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$r$"></SPAN> es una distancia interat&#243;mica en Angstroms:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:dssp"></A><!-- MATH
+ \begin{equation}
+E = q_{1} q_{2} \left[ \frac{1}{r_{ON}} + \frac{1}{r_{CH}} - \frac{1}{r_{OH}} - \frac{1}{r_{CN}} \right] \cdot 332 \ \mathrm{kcal/mol}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="405" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\displaystyle E = q_{1} q_{2} \left[ \frac{1}{r_{ON}} + \frac{1}{r_{CH}} - \frac{1}{r_{OH}} - \frac{1}{r_{CN}} \right] \cdot 332  \mathrm{kcal/mol}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+El software <A NAME="tex2html232"
+  HREF="http://webclu.bio.wzw.tum.de/stride/">STRIDE</A>
+(<A
+ HREF="node50.html#Frishman1995">Frishman &amp; Argos, 1995</A>) es otro programa para este fin 
+que en experimentos de validaci&#243;n mejora las asignaciones de estructura secundaria de DSSP.
+
+<P>
+Sin embargo, frecuentemente el problema es todav&#237;a m&#225;s complicado:
+
+<UL>
+<LI><SPAN  CLASS="textbf">PROBLEMA:</SPAN> tenemos una secuencia proteica pero no conocemos su estructura 
+</LI>
+<LI><SPAN  CLASS="textbf">SOLUCI&#211;N PROPUESTA:</SPAN> reconocer en la secuencia segmentos que formen h&#233;lices y l&#225;minas, y lazos 
+para caracterizar su topolog&#237;a o estructura secundaria 
+</LI>
+</UL> 
+
+<P>
+Si definimos un alfabeto simplificado de tres letras para describir la estructura secundaria (H=h&#233;lice alfa, E=l&#225;mina beta y C=coil), 
+hay algoritmos basados en redes neuronales que predicen con una precisi&#243;n en torno al 75% el estado de estructura secundaria a nivel de residuo.
+Es evidente que se pierde informaci&#243;n con este alfabeto, pero la estructura inferida puede tener muchas aplicaciones a la hora de dise&#241;ar 
+experimentos y algoritmos que trabajen sobre la estructura terciaria. 
+
+<P>
+Hay una buena exposici&#243;n de este tema en el
+art&#237;culo de <A
+ HREF="node50.html#Jones1999">Jones (1999)</A>, donde se presenta el algoritmo <A NAME="tex2html233"
+  HREF="http://bioinf.cs.ucl.ac.uk/psipred">PSIPRED</A>
+y se eval&#250;a la precisi&#243;n de las asignaciones de estructura secundaria de varias maneras, incluyendo la funci&#243;n:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q_{3} = \frac{\sum\limits_{i=H,E,C}{corrpred_{i}}}{\sum\limits_{i=H,E,C}{obs_{i}}} \times 100
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="233" HEIGHT="91" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$\displaystyle Q_{3} = \frac{\sum\limits_{i=H,E,C}{corrpred_{i}}}{\sum\limits_{i=H,E,C}{obs_{i}}} \times 100$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+En <A
+ HREF="node50.html#Jurtz2017">Jurtz <EM>et&nbsp;al.</EM> (2017)</A> se explica en mayor detalle como funcionan este tipo de predictores, 
+incluyendo <A NAME="tex2html234"
+  HREF="https://github.com/vanessajurtz/lasagne4bio">c&#243;digo fuente en python2.7</A>
+para programar uno.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:psipred"></A><A NAME="2878"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.4:</STRONG>
+
+Ejemplo de predicci&#243;n de estructura secundaria de PSIPRED, 
+obtenida en el servidor <A NAME="tex2html220"
+  HREF="http://bioinf.cs.ucl.ac.uk/psipred">PSIPRED</A>.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="412" HEIGHT="486" ALIGN="BOTTOM" BORDER="0"
+ SRC="./ss1.png"
+ ALT="Image ss1">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+PSIPRED es aceptado como uno de los mejores predictores, pero hay muchos otros algoritmos de predicci&#243;n de estructura secundaria y 
+la mejor manera de compararlos es por medio de evaluaciones autom&#225;ticas a ciegas. Desgraciadamente, este tipo de iniciativas, como  
+<A NAME="tex2html235"
+  HREF="http://en.wikipedia.org/wiki/LiveBench">LiveBench</A>
+o EVA,  
+que recolectan datos de distintos algoritmos a medida que crece el PDB, son financiadas por poco tiempo y mueren.
+
+<P>
+Tras la aparici&#243;n de los primeros predictores de estructura secundaria empez&#243; a ser evidente que muchas prote&#237;nas, 
+sobre todo de vertebrados, no ten&#237;an aparentemente una estructura ordenada, al menos en ciertos estados fisiol&#243;gicos 
+(ver por ejemplo el repositorio <A NAME="tex2html236"
+  HREF="http://www.disprot.org">Disprot</A>
+(<A NAME="tex2html1017" target="contents"
+  HREF="node50.html#yruela_inmaculada_2014_1066352">Yruela, 2014</A>; <A NAME="tex2html1018" target="contents"
+  HREF="node50.html#Sickmeier2007">Sickmeier <EM>et&nbsp;al.</EM>, 2007</A>)).
+Hoy sabemos que muchas prote&#237;nas ordenadas pueden contener segmentos desordenados o d&#250;ctiles (<A
+ HREF="node50.html#Lobanov2010">Lobanov <EM>et&nbsp;al.</EM>, 2010</A>).
+Como resultado se dise&#241;aron predictores para un cuarto estado, el de desorden intr&#237;nseco, y se han creado recursos para la 
+anotaci&#243;n de estas secuencias como <A NAME="tex2html237"
+  HREF="http://d2p2.pro">D2P2</A>.
+De acuerdo con meta-an&#225;lisis recientes los mejores predictores de desorden son 
+<A NAME="tex2html238"
+  HREF="http://bioinf.cs.ucl.ac.uk/psipred/?disopred=1">DISOPRED</A>, 
+<A NAME="tex2html239"
+  HREF="http://prdos.hgc.jp/cgi-bin/top.cgi">PrDOS</A>
 y 
-<A NAME="tex2html226"
-  HREF="http://www.rcsb.org/pdb/explore/explore.do?structureId=1GD6">1GD6</A>
-(<A NAME="tex2html227"
-  HREF="./files/2nwd.pdb">2nwd.pdb</A>,<A NAME="tex2html228"
-  HREF="./files/1gd6.pdb">1gd6.pdb</A>), 
-y alineemos sus secuencias:
-<PRE>
-2nwd   KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQIN 60
-1gd6   KTFTRCGLVHELRKHGFEEN---LMRNWVCLVEHESSRDTSKTNTNR-NGSKDYGLFQIN 56
-
-2nwd   SRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRD 120
-1gd6   DRYWCSKGASPG--KDCNVKCSDLLTDDITKAAKCAKKIYKR-HRFDAWYGWKNHCQG-- 111
-
-2nwd   VRQYVQGCGV 130
-1gd6   SLPDISSC-- 119
-</PRE>
+<A NAME="tex2html240"
+  HREF="http://raptorx2.uchicago.edu/StructurePropertyPred/predict">AUCpreD</A>
+(<A NAME="tex2html1019" target="contents"
+  HREF="node50.html#Wang2016">Wang <EM>et&nbsp;al.</EM>, 2016</A>; <A NAME="tex2html1020" target="contents"
+  HREF="node50.html#Meng2017">Meng <EM>et&nbsp;al.</EM>, 2017</A>).
 
 <P>
-Mediante un algoritmo similar al descrito en este 
-trabajo de <A
- HREF="node47.html#McLachlan1979">McLachlan (1979)</A>, que hace uso de la 
-<A NAME="tex2html229"
-  HREF="http://books.google.es/books?id=I2TEgd8-yfsC&amp;lpg=PR1&amp;pg=PA73#v=onepage&amp;q&amp;f=false">descomposici&#243;n en valores singulares</A>,
-podemos calcular la superposici&#243;n correspondiente. El siguiente programa, que importa
-el m&#243;dulo <A NAME="tex2html230"
-  HREF="./files/SVD.py">SVD</A>, lo implementa:
-<BR>
-<PRE  CLASS="verbatim">#!/usr/bin/env python
-""" prog3.1 Calcula la superposicion en 3D equivalente a un alineamiento de 
-secuencia de dos proteinas del PDB. Genera un fichero PDB con la superposicion 
-obtenida. """
+La mayor&#237;a de predictores de estructura secundaria y desorden tienen mejores resultados cuando
+extraen informaci&#243;n evolutiva de secuencias hom&#243;logas. Sin embargo, esto implica que 
+estos algoritmos son sensibles al contenido de las bases de datos de secuencias p&#250;blicas, 
+como se muestra en la siguiente figura:
 
-__author__  = 'Bruno Contreras-Moreira' 
-
-from math import sqrt
-import SVD 
-
-# 0) parametros del algoritmo: 
-pdb1 = { 'file':'./files/1gd6.pdb', 
-	'align':'KTFTRCGLVHELRKHGFEEN---LMRNWVCLVEHESSRDTSKTNTNR-NGSKDYGLFQIN' +
-	'DRYWCSKGASPG--KDCNVKCSDLLTDDITKAAKCAKKIYKR-HRFDAWYGWKNHCQG--SLPDISSC--' };
-
-pdb2 = { 'file':'./files/2nwd.pdb', 
-	'align':'KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQIN' +
-	'SRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRDVRQYVQGCGV' };
-	
-# 1) subrutinas
-def lee_coordenadas_PDB(filename):
-	""" Devuelve una lista de residuos, cada uno con las coordenadas de sus atomos. 
-	Ejemplo de linea en formato PDB:
-	ATOM     42  CA  PHE X   3       6.981  22.274  18.887  1.00  6.72 """
-	
-	coords = []
-	pdbfile = open(filename,'r')
-	try:
-		res,prev_resID = '',''
-		for line in pdbfile:
-			if(line[0:3] == 'TER'): break
-			if(line[0:4] != 'ATOM'): continue
-			resID = line[17:26]
-			if(resID != prev_resID):
-				if(res != ''): coords.append(res)
-				res = line
-			else: res += line	
-			
-			prev_resID = resID
-		
-		if(res != ''): coords.append(res)		
-	finally:
-		pdbfile.close()	
-	return coords	
-
-def coords_alineadas(align1,coords1,align2,coords2):
-	""" Devuelve dos listas de igual longitud con las coordenadas de los atomos CA 
-	de los residuos alineados en align1 y align2."""
-	
-	total1,total2 = -1,-1
-	align_coords1,align_coords2 = [],[]
-	length = len(align1)
-	
-	if(length != len(align2)): 
-		print "# coords_alineadas: alineamientos tienen != longitud",
-		return ([],[])
-	
-	for r in range(0, length):
-		res1 = align1[r:r+1]
-		res2 = align2[r:r+1]
-		if(res1 != '-'): total1+=1
-		if(res2 != '-'): total2+=1
-		if(res1 == '-' or res2 == '-'): continue #solo  interesan pares alineados
-		align_coords1.append( extrae_coords_atomo(coords1[total1],' CA ') )
-		align_coords2.append( extrae_coords_atomo(coords2[total2],' CA ') )
-	return (align_coords1,align_coords2)
-	
-def extrae_coords_atomo(res,atomo_seleccion):
-	""" De todas las coordenadas atomicas de un residuo, extrae las de un atomo particular 
-	y devuelve una lista con las X, Y y Z de ese atomo."""
-	
-	atom_coords = []
-	for atomo in res.split("\n"):
-		if(atomo[12:16] == atomo_seleccion):
-			atom_coords = [ float(atomo[30:38]), float(atomo[38:46]), float(atomo[46:54]) ]
-	return atom_coords
-	
-
-def calcula_superposicion_SVD(pdbh1,pdbh2,originalPDBname,fittedPDBname,test=False):
-	""" Calcula matriz de rotacion que aplicada sobre coords1 minimiza RMSD respecto a coords2
-	y crea archivo con formato PDB con la superposicion resultante.
-	Emplea el algoritmo de 'Single Value Decomposition' del paquete SVD. """
-	
-	def calcula_centro(coords):
-		centro = [0,0,0]
-    		for coord in (coords): 
-			for dim in range(0,3): centro[dim] += coord[dim]
-    		for dim in range(0,3): centro[dim] /= len(coords)
-		return centro
-   
-   	def calcula_coordenadas_centradas(coords,centro):
-		ccoords,total = [],0
-		for coord in (coords): 
-			ccoords.append(coord)
-			for dim in range(0,3): ccoords[total][dim] -= centro[dim]
-			total+=1
-		return ccoords
-		
-	def calcula_coordenadas_rotadas(coords,rotacion):
-		rcoords = [0,0,0]            
-		for i in range(0,3):               
-			tmp = 0.0
-			for j in range(0,3): tmp += coords[j] * rotacion[i][j]
-			rcoords[i] = tmp
-		return rcoords			
-   
-   	# escribe fichero PDB con coordenadas originales
-	pdbfile = open(originalPDBname, 'w')
-	print &gt;&gt; pdbfile, "HEADER %s\n" % pdbh1['file'],
-	for res in (pdbh1['coords']): print &gt;&gt; pdbfile, res,
-	print &gt;&gt; pdbfile, "TER\n",
-	print &gt;&gt; pdbfile, "HEADER %s\n" % pdbh2['file'],
-	for res in (pdbh2['coords']): print &gt;&gt; pdbfile, res,
-	print &gt;&gt; pdbfile, "TER\n",
-	pdbfile.close()	
-	
-	## prepara coordenadas de atomos CA alineados (equivalentes)
-	coords1,coords2 = pdbh1['align_coords'],pdbh2['align_coords']
-    	centro1 = calcula_centro(coords1) 
-    	centro2 = calcula_centro(coords2) 
-	ccoords1 = calcula_coordenadas_centradas(coords1,centro1) 
-	ccoords2 = calcula_coordenadas_centradas(coords2,centro2) 
-	
-	## prepara matriz producto para descomposicion matricial SVD matriz = U.Sigma.V
-	matriz = [[0,0,0],[0,0,0],[0,0,0]]
-	peso = 1.0/len(ccoords1) # todos los residuos cuentan igual
-	for i in range(0,3):
-		for j in range(0,3):
-			tmp = 0.0
-			for k in range(0,len(ccoords1)): tmp += ccoords1[k][i] * ccoords2[k][j] * peso
-			matriz[i][j]=tmp;
-	if(test == True): 
-		for i in range(0,3): print "mat %f %f %f\n" % (matriz[i][0],matriz[i][1],matriz[i][2]),		
-   			
-	## invoca descomposicion en valores singulares y comprueba matrix/determinante
-	[U, Sigma, V] = SVD.svd( matriz )
-	if(test==True): 
-		for i in range(0,3): print "U %f %f %f\n" % (U[i][0],U[i][1],U[i][2]),
-		for i in range(0,3): print "Vt %f %f %f\n" % (V[i][0],V[i][1],V[i][2]),
-	
-	rotacion = [[0,0,0],[0,0,0],[0,0,0]]
-	for i in range(0,3):
-		for j in range(0,3):
-			rotacion[i][j]= U[j][0]*V[i][0] + U[j][1]*V[i][1] + U[j][2]*V[i][2]
-				
-	## evalua error de la superposicion
-	rmsd = 0.0
-	for n in range(0,len(coords1)):
-		coords1_rot = calcula_coordenadas_rotadas(ccoords1[n],rotacion)
-		for i in range(0,3):
-			desv = ccoords2[n][i]-coords1_rot[i]
-			rmsd += desv*desv
-   	rmsd /= len(coords1)
-	
-	## imprime superposicion de todos los atomos en formato PDB
-	pdbfile = open(fittedPDBname, 'w')
-	
-	# pdb superpuesto, coordenadas rotadas (1)
-	print &gt;&gt; pdbfile, "HEADER %s (rotated)\n" % pdbh1['file'],
-	print &gt;&gt; pdbfile, "REMARK Rotation matrix:\n",
-	for i in range(0,3): print &gt;&gt; pdbfile, "REMARK %f %f %f\n" % \
-				(rotacion[i][0],rotacion[i][1],rotacion[i][2]),
-	print &gt;&gt; pdbfile, "REMARK centroid: %f %f %f\n" % (centro1[0],centro1[1],centro1[2]),
-	print &gt;&gt; pdbfile, "REMARK partner centroid: %f %f %f\n" % \
-		(centro2[0],centro2[1],centro2[2]),
-	for res in (pdbh1['coords']): 
-		for atomo in res.split("\n"):
-			if(atomo == ''): break
-			atcoords = extrae_coords_atomo(res,atomo[12:16]) 
-			
-			atcoords[0] -= centro1[0] # centralo
-			atcoords[1] -= centro1[1]
-			atcoords[2] -= centro1[2]
-			
-			coords_rot = calcula_coordenadas_rotadas(atcoords,rotacion)
-			
-			# trasladalo al pdb referencia
-			atcoords[0] = centro2[0] + coords_rot[0] 
-			atcoords[1] = centro2[1] + coords_rot[1]
-			atcoords[2] = centro2[2] + coords_rot[2]
-					
-			print &gt;&gt; pdbfile, "%s%8.3f%8.3f%8.3f%s" % \
-			(atomo[0:30],atcoords[0],atcoords[1],atcoords[2],atomo[54:])	
-	print &gt;&gt; pdbfile, "TER\n",	
-	
-	# pdb de referencia, coordenadas originales (2)
-	print &gt;&gt; pdbfile, "HEADER %s\n" % pdbh2['file'],
-	for res in (pdbh2['coords']): print &gt;&gt; pdbfile, res,
-	print &gt;&gt; pdbfile, "TER\n",
-	
-	pdbfile.close()	
-	
-	return sqrt(rmsd)
-					
-
-# 2) programa principal ###################################################
-
-pdb1['coords'] = lee_coordenadas_PDB( pdb1['file'] )
-pdb2['coords'] = lee_coordenadas_PDB( pdb2['file'] )
-		
-print "# total residuos: pdb1 = %s pdb2 = %s\n" % (len(pdb1['coords']),len(pdb2['coords'])),
-
-(pdb1['align_coords'],pdb2['align_coords']) = coords_alineadas(pdb1['align'],pdb1['coords'],\
-						pdb2['align'],pdb2['coords'] )
-
-print "# total residuos alineados = %s\n" % (len(pdb1['align_coords'])),
-
-rmsd = calcula_superposicion_SVD(pdb2,pdb1,'original.pdb','align_fit.pdb')
-
-print "\n# coordenadas originales = original.pdb\n# superposicion optima:\n", 
-print "# archivo PDB = align_fit.pdb\n# RMSD = %1.2f Angstrom\n" % (rmsd),
-</PRE>
 <P>
-Si cambias el alineamiento ver&#225;s que cambia la superposici&#243;n, demostrando la importancia que tiene la 
-variable 'calidad de los alineamientos' si vamos a hacer inferencias estructurales. Sabr&#237;as editar el c&#243;digo
-para replicar el algoritmo de superposici&#243;n de <A
- HREF="node47.html#Chothia1986">Chothia &amp; Lesk (1986)</A>?
+
+<DIV ALIGN="CENTER"><A NAME="fig:disopredTime"></A><A NAME="2879"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.5:</STRONG>
+
+Comparaci&#243;n de predicciones de PSIPRED (estructura secundaria) y DISOPRED2 (desorden) 
+para la secuencia NAC81 de Arabidopsis thaliana calculadas sobre versiones de 2010 y 2014 
+de la colecci&#243;n de secuencias <A NAME="tex2html223"
+  HREF="https://www.uniprot.org/help/uniref">uniref90</A>.
+Se marcan en rojo los segmentos desordenados, las h&#233;lices en azul y las l&#225;minas <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$\beta $"></SPAN> en verde.
+Figura de <A
+ HREF="node50.html#Yruela2014">Yruela &amp; Contreras-Moreira (2014)</A>.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="643" HEIGHT="284" ALIGN="BOTTOM" BORDER="0"
+ SRC="./disopredTime2.png"
+ ALT="Image disopredTime2">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+En el caso de PSIPRED, la evoluci&#243;n es un software de nombre
+<A NAME="tex2html241"
+  HREF="http://bioinfadmin.cs.ucl.ac.uk/downloads/DISOPRED">DISOPRED</A>
+(<A
+ HREF="node50.html#Ward2004">Ward <EM>et&nbsp;al.</EM>, 2004</A>),
+que adem&#225;s de reconocer elementos de estructura secundaria, estima una probabilidad emp&#237;rica de que cada amino&#225;cido est&#233; desordenado, 
+sin pertenecer a ninguna clase de estructura secundaria. Otros predictores recientes que combinan estructura secundaria y otras propiedades son 
+<A NAME="tex2html242"
+  HREF="http://www-mvsoftware.ch.cam.ac.uk/">s2D</A>
+o 
+<A NAME="tex2html243"
+  HREF="http://sparks-lab.org/server/SPIDER2">SPIDER2</A>, con una precisi&#243;n por encima del 80% (<A NAME="tex2html1021" target="contents"
+  HREF="node50.html#Heffernan2015">Heffernan <EM>et&nbsp;al.</EM>, 2015</A>; <A NAME="tex2html1022" target="contents"
+  HREF="node50.html#Sormanni2014">Sormanni <EM>et&nbsp;al.</EM>, 2014</A>),
+o <A NAME="tex2html244"
+  HREF="http://scratch.proteomics.ics.uci.edu/">SSpro</A>, rayando el %90 en las validaciones de sus autores (<A
+ HREF="node50.html#Magnan2014">Magnan &amp; Baldi, 2014</A>).
+Probablemente se alcanzado ya el techo para predicciones de 3 estados, pero queda espacio para mejorar las predicciones 
+de los 8 estados de DSSP (<A
+ HREF="node50.html#Yang2018">Yang <EM>et&nbsp;al.</EM>, 2018</A>) (ver tabla <A HREF="node9.html#tab:SS8">1.2</A>).
+
+<P>
+El ejercicio de esta secci&#243;n consiste en calcular la estructura secundaria de una prote&#237;na del 
+<A NAME="tex2html245"
+  HREF="http://www.rcsb.org/pdb">Protein Data Bank</A>
+de 3 maneras distintas, con el fin de compararlas:
+
+<UL>
+<LI>por medio de PSIPRED, que en realidad es un predictor,
+</LI>
+<LI>modificando el programa prog2.2.pl, calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria
+seg&#250;n el diagrama de Ramachandran y 
+</LI>
+<LI>por medio del programa STRIDE, simplificando segmentos de estructura secundaria (H=G,H,I; E=E,B y C=resto de estados)
+</LI>
+<LI>alinea las estructuras secundarias en alfabeto simplificado de tres letras y describe las diferencias observadas
+</LI>
+<LI>(los ejecutables necesarios se encuentran en <code>/home/compu2/algoritmos3D/soft</code>)
+</LI>
+</UL>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html968"
+<A NAME="tex2html1009"
   HREF="node30.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html974"
-  HREF="node30.html">
+<A NAME="tex2html1013"
+  HREF="node29.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html976"
+<A NAME="tex2html1015"
   HREF="node32.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

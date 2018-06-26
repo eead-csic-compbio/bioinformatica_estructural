@@ -1,10 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
 <TITLE>Algoritmos en bioinform&#225;tica estructural</TITLE>
@@ -13,7 +9,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
@@ -41,10 +37,10 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
  SRC="./icons//prev_g.png"> 
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up_g.png"> 
-<A NAME="tex2html555"
+<A NAME="tex2html592"
   HREF="node1.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html556"
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html593"
   HREF="node1.html">TEOR&#205;A: Fundamentos de estructura de</A></b>  </fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -77,26 +73,54 @@ y
 <P>
 
 <P>
-Tras un breve repaso de fundamentos bioqu&#237;micos, este material presenta y analiza unos cuantos algoritmos b&#225;sicos 
-para el estudio de la estructura molecular de prote&#237;nas y &#225;cidos nucleicos. Al igual que en muchos libros
-de texto, iremos introduciendo problemas (y estrategias para resolverlos) desde el nivel de estructura primaria al
-nivel de estructura cuaternaria. A lo largo del curso encontrar&#233;is referencias a art&#237;culos que profundizan sobre 
-aspectos particulares de cada tema, junto con ejemplos y ejercicios que a veces requieren de ciertos conocimientos de programaci&#243;n (en Perl y Python). 
-Si tuviese que recomendar un libro de texto como acompa&#241;amiento para este material ser&#237;a posiblemente
-<A NAME="tex2html36"
-  HREF="https://www.crcpress.com/Structural-Bioinformatics-An-Algorithmic-Approach/Burkowski/p/book/9781584886839"> <i> Structural Bioinformatics: An Algorithmic Approach  </i></A>.
-En espa&#241;ol, el texto 
-<A NAME="tex2html37"
-  HREF="https://zenodo.org/communities/bioinfconn"> <i> Bioinform&#225;tica con &#209;  </i></A>
-
-contiene varios cap&#237;tulos que pueden ser muy buen complemento para este material.
+La Bioinform&#225;tica Estructural se ocupa del estudio de la estructura molecular de prote&#237;nas y 
+&#225;cidos nucleicos con el fin de reconstruir su historia evolutiva e inferir sus posibles funciones. 
+El objetivo de este material es ayudar a comprender las diferentes estrategias y algoritmos
+que se utilizan habitualmente con este fin. 
+El curso no incluye la disecci&#243;n formal de la eficiencia de cada algoritmo; en cambio, 
+se apoya en validaciones emp&#237;ricas publicadas en la literatura para describir los puntos fuertes y d&#233;biles 
+de las diferentes estrategias. Solamente conociendo c&#243;mo funcionan estos algoritmos podremos elegir 
+los m&#225;s apropiados para cada problema y evaluar de manera cr&#237;tica los resultados obtenidos.
 
 <P>
-Puedes descargar este material en formato PDF en <A NAME="tex2html38"
+Tras un breve repaso de fundamentos bioqu&#237;micos, este material presenta algunos algoritmos b&#225;sicos,
+en su mayoria heur&#237;sticos, plantea problemas y estrategias para resolverlos. A lo largo del curso encontrar&#233;is 
+referencias a art&#237;culos que profundizan sobre aspectos particulares de cada tema, junto con ejemplos que 
+a veces requieren de ciertos conocimientos de programaci&#243;n (en Perl5 y Python2.7). 
+
+<P>
+Este curso ha servido como material did&#225;ctico de la 
+<A NAME="tex2html36"
+  HREF="http://www.lcg.unam.mx">Licenciatura en Ciencias Gen&#243;micas-UNAM</A>
+desde 2008. 
+Agradezco a los alumnos por sus comentarios para mejorarlo, 
+a M.Medina, J.Fern&#225;ndez-Recio y A.Pascual-Garc&#237;a por actuar de evaluadores en un proceso de 
+revisi&#243;n abierta por pares ( <i> open peer review  </i>) en 
+<A NAME="tex2html37"
+  HREF="https://digital.csic.es">Digital.CSIC</A>,
+y a <A NAME="tex2html38"
+  HREF="http://www.araid.es">ARAID</A>
+por el apoyo todos estos a&#241;os.
+
+<P>
+Puedes descargar este material en formato PDF en <A NAME="tex2html39"
   HREF="http://hdl.handle.net/10261/21892">Digital.CSIC</A>
 y
-los ejemplos y programas del curso en la carpeta <A NAME="tex2html39"
+los ejemplos y programas del curso en la carpeta <A NAME="tex2html40"
   HREF="https://github.com/eead-csic-compbio/bioinformatica_estructural/">code</A>.
+Puedes asimismo citarlo como:
+
+<P>
+Contreras-Moreira,B. (2018) Algoritmos en bioinform&#225;tica estructural. <A NAME="tex2html41"
+  HREF="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</A>
+<P>
+Si tuviese que recomendar un libro de texto como acompa&#241;amiento para este material ser&#237;a posiblemente
+<A NAME="tex2html42"
+  HREF="https://www.crcpress.com/Structural-Bioinformatics-An-Algorithmic-Approach/Burkowski/p/book/9781584886839"> <i> Structural Bioinformatics: An Algorithmic Approach  </i></A>.
+En espa&#241;ol, el texto 
+<A NAME="tex2html43"
+  HREF="https://zenodo.org/communities/bioinfconn"> <i> Bioinform&#225;tica con &#209;  </i></A>
+contiene varios cap&#237;tulos que pueden complementar este material, varios de ellos citados en el texto. 
 
 <P>
 <BR><HR>
@@ -104,129 +128,135 @@ los ejemplos y programas del curso en la carpeta <A NAME="tex2html39"
 <A NAME="CHILD_LINKS"></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html557"
+<LI><A NAME="tex2html594"
   HREF="node1.html">TEOR&#205;A: Fundamentos de estructura de macromol&#233;culas</A>
 <UL>
-<LI><A NAME="tex2html558"
-  HREF="node2.html">Papel biol&#243;gico de las macromol&#233;culas: relaci&#243;n entre estructura y funci&#243;n</A>
-<LI><A NAME="tex2html559"
+<LI><A NAME="tex2html595"
+  HREF="node2.html">Papel biol&#243;gico de las macromol&#233;culas: relaci&#243;n entre secuencia, estructura y funci&#243;n</A>
+<LI><A NAME="tex2html596"
   HREF="node3.html">Componentes y enlaces</A>
 <UL>
-<LI><A NAME="tex2html560"
+<LI><A NAME="tex2html597"
   HREF="node4.html">El enlace pept&#237;dico y los amino&#225;cidos</A>
-<LI><A NAME="tex2html561"
+<LI><A NAME="tex2html598"
   HREF="node5.html">El enlace fosfodi&#233;ster y los nucle&#243;tidos</A>
-<LI><A NAME="tex2html562"
+<LI><A NAME="tex2html599"
   HREF="node6.html">Interacciones no covalentes en las macromol&#233;culas</A>
 </UL>
-<LI><A NAME="tex2html563"
+<LI><A NAME="tex2html600"
   HREF="node7.html">An&#225;lisis jer&#225;rquico de la estructura de macromol&#233;culas</A>
 <UL>
-<LI><A NAME="tex2html564"
-  HREF="node8.html">Estructura primaria</A>
-<LI><A NAME="tex2html565"
-  HREF="node9.html">Estructura secundaria</A>
-<LI><A NAME="tex2html566"
-  HREF="node10.html">Estructura terciaria y cuaternaria</A>
-<LI><A NAME="tex2html567"
-  HREF="node11.html">Estructura 3D de la cromatina</A>
-</UL>
-<LI><A NAME="tex2html568"
-  HREF="node12.html">M&#233;todos experimentales para el estudio de la estructura y din&#225;mica de macromol&#233;culas</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html569"
-  HREF="node13.html">TEOR&#205;A: Plegamiento y din&#225;mica de macromol&#233;culas</A>
-<UL>
-<LI><A NAME="tex2html570"
-  HREF="node14.html">Plegamiento y desnaturalizaci&#243;n</A>
-<LI><A NAME="tex2html571"
-  HREF="node15.html">Fuerzas que influyen en el proceso de plegamiento de macromol&#233;culas</A>
-<LI><A NAME="tex2html572"
-  HREF="node16.html">Complejidad algor&#237;tmica del plegamiento</A>
-<LI><A NAME="tex2html573"
-  HREF="node17.html">Paradoja de Levinthal</A>
-<LI><A NAME="tex2html574"
-  HREF="node18.html">Aproximaciones a la velocidad de plegamiento de prote&#237;nas</A>
-<LI><A NAME="tex2html575"
-  HREF="node19.html">Algoritmos de din&#225;mica molecular y plegamiento</A>
-<UL>
-<LI><A NAME="tex2html576"
-  HREF="node20.html">Modelos bidimensionales de plegamiento de prote&#237;nas</A>
-<LI><A NAME="tex2html577"
-  HREF="node21.html">Modelos tridimensionales de mec&#225;nica molecular</A>
-<LI><A NAME="tex2html578"
-  HREF="node22.html">Modelos aproximados</A>
-</UL>
-<LI><A NAME="tex2html579"
-  HREF="node23.html">Foldit: jugando a plegar prote&#237;nas</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html580"
-  HREF="node24.html">Estructura primaria o secuencia</A>
-<UL>
-<LI><A NAME="tex2html581"
-  HREF="node25.html">Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de promotores</A>
-<LI><A NAME="tex2html582"
-  HREF="node26.html">Dise&#241;o de primers para PCR</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html583"
-  HREF="node27.html">Estructura secundaria</A>
-<UL>
-<LI><A NAME="tex2html584"
-  HREF="node28.html">Estructura secundaria de RNA</A>
-<LI><A NAME="tex2html585"
-  HREF="node29.html">(Des)estructura secundaria de prote&#237;nas</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html586"
-  HREF="node30.html">Estructura terciaria</A>
-<UL>
-<LI><A NAME="tex2html587"
-  HREF="node31.html">Relaci&#243;n entre estructura primaria y terciaria</A>
-<LI><A NAME="tex2html588"
-  HREF="node32.html">Comparaci&#243;n de estructura terciaria entre prote&#237;nas</A>
-<LI><A NAME="tex2html589"
-  HREF="node33.html"> <i> Protein fold recognition  </i></A>
-<LI><A NAME="tex2html590"
-  HREF="node34.html">Modelado de prote&#237;nas por homolog&#237;a</A>
-<LI><A NAME="tex2html591"
-  HREF="node35.html">Modelado de prote&#237;nas por predicci&#243;n de contactos</A>
-<LI><A NAME="tex2html592"
-  HREF="node36.html">Mutaciones puntuales de prote&#237;nas</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html593"
-  HREF="node37.html">Estructura cuaternaria</A>
-<UL>
-<LI><A NAME="tex2html594"
-  HREF="node38.html">Interfaces moleculares</A>
-<LI><A NAME="tex2html595"
-  HREF="node39.html">Optimizaci&#243;n de cadenas laterales en interfaces</A>
-<LI><A NAME="tex2html596"
-  HREF="node40.html">Modelando nucle&#243;tidos dentro de una doble h&#233;lice de DNA</A>
-<LI><A NAME="tex2html597"
-  HREF="node41.html">Interacciones no covalentes: puentes de hidr&#243;geno en la interfaz</A>
-<LI><A NAME="tex2html598"
-  HREF="node42.html">Interfaces entre prote&#237;na, DNA y RNA: endonucleasas CRISPR-Cas guiadas por RNA</A>
-<LI><A NAME="tex2html599"
-  HREF="node43.html">Modelando interfaces moleculares por homolog&#237;a</A>
-<LI><A NAME="tex2html600"
-  HREF="node44.html">Modelando interfaces moleculares mediante docking</A>
-</UL>
-<BR>
 <LI><A NAME="tex2html601"
-  HREF="node45.html">Ap&#233;ndices</A>
-<UL>
+  HREF="node8.html">Estructura primaria</A>
 <LI><A NAME="tex2html602"
-  HREF="node46.html">Muestra de R  <i> Markdown  </i> para tus trabajos</A>
+  HREF="node9.html">Estructura secundaria</A>
+<LI><A NAME="tex2html603"
+  HREF="node10.html">Estructura terciaria y cuaternaria</A>
+<LI><A NAME="tex2html604"
+  HREF="node11.html">Estructura 3D de la cromatina</A>
+<LI><A NAME="tex2html605"
+  HREF="node12.html">Relaci&#243;n entre estructura primaria y terciaria de las prote&#237;nas: alineamientos y superposiciones</A>
+</UL>
+<LI><A NAME="tex2html606"
+  HREF="node13.html">M&#233;todos experimentales para el estudio de la estructura y din&#225;mica de macromol&#233;culas</A>
+<LI><A NAME="tex2html607"
+  HREF="node14.html">El Protein Data Bank y sus formatos</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html603"
-  HREF="node47.html">Bibliograf&#237;a</A>
-<LI><A NAME="tex2html604"
-  HREF="node48.html">Sobre este documento...</A>
+<LI><A NAME="tex2html608"
+  HREF="node15.html">TEOR&#205;A: Plegamiento y din&#225;mica de macromol&#233;culas</A>
+<UL>
+<LI><A NAME="tex2html609"
+  HREF="node16.html">Plegamiento y desnaturalizaci&#243;n</A>
+<LI><A NAME="tex2html610"
+  HREF="node17.html">Fuerzas que influyen en el proceso de plegamiento de macromol&#233;culas</A>
+<LI><A NAME="tex2html611"
+  HREF="node18.html">Complejidad algor&#237;tmica del plegamiento</A>
+<LI><A NAME="tex2html612"
+  HREF="node19.html">Paradoja de Levinthal</A>
+<LI><A NAME="tex2html613"
+  HREF="node20.html">Aproximaciones a la velocidad de plegamiento de prote&#237;nas</A>
+<LI><A NAME="tex2html614"
+  HREF="node21.html">Algoritmos de din&#225;mica molecular y plegamiento</A>
+<UL>
+<LI><A NAME="tex2html615"
+  HREF="node22.html">Modelos bidimensionales de plegamiento de prote&#237;nas</A>
+<LI><A NAME="tex2html616"
+  HREF="node23.html">Modelos tridimensionales de mec&#225;nica molecular</A>
+<LI><A NAME="tex2html617"
+  HREF="node24.html">Modelos aproximados</A>
+</UL>
+<LI><A NAME="tex2html618"
+  HREF="node25.html">Foldit: jugando a plegar prote&#237;nas</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html619"
+  HREF="node26.html">Estructura primaria o secuencia</A>
+<UL>
+<LI><A NAME="tex2html620"
+  HREF="node27.html">Estabilidad y deformaci&#243;n de un d&#250;plex de ADN: predicci&#243;n de promotores</A>
+<LI><A NAME="tex2html621"
+  HREF="node28.html">Dise&#241;o de primers para PCR</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html622"
+  HREF="node29.html">Estructura secundaria</A>
+<UL>
+<LI><A NAME="tex2html623"
+  HREF="node30.html">Estructura secundaria de RNA</A>
+<LI><A NAME="tex2html624"
+  HREF="node31.html">(Des)estructura secundaria de prote&#237;nas</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html625"
+  HREF="node32.html">Estructura terciaria</A>
+<UL>
+<LI><A NAME="tex2html626"
+  HREF="node33.html">Comparaci&#243;n de estructura terciaria entre prote&#237;nas</A>
+<LI><A NAME="tex2html627"
+  HREF="node34.html"> <i> Protein fold recognition  </i></A>
+<LI><A NAME="tex2html628"
+  HREF="node35.html">Modelado de prote&#237;nas por homolog&#237;a</A>
+<LI><A NAME="tex2html629"
+  HREF="node36.html">Modelado de prote&#237;nas  <i> ab initio  </i></A>
+<LI><A NAME="tex2html630"
+  HREF="node37.html">Modelado de prote&#237;nas por predicci&#243;n de contactos</A>
+<LI><A NAME="tex2html631"
+  HREF="node38.html">Mutaciones puntuales de prote&#237;nas</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html632"
+  HREF="node39.html">Estructura cuaternaria</A>
+<UL>
+<LI><A NAME="tex2html633"
+  HREF="node40.html">Interfaces moleculares</A>
+<LI><A NAME="tex2html634"
+  HREF="node41.html">Optimizaci&#243;n de cadenas laterales en interfaces</A>
+<LI><A NAME="tex2html635"
+  HREF="node42.html">Modelando nucle&#243;tidos dentro de una doble h&#233;lice de DNA</A>
+<LI><A NAME="tex2html636"
+  HREF="node43.html">Interacciones no covalentes: puentes de hidr&#243;geno en la interfaz</A>
+<LI><A NAME="tex2html637"
+  HREF="node44.html">Interfaces entre prote&#237;na, DNA y RNA: endonucleasas CRISPR-Cas guiadas por RNA</A>
+<LI><A NAME="tex2html638"
+  HREF="node45.html">Modelando interfaces moleculares por homolog&#237;a</A>
+<LI><A NAME="tex2html639"
+  HREF="node46.html">Modelando interfaces moleculares mediante docking</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html640"
+  HREF="node47.html">Ap&#233;ndices</A>
+<UL>
+<LI><A NAME="tex2html641"
+  HREF="node48.html">Abreviaturas</A>
+<LI><A NAME="tex2html642"
+  HREF="node49.html">Muestra de R  <i> Markdown  </i> para tus trabajos</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html643"
+  HREF="node50.html">Bibliograf&#237;a</A>
+<LI><A NAME="tex2html644"
+  HREF="node51.html">Sobre este documento...</A>
 </UL>
 <!--End of Table of Child-Links-->
 
@@ -235,13 +265,13 @@ los ejemplos y programas del curso en la carpeta <A NAME="tex2html39"
  SRC="./icons//prev_g.png"> 
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up_g.png"> 
-<A NAME="tex2html555"
+<A NAME="tex2html592"
   HREF="node1.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>

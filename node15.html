@@ -1,26 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2008 (1.71)
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<!--Converted with LaTeX2HTML 2018.2 (Released May 16, 2018) -->
 <HTML>
 <HEAD>
-<TITLE>Fuerzas que influyen en el proceso de plegamiento de macromol&#233;culas</TITLE>
-<META NAME="description" CONTENT="Fuerzas que influyen en el proceso de plegamiento de macromol&#233;culas">
+<TITLE>TEOR&#205;A: Plegamiento y din&#225;mica de macromol&#233;culas</TITLE>
+<META NAME="description" CONTENT="TEOR&#205;A: Plegamiento y din&#225;mica de macromol&#233;culas">
 <META NAME="keywords" CONTENT="algoritmos3D">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018.2">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="algoritmos3D.css">
 
-<LINK REL="next" HREF="node16.html">
-<LINK REL="previous" HREF="node14.html">
-<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="algoritmos3D.html">
 <LINK REL="next" HREF="node16.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,149 +36,82 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html783"
+<A NAME="tex2html818"
   HREF="node14.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html789"
-  HREF="node13.html">
+<A NAME="tex2html824"
+  HREF="algoritmos3D.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html791"
+<A NAME="tex2html826"
   HREF="node16.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html792"
-  HREF="node16.html">Complejidad algor&#237;tmica del plegamiento</A></b>  Arriba: <b><A NAME="tex2html790"
-  HREF="node13.html">TEOR&#205;A: Plegamiento y din&#225;mica de</A></b>  Anterior: <b><A NAME="tex2html784"
-  HREF="node14.html">Plegamiento y desnaturalizaci&#243;n</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A> <div><fieldset>Siguiente: <b><A NAME="tex2html827"
+  HREF="node16.html">Plegamiento y desnaturalizaci&#243;n</A></b>  Arriba: <b><A NAME="tex2html825"
+  HREF="algoritmos3D.html">Algoritmos en bioinform&#225;tica estructural</A></b>  Anterior: <b><A NAME="tex2html819"
+  HREF="node14.html">El Protein Data Bank y</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00220000000000000000">
-Fuerzas que influyen en el proceso de plegamiento de macromol&#233;culas</A>
+<H1><A NAME="SECTION00200000000000000000"></A> <A NAME="macro2"></A>
+<BR>
+TEOR&#205;A: Plegamiento y din&#225;mica de macromol&#233;culas
 </H1>
 
 <P>
-Se han reconocido varias propiedades e interacciones f&#237;sicas que gu&#237;an al proceso de plegamiento, 
-como las que mencionamos en la secci&#243;n <A HREF="node6.html#macro1:intnocov">1.2.3</A>. Algunas son espec&#237;ficas
-del plegamiento de prote&#237;nas, como la formaci&#243;n de enlaces disulfuro entre ciste&#237;nas o la formaci&#243;n
-de puentes salinos entre amino&#225;cidos b&#225;sicos y &#225;cidos, pero en general se acepta que las principales
-son la hidrofobicidad en un medio acuoso y la formaci&#243;n de puentes de hidr&#243;geno 
-(<A NAME="tex2html793" target="contents"
-  HREF="node47.html#Dill1990">Dill, 1990</A>; <A NAME="tex2html794" target="contents"
-  HREF="node47.html#Mathews1999">Mathews <EM>et&nbsp;al.</EM>, 1999</A>; <A NAME="tex2html795" target="contents"
-  HREF="node47.html#Lehninger1982">Lehninger, 1982</A>).
+Ahora que conocemos de qu&#233; est&#225;n hechas las macromol&#233;culas y sabemos lo importantes que son 
+en biolog&#237;a, haremos un peque&#241;o repaso sobre las ideas centrales del proceso de plegamiento
+( <i> folding  </i>), responsable de que estas mol&#233;culas adquieran la estructura tridimensional 
+que les confiere su funci&#243;n.
 
 <P>
-Algunas de estas propiedades pueden estimarse directamente desde la secuencia. Por ejemplo, se han
-propuesto escalas de hidrofobicidad como la de la tabla <A HREF="#tab:hidrof">2.1</A>, que quedan englobadas en clasificaciones 
-como la de <A HREF="node4.html#fig:amino_classif">1.5</A>.
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
-<P>
-<BR><P></P>
-<DIV ALIGN="CENTER"><A NAME="1480"></A>
-<TABLE>
-<CAPTION><STRONG>Tabla 2.1:</STRONG>
-Escala de hidrofobicidad de los 20 amino&#225;cidos (<A
- HREF="node47.html#Kyte1982">Kyte, 1982</A>)</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-</DIV>
-<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">
-A </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 1.8 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> M </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 1.9</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">    
-C </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 2.5 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> N </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -3.5</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 
-D </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -3.5 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> P </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -1.6</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">  
-E </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -3.5 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> Q </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -3.5</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">   
-F </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 2.8 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> R </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -4.5</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 
-G </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -0.4 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> S </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -0.8</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">       
-H </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -3.2 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> T </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -0.7</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">     
-I </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 4.5 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> V </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 4.2</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE">    
-K </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -3.9 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> W </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -0.9</SMALL></TD>
-</TR>
-<TR><TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 
-L </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> 3.8 </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> Y </SMALL></TD>
-<TD ALIGN="LEFT"><SMALL CLASS="SCRIPTSIZE"> -1.3</SMALL></TD>
-</TR>
-</TABLE>
-</DIV>
-
-<A NAME="tab:hidrof"></A>
-</TD></TR>
-</TABLE>
-</DIV><P></P>
-<BR> 
-
-<P>
-Como resultado del proceso de plegamiento en medios acuosos, las macromol&#233;culas se empaquetan mostrando 
-hacia el solvente superficies hidrof&#237;licas y ocultando los componentes m&#225;s hidrof&#243;bicas. En el interior
-las interacciones de van der Waals dan estabilidad al conjunto. Como siempre, hay excepciones notables (<A
- HREF="node47.html#Sun2014">Sun <EM>et&nbsp;al.</EM>, 2014</A>).
-En el caso de las prote&#237;nas otro factor que condiciona el plegamiento es su tendencia natural a formar 
-mult&#237;meros (<A
- HREF="node47.html#Garcia2017">Garcia-Seisdedos <EM>et&nbsp;al.</EM>, 2017</A>). 
-<P>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html828"
+  HREF="node16.html">Plegamiento y desnaturalizaci&#243;n</A>
+<LI><A NAME="tex2html829"
+  HREF="node17.html">Fuerzas que influyen en el proceso de plegamiento de macromol&#233;culas</A>
+<LI><A NAME="tex2html830"
+  HREF="node18.html">Complejidad algor&#237;tmica del plegamiento</A>
+<LI><A NAME="tex2html831"
+  HREF="node19.html">Paradoja de Levinthal</A>
+<LI><A NAME="tex2html832"
+  HREF="node20.html">Aproximaciones a la velocidad de plegamiento de prote&#237;nas</A>
+<LI><A NAME="tex2html833"
+  HREF="node21.html">Algoritmos de din&#225;mica molecular y plegamiento</A>
+<UL>
+<LI><A NAME="tex2html834"
+  HREF="node22.html">Modelos bidimensionales de plegamiento de prote&#237;nas</A>
+<LI><A NAME="tex2html835"
+  HREF="node23.html">Modelos tridimensionales de mec&#225;nica molecular</A>
+<LI><A NAME="tex2html836"
+  HREF="node24.html">Modelos aproximados</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html837"
+  HREF="node25.html">Foldit: jugando a plegar prote&#237;nas</A>
+</UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html783"
+<A NAME="tex2html818"
   HREF="node14.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html789"
-  HREF="node13.html">
+<A NAME="tex2html824"
+  HREF="algoritmos3D.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html791"
+<A NAME="tex2html826"
   HREF="node16.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
-<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+<a href="http://hdl.handle.net/10261/21892">PDF</a><br>Contreras-Moreira,B. (2018) Algoritmos en bioinform&aacute;tica estructural. <a href="https://doi.org/10.20350/digitalcsic/8544">doi:10.20350/digitalcsic/8544</a><br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
 </ADDRESS>
 </BODY>
 </HTML>
