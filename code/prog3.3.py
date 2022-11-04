@@ -1,11 +1,13 @@
 #!/usr/bin/env python
+
+from __future__ import print_function
+from math import exp
+
 """ prog3.3 Construye un modelo sin gaps ni rotameros una secuencia problema (query) 
 en base a las coordenadas del model (pdb2) en base a un alineamiento. 
 Genera un fichero PDB con el modelo comparativo resultante."""
 
 __author__  = 'Bruno Contreras-Moreira' 
-
-from math import exp
 
 # 0) parametros del algoritmo: 
 query = { 'align':'KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQIN' +
@@ -57,13 +59,13 @@ def copia_coords_alineadas(align1,align2,coords_molde,PDBname):
 	length = len(align1)
 	
 	if(length != len(align2)): 
-		print "# copia_coords_alineadas: alineamientos tienen != longitud",
+		print("# copia_coords_alineadas: alineamientos tienen != longitud")
 		return []
 	
 	pdbfile = open(PDBname, 'w')
-	print >> pdbfile, "HEADER comparative model\nREMARK alignment:\n",
-	print >> pdbfile, "REMARK query   : %s\n" % (align1),
-	print >> pdbfile, "REMARK template: %s\n" % (align2),
+	print("HEADER comparative model\nREMARK alignment:\n", file=pdbfile)
+	print("REMARK query   : %s\n" % (align1), file=pdbfile)
+	print("REMARK template: %s\n" % (align2), file=pdbfile)
 	
 	for r in range(0, length):
 		conserved = False
@@ -81,10 +83,10 @@ def copia_coords_alineadas(align1,align2,coords_molde,PDBname):
 			if(atomo[12:16] == ' CA ' or atomo[12:16] == ' C  ' or \
 				atomo[12:16] == ' N  ' or atomo[12:16] == ' O  ' \
 				or conserved):
-				print >> pdbfile, "%s%s%s%4d%s" % \
-				(atomo[0:17],aanames[res1],atomo[20:22],total1+1,atomo[26:])	
+				print("%s%s%s%4d%s" % \
+				    (atomo[0:17],aanames[res1],atomo[20:22],total1+1,atomo[26:]), file=pdbfile)
 		
-	print >> pdbfile, "TER\n",
+	print("TER\n", file=pdbfile)
 	pdbfile.close()	
 	
 	rmsd = 0.40 * exp(1.87*(1-(identical/total_model)))
@@ -96,12 +98,12 @@ def copia_coords_alineadas(align1,align2,coords_molde,PDBname):
 
 molde['coords'] = lee_coordenadas_PDB( molde['file'] )
 		
-print "# total residuos en estructura molde : %s\n" % (len(molde['coords'])),
+print("# total residuos en estructura molde : %s\n" % (len(molde['coords'])))
 
 (long_modelo,identidad,rmsd) = copia_coords_alineadas(query['align'],
 				molde['align'],molde['coords'],'modelo.pdb' )
 
-print "# archivo PDB = modelo.pdb longitud modelo (residuos) = %d \n" % long_modelo,
-print "# identidad = %1.0f%% RMSD estimado = %1.2f ansgtrom\n" % (100*identidad,rmsd),
+print("# archivo PDB = modelo.pdb longitud modelo (residuos) = %d \n" % long_modelo)
+print("# identidad = %1.0f%% RMSD estimado = %1.2f ansgtrom\n" % (100*identidad,rmsd))
 
 
