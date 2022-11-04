@@ -1,11 +1,13 @@
 #!/usr/bin/env python
+
+from __future__ import print_function
+import bases
+from math import sqrt
+
 """ prog4.1 Toma un complejo proteina-DNA en formato PDB y sustituye la secuencia 
 de DNA. Genera un fichero PDB con el complejo resultante."""
 
 __author__  = 'Bruno Contreras-Moreira with help from Vladimir Espinosa Angarica' 
-
-import bases
-from math import sqrt
 
 # 0) parametros del algoritmo: 
 complexfile = './files/1j1v.pdb';
@@ -83,13 +85,13 @@ def mutagenesis(protein,dna,sequence,designed_sequence,PDBname):
 		designed_dna.append(renum_nt)
 
 	pdbfile = open(PDBname, 'w')
-	print >> pdbfile, "HEADER redesigned protein-DNA complex\n",
-	print >> pdbfile, "REMARK original sequence : %s\n" % (sequence),
-	print >> pdbfile, "REMARK designed sequence : %s\n" % (designed_sequence),
-	for r in protein: print >> pdbfile, "%s" % (r),
-	print >> pdbfile, "TER\n",
-	for r in designed_dna: print >> pdbfile, "%s" % (r),	
-	print >> pdbfile, "TER\n",
+	print("HEADER redesigned protein-DNA complex\n", file=pdbfile)
+	print("REMARK original sequence : %s\n" % (sequence), file=pdbfile)
+	print("REMARK designed sequence : %s\n" % (designed_sequence), file=pdbfile)
+	for r in protein: print("%s" % (r), file=pdbfile)
+	print("TER\n", file=pdbfile)
+	for r in designed_dna: print("%s" % (r), file=pdbfile)
+	print("TER\n", file=pdbfile)
 	pdbfile.close()	
 	
 	return n_of_substitutions
@@ -108,9 +110,9 @@ def base_mutada(base_coords,sequence):
 	basename = 'D'+sequence
 	chainID  = base_coords[21:22]
 	resID    = int(base_coords[22:26])
-        original_sequence = base_coords[19:20]
+	original_sequence = base_coords[19:20]
 
-        if(original_sequence == 'A' or original_sequence == 'G'):
+	if(original_sequence == 'A' or original_sequence == 'G'):
 		refatom1 = extrae_coords_atomo(base_coords,' N9 ')	
 		refatom2 = extrae_coords_atomo(base_coords,' C4 ')
 		refatom3 = extrae_coords_atomo(base_coords,' C8 ')
@@ -190,14 +192,14 @@ def renumera_atomos(res,total_provisional):
 
 	
 # 2) programa principal 
-print "# leyendo complejo %s ...\n" % (complexfile),
+print("# leyendo complejo %s ...\n" % (complexfile))
 (protein,dna,secuencia) = lee_coordenadas_complejoPDB( complexfile )
 		
-print "# total aminoacidos: %d total nucleotidos: %d \n" % (len(protein),len(dna)),
-print "# secuencia nativa : %s\n# secuencia deseada: %s\n" % (secuencia,secuencia_nueva),
+print("# total aminoacidos: %d total nucleotidos: %d \n" % (len(protein),len(dna)))
+print("# secuencia nativa : %s\n# secuencia deseada: %s\n" % (secuencia,secuencia_nueva))
 
 sustituciones = mutagenesis(protein,dna,secuencia,secuencia_nueva,'complejo.pdb')
 
-print "# archivo PDB = complejo.pdb con %d sustituciones\n" % sustituciones,
+print("# archivo PDB = complejo.pdb con %d sustituciones\n" % sustituciones)
 
 
