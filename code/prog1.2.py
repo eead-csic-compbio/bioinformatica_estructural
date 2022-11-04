@@ -3,6 +3,7 @@
 
 # adapted from Amplicon (Simon Neil Jarman, http://sourceforge.net/projects/amplicon/)
 
+from __future__ import print_function
 import math,string,getopt,sys
 
 ######################################################################################
@@ -80,30 +81,29 @@ def checkhairpins(primerseqs,minhplen,maxhplen,hpthresh):
     n=1
     
     for seq in primerseqs:
-	#print 'oligo number '+str(n)+': '+seq+'\n'
-	n=n+1
-	high=perfectmatch(seq)
-	thresh=(hpthresh/200.0)*high
-	l=minhplen
-	topcheck=0
-	while l<max:
-	    tops,mids,bots,matches=hairpin(seq,l,thresh)
-	    tops=tops[:5]
-	    mids=mids[:5]
-	    bots=bots[:5]
-	    matches=matches[:5]
-	    a=0
-	    while a < len(tops)-1:
-		print tops[a]
-		print mids[a]
-		print bots[a]+'\n'
-		print str(matches[a])+' / '+str(high/2-l)+ ' Potential H-Bonds\n'
-		if matches[a]/float(high/2-l) > maxHpotential:
-		   maxHpotential = matches[a]/float(high/2-l) 
-		if tops[a]<>[]:
-		   topcheck=1
-		a=a+1
-	    l=l+1
+        n=n+1
+        high=perfectmatch(seq)
+        thresh=(hpthresh/200.0)*high
+        l=minhplen
+        topcheck=0
+        while l<max:
+            tops,mids,bots,matches=hairpin(seq,l,thresh)
+            tops=tops[:5]
+            mids=mids[:5]
+            bots=bots[:5]
+            matches=matches[:5]
+            a=0
+            while a < len(tops)-1:
+                print(tops[a])
+                print(mids[a])
+                print(bots[a]+'\n')
+                print(str(matches[a])+' / '+str(high/2-l)+ ' Potential H-Bonds\n')
+                if matches[a]/float(high/2-l) > maxHpotential:
+                   maxHpotential = matches[a]/float(high/2-l) 
+                if tops[a]!=[]:
+                   topcheck=1
+                a=a+1
+            l=l+1
 	    
     return maxHpotential
 
@@ -213,39 +213,35 @@ def selfcomp(primerseqs,propcomp,numcomp):
        n=n+1
        b=0
        while b<len(comps):
-	   print comps[b]
-	   print comps[b+1]
-	   print comps[b+2]
-	   per = perfectmatch(comps[b])
-	   print '\n ',comps[b+3]+' / '+str(per)+' Potential H-bonds\n'
-	   if float(comps[b+3])/per > maxHpotential:
+           print(comps[b])
+           print(comps[b+1])
+           print(comps[b+2])
+           per = perfectmatch(comps[b])
+           print('\n ',comps[b+3]+' / '+str(per)+' Potential H-bonds\n')
+           if float(comps[b+3])/per > maxHpotential:
               maxHpotential = float(comps[b+3])/per
-	   b=b+4
+           b=b+4
    if len(primerseqs)>1:
-       #print "primer multiple sequence complementarities\n"
        n=1
        dmin=1
        for a in primerseqs:
-	   d=dmin
-	   while d < len(primerseqs):
-	       comps=complementarity(a,primerseqs[d],threshold)
-	       comps=comps[:(numcomp*4)]
-	       #print 'oligo combination '+str(n)+': '+a+' + '+primerseqs[d]
-	       #if comps==[]:
-		#   print "\n\nNo self complementarity above current threshold\n"
-	       n=n+1
-	       b=0
-	       while b<len(comps):
-		   print comps[b]
-		   print comps[b+1] 
-		   print comps[b+2]
-		   per = perfectmatch(comps[b])
-		   print '\n '+comps[b+3]+' / '+str(per)+' Potential H-bonds\n'
-		   if float(comps[b+3])/per > maxHpotential:
-		      maxHpotential = float(comps[b+3])/per
-		   b=b+4
-	       d=d+1
-	   dmin=dmin+1
+           d=dmin
+           while d < len(primerseqs):
+               comps=complementarity(a,primerseqs[d],threshold)
+               comps=comps[:(numcomp*4)]
+               n=n+1
+               b=0
+               while b<len(comps):
+                   print(comps[b])
+                   print(comps[b+1])
+                   print(comps[b+2])
+                   per = perfectmatch(comps[b])
+                   print('\n '+comps[b+3]+' / '+str(per)+' Potential H-bonds\n')
+                   if float(comps[b+3])/per > maxHpotential:
+                       maxHpotential = float(comps[b+3])/per
+                   b=b+4
+               d=d+1
+           dmin=dmin+1
    return maxHpotential
 	
 ############################################################################	
@@ -321,7 +317,7 @@ def complementarity(inseq,inseq2,threshold):
             for e in matches:
                 if e == mid:
                     f=1
-            if f <>1:
+            if f != 1:
                 smatch = str(match)
                 matches = matches+[oligo]+[mid]+[Toligorev]+[smatch]
                 if int(match) > max:
@@ -360,31 +356,28 @@ def crosscomp(fprimer,rprimer,propcomp,numcomp):
     perfect1=perfectmatch(fprimer)
     perfect2=perfectmatch(rprimer)
     if perfect2<perfect1:
-	perfect1=perfect2
+        perfect1=perfect2
     threshold=propcomp*perfect1*0.01
     
     crossHpotential = 0
     n=1
     q=0
     while q <len(growR):
-	for a in growF:
-	    comps=complementarity(a,growR[q],threshold)
-	    comps=comps[:(numcomp*4)]
-	    #print 'oligo '+str(n)+' f: '+a+' r: '+growR[q]
-	    #if comps==[]:
-		#print "\n\nNo complementarity above current threshold\n"
-	    n=n+1
-	    b=0
-	    while b<len(comps):
-		print comps[b]
-		print comps[b+1]
-		print comps[b+2]
-		per=perfectmatch(comps[b])
-		print '\n '+comps[b+3]+' / '+str(per)+' Potential H-bonds'
-		if float(comps[b+3])/per > crossHpotential:
-		   crossHpotential = float(comps[b+3])/per
-		b=b+4
-	q=q+1
+        for a in growF:
+            comps=complementarity(a,growR[q],threshold)
+            comps=comps[:(numcomp*4)]
+            n=n+1
+            b=0
+            while b<len(comps):
+                print(comps[b])
+                print(comps[b+1])
+                print(comps[b+2])
+                per=perfectmatch(comps[b])
+                print('\n '+comps[b+3]+' / '+str(per)+' Potential H-bonds')
+                if float(comps[b+3])/per > crossHpotential:
+                    crossHpotential = float(comps[b+3])/per
+                b=b+4
+        q=q+1
     
     return crossHpotential
 
@@ -409,8 +402,8 @@ def main(argv):
     maxdegen = 128
 
     if len(sys.argv) < 3:
-        print "usage: python check_primers.py 5'forward_primer3' 5'reverse primer3'"
-	sys.exit(-1)
+        print("usage: python check_primers.py 5'forward_primer3' 5'reverse primer3'")
+        sys.exit(-1)
 	
     fprimer = string.upper(sys.argv[1])
     rprimer = string.upper(sys.argv[2])
@@ -423,11 +416,11 @@ def main(argv):
     fdegen = rdegen = 0
     
     ## 1) take care of forward primer		    
-    print "# forward primer "+fprimer+'\n'	                   
+    print("# forward primer "+fprimer+'\n')
 
     fdegen = degeneracy(fprimer)
     
-    print "# fdegen= %g\n" % fdegen
+    print("# fdegen= %g\n" % fdegen)
     
     if fdegen <= maxdegen :
  
@@ -435,8 +428,8 @@ def main(argv):
 
        # 1.0) print each regenerated foligo
        for s in fprimerseqs:
-         print "# fundegseq ", s
-       print "\n"
+         print("# fundegseq ", s)
+       print("\n")
         
        # 1.1) calculate tms
        for s in fprimerseqs:
@@ -453,18 +446,18 @@ def main(argv):
        fselfHpotentail = selfcomp(fprimerseqs,40,4)
     
        # 1.4) report results
-       print "# flowTm= %1.1f\n# fhighTm= %1.1f" % (flowtm,fhightm) 
-       print "# fhairpin potential= %1.2f\n# fselfcompl potential= %1.2f\n" % (fhpinHpotential,fselfHpotentail)
+       print("# flowTm= %1.1f\n# fhighTm= %1.1f" % (flowtm,fhightm) )
+       print( "# fhairpin potential= %1.2f\n# fselfcompl potential= %1.2f\n" % (fhpinHpotential,fselfHpotentail))
     
     else :
-       print "primer skipped, too degenerated (> ",maxdegen,")\n"    
+       print("primer skipped, too degenerated (> ",maxdegen,")\n")
 
     ## 2) now do reverse primer
-    print "# reverse primer "+rprimer+'\n'	    
+    print("# reverse primer "+rprimer+'\n')
 
     rdegen = degeneracy(rprimer)
 
-    print "# rdegen= %g\n" % rdegen
+    print("# rdegen= %g\n" % rdegen)
 
     if rdegen <= maxdegen :
 
@@ -472,8 +465,8 @@ def main(argv):
        
        # 2.0) print each regenerated roligo
        for s in rprimerseqs:
-         print "# rundegseq ", s
-       print "\n"
+         print("# rundegseq ", s)
+       print("\n")
 
        # 2.1) calculate tms
        for s in rprimerseqs:
@@ -490,16 +483,16 @@ def main(argv):
        rselfHpotentail = selfcomp(rprimerseqs,40,4)
     
        # 2.4) report results
-       print "# rlowTm= %1.1f\n# rhighTm= %1.1f" % (rlowtm,rhightm) 
-       print "# rhairpin potential= %1.2f\n# rselfcompl potential= %1.2f\n" % (rhpinHpotential,rselfHpotentail)
+       print("# rlowTm= %1.1f\n# rhighTm= %1.1f" % (rlowtm,rhightm))
+       print("# rhairpin potential= %1.2f\n# rselfcompl potential= %1.2f\n" % (rhpinHpotential,rselfHpotentail))
     
     else :
-       print "primer skipped, too degenerated (> ",maxdegen,")\n"    
+       print("primer skipped, too degenerated (> ",maxdegen,")\n")
 
     ## 3) finally chech cross-complementarities
     if fdegen <= maxdegen and rdegen <= maxdegen :
        crossHpotential = crosscomp(fprimer,rprimer,40,4)
-       print "\n# cross-compl potential= %1.1f" % crossHpotential
+       print("\n# cross-compl potential= %1.1f" % crossHpotential)
 
 
 ########################### MAIN ################################################
