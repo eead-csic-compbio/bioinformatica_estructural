@@ -53,7 +53,7 @@
 #
 # Version 1.0 2005 May 01
 
-
+from __future__ import print_function
 import copy
 import math
 
@@ -75,8 +75,8 @@ def svd(a):
     #if __debug__: print 'a is ',m,' by ',n
 
     if m < n:
-        if __debug__: print 'Error: m is less than n'
-        raise ValueError,'SVD Error: m is less than n.'
+        if __debug__: print('Error: m is less than n')
+        raise ValueError('SVD Error: m is less than n.')
 
     e = [0.0]*n  # allocate arrays
     q = [0.0]*n
@@ -205,7 +205,7 @@ def svd(a):
                         v[j][k] = -v[j][k]
                 break  # break out of iteration loop and move on to next k value
             if iteration >= itmax-1:
-                if __debug__: print 'Error: no convergence.'
+                if __debug__: print('Error: no convergence.')
                 # should this move on the the next k or exit with error??
                 #raise ValueError,'SVD Error: No convergence.'  # exit the program with error
                 break  # break out of iteration loop and move on to next k
@@ -294,7 +294,7 @@ def matrixmultiply(a,b):
     except TypeError:
         bn = 1
     if an != bm:
-        raise ValueError, 'matrixmultiply error: array sizes do not match.'
+        raise ValueError('matrixmultiply error: array sizes do not match.')
     cm = am
     cn = bn
     if bn == 1:
