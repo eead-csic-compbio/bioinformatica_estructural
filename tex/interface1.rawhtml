@@ -1,0 +1,50 @@
+\begin{rawhtml}
+<table border="0" cellspacing="10">
+<tbody><tr><th>factor</th><th>logo</th><th>E-value</th><th>\%IID</th><th>\%Isim</th><th>\%Icover</th><th>organism</th><th>complex</th></tr>
+<tr><td>SigA:</td><td>
+<img src="http://floresta.eead.csic.es/3dfootprint/pics/1rio_H_trimmedPWM_50_logo.png" height="50" alt="cTTGACT"></td><td>4e-23</td><td>100</td><td>100.0</td><td>100</td><td style="font-size: 70%" align="center">THERMUS AQUATICUS</td><td><a href="http://floresta.eead.csic.es/3dfootprint/complexes/1rio_H.html" title="Sigma3_and_sigma4_domains_of_RNA_polymerase_sigma_factors;">1rio_H</a>:STRUCTURE OF BACTERIOPHAGE LAMBDA C...</td></tr>
+</tbody></table>
+
+<pre>
+><a href="http://floresta.eead.csic.es/3dfootprint/complexes/1rio_H.html">1rio_H</a>:Sigma3_and_sigma4_domains_of_RNA_polymerase_sigma_factors;
+           title=STRUCTURE OF BACTERIOPHAGE LAMBDA CI-NTD IN COMPLEX WITH SIGMA-REGION4 OF THERMUS AQUATICUS BOUND TO
+           DNA organism=THERMUS AQUATICUS | interface=43,44,45,46,48,49
+
+  Expect = 4e-23, Identities = 34/59 (57%)
+  <b>Interface:</b> identity = 6/6 (100%) , similarity = 6.0/6 (100%) , coverage = 6/6 (100%)
+
+Query: 614 ETTTRVLASLTPREERVLRMRFGIGMNTDHTLEEVGQQFSVTRERIRQIEAKALRKLKH 672
+           E   + L+ L+ RE  VL++R G+    +HTLEEVG  F VTRERIRQIE KALRKLK+
+Sbjct: 2   EELEKALSKLSEREAMVLKLRKGLIDGREHTLEEVGAYFGV<font color="red"><b><u>T</u></b></font><font color="red"><b><u>R</u></b></font><font color="red"><b><u>E</u></b></font><font color="red"><b><u>R</u></b></font>I<font color="red"><b><u>R</u></b></font><font color="red"><b><u>Q</u></b></font>IENKALRKLKY 60
+</pre>
+
+<table border="0" cellspacing="10">
+<tbody>
+<tr><td>rpoH1:</td><td><img src="http://floresta.eead.csic.es/3dfootprint/pics/1rio_H_trimmedPWM_50_logo.png" height="50" alt="cTTGACT"></td><td>3e-17</td><td>83</td><td>87.5</td><td>100</td><td style="font-size: 70%;" align="center">THERMUS AQUATICUS</td><td><a href="http://floresta.eead.csic.es/3dfootprint/complexes/1rio_H.html" title="Sigma3_and_sigma4_domains_of_RNA_polymerase_sigma_factors;">1rio_H</a>:STRUCTURE OF BACTERIOPHAGE LAMBDA C...</td></tr>
+</tbody></table>
+<pre>
+><a href="http://floresta.eead.csic.es/3dfootprint/complexes/1rio_H.html">1rio_H</a>:Sigma3_and_sigma4...
+
+  Expect = 3e-17, Identities = 24/56 (42%)
+  <b>Interface:</b> identity = 5/6 (83%) , similarity = 5.2/6 (88%) , coverage = 6/6 (100%)
+
+Query: 228 LAKAMSVLNERERRIFEARRLAED--PVTLEDLSAEFDISRERVRQIEVRAFEKVQ 281
+           L KA+S L+ERE  + + R+   D    TLE++ A F ++RER+RQIE +A  K++
+Sbjct: 4   LEKALSKLSEREAMVLKLRKGLIDGREHTLEEVGAYFGV<font color="red"><b><u>T</u></b></font><font color="red"><b><u>R</u></b></font><font color="red"><b><u>E</u></b></font><font color="red"><b><u>R</u></b></font>I<font color="red"><b><u>R</u></b></font><font color="red"><b><u>Q</u></b></font>IENKALRKLK 59
+</pre>
+
+<table border="0" cellspacing="10">
+<tbody>
+<tr><td>rpoH2:</td><td><img src="http://floresta.eead.csic.es/3dfootprint/pics/1rio_H_trimmedPWM_50_logo.png" height="50" alt="cTTGACT"></td><td>2e-18</td><td>67</td><td>77.5</td><td>100</td><td style="font-size: 70%;" align="center">THERMUS AQUATICUS</td><td><a href="http://floresta.eead.csic.es/3dfootprint/complexes/1rio_H.html" title="Sigma3_and_sigma4_domains_of_RNA_polymerase_sigma_factors;">1rio_H</a>:STRUCTURE OF BACTERIOPHAGE LAMBDA C...</td></tr>
+</tbody></table>
+<pre>
+><a href="http://floresta.eead.csic.es/3dfootprint/complexes/1rio_H.html">1rio_H</a>:Sigma3_and_sigma4...
+
+  Expect = 2e-18, Identities = 26/56 (46%)
+  <b>Interface:</b> identity = 4/6 (67%) , similarity = 4.7/6 (78%) , coverage = 6/6 (100%)
+
+Query: 220 LASALKHLNEREMKIISARRLAEDGA--TLEELGADLGISKERVRQIESRAMEKLR 273
+           L  AL  L+ERE  ++  R+   DG   TLEE+GA  G+++ER+RQIE++A+ KL+
+Sbjct: 4   LEKALSKLSEREAMVLKLRKGLIDGREHTLEEVGAYFGV<font color="red"><b><u>T</u></b></font><font color="red"><b><u>R</u></b></font><font color="red"><b><u>E</u></b></font><font color="red"><b><u>R</u></b></font>I<font color="red"><b><u>R</u></b></font><font color="red"><b><u>Q</u></b></font>IENKALRKLK 59
+</pre>
+\end{rawhtml}
