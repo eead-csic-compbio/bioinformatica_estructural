@@ -1,5 +1,5 @@
 Estos son los programas y ejemplos del curso "Algoritmos en bioinformatica estructural".
-Lenguajes: perl5 y python2.7
+Lenguajes: perl5 y python3
 
 # http://www.eead.csic.es/compbio
 # https://github.com/eead-csic-compbio/bioinformatica_estructural
