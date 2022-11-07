@@ -18,3 +18,5 @@ En español, el compendio [Bioinformática con Ñ](https://zenodo.org/communitie
 tiene varios capítulos que pueden ser muy buen complemento para este material, varios de ellos citados en el texto.
 
 Puedes descargar este material en formato PDF en [Digital.CSIC](http://hdl.handle.net/10261/21892) y navegarlo en <http://eead-csic-compbio.github.io/bioinformatica_estructural>. 
+
+![](fig/licenciaCC.png)
