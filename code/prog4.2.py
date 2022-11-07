@@ -1,10 +1,12 @@
 #!/usr/bin/env python
+
+from __future__ import print_function
+from math import sqrt,acos,pi
+
 """ prog4.2 Toma un complejo proteina-DNA en formato PDB y enumera los puentes de hidrogeno
 	encontrados entre donadores y aceptores de proteina y DNA, en la interfaz."""
 
 __author__  = 'Bruno Contreras-Moreira' 
-
-from math import sqrt,acos,pi
 
 # 0) datos del programa y parametros 
 complexfile = './files/1j1v_withH.pdb';
@@ -30,7 +32,10 @@ def lee_coordenadas_complejoPDB(filename):
 		
 	# 2) convierte tabla a lista, ordenando residuos 'ALA   440'
 	resIDs = coords.keys()
-	resIDs.sort( lambda x,y: int(x[5:])-int(y[5:]) )
+	resIDs = list(resIDs)
+	resIDs.sort( key=lambda x: int(x[5:]) )
+	#resIDs.sort( key=lambda x,y: int(x[5:])-int(y[5:]) ) # python2
+
 	for resID in resIDs:
 		if(coords[resID][17:19] == " D"): ncoords.append(coords[resID]) 
 		else: pcoords.append(coords[resID]) 
@@ -91,7 +96,7 @@ def puentesH_interfaz(protein,dna,verbose=False):
 					# comprueba distancia DA
 					if(DAdist > MAX_DA_DIST): continue
 					
-					if(verbose): print "distancia %s %s %g\n" % (pgroup,ngroup,DAdist)
+					if(verbose): print("distancia %s %s %g\n" % (pgroup,ngroup,DAdist))
 		
 					# comprueba distancia HA
 					Hcandidatos = []
@@ -108,14 +113,14 @@ def puentesH_interfaz(protein,dna,verbose=False):
 					for H in hidrogenos:
 						HAdist = distancia(aceptor,H)
 						if(HAdist < MAX_HA_DIST):
-							if(verbose): print"distancia HA %g\n" % (HAdist)
+							if(verbose): print("distancia HA %g\n" % (HAdist))
 							Hcandidatos.append(H)
 				
 					# comprueba angulo DHA y guarda los puentes resultantes			
 					for H in Hcandidatos:
 						angDHA = calcula_angulo_puenteH(donor,H,aceptor)
 						if(angDHA > MIN_DHA_ANGLE):
-							if(verbose): print"angulo DHA %g\n" % (angDHA)
+							if(verbose): print("angulo DHA %g\n" % (angDHA))
 							puente = "%s\n%1.1f DA %1.1f HA %1.1fD HA\n%s\n%s\n\n" % \
 									(patom,DAdist,HAdist,angDHA,natom,H)
 							puentesH.append(puente)
@@ -182,13 +187,13 @@ def calcula_angulo_puenteH(D,H,A):
 	
 	
 # 2) programa principal 
-print "# leyendo complejo %s ...\n" % (complexfile),
+print("# leyendo complejo %s ...\n" % (complexfile))
 (protein,dna) = lee_coordenadas_complejoPDB( complexfile )
 	
-print "# total aminoacidos: %d total nucleotidos: %d \n" % (len(protein),len(dna)),
+print("# total aminoacidos: %d total nucleotidos: %d \n" % (len(protein),len(dna)))
 
 puentesH = puentesH_interfaz(protein,dna,True)
 
-print "# puentes identificados: %d\n" % (len(puentesH)),
+print("# puentes identificados: %d\n" % (len(puentesH)))
 for HB in puentesH:
-	print HB
+	print(HB)
