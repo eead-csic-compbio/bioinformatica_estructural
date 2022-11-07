@@ -1,12 +1,18 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python
+
+from __future__ import print_function
+
 """ prog4.3 Toma un complejo proteina-DNA en formato PDB y hace una simulacion de docking,
-	devolviendo un archivo PDB, inspirado en codigo de http://graylab.jhu.edu/pyrosetta/scripts.html
-	Para mas detalles ver: http://pyrosetta.org/downloads/documentation/Reference_Appendix_A.pdf """
+    devolviendo un archivo PDB.
+    Ejemplo inspirado en codigo de https://www.pyrosetta.org/documentation/scripts
+    Para mas detalles y para actualizar el codigo segun se actualiza Rosetta ver: 
+    https://www.pyrosetta.org/documentation """
 
 __author__  = 'Bruno Contreras-Moreira' 
 
 import os,re
 from rosetta import *
+from pyrosetta import *
 
 complexfile    = './files/1j1v_withH.pdb'
 tmpfile        = 'tmp.rosetta'
@@ -67,7 +73,7 @@ def Rosetta2PDB(ficheroRosetta,ficheroPDB):
 					num_cambios += 1
 				
 				match = patronNT.match(line[17:20]) 
-        			if match: 
+				if match: 
 						line = line[0:18] + 'D' + line[19:]
 						num_cambios += 1
 				coords.append(line)
@@ -80,7 +86,7 @@ def Rosetta2PDB(ficheroRosetta,ficheroPDB):
 	for line in coords: 
 		if(line[0:6] == 'HEADER'):
 			line += "REMARK PDB reformatted from Rosetta coordinates\n"	
-		print >> pdbfile, "%s" % (line),
+		print("%s" % (line), file=pdbfile)
 	pdbfile.close()	
 
 	return num_cambios
@@ -88,7 +94,7 @@ def Rosetta2PDB(ficheroRosetta,ficheroPDB):
 
 ## 2) programa principal 
 num_cambios = PDB2Rosetta( complexfile, tmpfile )
-print "# convierto complejo %s en %s (%d cambios)\n\n" % (complexfile,tmpfile,num_cambios),
+print("# convierto complejo %s en %s (%d cambios)\n\n" % (complexfile,tmpfile,num_cambios))
 
 	
 # 2.1) inicia Rosetta y lee conformacion de partida
@@ -118,7 +124,7 @@ slide_into_contact = FaDockingSlideTogether( dock_jump )
 # en contraste con docking de baja resolucion:
 # Low-resolution, centroid based MC search (50 RigidBodyPerturbMoves with adaptable step sizes)
 
-print "comienzo docking (%d simulaciones MonteCarlo)..." % (intentos)
+print("comienzo docking (%d simulaciones MonteCarlo)..." % (intentos))
 docking_highres = DockingHighRes(funcion_eval, dock_jump)
 jd = PyJobDistributor(prefijo_salida, intentos, funcion_eval) 
 while (jd.job_complete == False):
@@ -140,16 +146,16 @@ fichero_resumen = prefijo_salida + '.fasc'
 
 if(os.path.isfile(fichero_resumen) == True):
 
-	print "\n# resultados en %s :\n\n" % (fichero_resumen),
+	print("\n# resultados en %s :\n\n" % (fichero_resumen))
 
 	salida = open(fichero_resumen,'r')
 	for line in salida: 
 		match = patron.match(line) 
-        	if match: 
+		if match: 
 				rosetta_outfile = match.group(1)
 				pdb_outfile = rosetta_outfile # sobreescribe archivo de salida de Rosetta
 				Rosetta2PDB(rosetta_outfile,pdb_outfile)
-				print "> %s valoracion: %f\n" % (pdb_outfile,float(match.group(2))),
+				print("> %s valoracion: %f\n" % (pdb_outfile,float(match.group(2))))
 			
 	salida.close()	
 
