@@ -1,9 +1,5 @@
 
-# Algoritmos en bioinformática estructural
-
-[Bruno Contreras-Moreira](http://www.eead.csic.es/compbio)
-
-[Estación Experimental de Aula Dei-CSIC, Zaragoza, España](http://www.eead.csic.es) 
+# Resumen {-}
 
 La Bioinformática Estructural se ocupa del estudio de la estructura molecular de proteínas y ácidos nucleicos con el fin de reconstruir su historia evolutiva e inferir sus posibles funciones. El objetivo de este material es ayudar a comprender las diferentes estrategias y algoritmos que se utilizan habitualmente con este fin. El curso no incluye la disección formal de la eficiencia de cada algoritmo; en cambio, se apoya en validaciones empíricas publicadas en la literatura para describir los puntos fuertes y débiles de las diferentes estrategias. Solamente conociendo cómo funcionan estos algoritmos podremos elegir los más apropiados para cada problema y evaluar de manera crítica los resultados obtenidos.
 
