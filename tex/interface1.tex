@@ -146,7 +146,7 @@ usando el algoritmo de \italics{backrub} de \citet{Davis2006}.
 Al igual que con SCWRL es posible explorar los rot\'{a}meros de ciertas posiciones de una estructura proteica (ver \ref{scwrl}), 
 con el siguiente c\'{o}digo, parte del algoritmo DNAPROT de \citet{Espinosa2008}, 
 podemos sustituir bases nitrogenadas a lo largo 
-de una doble h\'{e}lice de DNA en formato PDB, importando el m\'{o}dulo \htmladdnormallink{bases}{./files/bases.py} y descargando
+de una doble h\'{e}lice de DNA en formato PDB, importando el m\'{o}dulo \htmladdnormallink{bases}{./code/bases.py} y descargando
 las coordenadas cristalogr\'{a}ficas de la prote\'{i}na dnaA (\htmladdnormallink{PDB 1J1V}{http://www.rcsb.org/pdb/explore.do?structureId=1j1v}):
 
 \begin{figure}
@@ -212,7 +212,7 @@ con ADN. Figura tomada de \cite{Fujikawa2003}. Copyright (2003) Nucleic Acids Re
 
 El punto de partida para presentar este algoritmo es la estructura del complejo de dnaA y su sitio operador, tras a\~nadir con
 \htmladdnormallink{Open Babel}{http://openbabel.org/wiki/Main_Page} los \'{a}tomos de hidr\'{o}geno que puedan faltar de un fichero
-en formato PDB (ver \htmladdnormallink{\italics{script}}{./files/add_hydrogens.py}).
+en formato PDB (ver \htmladdnormallink{\italics{script}}{./code/add_hydrogens.py}).
 Por ejemplo, partiendo del complejo capturado en el archivo \htmladdnormallink{PDB 1J1V}{http://www.rcsb.org/pdb/explore.do?structureId=1j1v}, 
 que ya usamos en el apartado \ref{modelnt}, obtenemos \htmladdnormallink{1j1v\_withH.pdb}{./files/1j1v_withH.pdb}. 
 Una vez realizado este paso preliminar,
