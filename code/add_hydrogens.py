@@ -6,7 +6,7 @@ __author__  = 'Bruno Contreras-Moreira'
 import os,sys,getopt,subprocess
 
 BABELEXE = '/usr/bin/babel' # get it from http://openbabel.org 
-							# edit according to your settings
+                            # edit according to your settings
 
 ##################################################################
 
@@ -46,8 +46,8 @@ def completa_H_cadenas(cadenas):
 		tmpfile = '__' + cadena[21:22]
 		tmpfile2= '__' + cadena[21:22] + '.H'
 		file1 = open(tmpfile, 'w')
-		print >> file1, "HEADER chain coordinates for babel\n",
-		print >> file1, "%s" % (cadena),
+		print("HEADER chain coordinates for babel\n", file=file1)
+		print("%s" % (cadena), file=file1)
 		file1.close()	
 		subprocess.Popen([BABELEXE,'-h','-iPDB',tmpfile,'-oPDB',tmpfile2]).wait()
 		
@@ -125,35 +125,35 @@ try:
 	opts, args = getopt.getopt(sys.argv[1:], "hi:o:", ['help','in_PDB_file','out_PDB_file'])      
 		
 	if not opts: 
-		print usage                     
+		print(usage)
 		sys.exit(0)		
 		
 	for opt, arg in opts: 
 		if opt in ("-h", "--help"):
-			print usage                     
-        		sys.exit(0)
+			print(usage) 
+			sys.exit(0)
 		elif opt in ("-i", "--in_PDB_file"): INPinpdb = arg
 		elif opt in ("-o", "--out_PDB_file"): INPoutpdb = arg
 
 	if(INPinpdb == '' or INPoutpdb == ''): 
-		print usage                     
+		print(usage)                     
 		sys.exit(0)	
 	
 except getopt.GetoptError:          
-	print usage                         
+	print(usage)                     
 	sys.exit(2)    
 	
-print "# %s -i %s -o %s\n" % (sys.argv[0],INPinpdb,INPoutpdb)	  
+print("# %s -i %s -o %s\n" % (sys.argv[0],INPinpdb,INPoutpdb))
 
 cadenasPDB = lee_cadenas_ficheroPDB( INPinpdb )
-print "# %s contiene %d cadenas\n" % (INPinpdb,len(cadenasPDB)),
+print("# %s contiene %d cadenas\n" % (INPinpdb,len(cadenasPDB)))
 
 cadenasH = completa_H_cadenas(cadenasPDB)
 
 outfile = open(INPoutpdb, 'w')
-print >> outfile, "HEADER %s renumbered with added hydrogens (open babel)\n" % (INPinpdb),
+print("HEADER %s renumbered with added hydrogens (open babel)\n" % (INPinpdb), file=outfile)
 for cadena in cadenasH:	
-	print >> outfile, "%sTER\n" % (cadena),
+	print("%sTER\n" % (cadena), file=outfile)
 outfile.close()	
 
-print "# generated outfile %s\n" % (INPoutpdb)
+print("# generated outfile %s\n" % (INPoutpdb))
