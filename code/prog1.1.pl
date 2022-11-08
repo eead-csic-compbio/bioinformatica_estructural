@@ -32,7 +32,7 @@ my %NNparams    = (
 
 my $infile = $ARGV[0] || die "# usage: $0 <promoters file>\n";
 
-print "# parameters: Temperature=$T\C Window=$windowL\n\n";
+print "# parameters: Temperature=$T C Window=$windowL\n\n";
 
 open(SEQ, $infile) || die "# cannot open input $infile : $!\n";
 while(<SEQ>)
