@@ -39,14 +39,14 @@ open(TEX,"<",$texfile) ||
 
 my ($tmpfh, $tmpfilename) = tempfile( 'texXXXXXXXX', UNLINK => 1 );
 
-my ($ext, $params, $file, $fullfile, $URL, $text);
+my ($ext, $params, $file, $fullfile);
+my ($URL, $text, $edtext);
 
 while(<TEX>) {
 
   # 1.1) fix figures, sources in fig/
   # \includegraphics[width=0.8\textwidth]{flujoinfo}
   if(/%\\includegraphics/) {
-    print $tmpfh $_;
 
   } elsif(/includegraphics\[(.*?)\]\{(\S+)\}/) {
 
@@ -66,7 +66,6 @@ while(<TEX>) {
 
     if($fullfile) {
       s/includegraphics\[(.*?)\]\{(\S+)\}/includegraphics[$params]{$figpath$fullfile}/g;
-      print $tmpfh $_;
     } else {
       print "# cannot find $_\n";
     } 
@@ -88,7 +87,6 @@ while(<TEX>) {
 
     if($fullfile) {
       s/includegraphics\{(\S+)\}/includegraphics{$figpath$fullfile}/g;
-      print $tmpfh $_;
     } else {
       print "# cannot find $_";
     }
@@ -96,11 +94,17 @@ while(<TEX>) {
   } elsif(/%\\htmladdnormallink/) {
     print $tmpfh $_;
 
-  } elsif(/htmladdnormallink/) { 
+  } 
+  
+  if(/\\caption/) {
+	  #$
+  }
+
+  if(/htmladdnormallink/) { 
     # 1.2) pandoc does not like \htmladdnormallink
 
-    while(/htmladdnormallink\{(.+)?\}\{(.+)?\}/g) {
-      ($text, $URL) = ($1, $2); #print ">$URL $_";
+    while(/htmladdnormallink\{(.+)?\}\{([^\}]+)/g) {
+      ($text, $URL) = ($1, $2);
 
       if($URL =~ /\.\/files\/(.+)/) {
         # change local paths to URLs
@@ -121,31 +125,33 @@ while(<TEX>) {
         s/htmladdnormallink\{\Q$text\E\}\{\Q$URL\E\}/href{$URL}{$text}/
       }
     }
-
-    print $tmpfh $_;
-
-  } elsif(/\\verbatiminput/) {
+  } 
+  
+  if(/\\verbatiminput/) {
     # 1.3) pandoc does not like \verbatiminput, add placeholder
-
     s/^\\verbatiminput/verbatiminput/;
-    print $tmpfh $_;
+  } 
+ 
+  if(/(ref)\{fig:([^\}]+)\}/ || /(label)\{fig:([^\}]+)\}/) {
+    # 1.4) pandoc does not like internal refs with_
+    ($ext, $text) = ($1, $2);
+    $edtext = $text;
+    $edtext =~ s/_//g; 
+    s/$ext\{fig:$text\}/$ext\{fig:$edtext\}/;
+  }
 
-  } elsif(/\\italics/) {
-    # 1.4) pandoc does not like \italics
+  if(/\\italics/) {
+    # 1.5) pandoc does not like \italics
 
     while(/\\italics\{([^\}]+)}/g) {
 
       $text = $1;
       s/\\italics\{\Q$text\E\}/\\emph{$text}/;
     }
+  } 
 
-    print $tmpfh $_;
-
-  } else {
-
-    # 1.5) copy all other lines unchanged
-    print $tmpfh $_;
-  }
+  # 1.6) copy unchanged and edited lines
+  print $tmpfh $_;
 }
 
 close($tmpfh);
@@ -153,5 +159,31 @@ close($tmpfh);
 close(TEX);
 
 ## 2) convert LATEX to markdown
-print "$pandocEXE -f latex -t markdown --verbose -s $tmpfilename -o $mdfile\n";
-system("$pandocEXE -f latex -t markdown --verbose -s $tmpfilename -o $mdfile");
+my ($tmpfh2, $tmpfilename2) = tempfile( 'mdXXXXXXXX', UNLINK => 1 );
+
+system("$pandocEXE -f latex -t markdown --verbose --wrap=none -s $tmpfilename -o $tmpfilename2");
+
+open(TEMPMD,"<",$tmpfilename2) ||
+  die "# ERROR: cannot open $tmpfilename2\n";
+
+open(MD,">",$mdfile) ||
+  die "# ERROR: cannot write to $mdfile\n";
+
+while(<TEMPMD>) {
+
+  # 2.1) Fix figure legends
+  # ![ Estructura ... Figura tomada de <https>. []{label="fig:dna"}](fig/dna.png){#fig:dna width="100%"}
+  if(/^!\[ (\S+).*\{(#\S+)/) {
+    ($text, $params) = ($1, $2);
+
+    # remove unneded label
+    s/\[\]\{label="\S+"\}//;
+
+    s/^!\[ $text/!\[ [Figura]($params). $text/;
+  }
+
+  print MD $_; 
+
+}
+
+close(MD);  
