@@ -37,7 +37,7 @@ my ($texfile, $mdfile) = @ARGV;
 open(TEX,"<",$texfile) ||
   die "# ERROR: cannot read $texfile\n";
 
-my ($tmpfh, $tmpfilename) = tempfile( 'texXXXXXXXX', UNLINK => 0 );
+my ($tmpfh, $tmpfilename) = tempfile( 'texXXXXXXXX', UNLINK => 1 );
 
 my ($ext, $params, $file, $fullfile, $URL, $text);
 
@@ -133,7 +133,7 @@ while(<TEX>) {
   } elsif(/\\italics/) {
     # 1.4) pandoc does not like \italics
 
-    while(/\\italics{([^}]+)}/g) {
+    while(/\\italics\{([^\}]+)}/g) {
 
       $text = $1;
       s/\\italics\{\Q$text\E\}/\\emph{$text}/;
@@ -153,5 +153,5 @@ close($tmpfh);
 close(TEX);
 
 ## 2) convert LATEX to markdown
-print("$pandocEXE -f latex -t markdown --verbose -s $tmpfilename -o $mdfile");
+print "$pandocEXE -f latex -t markdown --verbose -s $tmpfilename -o $mdfile\n";
 system("$pandocEXE -f latex -t markdown --verbose -s $tmpfilename -o $mdfile");
