@@ -213,7 +213,7 @@ elige una clase (ver figura \ref{fig:foldclassif})
 y selecciona un grupo de 5 estructuras de prote\'\i{}nas que pertenezcan a la misma superfamilia, para despu\'{e}s
 \begin{itemize}
 \item descargar los archivos PDB correspondientes,que contienen las coordenadas at\'{o}micas,  del
-\htmladdnormallink{Protein Data Bank}{http://www.rcsb.org/pdb} y
+\htmladdnormallink{Protein Data Bank}{https://www.rcsb.org/pdb} y
 \item compara al menos una pareja de estructuras con MAMMOTH %\htmladdnormallink{MAMMOTH}{https://ub.cbm.uam.es/software/mammoth.php} 
 e inspecciona los archivos de salida generados (\verb+maxsub_sup.pdb,maxsub_sup2.pdb,rasmol.tcl+)
 %o con la versi\'{o}n \htmladdnormallink{web}{https://ub.cbm.uam.es/software/online/mammoth.php})
@@ -304,7 +304,7 @@ parejas de residuos en las estructuras conocidas. %(\htmladdnormallink{genTHREAD
 
 Probablemente la mejor manera de evaluar objetivamente y elegir un m\'{e}todo de FR 
 son experimentos colectivos a ciegas con secuencias cuyas estructuras experimentales se hacen p\'{u}blicas
-tras las entrega de las predicciones. Hay dos tipos de experimentos de estipo: 
+tras las entrega de las predicciones. Hay dos tipos de experimentos de este tipo: 
 \htmladdnormallink{CASP}{http://predictioncenter.org/index.cgi?page=public_serv}, 
 que mide bianualmente la competencia de los algoritmos de los grupos participantes, y 
 \htmladdnormallink{CAMEO}{https://www.cameo3d.org}, que hace evaluaciones continuas no supervisadas.
@@ -361,11 +361,11 @@ Hay fundamentalmente dos estrategias, que en general requieren alineamientos ent
 
 \item Ensamblaje de grandes fragmentos r\'{i}gidos, incluso el plegamiento entero, 
 obtenidos de estructuras similares alineadas por medio de su secuencia primaria y secundaria
-(\htmladdnormallink{SWISS-MODEL}{http://swissmodel.expasy.org}, 
-\htmladdnormallink{IntFOLD}{http://www.reading.ac.uk/bioinf/IntFOLD}, 
-\htmladdnormallink{ROBETTA}{http://robetta.bakerlab.org} o 
+(\htmladdnormallink{SWISS-MODEL}{http://swissmodel.expasy.org} o
+%\htmladdnormallink{IntFOLD}{http://www.reading.ac.uk/bioinf/IntFOLD}, 
+\htmladdnormallink{ROBETTA}{http://robetta.bakerlab.org}.
 %\htmladdnormallink{3D-JIGSAW}{http://bmm.cancerresearchuk.org/~3djigsaw} 
-\htmladdnormallink{MEDELLER}{http://opig.stats.ox.ac.uk/webapps/medeller/home.pl?app=MEDELLER} para prote\'{i}nas transmembrana).
+%\htmladdnormallink{MEDELLER}{http://opig.stats.ox.ac.uk/webapps/medeller/home.pl?app=MEDELLER} para prote\'{i}nas transmembrana).
 Esta metodolog\'{i}a corta y pega literalmente fragmentos del esqueleto pept\'{i}dico de estructuras conocidas.
 
 \item Modelado por satisfacci\'{o}n de restricciones (distancias, \'{a}ngulos) moleculares extra\'{i}das 
@@ -385,10 +385,10 @@ Cada dominio con al menos un molde es potencialmente modelable.
 \begin{itemize}
 \item{3.1.} Refinar el alineamiento local de cada segmento alineado del molde.
 \item{3.2.} Tomar las coordenadas pept\'{i}dicas (o descriptores moleculares) de la estructura molde alineada.
-\item{3.3.} Copiar los \htmladdnormallink{rot\'{a}meros}{http://kinemage.biochem.duke.edu/databases/rotamer.php}
+\item{3.3.} Copiar los \htmladdnormallink{rot\'{a}meros}{https://en.wikipedia.org/wiki/Backbone-dependent_rotamer_library}
 de las cadenas laterales de los amino\'{a}cidos conservados en el alineamiento.
 \item{3.4.} Modelar los rot\'{a}meros de los residuos que mutan respecto al molde, 
-con ayuda de una \htmladdnormallink{biblioteca}{http://dunbrack.fccc.edu/bbdep2010}.
+con ayuda de una \htmladdnormallink{biblioteca}{http://dunbrack.fccc.edu/lab/bbdep2010}.
 \begin{figure}
 \begin{center} 
 \includegraphics{rotamer}
@@ -400,7 +400,7 @@ con ayuda de una \htmladdnormallink{biblioteca}{http://dunbrack.fccc.edu/bbdep20
 \label{fig:rotamer}
 \end{center}
 \end{figure}
-\item{3.4.} A\~nadir los segmentos, normalmente \htmladdnormallink{\italics{loops}}{http://bmm.cancerresearchuk.org/loop}, 
+\item{3.4.} A\~nadir los segmentos, normalmente lazos o \italics{lazos }, %\htmladdnormallink{\italics{loops}}{http://bmm.cancerresearchuk.org/loop}, 
 correspondientes a \italics{gaps} en la secuencia alineada del molde.
 \item{3.5.} Refinar 1 \'{o} m\'{a}s modelos completos $P_{n}$ con el objeto de eliminar errores obvios de estructura, como impedimentos o choques est\'{e}ricos.
 \item{3.6.} Evaluar los modelos $P_{n}$  y estimar su calidad, por medio de aplicaciones como 
@@ -416,8 +416,8 @@ el modelo resultante ser\'{a} malo, como ya vislumbramos en la secci\'{o}n \ref{
 necesario explorar diferentes combinaciones de moldes y alineamientos para encontrar la mejor soluci\'{o}n. %\citep{Contreras-Moreira2003}.
 Si la secuencia problema es multidominio o multim\'{e}rica puede ser necesario modelar su estructura cuaternaria \citep{Tramontano2017}, 
 con herramientas especiales como
-\htmladdnormallink{BAM}{http://dunbrack.fccc.edu/BAM} o 
-\htmladdnormallink{AIDA}{http://ffas.burnham.org/AIDA}.
+\htmladdnormallink{BAM}{http://dunbrack.fccc.edu/lab/bam}. 
+% o \htmladdnormallink{AIDA}{http://ffas.burnham.org/AIDA}.
 
 Con el objeto de explicar en mayor detalle el algoritmo, el siguiente c\'{o}digo implementa los pasos 3.1 y 3.2, quiz\'{a}s
 los m\'{a}s fundamentales tras el el paso 2. El programa usa como ejemplo secuencias
@@ -473,7 +473,7 @@ cuya estructura est\'{e} en el PDB (moldes o \italics{templates}).
 \item Para cada uno de los \italics{templates} interesantes sigue estos pasos:
 \begin{itemize}
 
-	\item descarga el fichero de coordenadas del \htmladdnormallink{PDB}{http://www.rcsb.org/pdb} 
+	\item descarga el fichero de coordenadas del \htmladdnormallink{PDB}{https://www.rcsb.org/pdb} 
 	y extrae la secuencia S contenida en los campos \verb+ATOM+
 
 	\item alinea la secuencia S de las coordenadas con la secuencia problema (FNR, por ejemplo con 
@@ -586,8 +586,8 @@ Figura de \citet{Wu2007}, reproducida con permiso de los autores.
 \section{Modelado de prote\'{i}nas por predicci\'{o}n de contactos} \label{contactosPred}
 
 Las matrices de contactos (ver secci\'{o}n \ref{estr34})  han sido durante mucho tiempo una fuente de inspiraci\'{o}n de m\'{e}todos 
-de predicci\'{o}n estructural, con la idea subyacente de 'si somos capaces de predecir con informaci\'{o}n evolutiva qu\'{e} residuos de 
-una secuencia contactan, entonces podremos resolver su estructura' \citep{Gobel1994,deJuan2013}.
+de predicci\'{o}n estructural, con la idea subyacente de "si somos capaces de predecir con informaci\'{o}n evolutiva qu\'{e} residuos de 
+una secuencia contactan, entonces podremos resolver su estructura" \citep{Gobel1994,deJuan2013}.
 
 La informaci\'{o}n evolutiva en cuesti\'{o}n es normalmente un alineamiento m\'{u}ltiple de secuencias hom\'{o}logas, que se espera
 capturen de forma impl\'{i}cita las limitaciones que impone la estructura terciaria de un dominio a las sustituciones de amino\'{a}cidos
@@ -709,10 +709,12 @@ guarda el resultado en un fichero FASTA.
 
 \item Con ayuda de los 
 \htmladdnormallink{m\'{e}todos suplementarios}{https://doi.org/10.1371/journal.pone.0028766.s017} de \cite{Marks2011}
-modifica el c\'{o}digo fuente del programa 3.4 para calcular el peso de las secuencias en base a su identidad
+modifica el c\'{o}digo 
+\htmladdnormallink{fuente: prog3.4.pl}{https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog3.4.pl}
+para calcular el peso de las secuencias en base a su identidad
 y sumar pseudoconteos y de esa manera calcular con mayor precisi\'{o}n MI en tu alineamiento A.
 Hay tambi\'{e}n c\'{o}digo fuente disponible en 
-\htmladdnormallink{http://evfold.org/evfold-web/code.do}{http://evfold.org/evfold-web/code.do}.
+\htmladdnormallink{GitHub}{https://github.com/debbiemarkslab/EVcouplings}.
 
 \item Construye un modelo 3D para S.
 
@@ -827,8 +829,9 @@ Para explorar la predicci\'{o}n de fenotipos de mutaciones no sin\'{o}nimas plan
 
 \item Construye un modelo comparativo de M y S.
 
-\item Haz predicciones de fenotipo para S y M con ayuda, por ejemplo, de: \htmladdnormallink{SIFT}{http://sift.jcvi.org/}, 
-\htmladdnormallink{PolyPhen-2}{http://genetics.bwh.harvard.edu/pph2/} y \htmladdnormallink{SusPect}{http://www.sbg.bio.ic.ac.uk/~suspect}.
+\item Haz predicciones de fenotipo para S y M con ayuda, por ejemplo, de: \htmladdnormallink{SIFT}{https://sift.bii.a-star.edu.sg/}, 
+\htmladdnormallink{PolyPhen-2}{http://genetics.bwh.harvard.edu/pph2/} y 
+\htmladdnormallink{SusPect}{http://www.sbg.bio.ic.ac.uk/~suspect}.
 
 \item Compara las predicciones obtenidas e interpr\'{e}talas a la luz de las estructuras modeladas. 
 Qu\'{e} limitaciones del modelado comparativo afloran?
