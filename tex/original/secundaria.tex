@@ -1,0 +1,277 @@
+\chapter{Estructura secundaria} \label{ss}
+
+%\input{rna1.tex}  %autoalineamiento de secuencias de RNA, prediccion de estructura secundaria
+%\input{prot1.tex} %estructura secundaria y desorden de proteinas, red neuronal
+
+\section{Estructura secundaria de RNA} \label{SSRNA}
+
+En contraste con las mol\'{e}culas de DNA, que en sus papeles m\'{a}s comunes act\'{u}an como dobles h\'{e}lices,
+las mol\'{e}culas de RNA pueden adoptar una mayor variedad de conformaciones, igual de complejas que las de
+las prote\'{i}nas, que a su vez les permiten tener diferentes funciones , ya sea mensajero, RNA de transferencia,
+ribosomal, regulador o enzima. Por primera vez en este curso vamos a ir un poco m\'{a}s all\'{a} de lo que expresa
+una secuencia lineal:
+
+\begin{itemize}
+\item \textbf{PROBLEMA:} desconocemos la estructura de una mol\'{e}cula de hebra sencilla de RNA pero conocemos su secuencia
+\item \textbf{SOLUCI\'{O}N PROPUESTA:} predecir su estructura secundaria en base a las subsecuencias complementarias que contiene
+\end{itemize}
+
+\begin{figure}
+\begin{center} 
+\includegraphics{RNAss}
+\caption%[]
+{
+Estructura secundaria de un RNA (A) correspondiente a la estructura (B), tomada de \cite{Noller2004} y reproducida con permiso.
+}
+\label{fig:RNAss}
+\end{center}
+\end{figure}
+
+La estructura secundaria de una mol\'{e}cula de RNA, sostenida por medio de 
+puentes de hidr\'{o}geno (de tipo Watson-Crick y
+%\htmladdnormallink{puentes de hidr\'{o}geno}{http://www.fli-leibniz.de/IMAGE\_BPDIR.html} (de tipo Watson-Crick y 
+\htmladdnormallink{Hoogsteen}{http://en.wikipedia.org/wiki/Hoogsteen_base_pair}) entre nucle\'{o}tidos,
+puede aproximarse a partir del conocimiento de la secuencia, aunque obviamente se pierde parte de la complejidad
+del plegamiento, como sugiere la figura \ref{fig:RNAss}. Para qu\'{e} sirven este tipo de predicciones? 
+Por ejemplo, para descubrir RNAs no codificantes, que a menudo tienen funciones biol\'{o}gicas importantes, 
+como se discute en el art\'{i}culo de \cite{Washietl2005}.
+%ste \htmladdnormallink{art\'{i}culo}{./papers/ncRNAs2005.pdf} de \citet{Washietl2005}. 
+Hay muchos programas disponibles que pueden ayudarnos en este tipo de tareas, como 
+\htmladdnormallink{MC-Fold | MC-Sym}{http://www.major.iric.ca/MC-Pipeline},
+\htmladdnormallink{Mfold}{http://mfold.rna.albany.edu/?q=mfold},
+%\htmladdnormallink{UNAFold}{http://www.bioinfo.rpi.edu/applications/hybrid/download.php},
+\htmladdnormallink{Vienna}{http://www.tbi.univie.ac.at/~ivo/RNA/},
+\htmladdnormallink{RNAz}{http://www.tbi.univie.ac.at/~wash/RNAz/}, 
+\htmladdnormallink{infernal}{http://infernal.janelia.org/} o
+\htmladdnormallink{EDeN}{http://www.bioinf.uni-freiburg.de/~costa/EDeN.tgz}, especializado en ncRNAs.
+
+Un programa complementario, que asigna elementos de estructura secundaria dadas unas coordenadas en formato PDB, es 
+\htmladdnormallink{DSSR}{http://dssr.x3dna.org}.
+
+Aqu\'{i} nos vamos a centrar en ilustrar el algoritmo de \citet{Nussinov1978} para predecir estructura secundaria de RNA 
+por medio de alineamientos, %que ya vimos de pasada en el programa de la secci\'{o}n \ref{dna2}, 
+que usa una estrategia de 
+\htmladdnormallink{programaci\'{o}n din\'{a}mica}{http://es.wikipedia.org/wiki/Programaci\%C3\%B3n_din\%C3\%A1mica_(inform\%C3\%A1tica)} (DP)
+para maximizar el n\'{u}mero de puentes de hidr\'{o}geno que se forman dentro de la secuencia. \'{E}ste puede decirse que es
+el algoritmo fundamental para resolver este problema aunque tiene algunas limitaciones. Por ejemplo, no considera la posibilidad de 
+pseudonudos (\htmladdnormallink{\italics{pseudoknots}}{http://en.wikipedia.org/wiki/Pseudoknot}) ni tiene en cuenta el 
+apilamiento de bases (\italics{base stacking}),
+un tipo de interacci\'{o}n que favorece la estabilidad de estas estructuras, elementos que s\'{i} son proyectados en el
+\htmladdnormallink{software actual}{http://en.wikipedia.org/wiki/List_of_RNA_structure_prediction_software} \citep{dotu_ivan_2014_1066354}.
+
+El c\'{o}digo fuente que se muestra implementa este algoritmo, 
+evaluando recursivamente hasta 4 situaciones en cada posici\'{o}n de la matrix DP \citep{Eddy2004b}:
+\begin{itemize}
+\item caso1: nuevo par de bases alineado
+\item caso2: indel en un extremo, se conserva score anterior
+\item caso3: indel en extremo opuesto, se conserva score
+\item caso4: bifurcaci\'{o}n en base $k$ si hay distancia suficiente 
+\end{itemize}
+
+\verbatiminput{code/prog2.1.pl}
+
+%\begin{figure}
+%\begin{center} 
+%\includegraphics{RNAdp}
+%\caption
+%{
+%Recursiones y etapas de programaci\'{o}n din\'{a}mica para el estudio de la estructura secundaria de una secuencia RNA,
+%tomadas de \cite{Eddy2004b}. 
+%}
+%\label{fig:RNAdp}
+%\end{center}
+%\end{figure}
+%no gratuito
+
+\begin{figure}
+\begin{center} 
+\includegraphics{RNAdotplot}
+\caption
+{
+Estructura secundaria de una mol\'{e}cula de RNA y matriz (dot plot) que esquematiza sus puentes de hidr\'{o}geno.
+Figura tomada de \cite{Bernhart2006} y reproducida con permiso. 
+}
+\label{fig:RNAdotplot}
+\end{center}
+\end{figure}
+\section{(Des)estructura secundaria de prote\'\i{}nas} \label{protSS}
+
+La estructura secundaria es una propiedad de las prote\'\i{}nas naturales en soluci\'{o}n, 
+que se explica por medio de una red (din\'{a}mica) de puentes de hidr\'{o}geno que conectan diferentes partes del polip\'{e}ptido 
+a escala m\'{a}s o menos local, formando h\'{e}lices y l\'{a}minas que quedan conectadas por lazos (\italics{loops}) y regiones 
+desordenadas, como ya recordamos en la secci\'{o}n \ref{SS} 
+(y en este \htmladdnormallink{otro curso}{http://www.eead.csic.es/compbio/material/modelado_comparativo/node5.html}). 
+
+Si disponemos de las coordenadas at\'{o}micas de una prote\'{i}na podemos medir sus \'{a}ngulos diedros 
+para generar nuestros propios diagramas de Ramachandran, como hace 
+\htmladdnormallink{esta herramienta web}{http://dicsoft1.physics.iisc.ernet.in/rp/}, con dos fines:
+\begin{itemize}
+\item Comprobar qu\'{e} residuos de la secuencia se encuentran en conformaciones (regiones) favorables, como medida de calidad
+de la estructura. 
+\item Averiguar en base a la geometr\'{i}a del esqueleto proteico el estado de estructura secundaria de segmentos de residuos
+(como en este \htmladdnormallink{ejercicio}{http://www.eead.csic.es/compbio/material/bioperl/node53.html}). 
+\end{itemize}
+
+El procedimiento, dado unas coordenadas en formato PDB (\htmladdnormallink{1LFU}{./files/1lfu.html}),
+es relativamente sencillo, recurriendo a programas como \htmladdnormallink{DANGLE}{http://kinemage.biochem.duke.edu/software/dangle.php}
+o haciendo un poco de \'{a}lgebra y trigonometr\'{i}a:
+\verbatiminput{code/prog2.2.pl}
+
+\begin{figure}
+\begin{center} 
+\includegraphics{signo_diedro1}
+\caption%[fi y psi en el esqueleto pept?dico]
+{
+Definici\'{o}n de \'{a}ngulo diedro, 
+figura tomada de \htmladdnormallink{http://structuralbioinformatics.com}{http://structuralbioinformatics.com}.
+}
+\label{fig:signo_diedro1}
+\end{center}
+\end{figure}
+
+%\begin{figure}
+%\begin{center} 
+%\includegraphics{signo_diedro2}
+%\caption%[fi y psi en el esqueleto pept?dico]
+%{
+%Signo de un \'{a}ngulo diedro, 
+%figura tomada de \htmladdnormallink{http://structuralbioinformatics.com}{http://structuralbioinformatics.com}.
+%}
+%\label{fig:signo_diedro2}
+%\end{center}
+%\end{figure}
+
+Otras definiciones de estructura secundaria se basan en encontrar patrones de puentes de 
+hidr\'{o}geno entre grupos $-CO$ y $-NH$ del esqueleto pept\'{i}dico, 
+como por ejemplo hace el software \htmladdnormallink{DSSP}{http://swift.cmbi.ru.nl/gv/dssp/} \citep{Kabsch1983}
+de acuerdo con esta definici\'{o}n energ\'{e}tica, donde un puente v\'{a}lido debe tener $E<-0{.}5 kcal/mol$, 
+$q_{1}=0.42e$, $q_{2}=0.20e$ y $r$ es una distancia interat\'{o}mica en Angstroms:
+\begin{equation}
+E = q_{1} q_{2} \left[ \frac{1}{r_{ON}} + \frac{1}{r_{CH}} - \frac{1}{r_{OH}} - \frac{1}{r_{CN}} \right] \cdot 332 \ \mathrm{kcal/mol}
+\label{eq:dssp}
+\end{equation}
+
+El software \htmladdnormallink{STRIDE}{http://webclu.bio.wzw.tum.de/stride/} \citep{Frishman1995} es otro programa para este fin 
+que en experimentos de validaci\'{o}n mejora las asignaciones de estructura secundaria de DSSP.
+
+Sin embargo, frecuentemente el problema es todav\'{i}a m\'{a}s complicado:
+\begin{itemize}
+\item \textbf{PROBLEMA:} tenemos una secuencia proteica pero no conocemos su estructura 
+\item \textbf{SOLUCI\'{O}N PROPUESTA:} reconocer en la secuencia segmentos que formen h\'{e}lices y l\'{a}minas, y lazos 
+para caracterizar su topolog\'{i}a o estructura secundaria 
+\end{itemize} 
+
+Si calculamos alineamientos m\'{u}ltiples de secuencias de prote\'{i}nas hom\'{o}logas,
+las columnas del alineamiento resultante permiten deducir patrones de sustituci\'{o}n de amino\'{a}cidos
+que son espec\'{i}ficos de posici\'{o}n. Esta fuente de informaci\'{o}n evolutiva,
+combinada con algoritmos basados en \htmladdnormallink{redes neuronales}{https://en.wikipedia.org/wiki/Artificial_neural_network},
+permite predecir con una precisi\'{o}n cercana al 75\% la estructura secundaria en 3 estados (H=h\'{e}lice alfa, E=l\'{a}mina beta y C=coil).
+Es evidente que se pierde informaci\'{o}n con este alfabeto, pero la estructura inferida puede tener muchas aplicaciones a la hora de dise\~nar 
+experimentos y algoritmos que trabajen sobre la estructura terciaria. 
+
+Hay una buena exposici\'{o}n de este tema en el art\'\i{}culo de \cite{Jones1999}, 
+donde se presenta el algoritmo \htmladdnormallink{PSIPRED}{http://bioinf.cs.ucl.ac.uk/psipred}
+y se eval\'{u}a la precisi\'{o}n de las asignaciones de estructura secundaria de varias maneras, incluyendo la funci\'{o}n:
+\begin{equation}
+Q_{3} = \frac{\sum\limits_{i=H,E,C}{corrpred_{i}}}{\sum\limits_{i=H,E,C}{obs_{i}}} \times 100
+\end{equation}
+
+En \citet{Jurtz2017} se explica en mayor detalle c\'{o}mo funcionan este tipo de predictores, 
+incluyendo \htmladdnormallink{c\'{o}digo fuente en python2.7}{https://github.com/vanessajurtz/lasagne4bio}
+para programar uno.
+
+%\begin{equation}
+%Sov = \frac{1}{N} \sum_{s}\frac{minsolap (s_{obs},s_{pred})}{maxsolap (s_{obs},s_{pred})} \times 100)
+%\end{equation}
+
+\begin{figure}
+\begin{center} 
+\includegraphics{ss1}
+\caption%[]
+{
+Ejemplo de predicci\'{o}n de estructura secundaria de PSIPRED, 
+obtenida en el servidor \htmladdnormallink{PSIPRED}{http://bioinf.cs.ucl.ac.uk/psipred}.
+}
+\label{fig:psipred}
+\end{center}
+\end{figure}
+
+PSIPRED es aceptado como uno de los mejores predictores, pero hay muchos otros algoritmos de predicci\'{o}n de estructura secundaria y 
+la mejor manera de compararlos es por medio de evaluaciones autom\'{a}ticas a ciegas. Desgraciadamente, este tipo de iniciativas, como  
+\htmladdnormallink{LiveBench}{http://en.wikipedia.org/wiki/LiveBench} o EVA,  
+que recolectan datos de distintos algoritmos a medida que crece el PDB, son financiadas por poco tiempo y mueren.
+
+Tras la aparici\'{o}n de los primeros predictores de estructura secundaria empez\'{o} a ser evidente que muchas prote\'{i}nas, 
+sobre todo de vertebrados, no ten\'{i}an aparentemente una estructura ordenada, al menos en ciertos estados fisiol\'{o}gicos 
+(ver por ejemplo el repositorio \htmladdnormallink{Disprot}{http://www.disprot.org} \citep{Sickmeier2007,yruela_inmaculada_2014_1066352}).
+Hoy sabemos que muchas prote\'{i}nas ordenadas pueden contener segmentos desordenados o d\'{u}ctiles \citep{Lobanov2010}.
+Como resultado se dise\~naron predictores para un cuarto estado, el de desorden intr\'{i}nseco, y se han creado recursos para la 
+anotaci\'{o}n de estas secuencias como \htmladdnormallink{D2P2}{http://d2p2.pro}.
+
+En el caso de PSIPRED, la evoluci\'{o}n es un software de nombre
+\htmladdnormallink{DISOPRED}{http://bioinfadmin.cs.ucl.ac.uk/downloads/DISOPRED} \citep{Ward2004},
+que adem\'{a}s de reconocer elementos de estructura secundaria estima la probabilidad de que cada residuo est\'{e} desordenado,
+sin pertenecer a ninguna clase de estructura secundaria.
+
+La mayor\'{i}a de predictores de estructura secundaria y desorden tienen mejores resultados cuando
+extraen informaci\'{o}n evolutiva de secuencias hom\'{o}logas. Sin embargo, esto implica que 
+estos algoritmos son sensibles al contenido de las bases de datos de secuencias p\'{u}blicas, 
+como se muestra en la siguiente figura:
+
+\begin{figure}
+\begin{center} 
+\includegraphics{disopredTime2}
+\caption%[]
+{
+Comparaci\'{o}n de predicciones de PSIPRED (estructura secundaria) y DISOPRED2 (desorden) 
+para la secuencia NAC81 de Arabidopsis thaliana calculadas sobre versiones de 2010 y 2014 
+de la colecci\'{o}n de secuencias \htmladdnormallink{uniref90}{https://www.uniprot.org/help/uniref}.
+Se marcan en rojo los segmentos desordenados, las h\'{e}lices en azul y las l\'{a}minas $\beta$ en verde.
+Figura de \citet{Yruela2014}.
+}
+\label{fig:disopredTime}
+\end{center}
+\end{figure}
+
+%\begin{figure}
+%\begin{center} 
+%\includegraphics{disopredTime}
+%\caption%[]
+%{
+%Consistency of intrinsically disordered residues predicted by DISOPRED2 (A, B ,C), 
+%amino acid substitutions affecting function predicted by SIFT (D, E, F), 
+%and PSIPRED secondary structure predictions (G). 
+%Sets of proteins from E. coli (red), A. thaliana (green) and H. sapiens (blue), 
+%as well as a collection of high quality PDB structures (grey, n=1983) 
+%were analyzed using uniref90 database snapshots from 2010 and 2014 and their overlap computed as explained in Methods. 
+%For SIFT two kinds of histograms are produced, using the strict (dashed line) and set-based (solid columns) overlap functions. 
+%Panels H and I benchmark the quality of 2010 and 2014 secondary structure predictions by showing the overlap of PSIPRED 
+%results and experimentally determined protein structures. 
+%}
+%\label{fig:disopred1}
+%\end{center}
+%\end{figure}
+
+Otros predictores que combinan estructura secundaria y otras propiedades son 
+\htmladdnormallink{s2D}{http://www-mvsoftware.ch.cam.ac.uk/} o 
+\htmladdnormallink{SPIDER2}{http://sparks-lab.org/server/SPIDER2}, con una precisi\'{o}n por encima del 80\% \citep{Sormanni2014,Heffernan2015},
+o \htmladdnormallink{SSpro}{http://scratch.proteomics.ics.uci.edu/}, rayando el \%90 en las validaciones de sus autores \citep{Magnan2014}.
+Probablemente se alcanzado ya el techo para predicciones de 3 estados, pero queda espacio para mejorar las predicciones 
+de los 8 estados de DSSP \citep{Yang2018}. % (ver tabla \ref{tab:SS8}).
+
+De acuerdo con meta-an\'{a}lisis recientes los mejores predictores de desorden son
+\htmladdnormallink{DISOPRED}{http://bioinf.cs.ucl.ac.uk/psipred/?disopred=1},
+\htmladdnormallink{PrDOS}{http://prdos.hgc.jp/cgi-bin/top.cgi} y
+\htmladdnormallink{AUCpreD}{http://raptorx2.uchicago.edu/StructurePropertyPred/predict}
+\citep{Wang2016,Meng2017}
+
+El ejercicio de esta secci\'{o}n consiste en calcular la estructura secundaria de una prote\'\i{}na del 
+\htmladdnormallink{Protein Data Bank}{http://www.rcsb.org/pdb} de 3 maneras distintas, con el fin de compararlas:
+\begin{itemize}
+\item por medio de PSIPRED, que en realidad es un predictor,
+\item modificando el programa prog2.2.pl, calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria
+seg\'{u}n el diagrama de Ramachandran y 
+\item por medio del programa STRIDE, simplificando segmentos de estructura secundaria (H=G,H,I; E=E,B y C=resto de estados)
+\item alinea las estructuras secundarias en alfabeto simplificado de tres letras y describe las diferencias observadas
+\item (los ejecutables necesarios se encuentran en \verb+/home/compu2/algoritmos3D/soft+)
+\end{itemize}
