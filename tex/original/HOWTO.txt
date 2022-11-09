@@ -1,0 +1,33 @@
+
+echo "\chapter{Estructura primaria o secuencia} \label{secuencia}" > primaria.tex
+echo >> primaria.tex
+echo "En estas secciones veremos dos ejemplos de algoritmos que utilizan secuencias de DNA y prote\'\i{}nas con el objeto de estudiar procesos que dependen de propiedades estructurales." >> primaria.tex
+echo >> primaria.tex
+echo "%\input{dna1.tex}  %estabilidad y deformacion de duplex de ADN y prediccion de promotores" >> primaria.tex
+echo "%\input{dna2.tex}  %disegno de primers para PCR: explicar Tm, hairpins, codehops" >> primaria.tex
+echo >> primaria.tex
+cat dna1.tex dna2.tex >> primaria.tex
+
+echo "\chapter{Estructura secundaria} \label{ss}" > secundaria.tex
+echo >> secundaria.tex
+echo "%\input{rna1.tex}  %autoalineamiento de secuencias de RNA, prediccion de estructura secundaria" >> secundaria.tex
+echo "%\input{prot1.tex} %estructura secundaria y desorden de proteinas, red neuronal" >> secundaria.tex
+echo >> secundaria.tex
+cat rna1.tex prot1.tex >> secundaria.tex
+
+echo "\chapter{Estructura terciaria} \label{s3}" > terciaria.tex
+echo >> terciaria.tex
+echo "De ahora en adelante nos metemos un poco m\'{a}s en el laberinto de la estructura molecular y dejamos definitivamente atr\'{a}s las representaciones de prote\'{i}nas o \'{a}cidos nucleicos como secuencias lineales, puesto que no sirven para capturar las relaciones espaciales entre diferentes partes o elementos de estructura secundaria de una misma mol\'{e}cula." >> terciaria.tex
+echo >> terciaria.tex
+echo "%\input{prot2.tex} %comparacion y alineamiento estructural de proteinas (MAMMOTH): explicar e-values" >> terciaria.tex
+echo "%\input{prot4.tex} %fold recognition/threading hhpred" >> terciaria.tex
+echo "%\input{prot3.tex} %modelado comparativo de proteinas (MODELLER): explicar restraints de modeller y rotameros" >> terciaria.tex
+echo "%\input{prot5.tex} %modelado 3D en base a contactos" >> terciaria.tex
+echo "%\input{prot6.tex} %prediccion de efecto de mutaciones puntuales" >> terciaria.tex
+echo >> terciaria.tex
+cat prot2.tex prot4.tex prot3.tex prot5.tex prot6.tex >> terciaria.tex
+
+echo "\chapter{Estructura cuaternaria} \label{s4}" > cuaternaria.tex
+echo >> cuaternaria.tex
+echo "%\input{interface1.tex} %analisis de interfaces proteinas/dna/prot (SCWRL y dnaprot/aloy), explicar z-scores de dnaprot, bootstrap de matrices" >> cuaternaria.tex
+cat interface1.tex >> cuaternaria.tex
