@@ -38,15 +38,15 @@ como se discute en el art\'{i}culo de \cite{Washietl2005}.
 %ste \htmladdnormallink{art\'{i}culo}{./papers/ncRNAs2005.pdf} de \citet{Washietl2005}. 
 Hay muchos programas disponibles que pueden ayudarnos en este tipo de tareas, como 
 \htmladdnormallink{MC-Fold | MC-Sym}{http://www.major.iric.ca/MC-Pipeline},
-\htmladdnormallink{Mfold}{http://mfold.rna.albany.edu/?q=mfold},
-%\htmladdnormallink{UNAFold}{http://www.bioinfo.rpi.edu/applications/hybrid/download.php},
+%\htmladdnormallink{Mfold}{http://mfold.rna.albany.edu/?q=mfold},
+\htmladdnormallink{UNAFold}{http://www.unafold.org},
 \htmladdnormallink{Vienna}{http://www.tbi.univie.ac.at/~ivo/RNA/},
 \htmladdnormallink{RNAz}{http://www.tbi.univie.ac.at/~wash/RNAz/}, 
-\htmladdnormallink{infernal}{http://infernal.janelia.org/} o
-\htmladdnormallink{EDeN}{http://www.bioinf.uni-freiburg.de/~costa/EDeN.tgz}, especializado en ncRNAs.
+\htmladdnormallink{infernal}{http://infernal.janelia.org/}.
+%o \htmladdnormallink{EDeN}{http://www.bioinf.uni-freiburg.de/~costa/EDeN.tgz}, especializado en ncRNAs.
 
 Un programa complementario, que asigna elementos de estructura secundaria dadas unas coordenadas en formato PDB, es 
-\htmladdnormallink{DSSR}{http://dssr.x3dna.org}.
+\htmladdnormallink{DSSR}{https://x3dna.org}.
 
 Aqu\'{i} nos vamos a centrar en ilustrar el algoritmo de \citet{Nussinov1978} para predecir estructura secundaria de RNA 
 por medio de alineamientos, %que ya vimos de pasada en el programa de la secci\'{o}n \ref{dna2}, 
@@ -99,22 +99,25 @@ Figura tomada de \cite{Bernhart2006} y reproducida con permiso.
 La estructura secundaria es una propiedad de las prote\'\i{}nas naturales en soluci\'{o}n, 
 que se explica por medio de una red (din\'{a}mica) de puentes de hidr\'{o}geno que conectan diferentes partes del polip\'{e}ptido 
 a escala m\'{a}s o menos local, formando h\'{e}lices y l\'{a}minas que quedan conectadas por lazos (\italics{loops}) y regiones 
-desordenadas, como ya recordamos en la secci\'{o}n \ref{SS} 
-(y en este \htmladdnormallink{otro curso}{http://www.eead.csic.es/compbio/material/modelado_comparativo/node5.html}). 
+desordenadas, como ya recordamos en la secci\'{o}n \ref{SS}. 
+%(y en este \htmladdnormallink{otro curso}{http://www.eead.csic.es/compbio/material/modelado_comparativo/node5.html}). 
 
 Si disponemos de las coordenadas at\'{o}micas de una prote\'{i}na podemos medir sus \'{a}ngulos diedros 
-para generar nuestros propios diagramas de Ramachandran, como hace 
-\htmladdnormallink{esta herramienta web}{http://dicsoft1.physics.iisc.ernet.in/rp/}, con dos fines:
+para generar nuestros propios diagramas de Ramachandran, 
+%como hace \htmladdnormallink{esta herramienta web}{http://dicsoft1.physics.iisc.ernet.in/rp/}, 
+con dos fines:
 \begin{itemize}
 \item Comprobar qu\'{e} residuos de la secuencia se encuentran en conformaciones (regiones) favorables, como medida de calidad
 de la estructura. 
-\item Averiguar en base a la geometr\'{i}a del esqueleto proteico el estado de estructura secundaria de segmentos de residuos
-(como en este \htmladdnormallink{ejercicio}{http://www.eead.csic.es/compbio/material/bioperl/node53.html}). 
+\item Averiguar en base a la geometr\'{i}a del esqueleto proteico el estado de estructura secundaria de segmentos de residuos.
+%(como en este \htmladdnormallink{ejercicio}{http://www.eead.csic.es/compbio/material/bioperl/node53.html}). 
 \end{itemize}
 
-El procedimiento, dado unas coordenadas en formato PDB (\htmladdnormallink{1LFU}{./files/1lfu.html}),
-es relativamente sencillo, recurriendo a programas como \htmladdnormallink{DANGLE}{http://kinemage.biochem.duke.edu/software/dangle.php}
-o haciendo un poco de \'{a}lgebra y trigonometr\'{i}a:
+El procedimiento, dado unas coordenadas en formato PDB 
+(\htmladdnormallink{1LFU}{https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/files/1lfu.pdb}),
+es relativamente sencillo, 
+%recurriendo a programas como \htmladdnormallink{DANGLE}{http://kinemage.biochem.duke.edu/software/dangle.php}
+haciendo un poco de \'{a}lgebra y trigonometr\'{i}a:
 \verbatiminput{code/prog2.2.pl}
 
 \begin{figure}
@@ -143,7 +146,7 @@ figura tomada de \htmladdnormallink{http://structuralbioinformatics.com}{http://
 
 Otras definiciones de estructura secundaria se basan en encontrar patrones de puentes de 
 hidr\'{o}geno entre grupos $-CO$ y $-NH$ del esqueleto pept\'{i}dico, 
-como por ejemplo hace el software \htmladdnormallink{DSSP}{http://swift.cmbi.ru.nl/gv/dssp/} \citep{Kabsch1983}
+como por ejemplo hace el software \htmladdnormallink{DSSP}{https://swift.cmbi.umcn.nl/gv/dssp} \citep{Kabsch1983}
 de acuerdo con esta definici\'{o}n energ\'{e}tica, donde un puente v\'{a}lido debe tener $E<-0{.}5 kcal/mol$, 
 $q_{1}=0.42e$, $q_{2}=0.20e$ y $r$ es una distancia interat\'{o}mica en Angstroms:
 \begin{equation}
@@ -164,7 +167,8 @@ para caracterizar su topolog\'{i}a o estructura secundaria
 Si calculamos alineamientos m\'{u}ltiples de secuencias de prote\'{i}nas hom\'{o}logas,
 las columnas del alineamiento resultante permiten deducir patrones de sustituci\'{o}n de amino\'{a}cidos
 que son espec\'{i}ficos de posici\'{o}n. Esta fuente de informaci\'{o}n evolutiva,
-combinada con algoritmos basados en \htmladdnormallink{redes neuronales}{https://en.wikipedia.org/wiki/Artificial_neural_network},
+combinada con algoritmos basados en \htmladdnormallink{redes neuronales}{https://en.wikipedia.org/wiki/Artificial_neural_network}
+m\'{a}s o menos \htmladdnormallink{{profundas}{https://bioinfoperl.blogspot.com/2020/04/redes-neuronales-profundas.html},
 permite predecir con una precisi\'{o}n cercana al 75\% la estructura secundaria en 3 estados (H=h\'{e}lice alfa, E=l\'{a}mina beta y C=coil).
 Es evidente que se pierde informaci\'{o}n con este alfabeto, pero la estructura inferida puede tener muchas aplicaciones a la hora de dise\~nar 
 experimentos y algoritmos que trabajen sobre la estructura terciaria. 
@@ -254,24 +258,25 @@ Figura de \citet{Yruela2014}.
 
 Otros predictores que combinan estructura secundaria y otras propiedades son 
 \htmladdnormallink{s2D}{http://www-mvsoftware.ch.cam.ac.uk/} o 
-\htmladdnormallink{SPIDER2}{http://sparks-lab.org/server/SPIDER2}, con una precisi\'{o}n por encima del 80\% \citep{Sormanni2014,Heffernan2015},
+%\htmladdnormallink{SPIDER2}{http://sparks-lab.org/server/SPIDER2}, con una precisi\'{o}n por encima del 80\% \citep{Sormanni2014,Heffernan2015},
 o \htmladdnormallink{SSpro}{http://scratch.proteomics.ics.uci.edu/}, rayando el \%90 en las validaciones de sus autores \citep{Magnan2014}.
 Probablemente se alcanzado ya el techo para predicciones de 3 estados, pero queda espacio para mejorar las predicciones 
 de los 8 estados de DSSP \citep{Yang2018}. % (ver tabla \ref{tab:SS8}).
 
 De acuerdo con meta-an\'{a}lisis recientes los mejores predictores de desorden son
-\htmladdnormallink{DISOPRED}{http://bioinf.cs.ucl.ac.uk/psipred/?disopred=1},
-\htmladdnormallink{PrDOS}{http://prdos.hgc.jp/cgi-bin/top.cgi} y
-\htmladdnormallink{AUCpreD}{http://raptorx2.uchicago.edu/StructurePropertyPred/predict}
+\htmladdnormallink{DISOPRED}{http://bioinf.cs.ucl.ac.uk/psipred/?disopred=1} y
+\htmladdnormallink{PrDOS}{http://prdos.hgc.jp/cgi-bin/top.cgi} 
+%\htmladdnormallink{AUCpreD}{http://raptorx2.uchicago.edu/StructurePropertyPred/predict}
 \citep{Wang2016,Meng2017}
 
 El ejercicio de esta secci\'{o}n consiste en calcular la estructura secundaria de una prote\'\i{}na del 
-\htmladdnormallink{Protein Data Bank}{http://www.rcsb.org/pdb} de 3 maneras distintas, con el fin de compararlas:
+\htmladdnormallink{Protein Data Bank}{https://www.rcsb.org} de 3 maneras distintas, con el fin de compararlas:
 \begin{itemize}
 \item por medio de PSIPRED, que en realidad es un predictor,
-\item modificando el programa prog2.2.pl, calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria
+\item modificando el programa \htmladdnormallink{[fuente: prog2.2.pl]}{https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog2.2.pl}, 
+calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria
 seg\'{u}n el diagrama de Ramachandran y 
 \item por medio del programa STRIDE, simplificando segmentos de estructura secundaria (H=G,H,I; E=E,B y C=resto de estados)
 \item alinea las estructuras secundarias en alfabeto simplificado de tres letras y describe las diferencias observadas
-\item (los ejecutables necesarios se encuentran en \verb+/home/compu2/algoritmos3D/soft+)
+\item debes obtener los ejecutables necesarios (en la LCG se encuentran en \verb+/home/compu2/algoritmos3D/soft+)
 \end{itemize}
