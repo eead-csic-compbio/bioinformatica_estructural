@@ -14,14 +14,27 @@ Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Ferná
 
 ## Cómo descargar y citar este curso {-}
 
-Puedes descargar este material en formato PDF en [Digital.CSIC](http://hdl.handle.net/10261/21892) y navegarlo en <http://eead-csic-compbio.github.io/bioinformatica_estructural>. El código de ejemplo está disponible en la carpeta 
-[code](https://github.com/eead-csic-compbio/bioinformatica_estructural/tree/master/code). 
+Puedes descargar este material en formato PDF en [Digital.CSIC](http://hdl.handle.net/10261/21892) y navegarlo en <http://eead-csic-compbio.github.io/bioinformatica_estructural>. 
+
+Este contenido se mantiene en el repositorio 
+<https://github.com/eead-csic-compbio/bioinformatica_estructural>,
+que incluye código fuente dentro de la carpeta [code](https://github.com/eead-csic-compbio/bioinformatica_estructural/tree/master/code). 
 
 Puedes citarlo como:
 
 Contreras-Moreira B (2018) Algoritmos en bioinformática estructural. Edición 2022. [doi:10.20350/digitalcsic/8544](https://doi.org/10.20350/digitalcsic/8544)
 
-## Libros de texto {-}
+    @book{
+      Author = {Contreras-Moreira, Bruno},
+      Title = {Algoritmos en bioinform\'{a}tica estructural},
+      Publisher = {Digital.CSIC},
+      Edition = {2022},
+      Year = {2018},
+      url="https://doi.org/10.20350/digitalcsic/8544",
+      doi = "10.20350/digitalcsic/8544"
+    }
+
+## Libros de texto complementarios {-}
 
 Si tuviese que recomendar un libro de texto como acompañamiento para este material sería posiblemente 
 _[Structural Bioinformatics: An Algorithmic Approach](http://www.structuralbioinformatics.com)_. 
