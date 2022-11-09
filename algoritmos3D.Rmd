@@ -1,0 +1,78 @@
+---
+title: "Algoritmos en Bioinformática Estructural"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+author:
+- affiliation: Estación Experimental de Aula Dei-CSIC, Zaragoza, España, https://eead.csic.es/compbio
+  name: Bruno Contreras Moreira
+output:
+  bookdown::gitbook: 
+    split_by: none
+documentclass: book
+bibliography: bib_myarticles_md.bib
+link-citations: yes
+---
+
+
+<!-- TODO
+https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-an-rmarkdown-generated-github-page
+-->
+
+
+
+```{r, child='README.md'}
+```
+
+<!--
+```{perl, highlight=TRUE, eval=FALSE, }
+#!/usr/bin/perl -w
+
+# prog1.1 
+# Bruno Contreras-Moreira
+# Nearest Neighbor dG calculator
+
+use strict;
+
+# global variables
+my $T           = 37; # temperature(C)
+my $windowL     = 15;  # window length, http://www.biomedcentral.com/1471-2105/6/1
+```
+-->
+
+
+<!-- importa capítulos originales .tex convertidos a .md  -->
+
+```{r, child='fixmerge.md'}
+```
+
+<!--
+%\chapter{Alphafold} \label{AF}
+%\input{alphafold.tex} 
+-->
+
+# Apéndices
+
+## Abreviaturas {#tab:abbrev}
+
+|||
+|:---|:----------------------------|
+|CASP|Critical Assessment of Techniques for Protein Structure Prediction|
+|CATH|Protein Structure Classification database|
+|CM|Comparative Modelling|
+|DSSP|Define Secondary Structure of Proteins|
+|FR|Fold Recognition|
+|NMR|Nuclear Magnetic Resonance|
+|NN|Nearest Neighbor|
+|PCR|Polymerase Chain Reaction|
+|PDB|Protein data Bank|
+|SCOP|Structural Classification of Proteins|
+|TF|Transcription Factor|
+|SS|Secondary Structure|
+
+
+<!--\section{Muestra de R \italics{Markdown} para tus trabajos} \label{md}
+\verbatiminput{sample_markdown.Rmd}-->
+
+
+
+# Bibliografía
+
