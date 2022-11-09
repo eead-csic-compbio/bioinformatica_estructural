@@ -2,14 +2,18 @@
 use strict;
 use warnings;
 
-# Fixes Pandoc-generated markdown to adapt it to Bookdown
+# Fixes Pandoc-generated markdown 
+
+my $repoURL = 'https://github.com/eead-csic-compbio/bioinformatica_estructural';
+my $codeURL = "$repoURL/blob/master/code/";
+my $codepath = '../code/';
 
 if(!$ARGV[1]) {
   die "# usage: <raw.md> <fixed.md>\n"
 }
 
 my ($mdfile, $fixedfile) = @ARGV;
-my ($text,$params);
+my ($text, $params, $source_file);
 
 open(RAWMD,"<",$mdfile) ||
   die "# ERROR: cannot open $mdfile\n";
@@ -47,8 +51,13 @@ while(<RAWMD>) {
     s/\\\]\]/]/g;
   }
 
-  print MD $_; 
+  # 4) Parse blocks of code that lived as \verbatiminput in LATEX and convert them to links
+  if(/(verbatiminput.*?code\/)(\S+)/) {
+    $source_file = $2;
+    s/$1$source_file/[\[fuente: $source_file\]]($codeURL$source_file)/;
+  }
 
+  print MD $_; 
 }
 
 close(MD); 
