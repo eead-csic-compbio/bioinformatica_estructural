@@ -6,6 +6,7 @@ use warnings;
 
 my $repoURL = 'https://github.com/eead-csic-compbio/bioinformatica_estructural';
 my $codeURL = "$repoURL/blob/master/code/";
+my $styleURL = 'color: black; text-decoration: underline;'; # matches README.md
 my $codepath = '../code/';
 
 if(!$ARGV[1]) {
@@ -13,7 +14,7 @@ if(!$ARGV[1]) {
 }
 
 my ($mdfile, $fixedfile) = @ARGV;
-my ($text, $params, $source_file);
+my ($text, $params, $source_file, $href);
 
 open(RAWMD,"<",$mdfile) ||
   die "# ERROR: cannot open $mdfile\n";
@@ -54,7 +55,9 @@ while(<RAWMD>) {
   # 4) Parse blocks of code that lived as \verbatiminput in LATEX and convert them to links
   if(/(verbatiminput.*?code\/)(\S+)/) {
     $source_file = $2;
-    s/$1$source_file/[\[fuente: $source_file\]]($codeURL$source_file)/;
+    $href = "<a href=\"$codeURL$source_file\" style=\"$styleURL\">[fuente: $source_file]</a>";
+    s/$1$source_file/$href/;
+    #s/$1$source_file/[\[fuente: $source_file\]]($codeURL$source_file)/;
   }
 
   print MD $_; 
