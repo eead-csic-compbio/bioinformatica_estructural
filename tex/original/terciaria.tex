@@ -23,6 +23,9 @@ Repasemos algunos algoritmos fundamentales para calcular la similitud estructura
 (hay alguno m\'{a}s en la \htmladdnormallink{WikipediA}{http://en.wikipedia.org/wiki/Structural_alignment}):
 \begin{itemize}
 
+\item Conversi\'{o}n de informaci\'{o}n estructural en secuencias usando un alfabeto a medida para acelerar la comparaci\'{o}n
+(\htmladdnormallink{Foldseek}{https://search.foldseek.com/search})
+
 \item Alineamiento estructural iterativo (\htmladdnormallink{STAMP}{http://www.compbio.dundee.ac.uk/downloads/stamp/}). 
 El primer borrador de alineamiento se calcula con ayuda de  matrices de sustituci\'{o}n de amino\'{a}cidos como 
 \htmladdnormallink{BLOSUM}{https://en.wikipedia.org/wiki/BLOSUM}. \'{E}ste sirve para calcular la superposici\'{o}n correspondiente y 
@@ -33,7 +36,7 @@ el RMSD no mejora (ver \citet{Chothia1986} y secci\'{o}n \ref{threedeecons}).
 \item Doble programaci\'{o}n din\'{a}mica para primero) establecer fragmentos localmente similares entre ambas estructuras y 
 segundo) estimar el subconjunto de fragmentos que producen una superposici\'{o}n \'{o}ptima 
 (\htmladdnormallink{SSAP}{http://sillitoe.cathdb.info/tools/cath-ssap}). 
-M\'{a}s detalles en este \htmladdnormallink{enlace}{http://en.wikipedia.org/wiki/Structural_alignment#SSAP}).
+M\'{a}s detalles en este \htmladdnormallink{enlace}{http://en.wikipedia.org/wiki/Structural_alignment#SSAP}.
 
 %\item extensi\'{o}n combinatoria de fragmentos alineados localmente (\htmladdnormallink{CE}{http://source.rcsb.org/jfatcatserver/ceHome.jsp})
 
@@ -50,7 +53,7 @@ para luego compararlas entre si.
 de la elecci\'{o}n subjetiva de umbrales y define de manera precisa la superposici\'{o}n \'{o}ptima.
 
 \item Superposici\'{o}n de factores de transcripci\'{o}n para deducir el alineamiento correcto de sus sitios \italics{cis} 
-(\htmladdnormallink{TFcompare}{http://floresta.eead.csic.es/tfcompare/})
+(\htmladdnormallink{TFcompare}{https://hub.docker.com/r/eeadcsiccompbio/tfcompare})
 
 \end{itemize}
 
