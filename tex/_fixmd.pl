@@ -21,13 +21,15 @@ while(<RAWMD>) {
 
   # 1) Fix figure legends
   # ![ Estructura ... Figura tomada de <https>. []{label="fig:dna"}](fig/dna.png){#fig:dna width="100%"}
-  if(/^!\[ (\S+).*\{(#\S+)/) {
-    ($text, $params) = ($1, $2);
+  # ![ (A) Estructura ... (PDB:... ), .... []{label="fig:MGW"}](fig/MGW.jpeg){#fig:MGW}
+
+  if(/^!\[ ([A-Za-z\(]+).*\{(#\S+)/) {
+    ($text, $params) = ($1, $2); 
 
     # remove unneded label
     s/\[\]\{label="\S+"\}//;
 
-    s/^!\[ $text/!\[ [Figura]($params). $text/;
+    s/^!\[ \Q$text\E/!\[ [Figura]($params). $text/;
   }
 
   # 2) Fix table legends
