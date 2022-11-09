@@ -1,4 +1,10 @@
 
+# edit, mostly URLs, and commit
+
+# check and comment out URLs
+perl _check_links.pl &> log.linksNov2022
+
+# done only 1st time
 echo "\chapter{Estructura primaria o secuencia} \label{secuencia}" > primaria.tex
 echo >> primaria.tex
 echo "En estas secciones veremos dos ejemplos de algoritmos que utilizan secuencias de DNA y prote\'\i{}nas con el objeto de estudiar procesos que dependen de propiedades estructurales." >> primaria.tex
@@ -31,6 +37,3 @@ echo "\chapter{Estructura cuaternaria} \label{s4}" > cuaternaria.tex
 echo >> cuaternaria.tex
 echo "%\input{interface1.tex} %analisis de interfaces proteinas/dna/prot (SCWRL y dnaprot/aloy), explicar z-scores de dnaprot, bootstrap de matrices" >> cuaternaria.tex
 cat interface1.tex >> cuaternaria.tex
-
-# check and comment out URLs
-perl _check_links.pl &> log.linksNov2022 
