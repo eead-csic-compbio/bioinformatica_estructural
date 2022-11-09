@@ -33,4 +33,4 @@ echo "%\input{interface1.tex} %analisis de interfaces proteinas/dna/prot (SCWRL 
 cat interface1.tex >> cuaternaria.tex
 
 # check and comment out URLs
-perl _check_links.pl 
+perl _check_links.pl &> log.linksNov2022 
