@@ -10,13 +10,13 @@ De ahora en adelante nos metemos un poco m\'{a}s en el laberinto de la estructur
 
 \section{Comparaci\'{o}n de estructura terciaria entre prote\'{i}nas} \label{compS3}
 
-El hecho de que la estructura terciaria est\'{a} m\'{a}s conservada que la secuencia (ver secci\'{o}n \ref{3dcons})
+El hecho de que la estructura terciaria est\'{a} m\'{a}s conservada que la secuencia (ver secci\'{o}n \ref{threedeecons})
 podemos aprovecharlo para buscar posibles relaciones filogen\'{e}ticas remotas entre prote\'{i}nas:
 
 \begin{itemize}
 \item \textbf{PROBLEMA:} disponemos de las coordenadas de dos prote\'{i}nas A y B y queremos calcular cu\'{a}nto se parecen sus estructuras
 \item \textbf{SOLUCI\'{O}N:} buscar las subestructuras de m\'{a}ximo tama\~no subA y subB que minimizan la distancia entre \'{a}tomos equivalentes 
-(ver secci\'{o}n \ref{3dcons})
+(ver secci\'{o}n \ref{threedeecons})
 \end{itemize}
 
 Repasemos algunos algoritmos fundamentales para calcular la similitud estructural entre parejas de prote\'{i}nas
@@ -28,7 +28,7 @@ El primer borrador de alineamiento se calcula con ayuda de  matrices de sustituc
 \htmladdnormallink{BLOSUM}{https://en.wikipedia.org/wiki/BLOSUM}. \'{E}ste sirve para calcular la superposici\'{o}n correspondiente y 
 permite refinar el conjunto de residuos equivalentes, aquellos por debajo de cierto umbral de distancia.
 Estas iteraciones de alineamiento y definici\'{o}n de sobconjuntos de residuos equivalentes se repiten hasta que convergen y 
-el RMSD no mejora (ver \citet{Chothia1986} y secci\'{o}n \ref{3dcons}).
+el RMSD no mejora (ver \citet{Chothia1986} y secci\'{o}n \ref{threedeecons}).
 
 \item Doble programaci\'{o}n din\'{a}mica para primero) establecer fragmentos localmente similares entre ambas estructuras y 
 segundo) estimar el subconjunto de fragmentos que producen una superposici\'{o}n \'{o}ptima 
@@ -235,7 +235,7 @@ Cu\'{a}l es el l\'{i}mite esperado de precisi\'{o}n, en t\'{e}rminos de RMSD, qu
 
 Al analizar secuencias gen\'{o}micas frecuentemente encontraremos marcos de lectura (te\'{o}ricos) que codifican para prote\'{i}nas que aparentemente no se parecen a ninguna otra (llamadas a veces \italics{orphans} en la literatura), 
 o que s\'{o}lo tienen similitudes obvias con prote\'{i}nas de funci\'{o}n desconocida. Esto puede deberse a que de veras son 
-mol\'{e}culas observadas por primera vez, o como vimos en \ref{3dcons}, a que la evoluci\'{o}n ha conservado en mayor grado
+mol\'{e}culas observadas por primera vez, o como vimos en \ref{threedeecons}, a que la evoluci\'{o}n ha conservado en mayor grado
 la estructura y topolog\'{i}a de las prote\'{i}nas hom\'{o}logas que sus secuencias. 
 
 La segunda posibilidad ha justificado una familia de m\'{e}todos llamados gen\'{e}ricamente de \italics{Fold Recognition} (FR), 
@@ -409,7 +409,7 @@ correspondientes a \italics{gaps} en la secuencia alineada del molde.
 
 El paso 2 es el m\'{a}s determinante sobre la calidad del modelo y de hecho marca el techo de precisi\'{o}n de la metodolog\'{i}a 
 \citep{ContrerasMoreira2005}. Es adem\'{a}s un paso cr\'{i}tico en el sentido de que si el alineamiento $M_{i}$ es malo, 
-el modelo resultante ser\'{a} malo, como ya vislumbramos en la secci\'{o}n \ref{3dcons}. Para modelos complicados ser\'{a} 
+el modelo resultante ser\'{a} malo, como ya vislumbramos en la secci\'{o}n \ref{threedeecons}. Para modelos complicados ser\'{a} 
 necesario explorar diferentes combinaciones de moldes y alineamientos para encontrar la mejor soluci\'{o}n. %\citep{Contreras-Moreira2003}.
 Si la secuencia problema es multidominio o multim\'{e}rica puede ser necesario modelar su estructura cuaternaria \citep{Tramontano2017}, 
 con herramientas especiales como
@@ -418,7 +418,7 @@ con herramientas especiales como
 
 Con el objeto de explicar en mayor detalle el algoritmo, el siguiente c\'{o}digo implementa los pasos 3.1 y 3.2, quiz\'{a}s
 los m\'{a}s fundamentales tras el el paso 2. El programa usa como ejemplo secuencias
-y estructuras ya utilizadas en el apartado \ref{3dcons} (\htmladdnormallink{1gd6.pdb}{./files/1gd6.pdb}):
+y estructuras ya utilizadas en el apartado \ref{threedeecons} (\htmladdnormallink{1gd6.pdb}{./files/1gd6.pdb}):
 \verbatiminput{code/prog3.3.py}
 
 Como en otros campos de la biolog\'{i}a computacional, el repertorio de software para modelar prote\'{i}nas es muy extenso,
@@ -732,7 +732,7 @@ Esto es necesario porque hay muchos m\'{a}s genotipos que fenotipos observados, 
 patente que los individuos de una especie son portadores de m\'{u}ltiples mutaciones de diferente naturaleza
 \citep{Peterson2013}.
 
-Esto se relaciona con los resultados de \citet{Chothia1986}, presentados en la secci\'{o}n \ref{3dcons}, que 
+Esto se relaciona con los resultados de \citet{Chothia1986}, presentados en la secci\'{o}n \ref{threedeecons}, que 
 observaron que los efectos de las mutaciones sobre la estructura (y por tanto la funci\'{o}n) dependen en
 parte de d\'{o}nde se produzcan. No tiene el mismo efecto cambiar un amino\'{a}cido enterrado que uno en un
 \italics{loop}, o uno que coevoluciona con otro de un lazo vecino. Del mismo modo, una sustituci\'{o}n en el interior
