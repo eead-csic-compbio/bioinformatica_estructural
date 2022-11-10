@@ -6,6 +6,8 @@ author:
   name: 'Bruno Contreras Moreira'
 output:
   bookdown::gitbook: 
+    includes:
+       in_header: GAcode.html
     split_by: none
     self_contained: true
     config:
@@ -14,11 +16,12 @@ documentclass: book
 url: 'https://github.com/eead-csic-compbio/bioinformatica_estructural/'
 github-repo: 'eead-csic-compbio/bioinformatica_estructural'
 bibliography: bib_myarticles_md.bib
+biblio-style: apalike
 link-citations: yes
 ---
 
 
-<!-- TODO
+<!-- GAcode -> Google Analytics, lee
 https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-an-rmarkdown-generated-github-page
 -->
 
