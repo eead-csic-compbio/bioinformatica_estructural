@@ -6,8 +6,7 @@ La Bioinformática Estructural se ocupa del estudio de la estructura molecular d
 Tras un breve repaso de fundamentos bioquímicos, este material presenta algunos algoritmos básicos, en su mayoria heurísticos, plantea problemas y estrategias para resolverlos. A lo largo del curso encontraréis referencias a artículos que profundizan sobre aspectos particulares de cada tema, junto con ejemplos que a veces requieren de ciertos conocimientos de programación (en Perl y Python). Los enlaces al código fuente en el texto tienen un formato distinto: 
 <a href="https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog3.1.py" style="color: black; text-decoration: underline;">[fuente: prog3.1.py]</a>
 
-Este curso sirvió como material didáctico de la [Licenciatura en Ciencias Genómicas-UNAM](https://www.lcg.unam.mx) desde 2008 hasta 2019. 
-En 2022 lo actualicé para añadir el capítulo de AlphaFold.
+Este curso creció como material didáctico de la [Licenciatura en Ciencias Genómicas-UNAM](https://www.lcg.unam.mx) desde 2008 hasta 2019. En 2022 lo actualicé para añadir el capítulo de AlphaFold.
 
 Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Fernández-Recio y A.Pascual-García por actuar de evaluadores en un proceso de revisión abierta por pares ( open peer review ) en 2018 en Digital.CSIC, y a la [Fundación ARAID](http://www.araid.es) por el apoyo.
 
@@ -35,7 +34,7 @@ Contreras-Moreira B (2018) Algoritmos en bioinformática estructural. Edición 2
       doi = "10.20350/digitalcsic/8544"
     }
 
-## Libros de texto complementarios {-}
+## Recursos complementarios {-}
 
 Si tuviese que recomendar un libro de texto como acompañamiento para este material sería posiblemente 
 _[Structural Bioinformatics: An Algorithmic Approach](http://www.structuralbioinformatics.com)_. 
@@ -43,4 +42,4 @@ _[Structural Bioinformatics: An Algorithmic Approach](http://www.structuralbioin
 En español, el compendio [Bioinformática con Ñ](https://zenodo.org/communities/bioinfconn) 
 tiene varios capítulos que pueden ser muy buen complemento para este material, varios de ellos citados en el texto.
 
-
+En el blog de nuestro laboratorio también tratamos frecuentemente estos temas: <https://bioinfoperl.blogspot.com/>
