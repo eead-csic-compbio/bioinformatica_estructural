@@ -1,0 +1,40 @@
+
+perl _fixtex.pl original/teoria1.tex teoria1.tex
+perl _fixtex.pl original/teoria2.tex teoria2.tex
+perl _fixtex.pl original/primaria.tex primaria.tex
+perl _fixtex.pl original/secundaria.tex secundaria.tex
+perl _fixtex.pl original/terciaria.tex terciaria.tex
+perl _fixtex.pl original/cuaternaria.tex cuaternaria.tex
+
+
+pandoc -f latex -t markdown --verbose --wrap=none \
+	teoria1.tex teoria2.tex \
+	primaria.tex \
+	secundaria.tex \
+	terciaria.tex \
+	cuaternaria.tex \
+	> rawmerge.md
+
+#[INFO] Skipped '\htmlimage{scale=1.5}' at line 36 column 22
+#[INFO] Skipped '\htmlimage{scale=1.0}' at line 156 column 22
+#[INFO] Skipped '\htmlimage{scale=1.0}' at line 169 column 22
+#[INFO] Skipped '\begin{scriptsize}' at line 245 column 19
+#[INFO] Skipped '\end{scriptsize}' at line 259 column 17
+#[INFO] Skipped '\htmlimage{scale=1.0}' at line 331 column 22
+#[INFO] Skipped '\begin{scriptsize}' at line 364 column 19
+#[INFO] Skipped '\end{scriptsize}' at line 375 column 17
+#[INFO] Skipped '\htmlimage{scale=1.0}' at line 427 column 22
+#[INFO] Skipped '\begin{scriptsize}' at line 977 column 19
+#[INFO] Skipped '\end{scriptsize}' at line 990 column 17
+#[INFO] Skipped '\htmlimage{scale=1.0}' at line 1190 column 22
+#[INFO] Parsing unescaped '&' at line 2114 column 46
+#[INFO] Parsing unescaped '&' at line 2115 column 53
+#[INFO] Parsing unescaped '&' at line 2122 column 56
+#[INFO] Parsing unescaped '&' at line 2129 column 55
+#[INFO] Parsing unescaped '&' at line 2137 column 61
+#[INFO] Parsing unescaped '&' at line 2138 column 61
+
+
+
+perl _fixmd.pl rawmerge.md ../fixmerge.md 
+
