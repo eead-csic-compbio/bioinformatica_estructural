@@ -9,6 +9,10 @@ my $codeURL = "$repoURL/blob/master/code/";
 my $styleURL = 'color: black; text-decoration: underline;'; # matches README.md
 my $codepath = '../code/';
 
+# hack to add raw HTML that lived between {rawhtml} in LaTeX
+my $rawhtmlfile = 'original/interface1.rawhtml';
+my $rawhtmlplace = 'Asimismo podemos observar que el logo de';
+
 if(!$ARGV[1]) {
   die "# usage: <raw.md> <fixed.md>\n"
 }
@@ -60,6 +64,17 @@ while(<RAWMD>) {
     #s/$1$source_file/[\[fuente: $source_file\]]($codeURL$source_file)/;
   }
 
+  # 5) raw HTML hacks
+  if(/$rawhtmlplace/) {
+    open(HTML,"<",$rawhtmlfile) || 
+      die "# ERROR: cannot read $rawhtmlfile\n";
+    while($text = <HTML>) {
+	  print MD $text; 
+    }
+    close(HTML);
+  }
+
+  
   print MD $_; 
 }
 
