@@ -505,7 +505,7 @@ Este algoritmo incluye varios parámetros libres y en el artículo original se m
 
 Se han propuesto otras aproximaciones estructurales, como la de [@Gogni2007], que identifica regiones promotoras en base a la capacidad de deformación de los [pares de bases](http://nar.oxfordjournals.org/content/31/17/5108/F1.large.jpg), estimada por medio de extensas simulaciones moleculares precalculadas.
 
-El repertorio de métodos para predicción de promotores en base a inferencias estructurales es limitado, pero incluye al menos: <http://bioinformatics.psb.ugent.be/software/details/ProSOM> o el algoritmo de @Song2012. Otras opciones recientes se basan en combinar diferentes fuentes por medio de algoritmos de aprendizaje [@Eser2016].
+El repertorio de métodos para predicción de promotores en base a inferencias estructurales es limitado, pero incluye al menos: [ProSOM](http://bioinformatics.psb.ugent.be/software/details/ProSOM) o el algoritmo de @Song2012. Otras opciones recientes se basan en combinar diferentes fuentes por medio de algoritmos de aprendizaje [@Eser2016].
 
 El ejercicio de esta sección consiste en completar el siguiente programa, usando los parámetros unificados de [@SantaLucia1998], para calcular la diferencia de estabilidad $D(n)$ entre dos fragmentos de 50bp y 100bp $E1(n)$ y $E2(n)$ que flanquean una región central (de 50bp) que podría albergar el promotor. A su vez, estos framentos se calculan sobre valores de estabilidad calculados sobre ventanas de secuencia de longitud 15pb en el artículo de [@Kanhere2005]:
 
@@ -560,13 +560,13 @@ o estos otros para diseñar primers degenerados, que permiten reconocer y por ta
 
 -   [amplicon](http://amplicon.sourceforge.net/)
 
--   [primers4clades](http://maya.ccg.unam.mx/primers4clades/) (específico para aplicaciones filogenéticas, utiliza CODEHOP)
+-   [primers4clades](https://hub.docker.com/r/csicunam/primers4clades) (específico para aplicaciones filogenéticas, utiliza CODEHOP)
 
 Sin embargo, más allá del software elegido, es importante saber cómo se calculan ciertas propiedades moleculares de los primers, para poder analizar con criterio los resultados obtenidos.
 
 Por ejemplo, nos puede interesar calcular la $T_{m}$, que es la temperatura a la que la mitad de los primers se han hibridado con el ADN molde, o la cantidad de ADN bicatenario a cualquier temperatura, por ejemplo a la temperatura de apareamiento, la más crítica, que a menudo se aproxima como $T_{m} - 5$.
 
-Una aproximación burda es llamada regla de Wallace, que se basa solamente en la secuencia, donde GC y AT son el número de nucleótidos G/C y A/T en la secuencia del cebador, respectivamente [@Santalucia2007]: $$T_{m} \sim 4GC + 2AT$$
+Una aproximación burda es llamada regla de Wallace, que se basa solamente en la secuencia, donde GC y AT son el número de nucleótidos G/C y A/T en la secuencia del cebador, respectivamente [@SantaLucia2007]: $$T_{m} \sim 4GC + 2AT$$
 
 Otra alternativa más precisa es la siguiente ecuación, que relaciona exactamente la temperatura con la proporción de ADN bicatenario, donde $[A]$ es la concentración de hebras en exceso (los primers), $[B]$ el ADN molde que queremos amplificar, $\Delta H$ el cambio de entalpía, $\Delta S$ el cambio de entropía y $R$ la [constante de Boltzmann](http://en.wikipedia.org/wiki/Boltzmann_constant) (R=1.987 cal/mol K): $$T_{m} = \frac{1000 \Delta H}{\Delta S + Rln([A]-\frac{[B]}{2})} - 273.15$$
 
