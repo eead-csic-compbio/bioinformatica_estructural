@@ -2,12 +2,17 @@
 title: "Algoritmos en Bioinformática Estructural"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 author:
-- affiliation: Estación Experimental de Aula Dei-CSIC, Zaragoza, España, https://eead.csic.es/compbio
-  name: Bruno Contreras Moreira
+- affiliation: 'Estación Experimental de Aula Dei-CSIC, Zaragoza, España, https://eead.csic.es/compbio'
+  name: 'Bruno Contreras Moreira'
 output:
   bookdown::gitbook: 
     split_by: none
+    self_contained: true
+    config:
+      sharing: false
 documentclass: book
+url: 'https://github.com/eead-csic-compbio/bioinformatica_estructural/'
+github-repo: 'eead-csic-compbio/bioinformatica_estructural'
 bibliography: bib_myarticles_md.bib
 link-citations: yes
 ---
@@ -22,32 +27,15 @@ https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-
 ```{r, child='README.md'}
 ```
 
-<!--
-```{perl, highlight=TRUE, eval=FALSE, }
-#!/usr/bin/perl -w
+<!-- importa capítulos originales .tex convertidos a .md y concatenados para que pandoc arregle xrefs -->
 
-# prog1.1 
-# Bruno Contreras-Moreira
-# Nearest Neighbor dG calculator
-
-use strict;
-
-# global variables
-my $T           = 37; # temperature(C)
-my $windowL     = 15;  # window length, http://www.biomedcentral.com/1471-2105/6/1
-```
--->
-
-
-<!-- importa capítulos originales .tex convertidos a .md  -->
-
-```{r, child='fixmerge.md'}
+```{r, child='latexmerge.md'}
 ```
 
-<!--
-%\chapter{Alphafold} \label{AF}
-%\input{alphafold.tex} 
--->
+<!-- capítulos en format Markdown -->
+
+```{r, child='alphafold.md'}
+```
 
 # Apéndices
 
@@ -55,6 +43,7 @@ my $windowL     = 15;  # window length, http://www.biomedcentral.com/1471-2105/6
 
 |||
 |:---|:----------------------------|
+|AF|AlphaFold|
 |CASP|Critical Assessment of Techniques for Protein Structure Prediction|
 |CATH|Protein Structure Classification database|
 |CM|Comparative Modelling|
@@ -71,7 +60,6 @@ my $windowL     = 15;  # window length, http://www.biomedcentral.com/1471-2105/6
 
 <!--\section{Muestra de R \italics{Markdown} para tus trabajos} \label{md}
 \verbatiminput{sample_markdown.Rmd}-->
-
 
 
 # Bibliografía
