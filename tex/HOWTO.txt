@@ -36,5 +36,5 @@ pandoc -f latex -t markdown --verbose --wrap=none \
 
 
 
-perl _fixmd.pl rawmerge.md ../fixmerge.md 
+perl _fixmd.pl rawmerge.md ../latexmerge.md 
 
