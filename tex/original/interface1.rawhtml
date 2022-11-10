@@ -1,4 +1,3 @@
-\begin{rawhtml}
 <table border="0" cellspacing="10">
 <tbody><tr><th>factor</th><th>logo</th><th>E-value</th><th>\%IID</th><th>\%Isim</th><th>\%Icover</th><th>organism</th><th>complex</th></tr>
 <tr><td>SigA:</td><td>
@@ -47,4 +46,3 @@ Query: 220 LASALKHLNEREMKIISARRLAEDGA--TLEELGADLGISKERVRQIESRAMEKLR 273
            L  AL  L+ERE  ++  R+   DG   TLEE+GA  G+++ER+RQIE++A+ KL+
 Sbjct: 4   LEKALSKLSEREAMVLKLRKGLIDGREHTLEEVGAYFGV<font color="red"><b><u>T</u></b></font><font color="red"><b><u>R</u></b></font><font color="red"><b><u>E</u></b></font><font color="red"><b><u>R</u></b></font>I<font color="red"><b><u>R</u></b></font><font color="red"><b><u>Q</u></b></font>IENKALRKLK 59
 </pre>
-\end{rawhtml}
