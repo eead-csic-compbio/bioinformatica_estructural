@@ -18,7 +18,7 @@ El experimento bianual CASP, del que ya hablamos en la sección de [Fold recogni
 ha permitido medir de manera objetiva el impacto del AA en la predicción estructural.
 En las siguientes figuras se puede ver el salto que supuso la aparición de AlphaFold y otros métodos de AA:
 
-![ [Figura](#fig:CASPAU). Calidad de los mejores modelos evaluados en CASP a lo largo de los años usando la métrica GDT_TS [@Zemla2002]. Los evaluadores de CASP13 achacaron la mejoría a que algunos de los mejores algoritmos fueron capaces de estimar distancias entre aminoácidos a partir de información evolutiva implícita en alineamientos múltiples de secuencia muy profundos [@Abriata2019]. Figura tomada de <https://www.sib.swiss/about/news/10307-deep-learning-a-leap-forward-for-protein-structure-prediction>. ](fig/CASPProgression.png){#fig:CASPAU}
+![ [Figura](#fig:CASPAU). Calidad de los mejores modelos evaluados en CASP a lo largo de los años usando la métrica GDT_TS [@Zemla2002]. Los evaluadores de CASP13 achacaron la mejoría a que algunos de los mejores algoritmos fueron capaces de estimar distancias entre aminoácidos a partir de información evolutiva implícita en alineamientos múltiples de secuencia muy profundos [@Abriata2019]. Figura tomada del [blog del SIB](https://www.sib.swiss/about/news/10307-deep-learning-a-leap-forward-for-protein-structure-prediction). ](fig/CASPProgression.png){#fig:CASPAU}
 
 ![ [Figura](#fig:CASPAF). Calidad de los mejores modelos evaluados en CASP hasta la participación del predictor AlphaFold2 (AF2). Figura tomada de [@Callaway2020]. Puedes leer más detalles en el [blog](https://bioinfoperl.blogspot.com/2020/11/alphafold-resuelve-plegamiento-proteinas.html).](fig/casp_history.png){#fig:CASPAF}
 
@@ -59,7 +59,7 @@ En resumen, el modelo AF2 consta de 4 etapas, resumidas en la figura siguiente:
  
  * Relajación y evaluación de los modelos.
 
-![ [Figura](#fig:AFflow). Arquitectura del modelo AlphaFold2 (AF2), donde se describe que los datos de partida se representan de dos formas  complementarias: alineamiento múltiple de secuencias (MSA) y parejas de residuos correlacionados. Estas dos representaciones sirven de entrada para dos tipos de redes profundas diferentes. La red Evoformer hace inferencia directa de relaciones espaciales y evolutivas usando mecanismos de atención [@DotCSV2021] y triángulos entre residuos. A continuación el módulo estructural sirve para modelar en 3D de manera explícita por medio de matrices de rotación y traslación cada aminoácido. Las flechas muestran el flujo de información y las dimensiones de las matrices se dan como $s$ (número de secuencias), $r$ (número de residuos) y $c$ (número de canales). El proceso se repite tres veces para ir refinando/reciclando las predicciones y producir los modelos finales. Figura tomada de [@Jumper2021]. El proceso se explica en detalle en un vídeo creado por los autores de AF2 [@Tunyasuvunakool2022].](fig/AF2flow.png){#fig:AFflow} 
+![ [Figura](#fig:AFflow). Arquitectura del modelo AlphaFold2 (AF2), donde se describe que los datos de partida se representan de dos formas  complementarias: alineamiento múltiple de secuencias (MSA) y parejas de residuos correlacionados. Estas dos representaciones sirven de entrada para dos tipos de redes profundas diferentes. La red Evoformer hace inferencia directa de relaciones espaciales y evolutivas usando mecanismos de 'atención' entre capas de la red [@DotCSV2021, @Outeiral2021] y triángulos entre residuos. A continuación el módulo estructural sirve para modelar en 3D de manera explícita por medio de matrices de rotación y traslación cada aminoácido. Las flechas muestran el flujo de información y las dimensiones de las matrices se dan como $s$ (número de secuencias), $r$ (número de residuos) y $c$ (número de canales). El proceso se repite tres veces para ir refinando/reciclando las predicciones y producir los modelos finales. Figura tomada de [@Jumper2021]. El proceso se explica en detalle en un vídeo creado por los autores de AF2 [@Tunyasuvunakool2022].](fig/AF2flow.png){#fig:AFflow} 
 
  
 ### Métricas de calidad de AlphaFold2 (AF2) {#AFmetrics}
@@ -100,9 +100,6 @@ Además, el análisis de las 365.184 estructuras de AF2 disponibles para un tota
  
 ![ [Figura](#fig:AF2CATH). Crecimiento en conocimiento estructural en número de dominios (izquierda) y en proporción (derecha) para 21 especies. Figura tomada de [@Bordin2022].](fig/AF2CATH.jpg){#fig:AF2CATH}
 
-TODO: https://www.nature.com/articles/s41594-022-00849-w
-
-
 
 Otros algoritmos alternativos a AF {#beyondAF}
 ----------------------------------------------
@@ -119,8 +116,23 @@ A diferencia de AF2 y RoseTTAFold, RGN2 no calcula alineamientos múltiples y po
 En cambio, RGN2 es un modelo de lenguaje, derivado de los que se usan cotidianamente para procesar lenguaje natural o para completar una frase cuando escribes en tu móvil. Aunque los autores recomiendan AF2 para los casos que sí tienen homólogos,
 sus resultados muestran que RGN2 supera a AF2 y RoseTTAFold en secuencias huérfanas gastando cien veces menos tiempo de cálculo.
 
+
 Aplicaciones de AlphaFold2 {#AFapps}
 ------------------------------------
+
+Tras la publicación de los primeros resultados de AF2 la comunidad se puso manos a la obra para explorar las aplicaciones reales que podría tener. Muchos de esos esfuerzos se discutieron y diseminaron en Twitter. Por ejemplo, en este [hilo](https://twitter.com/_BalintMeszaros/status/1419579483921731591) se habla de la capacidad de predecir regiones desordenadas en proteínas con AF2, en [éste](https://twitter.com/DeepMind/status/1455589083611271169?s=20) de predicciones para multímeros o este [otro](https://twitter.com/MoAlQuraishi/status/1459188604723351552) de cómo reimplementar AF2 por completo para poder entrenarlo tú mismo.
+
+El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiva el potencial de AF2 para resolver problemas clásicos de la bioinformática estructural:
+
+ * **Predicción del efecto fenotípico de variantes/SNPs**. Para ellos modelaron 33 proteínas con más de cien mil mutaciones en total resultantes de experimentos de mutagénesis profunda. Tras calcular correlaciones entre los efectos predichos y los medidos experimentalmente observaron que las obtenidas con AF2 eran en promedio iguales o mejores que las obtenidas por métodos experimentales.
+ 
+ * **Predicción de cavidades de unión a ligandos**. En este caso usaron un conjunto de 225 proteínas para las cuales había estructuras disponibles en conformación unida al ligando (holo) y también sin unir (apo). En sus manos no apreciaron diferencia entre las cavidades obtenidas experimentalmente y las derivadas de modelos AF2 con **pLDDT > 90**. En cambio, observaron que los modelos AF2 con pLDDT < 90 no son fiables para buscar cavidades.
+ 
+ * **Predicción de homo-oligómeros**. En su banco de pruebas observaron que en 71 de 87 casos los modelos de AF2 con el estado correcto de oligomerización tenían la puntuación más alta. 
+ 
+ * **Reemplazamiento molecular**. Con dos ejemplos mostraron que los modelos AF2 se pueden usar para refinar modelos obtenidos datos experimentales de cryo-EM y cristalográficos.
+ 
+### Cóm probar AlphaFold2
 
 Para los que queráis probarlo hay varias opciones:
 
