@@ -253,6 +253,8 @@ El Protein Data Bank y sus formatos {#PDBformat}
 
 En las siguientes secciones utilizaremos el formato clásico [PDB](http://www.wwpdb.org/documentation/file-format.php) (con sus hermanos PDBML y PDBx/mmCIF), el estándar histórico para codificar la estructura tridimensional de macromoléculas biológicas, sobre todo proteı́nas y ácidos nucleicos, por medio de las coordenadas cartesianas de sus átomos. El fichero [1LFU](https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/files/1lfu.pdb) muestra el contenido de uno de estos archivos.
 
+![ [Figura](#fig:pdbformat}). Esquema de un fichero de texto en formato PDB. Mientras la columna ocupancia se usa para registrar residuos con diferentes conformaciones, la columna de factor de temperatura o B-factor resume, para estructuras cristalográáficas de forma numérica cuánto oscilan los átomos en la nube de densidad electrónica. Valores por encima de 50 indican que los átomos se mueven mucho, como pasa en la parte expuesta al solvente. Figura tomada de <https://www.bioinfo.bisr.res.in>. ](fig/pdbformat.png){#fig:pdbformat}
+
 Estos archivos pueden visualizarse de forma interactiva usando programas como [RasMol](http://rasmol.org), [Jmol](http://jmol.sourceforge.net), [PyMOL](http://www.pymol.org), [Chimera](https://www.cgl.ucsf.edu/chimera), o interfaces web como [AQUARIA](http://aquaria.ws).
 
 Desde 2022 el Protein Data Bank adoptó por defecto el formato [PDBx/mmCIF](https://mmcif.wwpdb.org) porque supera al PDB a la hora de representar estructuras cuaternarias complejas con muchas cadenas. El software [gemmi](https://github.com/project-gemmi/gemmi) permite convertir entre estos formatos.
