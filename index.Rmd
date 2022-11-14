@@ -46,16 +46,19 @@ https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-
 
 |||
 |:---|:----------------------------|
+|AA||Aprendizaje Automático|
 |AF|AlphaFold|
 |CASP|Critical Assessment of Techniques for Protein Structure Prediction|
 |CATH|Protein Structure Classification database|
 |CM|Comparative Modelling|
 |DSSP|Define Secondary Structure of Proteins|
 |FR|Fold Recognition|
+|LDDT|Local Distance Difference Test|
 |NMR|Nuclear Magnetic Resonance|
 |NN|Nearest Neighbor|
 |PCR|Polymerase Chain Reaction|
 |PDB|Protein data Bank|
+|RMSD|Root Mean Square Difference|
 |SCOP|Structural Classification of Proteins|
 |TF|Transcription Factor|
 |SS|Secondary Structure|
