@@ -64,14 +64,14 @@ En resumen, el modelo AF2 consta de 4 etapas, resumidas en la figura siguiente:
  
 ### Métricas de calidad de AlphaFold2 (AF2) {#AFmetrics}
 
-Los modelos 3D producidos por AF2 se ordenan por su puntuación pLDDT (*predicted Local Distance Difference Test*).
+Los modelos 3D producidos por AF2 se ordenan por su puntuación **pLDDT** (*predicted Local Distance Difference Test*).
 Es una predicción por residuo de la función lDDT-C$alpha$, una medida de confianza para cada residuo basada en el porcentaje de distancias interatómicas que caen dentro de valores esperados. Por tanto es una medida que informa de la calidad local.
 
-Como se muestra eb la siguiente figura, toma valores de 0 a 100 que se guardan como factores B en los modelos generados en formato PDB. Los valores [70-90] se interpretan como de alta confianza y los mayores de 90 de muy alta confianza. Valores por debajo de 50 se consideran propios de estructuras desordenadas, como pasa frecuentemente en los extremos de los  polipéptidos.
+Como se muestra eb la siguiente figura, toma valores de 0 a 100 que se guardan como factores de temperatura en los modelos generados en formato PDB (ver sección [1.5](#PDBformat). Los valores [70-90] se interpretan como de alta confianza y los mayores de 90 de muy alta confianza. Valores por debajo de 50 se consideran propios de estructuras desordenadas, como pasa frecuentemente en los extremos de los  polipéptidos.
 
 ![ [Figura](#fig:pLDDT). Ejemplos de pLDDT de modelos AF2. El esquema de arriba muestra una proteínas con varios dominios. La gráfica de abajo muestra los valores en un dominio solo. Figura adaptada de [@Tunyasuvunakool2022] .](fig/pLDDT.png){#fig:pLDDT} 
 
-Otra medida independiente de la calidad de un modelo AF2 es PAE (*Predicted Aligned Error*), que se mide en Angstrom.
+Otra medida independiente de la calidad de un modelo AF2 es **PAE** (*Predicted Aligned Error*), que se mide en Angstrom.
 Esta métrica mide el error de las posiciones de los residuos de un modelo si se pudiera superponer con la estructura experimental. Se usa sobre todo para evaluar las posiciones de los diferentes dominios de una proteína multidominio.
  
 
@@ -111,6 +111,8 @@ El principal algoritmo alternativo publicado hasta la fecha creo que es
 [RoseTTAFold](https://github.com/RosettaCommons/RoseTTAFold), descrito en detalle en [@Baek2021].
 Como contamos en su día en el [blog](https://bioinfoperl.blogspot.com/2021/07/rosettafold-modelado-open-source-proteinas.html), su rendimiento es superior a los predictores clásicos pero inferior a AF2. Al igual que AF2 usa redes neuronales profundas y require de mucha potencia de cálculo.
 
+Otro algoritmo (de 2019) que usa aprendizaje profundo es [DMPfold](https://github.com/psipred/DMPfold) [@Greener2019]. 
+
 Otra alternativa interesante es el algoritmo [RGNA2](https://github.com/aqlaboratory/rgn2), una red geométrica recurrente descrita en [@Chowdhury2022].
 A diferencia de AF2 y RoseTTAFold, RGN2 no calcula alineamientos múltiples y por tanto se puede aplicar a cualquier secuencia, incluso a aquellas que llamamos huérfanas porque no tienen secuencias similares homólogas en las bases de datos.
 En cambio, RGN2 es un modelo de lenguaje, derivado de los que se usan cotidianamente para procesar lenguaje natural o para completar una frase cuando escribes en tu móvil. Aunque los autores recomiendan AF2 para los casos que sí tienen homólogos,
@@ -128,27 +130,31 @@ El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiv
  
  * **Predicción de cavidades de unión a ligandos**. En este caso usaron un conjunto de 225 proteínas para las cuales había estructuras disponibles en conformación unida al ligando (holo) y también sin unir (apo). En sus manos no apreciaron diferencia entre las cavidades obtenidas experimentalmente y las derivadas de modelos AF2 con **pLDDT > 90**. En cambio, observaron que los modelos AF2 con pLDDT < 90 no son fiables para buscar cavidades.
  
- * **Predicción de homo-oligómeros**. En su banco de pruebas observaron que en 71 de 87 casos los modelos de AF2 con el estado correcto de oligomerización tenían la puntuación más alta. 
+ * **Predicción de homo-oligómeros**. En su banco de pruebas observaron que en 71 de 87 casos los modelos de AF2 con el estado correcto de oligomerización tenían la puntuación más alta. Hay otra evaluación más completa em [@Evans2021].
  
  * **Reemplazamiento molecular**. Con dos ejemplos mostraron que los modelos AF2 se pueden usar para refinar modelos obtenidos datos experimentales de cryo-EM y cristalográficos.
  
-### Cóm probar AlphaFold2
+### Cómo obtener y usar modelos de AlphaFold2 
 
-Para los que queráis probarlo hay varias opciones:
+La manera más rápida de explorar modelos de AF2 es acceder a los que están precalculados en <https://alphafold.ebi.ac.uk>.
+En la interfaz Web puedes buscar proteínas por identificador de UniProt, o descargar todos los modelos de un organismo o de SwissProt en la sección de descargas <https://alphafold.ebi.ac.uk/download>. También buscar por similitud de secuencia en <https://www.ebi.ac.uk/Tools/sss/fasta>
 
-i) El contenedor Docker descrito en https://github.com/deepmind/alphafold que ojo, requiere 2.2TB de espacio si instalas todas las bases de datos. 
+Si quieres calcular tus propios modelos hay varias opciones:
 
-ii) Un cuaderno Colab con un predictor simplificado en https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb
+ + Un contenedor Docker descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos (BFD, MGnify, PDB70, PDB, Uniclust30, UniProt, UniRef90). No te olvides de revisar las [licencias](https://github.com/deepmind/alphafold#license-and-disclaimer).
 
-iii) Las predicciones ya disponibles en UniProt y AlphaFold db para un total de 21 especies (https://alphafold.ebi.ac.uk/download)
+ + Alternativamente, DeepMind tiene disponible un cuaderno Colab con un predictor simplificado en
+ <https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb>
+ 
+ + Los cuadernos Colab de <https://github.com/sokrypton/ColabFold> permiten combinar las prestaciones de [MMseqs2](https://github.com/soedinglab/MMseqs2) para encontrar secuencias homólogas con predictores como AlphaFold2 o  RoseTTAFold [@Mirdita2022].
+ 
+ 
+
+
 
 
 https://bioinfoperl.blogspot.com/2022/06/openfold-open-source-alphafold.html
 
-
-
-
-Ejercicios
 
 
 

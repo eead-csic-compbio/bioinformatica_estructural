@@ -57,7 +57,7 @@ https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-
 |NMR|Nuclear Magnetic Resonance|
 |NN|Nearest Neighbor|
 |PCR|Polymerase Chain Reaction|
-|PDB|Protein data Bank|
+|PDB|Protein Data Bank|
 |RMSD|Root Mean Square Difference|
 |SCOP|Structural Classification of Proteins|
 |TF|Transcription Factor|
