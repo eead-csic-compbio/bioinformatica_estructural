@@ -151,7 +151,7 @@ Si quieres calcular tus propios modelos hay varias opciones:
  + Un contenedor Docker descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos ([BFD](https://bfd.mmseqs.com), MGnify, PDB70, PDB, Uniclust30, UniProt, UniRef90). No te olvides de revisar las [licencias](https://github.com/deepmind/alphafold#license-and-disclaimer).
 
  + Alternativamente, DeepMind tiene disponible un cuaderno Colab con un predictor simplificado (sin moldes/*templates* y una versión reducida de BFD) en
- <https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb>
+ <https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb>. Cuando lo ejecutas desde el navegador, al terminar se descarga automáticamente el fichero de resultados **prediction.zip** a tu carpeta de descargas.
  
  + Los cuadernos Colab de <https://github.com/sokrypton/ColabFold> permiten combinar las prestaciones de [MMseqs2](https://github.com/soedinglab/MMseqs2) para encontrar secuencias homólogas con predictores como AlphaFold2 o  RoseTTAFold [@Mirdita2022].
  
