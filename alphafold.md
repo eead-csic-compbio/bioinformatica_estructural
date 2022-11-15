@@ -141,7 +141,7 @@ El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiv
  
  * **Reemplazamiento molecular**. Con dos ejemplos mostraron que los modelos AF2 se pueden usar para refinar modelos obtenidos datos experimentales de cryo-EM y cristalográficos.
  
-### Cómo obtener y usar modelos de AlphaFold2 
+## Cómo obtener y usar modelos de AlphaFold2 
 
 La manera más rápida de explorar modelos de AF2 es acceder a los que están precalculados en <https://alphafold.ebi.ac.uk>.
 En la interfaz Web puedes buscar proteínas por identificador de UniProt, o descargar todos los modelos de un organismo o de SwissProt en la sección de descargas <https://alphafold.ebi.ac.uk/download>. También buscar por similitud de secuencia en <https://www.ebi.ac.uk/Tools/sss/fasta>

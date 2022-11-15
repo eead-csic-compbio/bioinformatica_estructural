@@ -8,7 +8,7 @@ Tras un breve repaso de fundamentos bioquímicos, este material presenta algunos
 
 Este curso creció como material didáctico de la [Licenciatura en Ciencias Genómicas-UNAM](https://www.lcg.unam.mx) desde 2008 hasta 2019. En 2022 lo actualicé para añadir el capítulo de AlphaFold.
 
-Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Fernández-Recio y A.Pascual-García por actuar de evaluadores en un proceso de revisión abierta por pares ( open peer review ) en 2018 en Digital.CSIC, y a la [Fundación ARAID](http://www.araid.es) por el apoyo.
+Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Fernández-Recio y A.Pascual-García por participar en el proceso de revisión abierta por pares para Digital.CSIC en 2018, y a la [Fundación ARAID](http://www.araid.es) por el apoyo.
 
 ![](fig/licenciaCC.png)
 
