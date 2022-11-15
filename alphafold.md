@@ -157,6 +157,8 @@ Si quieres calcular tus propios modelos hay varias opciones:
  
  + El cuaderno Colab de <https://colab.research.google.com/github/aqlaboratory/openfold/blob/main/notebooks/OpenFold.ipynb>, una reimplementación de AF2, sin moldes/*templates* y una versión reducida de BFD, construida sobre  [PyTorch](https://pytorch.org). Puedes ver en 
  [Twitter](https://twitter.com/MoAlQuraishi/status/1539589308893597698) los resultados de la comparación con AF2 según los propios autores y en el [blog](https://bioinfoperl.blogspot.com/2022/06/openfold-open-source-alphafold.html) otras formas de ejecutarlo.
+ 
+![ [Figura](#fig:OF). La búsqueda de secuencias homólogas en AF2 Colab tarda 43min para una secuencia de 413 aminoácidos.](fig/AF2MSA.png){#fig:AF2MSA} 
 
 ![ [Figura](#fig:OF). Comparación de predicciones de AF2 y OpenFold para la estructura [7KDX:B](https://www.rcsb.org/structure/7KDX). Figura tomada de <https://github.com/aqlaboratory/openfold>.](fig/of_banner.png){#fig:OF}
 
