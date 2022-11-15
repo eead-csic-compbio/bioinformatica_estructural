@@ -1,3 +1,0 @@
-# Estos son los programas y ejemplos del curso "Algoritmos en bioinformatica estructural" de Bruno Contreras Moreira
-# http://www.eead.csic.es/compbio
-# https://github.com/eead-csic-compbio/bioinformatica_estructural
