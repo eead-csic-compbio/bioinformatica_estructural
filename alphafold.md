@@ -61,6 +61,13 @@ En resumen, el modelo AF2 consta de 4 etapas, resumidas en la figura siguiente:
 
 ![ [Figura](#fig:AFflow). Arquitectura del modelo AlphaFold2 (AF2), donde se describe que los datos de partida se representan de dos formas  complementarias: alineamiento múltiple de secuencias (MSA) y parejas de residuos correlacionados. Estas dos representaciones sirven de entrada para dos tipos de redes profundas diferentes. La red Evoformer hace inferencia directa de relaciones espaciales y evolutivas usando mecanismos de 'atención' entre capas de la red [@DotCSV2021, @Outeiral2021] y triángulos entre residuos. A continuación el módulo estructural sirve para modelar en 3D de manera explícita por medio de matrices de rotación y traslación cada aminoácido. Las flechas muestran el flujo de información y las dimensiones de las matrices se dan como $s$ (número de secuencias), $r$ (número de residuos) y $c$ (número de canales). El proceso se repite tres veces para ir refinando/reciclando las predicciones y producir los modelos finales. Figura tomada de [@Jumper2021]. El proceso se explica en detalle en un vídeo creado por los autores de AF2 [@Tunyasuvunakool2022].](fig/AF2flow.png){#fig:AFflow} 
 
+AF2 se construye sobre [Tensorflow](https://www.tensorflow.org), 
+[JAX](https://github.com/google/jax), 
+[TPU](https://en.wikipedia.org/wiki/Tensor_Processing_Unit) y
+[Colab](https://colab.research.google.com). 
+Puedes ver la lista completa de dependencies en su 
+[repositorio](https://github.com/deepmind/alphafold#acknowledgements).
+ 
  
 ### Métricas de calidad de AlphaFold2 (AF2) {#AFmetrics}
 
@@ -141,30 +148,17 @@ En la interfaz Web puedes buscar proteínas por identificador de UniProt, o desc
 
 Si quieres calcular tus propios modelos hay varias opciones:
 
- + Un contenedor Docker descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos (BFD, MGnify, PDB70, PDB, Uniclust30, UniProt, UniRef90). No te olvides de revisar las [licencias](https://github.com/deepmind/alphafold#license-and-disclaimer).
+ + Un contenedor Docker descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos ([BFD](https://bfd.mmseqs.com), MGnify, PDB70, PDB, Uniclust30, UniProt, UniRef90). No te olvides de revisar las [licencias](https://github.com/deepmind/alphafold#license-and-disclaimer).
 
- + Alternativamente, DeepMind tiene disponible un cuaderno Colab con un predictor simplificado en
+ + Alternativamente, DeepMind tiene disponible un cuaderno Colab con un predictor simplificado (sin moldes/*templates* y una versión reducida de BFD) en
  <https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb>
  
  + Los cuadernos Colab de <https://github.com/sokrypton/ColabFold> permiten combinar las prestaciones de [MMseqs2](https://github.com/soedinglab/MMseqs2) para encontrar secuencias homólogas con predictores como AlphaFold2 o  RoseTTAFold [@Mirdita2022].
  
- 
+ + El cuaderno Colab de <https://colab.research.google.com/github/aqlaboratory/openfold/blob/main/notebooks/OpenFold.ipynb>, una reimplementación de AF2, sin moldes/*templates* y una versión reducida de BFD, construida sobre  [PyTorch](https://pytorch.org). Puedes ver en 
+ [Twitter](https://twitter.com/MoAlQuraishi/status/1539589308893597698) los resultados de la comparación con AF2 según los propios autores y en el [blog](https://bioinfoperl.blogspot.com/2022/06/openfold-open-source-alphafold.html) otras formas de ejecutarlo.
 
-
-
-
-https://bioinfoperl.blogspot.com/2022/06/openfold-open-source-alphafold.html
-
-
-
-
-
-
-
-
-
-
-
+![ [Figura](#fig:OF). Comparación de predicciones de AF2 y OpenFold para la estructura [7KDX:B](https://www.rcsb.org/structure/7KDX). Figura tomada de <https://github.com/aqlaboratory/openfold>.](fig/of_banner.png){#fig:OF}
 
 
 

@@ -46,7 +46,7 @@ https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-
 
 |||
 |:---|:----------------------------|
-|AA||Aprendizaje Automático|
+|AA|Aprendizaje Automático|
 |AF|AlphaFold|
 |CASP|Critical Assessment of Techniques for Protein Structure Prediction|
 |CATH|Protein Structure Classification database|
