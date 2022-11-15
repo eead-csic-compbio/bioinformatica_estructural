@@ -3,3 +3,4 @@
 .RData
 bioinformatica_estructural.Rproj
 libs
+*.pdf
