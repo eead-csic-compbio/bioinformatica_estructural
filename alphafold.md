@@ -65,7 +65,7 @@ AF2 se construye sobre [Tensorflow](https://www.tensorflow.org),
 [JAX](https://github.com/google/jax), 
 [TPU](https://en.wikipedia.org/wiki/Tensor_Processing_Unit) y
 [Colab](https://colab.research.google.com). 
-Puedes ver la lista completa de dependencies en su 
+Puedes ver la lista completa de dependencias en su 
 [repositorio](https://github.com/deepmind/alphafold#acknowledgements).
  
  
