@@ -6,9 +6,12 @@ La Bioinformática Estructural se ocupa del estudio de la estructura molecular d
 Tras un breve repaso de fundamentos bioquímicos, este material presenta algunos algoritmos básicos, en su mayoria heurísticos, plantea problemas y estrategias para resolverlos. A lo largo del curso encontraréis referencias a artículos que profundizan sobre aspectos particulares de cada tema, junto con ejemplos que a veces requieren de ciertos conocimientos de programación (en Perl y Python). Los enlaces al código fuente en el texto tienen un formato distinto: 
 <a href="https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog3.1.py" style="color: black; text-decoration: underline;">[fuente: prog3.1.py]</a>
 
-Este curso creció como material didáctico de la [Licenciatura en Ciencias Genómicas-UNAM](https://www.lcg.unam.mx) desde 2008 hasta 2019. En 2022 lo actualicé para añadir el capítulo de AlphaFold.
+Este curso creció como material didáctico de la [Licenciatura en Ciencias Genómicas-UNAM](https://www.lcg.unam.mx) desde 2008 hasta 2019. 
+En 2022 lo actualicé para añadir el capítulo de AlphaFold, que volví a actualizar en 2025.
 
-Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Fernández-Recio y A.Pascual-García por participar en el proceso de revisión abierta por pares para Digital.CSIC en 2018, y a la [Fundación ARAID](http://www.araid.es) por el apoyo.
+Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Fernández-Recio y 
+A.Pascual-García por participar en el proceso de revisión abierta por pares para Digital.CSIC en 2018, 
+y a la [Fundación ARAID](http://www.araid.es) por el apoyo.
 
 ![](fig/licenciaCC.png)
 
@@ -22,13 +25,13 @@ que incluye código fuente dentro de la carpeta [code](https://github.com/eead-c
 
 Puedes citarlo como:
 
-Contreras-Moreira B (2018) Algoritmos en bioinformática estructural. Edición 2022. [doi:10.20350/digitalcsic/8544](https://doi.org/10.20350/digitalcsic/8544)
+Contreras-Moreira B (2018) Algoritmos en bioinformática estructural. Edición 2025. [doi:10.20350/digitalcsic/8544](https://doi.org/10.20350/digitalcsic/8544)
 
     @book{
       Author = {Contreras-Moreira, Bruno},
       Title = {Algoritmos en bioinform\'{a}tica estructural},
       Publisher = {Digital.CSIC},
-      Edition = {2022},
+      Edition = {2025},
       Year = {2018},
       url="https://doi.org/10.20350/digitalcsic/8544",
       doi = "10.20350/digitalcsic/8544"

@@ -7,8 +7,9 @@ se han ido publicando desde 2020 herramientas basadas en el
 [aprendizaje automático](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico) 
 (AU, _machine learning_ (ML) en inglés) 
 que han permitido dar un salto cualitativo en la predicción de la estructura de las proteínas. 
-La más famosa de todas es [AlphaFold](https://alphafold.ebi.ac.uk) (AF), pero hay muchas otras, y las que vendrán. 
-Vayamos por partes.
+La más famosa de todas es [AlphaFold](https://alphafold.ebi.ac.uk) (AF), 
+merecedora del [Nobel](https://bioinfoperl.blogspot.com/2024/10/nobel-diseno-prediccion-proteinas.html), 
+pero hay muchas otras, y las que vendrán. Vayamos por partes.
 
 
 La revolución del aprendizaje automático {#AA}
@@ -22,7 +23,10 @@ En las siguientes figuras se puede ver el salto que supuso la aparición de Alph
 
 ![ [Figura](#fig:CASPAF). Calidad de los mejores modelos evaluados en CASP hasta la participación del predictor AlphaFold2 (AF2). Figura tomada de [@Callaway2020]. Puedes leer más detalles en el [blog](https://bioinfoperl.blogspot.com/2020/11/alphafold-resuelve-plegamiento-proteinas.html).](fig/casp_history.png){#fig:CASPAF}
 
-Es evidente que los nuevos métodos de AA han aumentado de manera significativa nuestra capacidad de predecir la estructura de las proteínas. Como decía al principio de este capítulo, los investigadores de la compañia DeepMind han avanzado a hombros de gigantes y han tenido a su disposición enormes recursos de cálculo. Pero ojo, aunque el algoritmo AF haga predicciones de alta calidad en muchos casos, esto no significa que sepamos simular el proceso de plagamiento de proteínas todavía.
+Es evidente que los nuevos métodos de AA han aumentado de manera significativa nuestra capacidad de predecir la estructura de las proteínas. 
+Como decía al principio de este capítulo, los investigadores de la compañía DeepMind han avanzado a hombros de gigantes y 
+han tenido a su disposición enormes recursos de cálculo. Pero ojo, aunque el algoritmo AF haga predicciones de alta calidad en muchos casos, 
+esto no significa que sepamos simular el proceso de plagamiento de proteínas todavía.
 
 
 Cómo funciona AlphaFold2 {#alphafold}
@@ -108,17 +112,33 @@ Además, el análisis de las 365.184 estructuras de AF2 disponibles para un tota
 ![ [Figura](#fig:AF2CATH). Crecimiento en conocimiento estructural en número de dominios (izquierda) y en proporción (derecha) para 21 especies. Figura tomada de [@Bordin2022].](fig/AF2CATH.jpg){#fig:AF2CATH}
 
 
+Qué cambia con AlphaFold3 {#alphafold3}
+---------------------------------------
+
+El modelo AlphaFold3 (AF3) es una modificación sustancial de AF2 de manera que pueda representar una mayor variabilidad de 
+estructuras químicas (ADN, ARN, ligandos) y aprenda más rápido. AF3 i) reduce el procesamiento de alineamientos múltiples de 
+secuencias y ii) predice directamente coordenadas atómicas por medio de un nuevo módulo de difusión que elimina la necesidad 
+de trabajar sobre la base de aminoácidos y cadenas laterales. 
+
+![ [Figura](#fig:AF3). Arquitectura de AF3, una evolución de AF2 especializada en interacciones de proteínas. Figura tomada de [@AF3].](fig/AF3.png){#fig:AF3} 
+
 Otros algoritmos alternativos a AF {#beyondAF}
 ----------------------------------------------
 
 El fenómeno que ha supuesto la llegada de AF va más allá y prueba de ello es que otros autores están publicando 
-soluciones similares, lo cual nos dice mucho del potencial actual del AA en este campo. 
+soluciones similares usando algoritmos distintos, lo cual nos dice mucho del potencial actual del AA en este campo. 
 
-El principal algoritmo alternativo publicado hasta la fecha creo que es 
-[RoseTTAFold](https://github.com/RosettaCommons/RoseTTAFold), descrito en detalle en [@Baek2021].
-Como contamos en su día en el [blog](https://bioinfoperl.blogspot.com/2021/07/rosettafold-modelado-open-source-proteinas.html), su rendimiento es superior a los predictores clásicos pero inferior a AF2. Al igual que AF2 usa redes neuronales profundas y require de mucha potencia de cálculo.
+Los dos principales algoritmos alternativos hasta la fecha creo que son
+[RoseTTAFold](https://github.com/RosettaCommons/RoseTTAFold) y
+[ESMFold](https://github.com/facebookresearch/esm).
+El primero se describe en detalle en [@Baek2021] y en el 
+[blog](https://bioinfoperl.blogspot.com/2021/07/rosettafold-modelado-open-source-proteinas.html).
+El segundo se describe en [@ESMFold2023].
+<!--su rendimiento es superior a los predictores clásicos pero inferior a AF2. 
+Al igual que AF2 usa redes neuronales profundas y require de mucha potencia de cálculo.-->
 
-Otro algoritmo (de 2019) que usa aprendizaje profundo es [DMPfold](https://github.com/psipred/DMPfold) [@Greener2019]. 
+Otros algoritmos que usan aprendizaje profundo son por ejemplo [D-I-TASSER](https://zhanggroup.org/D-I-TASSER) [@DITASSER2025] o 
+[DMPfold](https://github.com/psipred/DMPfold) [@Greener2019]. 
 
 Otra alternativa interesante es el algoritmo [RGNA2](https://github.com/aqlaboratory/rgn2), una red geométrica recurrente descrita en [@Chowdhury2022].
 A diferencia de AF2 y RoseTTAFold, RGN2 no calcula alineamientos múltiples y por tanto se puede aplicar a cualquier secuencia, incluso a aquellas que llamamos huérfanas porque no tienen secuencias similares homólogas en las bases de datos.
@@ -126,14 +146,15 @@ En cambio, RGN2 es un modelo de lenguaje, derivado de los que se usan cotidianam
 sus resultados muestran que RGN2 supera a AF2 y RoseTTAFold en secuencias huérfanas gastando cien veces menos tiempo de cálculo.
 
 
-Aplicaciones de AlphaFold2 {#AFapps}
+Aplicaciones de AlphaFold y algoritmos similares {#AFapps}
 ------------------------------------
 
 Tras la publicación de los primeros resultados de AF2 la comunidad se puso manos a la obra para explorar las aplicaciones reales que podría tener. Muchos de esos esfuerzos se discutieron y diseminaron en Twitter. Por ejemplo, en este [hilo](https://twitter.com/_BalintMeszaros/status/1419579483921731591) se habla de la capacidad de predecir regiones desordenadas en proteínas con AF2, en [éste](https://twitter.com/DeepMind/status/1455589083611271169?s=20) de predicciones para multímeros o este [otro](https://twitter.com/MoAlQuraishi/status/1459188604723351552) de cómo reimplementar AF2 por completo para poder entrenarlo tú mismo.
 
 El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiva el potencial de AF2 para resolver problemas clásicos de la bioinformática estructural:
 
- * **Predicción del efecto fenotípico de variantes/SNPs**. Para ellos modelaron 33 proteínas con más de cien mil mutaciones en total resultantes de experimentos de mutagénesis profunda. Tras calcular correlaciones entre los efectos predichos y los medidos experimentalmente observaron que las obtenidas con AF2 eran en promedio iguales o mejores que las obtenidas por métodos experimentales.
+ * **Predicción del efecto fenotípico de variantes/SNPs**. Para ellos modelaron 33 proteínas con más de cien mil mutaciones en total resultantes de experimentos de mutagénesis profunda. Tras calcular correlaciones entre los efectos predichos y los medidos experimentalmente observaron que las obtenidas con AF2 eran en promedio iguales o mejores que las obtenidas por métodos experimentales. 
+ Otros trabajos más recientes proponen diferentes algoritmos [@Brandes2023; @AlphaMissense2023; @Lacoste2024], pero a menudo se centran en proteínas humanas.
  
  * **Predicción de cavidades de unión a ligandos**. En este caso usaron un conjunto de 225 proteínas para las cuales había estructuras disponibles en conformación unida al ligando (holo) y también sin unir (apo). En sus manos no apreciaron diferencia entre las cavidades obtenidas experimentalmente y las derivadas de modelos AF2 con **pLDDT > 90**. En cambio, observaron que los modelos AF2 con pLDDT < 90 no son fiables para buscar cavidades.
  
@@ -141,19 +162,36 @@ El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiv
  
  * **Reemplazamiento molecular**. Con dos ejemplos mostraron que los modelos AF2 se pueden usar para refinar modelos obtenidos datos experimentales de cryo-EM y cristalográficos.
  
-## Cómo obtener y usar modelos de AlphaFold2 
+ Otras aplicaciones son:
+ 
+ * **Diseño de proteínas con función a la carta**, como se explica por ejemplo en [@ProGen2023; @Guo2025] 
+ 
+ * **Descubrimiento de nuevos plegamientos**, como se describe por ejemplo en [@Koehler2023; @Durairaj2023].
+ 
+ * **Predicción de interfaces mediadas por proteínas desordenadas** [@Ginell2025]. 
+ 
+## Cómo obtener y usar modelos de AlphaFold y algoritmos similares 
 
-La manera más rápida de explorar modelos de AF2 es acceder a los que están precalculados en <https://alphafold.ebi.ac.uk>.
-En la interfaz Web puedes buscar proteínas por identificador de UniProt, o descargar todos los modelos de un organismo o de SwissProt en la sección de descargas <https://alphafold.ebi.ac.uk/download>. También buscar por similitud de secuencia en <https://www.ebi.ac.uk/Tools/sss/fasta>
+La manera más rápida de explorar modelos de AF es acceder a los que están precalculados en <https://alphafold.ebi.ac.uk>.
+En la interfaz Web puedes buscar proteínas por identificador de UniProt, 
+o descargar todos los modelos de un organismo o de SwissProt en la sección de descargas <https://alphafold.ebi.ac.uk/download>. 
+También buscar por similitud de secuencia en <https://www.ebi.ac.uk/jdispatcher/sss/fasta>
 
 Si quieres calcular tus propios modelos hay varias opciones:
 
- + Un contenedor Docker descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos ([BFD](https://bfd.mmseqs.com), MGnify, PDB70, PDB, Uniclust30, UniProt, UniRef90). No te olvides de revisar las [licencias](https://github.com/deepmind/alphafold#license-and-disclaimer).
+ + El servidor Web de AF3 <https://alphafoldserver.com> permite modelar monómeros, multímeros e incluso complejos 
+ [proteína-ADN]( https://bioinfoperl.blogspot.com/2024/05/logo-protein-DNA-complex-alphafold.html).
 
- + Alternativamente, DeepMind tiene disponible un cuaderno Colab con un predictor simplificado (sin moldes/*templates* y una versión reducida de BFD) en
- <https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb>. Cuando lo ejecutas desde el navegador, al terminar se descarga automáticamente el fichero de resultados **prediction.zip** a tu carpeta de descargas.
+ + Un contenedor Docker de AF2 descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos 
+ ([BFD](https://bfd.mmseqs.com), MGnify, PDB70, PDB, Uniclust30, UniProt, UniRef90). No te olvides de revisar las 
+ [licencias](https://github.com/deepmind/alphafold#license-and-disclaimer). 
+
+ <!--+ Alternativamente, DeepMind tiene disponible un cuaderno Colab con un predictor simplificado (sin moldes/*templates* y una versión reducida de BFD) en
+ <https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb>. Cuando lo ejecutas desde el navegador, al terminar se descarga automáticamente el fichero de resultados **prediction.zip** a tu carpeta de descargas.-->
  
- + Los cuadernos Colab de <https://github.com/sokrypton/ColabFold> permiten combinar las prestaciones de [MMseqs2](https://github.com/soedinglab/MMseqs2) para encontrar secuencias homólogas con predictores como AlphaFold2 o  RoseTTAFold [@Mirdita2022].
+ + Los cuadernos Colab de <https://github.com/sokrypton/ColabFold> permiten combinar las prestaciones de 
+ [MMseqs2](https://github.com/soedinglab/MMseqs2) para encontrar secuencias homólogas con diferentes predictores como AlphaFold2, 
+ RoseTTAFold o ESMFold.
  
  + El cuaderno Colab de <https://colab.research.google.com/github/aqlaboratory/openfold/blob/main/notebooks/OpenFold.ipynb>, una reimplementación de AF2, sin moldes/*templates* y una versión reducida de BFD, construida sobre  [PyTorch](https://pytorch.org). Puedes ver en 
  [Twitter](https://twitter.com/MoAlQuraishi/status/1539589308893597698) los resultados de la comparación con AF2 según los propios autores y en el [blog](https://bioinfoperl.blogspot.com/2022/06/openfold-open-source-alphafold.html) otras formas de ejecutarlo.
