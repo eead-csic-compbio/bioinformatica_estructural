@@ -168,7 +168,8 @@ El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiv
  
  * **Descubrimiento de nuevos plegamientos**, como se describe por ejemplo en [@Koehler2023; @Durairaj2023].
  
- * **Predicción de interfaces mediadas por proteínas desordenadas** [@Ginell2025]. 
+ * **Predicción de interacciones entre proteínas**, se ha aplicado a proteínas de defensa de plantas (ver [blog](https://bioinfoperl.blogspot.com/2024/09/protocolo-parejas-proteinas%20con%20AlphaFold.html))
+y a interfaces mediadas por proteínas desordenadas** [@Ginell2025]. 
  
 ## Cómo obtener y usar modelos de AlphaFold y algoritmos similares 
 

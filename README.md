@@ -7,11 +7,13 @@ Tras un breve repaso de fundamentos bioquímicos, este material presenta algunos
 <a href="https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog3.1.py" style="color: black; text-decoration: underline;">[fuente: prog3.1.py]</a>
 
 Este curso creció como material didáctico de la [Licenciatura en Ciencias Genómicas-UNAM](https://www.lcg.unam.mx) desde 2008 hasta 2019. 
-En 2022 lo actualicé para añadir el capítulo de AlphaFold, que volví a actualizar en 2025.
+En 2022 lo actualicé para añadir el capítulo de AlphaFold, que volví a actualizar en 2025 para el 
+[International Master in Plant Genetics, Genomics and Breeding](http://www.masterplantbreeding.com)
+organizado por [CIHEAM Zaragoza](https://www.iamz.ciheam.org). 
 
 Agradezco a los alumnos por sus comentarios para mejorarlo, a M.Medina, J.Fernández-Recio y 
 A.Pascual-García por participar en el proceso de revisión abierta por pares para Digital.CSIC en 2018, 
-y a la [Fundación ARAID](http://www.araid.es) por el apoyo.
+y a la [Fundación ARAID](http://www.araid.es) por el apoyo desde el principio.
 
 ![](fig/licenciaCC.png)
 
