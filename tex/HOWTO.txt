@@ -1,11 +1,11 @@
 
+# 1) only 1st time, skip to 2) if adding new text, dont edit .tex (como hice Jan2026 terciaria.tex, teoria1.tex por error)
 perl _fixtex.pl original/teoria1.tex teoria1.tex
 perl _fixtex.pl original/teoria2.tex teoria2.tex
 perl _fixtex.pl original/primaria.tex primaria.tex
 perl _fixtex.pl original/secundaria.tex secundaria.tex
 perl _fixtex.pl original/terciaria.tex terciaria.tex
 perl _fixtex.pl original/cuaternaria.tex cuaternaria.tex
-
 
 pandoc -f latex -t markdown --verbose --wrap=none \
 	teoria1.tex teoria2.tex \
@@ -34,7 +34,8 @@ pandoc -f latex -t markdown --verbose --wrap=none \
 #[INFO] Parsing unescaped '&' at line 2137 column 61
 #[INFO] Parsing unescaped '&' at line 2138 column 61
 
+# 2) edit rawmerge.md to add new text, refs and figures
 
-
+# 3) fix
 perl _fixmd.pl rawmerge.md ../latexmerge.md 
 

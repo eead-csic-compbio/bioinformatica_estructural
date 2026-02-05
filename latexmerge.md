@@ -8,11 +8,14 @@ Los ácidos nucleicos y las proteı́nas son las dos macromoléculas biológicas
 
 ![ [Figura](#fig:flujosinfobio). Flujos moleculares de información en la célula. Los flujos azules solamente se encuentran en algunos seres vivos, las negras son universales. ](fig/flujoinfo.png){#fig:flujosinfobio width="80%"}
 
+
 La función biológica de estas moléculas está ı́ntimamente ligada a su estructura. Por ejemplo, la estructura en doble hélice del ADN es en si mismo un mecanismo de protección de la información genética, ya que la información está contenida por duplicado, y asimismo es la base de su mecanismo de replicación.
+
 
 ![ [Figura](#fig:dna). Estructura helicoidal del ADN (DNA en inglés) en conformaciones A, B y Z. Figura de dominio público tomada de <https://en.wikipedia.org/wiki/Nucleic_acid_structure>. ](fig/dna.png){#fig:dna width="100%"}
 
-Las macromoléculas naturales deben plegarse, es decir, deben tomar una determinada conformación tridimensional relativamente estable para desempeñar su función biológica. A esta conformación, sostenida por una red de interacciones no covalentes, se le llama *nativa* (ver sección [1.2.3](#macro1:intnocov){reference-type="ref" reference="macro1:intnocov"}). Por el contrario, las moléculas se despliegan al perderse estas interacciones. Cuando una macromolécula pierde su estructura tridimensional nativa, normalmente pierde también su función. O al menos antes lo creíamos así. Ahora conocemos cada vez más proteı́nas intrı́nsecamente desordenadas no plegadas, que participan en complejos proteicos o que sólo se pliegan al unirse a sus ligandos y reducir su entropía [@Flock2014; @Riback2017], que desempeñan funciones celulares importantes [@Dyson1999]. Recientemente hay mucho interés en estudiar estos fenómenos por su relación con la complejidad de los organismos [@Yruela2017] y con proteínas de importancia en medicina como los [priones](http://es.wikipedia.org/wiki/Prion) [@Sabate2015].
+
+Las macromoléculas naturales deben plegarse, es decir, deben tomar una determinada conformación tridimensional relativamente estable para desempeñar su función biológica. A esta conformación, sostenida por una red de interacciones no covalentes, se le llama *nativa* (ver sección [1.2.3](#macro1:intnocov){reference-type="ref" reference="macro1:intnocov"}). Por el contrario, las moléculas se despliegan al perderse estas interacciones. Cuando una macromolécula pierde su estructura tridimensional nativa, normalmente pierde también su función. O al menos antes lo creíamos así. Ahora conocemos cada vez más proteı́nas intrı́nsecamente desordenadas no plegadas, que participan en complejos proteicos o que sólo se pliegan al unirse a sus ligandos y reducir su entropía [@Flock2014; @Riback2017], que desempeñan funciones celulares importantes [@Dyson1999]. Hay mucho interés en estudiar estos fenómenos por su relación con la complejidad de los organismos [@Yruela2017] y con proteínas de importancia en medicina como los [priones](http://es.wikipedia.org/wiki/Prion) [@Sabate2015]. Dadas la capacidad que tenemos actualmente de modelar grandes números de proteínas, éstas se pueden utilizar en vez de las secuencias para estudios de diversidad y asociación a escala genómica [@Wang2026].
 
 ![ [Figura](#fig:autoinhdis). Algunas regiones desordenadas tienen un rol autoinhibitorio, como el fragmento en color rosa de la figura. Figura tomada de [@Trudeau2013] y reproducida con permiso de los autores. ](fig/disorderautoinhib.png){#fig:autoinhdis width="70%"}
 
@@ -155,7 +158,7 @@ La mayorı́a de las proteı́nas forman glóbulos compactos al plegarse, compue
 
 Las clasificaciones estructurales de proteı́nas se hacen generalmente a nivel de dominios, como en el caso de <http://www.cathdb.info> o la [taxonomı́a de Richardson](http://kinemage.biochem.duke.edu/teaching/anatax), aunque también se han propuesto otros esquemas, como la tabla periódica de [@Taylor2002], donde la unidad básica de plegamiento es una combinación compacta de elementos de estructura secundaria sostenida por una red de contactos que coevoluciona [@Mackenzie2017; @Granata2017]. Se puede ampliar este tema en @pascual_garcia_alberto_2014_1066350.
 
-![ [Figura](#fig:1bvq}). Estructura terciaria de una proteı́na (tioesterasa), con los elementos de estructura secundaria coloreados (amarillo para la láminas betas, rosa para alfa-hélices y blanco para los lazos). Figura exportada con el programa [RasMol](http://rasmol.org/). ](fig/1bvq.png){#fig:1bvq}
+![ [Figura](#fig:1bvq}). Estructura terciaria de una proteı́na (tioesterasa), con los elementos de estructura secundaria coloreados (amarillo para la láminas betas, rosa para alfa-hélices y blanco para los lazos). Figura exportada con el programa RasMol. ](fig/1bvq.png){#fig:1bvq}
 
 ![ [Figura](#fig:1bvq}). Alineamiento de secuencias primarias y secundarias de diferentes dominios de tipo tioesterasa anotados en la base de datos [Pfam](https://pfam.xfam.org/family/Thioesterase). Se colorean con distintos colores las columnas con G, P, las cadenas laterales pequeñas o hidrofóbicas (C,A,V,L,I,M,F,W), residuos con grupo hidroxilo o amina (S,T,N,Q), los cargados (D,E,R,K) y finalmente los residuos H o Y. ](fig/thiosterase.png){#fig:1bvq}
 
@@ -174,7 +177,7 @@ Esta manera de condensar una estructura terciaria es literalmente el fundamento 
 En cuanto a los ácidos nucleicos, su estructura terciaria es muy distinta según se trate de ADN o ARN.\
 El ADN suele formar una doble hélice dextrógira antiparalela donde dos cadenas polinucleotı́dicas, de secuencia complementaria, corren en sentidos opuestos, como se muestra en la figura [1.25](#fig:dna3){reference-type="ref" reference="fig:dna3"}. El grado de enrollamiento del ADN puede variar e incluso sabemos que hay al menos [3 tipos](http://en.wikipedia.org/wiki/DNA_structure#DNA_helix_geometries) de dobles hélices posibles, una de ellas levógira, y una triple hélice.
 
-![ [Figura](#fig:dna3}). Estructura atómica en doble hélice antiparalela del ADN, generada con [RasMol](http://rasmol.org/). ](fig/dna3.png){#fig:dna3}
+![ [Figura](#fig:dna3}). Estructura atómica en doble hélice antiparalela del ADN, generada con RasMol. ](fig/dna3.png){#fig:dna3}
 
 Las combinaciones de diferentes cadenas de proteı́na y/o ácidos nucleicos para formar una unidad biológica funcional se dan ya al nivel de estructura cuaternaria, como ocurre con la [hemoglobina humana](http://en.wikipedia.org/wiki/Hemoglobin), que funciona como un tetrámero, o con muchos factores de transcripción que ejercen su papel regulador como multímeros, como se muestra en la figura [1.26](#fig:1cgp){reference-type="ref" reference="fig:1cgp"}:
 
@@ -248,18 +251,21 @@ En el PDB la mayor parte de las estructuras se derivan de cristales o espectros 
 
 ![ [Figura](#fig:mioglobina}). Primer modelo en la historia de una proteı́na, la mioglobina a 6Å de resolución [@Kendrew1958]. Figura reproducida con permiso de <https://www2.mrc-lmb.cam.ac.uk/about-lmb/archive/scientific-models> ](fig/mioglobina.png){#fig:mioglobina}
 
-El Protein Data Bank y sus formatos {#PDBformat}
------------------------------------
+El Protein Data Bank y sus formatos y sus formatos mmCIF y PDB {#PDBformat}
+--------------------------------------------------------------
 
-En las siguientes secciones utilizaremos el formato clásico [PDB](http://www.wwpdb.org/documentation/file-format.php) (con sus hermanos PDBML y PDBx/mmCIF), el estándar histórico para codificar la estructura tridimensional de macromoléculas biológicas, sobre todo proteı́nas y ácidos nucleicos, por medio de las coordenadas cartesianas de sus átomos. El fichero [1LFU](https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/files/1lfu.pdb) muestra el contenido de uno de estos archivos.
+Hasta 2022 el formato [PDB](https://www.wwpdb.org/documentation/file-format.php) fue el estándar para codificar la estructura tridimensional de macromoléculas biológicas, 
+sobre todo proteı́nas y ácidos nucleicos, por medio de las coordenadas cartesianas de sus átomos. Cada estructura se identificaba por una combinación de 4 caracteres, empezando por un número `/\d\w{3}/`, como por ejemplo 1LFU (puedes revisar el fichero 1LFU.pdb [aquí](https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/files/1lfu.pdb)). De hecho todavı́a muchos programas aceptan archivos en formato PDB por compatibilidad.
 
 ![ [Figura](#fig:pdbformat}). Esquema de un fichero de texto en formato PDB. Mientras la columna ocupancia se usa para registrar residuos con diferentes conformaciones, la columna de factor de temperatura o B-factor resume, para estructuras cristalográáficas de forma numérica cuánto oscilan los átomos en la nube de densidad electrónica. Valores por encima de 50 indican que los átomos se mueven mucho, como pasa en la parte expuesta al solvente. Figura tomada de <https://www.bioinfo.bisr.res.in>. ](fig/pdbformat.png){#fig:pdbformat}
 
-Estos archivos pueden visualizarse de forma interactiva usando programas como [RasMol](http://rasmol.org), [Jmol](http://jmol.sourceforge.net), [PyMOL](http://www.pymol.org), [Chimera](https://www.cgl.ucsf.edu/chimera), o interfaces web como [AQUARIA](http://aquaria.ws).
+Sin embargo, en la actualidad el estándar es el formato [mmCIF](https://mmcif.wwpdb.org) que es superior a la hora de representar estructuras cuaternarias complejas con muchas cadenas. Dado el creciente números de estructuras depositadas el espacio de nombres posibles se agotará pronto y se plantea que las nuevas tengan nombres con la estructura `pdb_00001lfu`. El software [gemmi](https://github.com/project-gemmi/gemmi) permite convertir entre ambos formatos.
 
-Desde 2022 el Protein Data Bank adoptó por defecto el formato [PDBx/mmCIF](https://mmcif.wwpdb.org) porque supera al PDB a la hora de representar estructuras cuaternarias complejas con muchas cadenas. El software [gemmi](https://github.com/project-gemmi/gemmi) permite convertir entre estos formatos.
+![ [Figura](#fig:mmCIFformat}). Tripas de un fichero de texto en formato mmCIF, donde se ilustra la estructura básica de un *loop*, que enumera primero los campos, para a continuación incluir los datos correspondientes (terminando con una almohadilla #). Figura tomada de [@Cech2011]. ](fig/mmCIFformat.png){#fig:mmCIFformat}
 
-Hasta 2022 las estructuras del PDB se han nombrado con una combinación de 4 caracteres, empezando por un número, pero el espacio de nombres posibles se agotará pronto y se plantea que las nuevas estructuras tengan nombres con la estructura `pdb_00017fgz`.
+Estos archivos pueden visualizarse de forma interactiva usando programas como 
+[PyMOL](https://github.com/schrodinger/pymol-open-source), [Jmol](https://jmol.sourceforge.net) o [Chimera](https://www.cgl.ucsf.edu/chimera).
+Otra alternativa es el programa clásico `rasmol`, disponible por ejemplo en [Ubuntu](https://manpages.ubuntu.com/manpages/resolute/en/man1/rasmol.1.html).
 
 Finalmente, aunque en este curso usaremos coordenadas cartesianas, conviene recordar que en muchas aplicaciones se prefiere usar [coordenadas internas](http://es.wikipedia.org/wiki/Matriz_Z) para hacer operaciones geométricas con moléculas de manera eficiente.
 
@@ -662,21 +668,22 @@ La mayoría de predictores de estructura secundaria y desorden tienen mejores re
 
 ![ [Figura](#fig:disopredTime}). Comparación de predicciones de PSIPRED (estructura secundaria) y DISOPRED2 (desorden) para la secuencia NAC81 de Arabidopsis thaliana calculadas sobre versiones de 2010 y 2014 de la colección de secuencias [uniref90](https://www.uniprot.org/help/uniref). Se marcan en rojo los segmentos desordenados, las hélices en azul y las láminas $\beta$ en verde. Figura de @Yruela2014. ](fig/disopredTime2.png){#fig:disopredTime}
 
-Otros predictores que combinan estructura secundaria y otras propiedades son [s2D](http://www-mvsoftware.ch.cam.ac.uk/) o o [SSpro](http://scratch.proteomics.ics.uci.edu/), rayando el %90 en las validaciones de sus autores [@Magnan2014]. Probablemente se alcanzado ya el techo para predicciones de 3 estados, pero queda espacio para mejorar las predicciones de los 8 estados de DSSP [@Yang2018].
+Otros predictores que combinan estructura secundaria y otras propiedades son s2D o [SSpro](http://scratch.proteomics.ics.uci.edu), rayando el %90 en las validaciones de sus autores [@Magnan2014]. Probablemente se alcanzado ya el techo para predicciones de 3 estados, pero queda espacio para mejorar las predicciones de los 8 estados de DSSP [@Yang2018].
 
-De acuerdo con meta-análisis recientes los mejores predictores de desorden son [DISOPRED](http://bioinf.cs.ucl.ac.uk/psipred/?disopred=1) y [PrDOS](http://prdos.hgc.jp/cgi-bin/top.cgi) [@Wang2016; @Meng2017]
+De acuerdo con meta-análisis recientes los mejores predictores de desorden son [DISOPRED](http://bioinf.cs.ucl.ac.uk/psipred) y 
+[PrDOS](http://prdos.hgc.jp/cgi-bin/top.cgi) [@Wang2016; @Meng2017]
 
 El ejercicio de esta sección consiste en calcular la estructura secundaria de una proteı́na del [Protein Data Bank](https://www.rcsb.org) de 3 maneras distintas, con el fin de compararlas:
 
--   por medio de PSIPRED, que en realidad es un predictor,
+- por medio de PSIPRED, que en realidad es un predictor,
 
--   modificando el código [fuente: prog2.2.pl](https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog2.2.pl), calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria según el diagrama de Ramachandran y
+- modificando el código [fuente: prog2.2.pl](https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog2.2.pl), calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria según el diagrama de Ramachandran y
 
--   por medio del programa STRIDE, simplificando segmentos de estructura secundaria (H=G,H,I; E=E,B y C=resto de estados)
+- por medio del programa [DSSP4](https://github.com/PDB-REDO/dssp), simplificando segmentos de estructura secundaria en 3 estados H,E,C.
 
--   alinea las estructuras secundarias en alfabeto simplificado de tres letras y describe las diferencias observadas
+- alinea las estructuras secundarias en alfabeto simplificado de tres letras y describe las diferencias observadas
 
--   debes obtener los ejecutables necesarios por tu cuenta
+- debes obtener los ejecutables necesarios por tu cuenta
 
 Estructura terciaria {#s3}
 ====================
@@ -694,7 +701,7 @@ El hecho de que la estructura terciaria está más conservada que la secuencia (
 
 Repasemos algunos algoritmos fundamentales para calcular la similitud estructural entre parejas de proteínas (hay alguno más en la [WikipediA](http://en.wikipedia.org/wiki/Structural_alignment)):
 
--   Conversión de información estructural en secuencias usando un alfabeto a medida para acelerar la comparación ([Foldseek](https://search.foldseek.com/search))
+-   Conversión de información estructural en secuencias usando un alfabeto a medida para acelerar la comparación ([Foldseek](https://search.foldseek.com/search), [FoldMason](https://github.com/steineggerlab/foldmason)).
 
 -   Alineamiento estructural iterativo ([STAMP](http://www.compbio.dundee.ac.uk/downloads/stamp/)). El primer borrador de alineamiento se calcula con ayuda de matrices de sustitución de aminoácidos como [BLOSUM](https://en.wikipedia.org/wiki/BLOSUM). Éste sirve para calcular la superposición correspondiente y permite refinar el conjunto de residuos equivalentes, aquellos por debajo de cierto umbral de distancia. Estas iteraciones de alineamiento y definición de sobconjuntos de residuos equivalentes se repiten hasta que convergen y el RMSD no mejora (ver @Chothia1986 y sección [1.3.5](#threedeecons){reference-type="ref" reference="threedeecons"}).
 
@@ -708,15 +715,18 @@ Repasemos algunos algoritmos fundamentales para calcular la similitud estructura
 
 Puedes ampliar detalles de estos algoritmos en @pascual_garcia_alberto_2014_1066346.
 
+
 ![ [Figura](#fig:dali}). Tres estrategias (rígida, flexible y elástica) para comparar la estructura terciaria de dos proteínas con dos dominios (círculos) con 4 residuos cada uno, separados por una secuencia de longitud variable. Arriba derecha: la superposición rígida tiene dos opciones: alinear un total de 5 residuos equivalentes ($Ne$) con RMSD bajo o alinear todos ($Ne=8$) con un RMSD alto. Abajo izquierda: una superposición flexible rompe la estructura larga en dos subestucturas para optimizar el RMSD sobre 4 residuos en cada dominio. Abajo derecha: la comparación de matrices de distancias permite alinear ambos dominios maximizando $Ne$. Figura tomada de @Hasegawa2009 y reproducida con permiso. ](fig/3Dsuper.jpg){#fig:dali}
+
 
 ![ [Figura](#fig:tfcompare}). Superposiciones de dominios de unión a DNA (DBD) de factores de transcripción, que ponen de manifiesto su mecanismo, no siempre conservado, de reconocimiento de sus cis-elementos (DBS). Figura tomada de @Sebastian2013. ](fig/tfcompare.png){#fig:tfcompare}
 
-Hay disponibles muchos otros programas disponibles para la comparación estructural de proteínas, y cada usuario tiene el suyo preferido. A qué se debe esto? La razón es que no existe una definición totalmente satisfactoria del alineamiento estructural correcto, que es en definitiva la función que todos estos algoritmos tratan de optimizar. De hecho, ni siquiera está claro si las taxonomías estructurales clásicas, como [CATH](http://www.cathdb.info) o [SCOP](http://scop.berkeley.edu) [@Csaba2009], son compatibles con la evidencia disponible sobre la evolución de los plegamientos (*folds*), que actualmente se imagina como un proceso discreto sólo hasta cierto punto [@Taylor2002; @Pascual2009; @Sadowski2010; @Andreeva2014]. De hecho [SCOP2](http://scop2.mrc-lmb.cam.ac.uk/) se hizo para superar esas limitaciones. Otra complicación adicional es que algunos plegamientos pueden verse como permutaciones circulares de elementos de estructura secundaria de otros [@Schmidt-Goenner2010].
 
-A pesar de estas dificultades, en general aceptamos que cada superfamilia de proteínas es un **clúster** de estructuras muy similares, que se pueden superponer aunque su secuencia sea muy diferente, y que cada plegamiento es un subconjunto de superfamilias que comparten una topología de estructura secundaria.
+Hay disponibles muchos otros programas disponibles para la comparación estructural de proteínas, y cada usuario tiene el suyo preferido. A qué se debe esto? La razón es que no existe una definición totalmente satisfactoria del alineamiento estructural correcto, que es en definitiva la función que todos estos algoritmos tratan de optimizar. De hecho, ni siquiera está claro si las taxonomías estructurales clásicas, como [CATH](http://www.cathdb.info) o [SCOP](http://scop.berkeley.edu) [@Csaba2009], son compatibles con la evidencia disponible sobre la evolución de los plegamientos (*folds*), que actualmente se imagina como un proceso discreto sólo hasta cierto punto [@Taylor2002; @Pascual2009; @Sadowski2010; @Andreeva2014]. De hecho [SCOP2](http://scop2.mrc-lmb.cam.ac.uk/) se hizo para superar esas limitaciones. Otra complicación adicional es que algunos plegamientos pueden verse como permutaciones circulares de elementos de estructura secundaria de otros [@Schmidt-Goenner2010]. En cualquier caso siguen siendo ideas útiles como muestra el hecho de que la reciente [TED: The Encyclopedia of Domains](https://ted.cathdb.info) se publicó en 2024 para ampliar el reportorio de dominios conocidos tras la explosión de AlphaFold [@Lau2024].
 
-Lo habitual cuando se publica un nuevo método es compararlo con otros preexistentes. Estas comparaciones, si son rigurosas y reproducibles, pueden ayudar en la tarea de seleccionar un programa idóneo para esta tarea. El algoritmo MAMMOTH, con el que vamos a trabajar, se resume en estos pasos, en palabras textuales de sus autores [@Ortiz2002]:
+En general aceptamos que cada superfamilia de proteínas es un clúster de estructuras muy similares, que se pueden superponer aunque su secuencia sea muy diferente, y que cada plegamiento es un subconjunto de superfamilias que comparten una topología de estructura secundaria.
+
+Lo habitual cuando se publica un nuevo método es compararlo con otros preexistentes. Estas comparaciones, si son rigurosas y reproducibles, pueden ayudar en la tarea de seleccionar un programa idóneo para esta tarea. El algoritmo MAMMOTH, uno de los más exitosos en la era pre-AlphaFold, se resumía en estos pasos, en palabras textuales de sus autores [@Ortiz2002]:
 
 > 1.- From the Calpha trace, compute the unit-vector U-RMS between all pairs of heptapeptides of both model and experimental structure. The U-RMS is described in: Kedem, Chew & Elber (1999) Proteins 37(4):554-64, and in Chew, Huttenlocher, Kedem & Kleinberg (1999) J.Comp.Biol. 6, 313-325. This is a measure sensitive to the local structure.
 >
@@ -730,7 +740,7 @@ MAMMOTH fue comparado con varios métodos, como se ve en esta figura:
 
 ![ [Figura](#fig:mammoth}). Semejanza de MAMMOTH respecto a otros algoritmos de comparación de estructura de proteínas, incluyendo el criterio de un experto humano (Murzin). Figura tomada de @Ortiz2002. Copyright (2002) Protein Science. ](fig/mammoth_bench.jpg){#fig:mammoth}
 
-MAMMOTH es junto con DALI de los mejores programas, porque además de generar superposiciones y alineamientos satisfactorios, sus medidas numéricas de similitud devuelven valores que se ajustan a la evaluación visual de la superposición obtenida. En concreto, MAMMOTH devuelve para cada alineamiento una puntuación y su valor esperado asociado (*E-value*), que podemos interpretar de manera análoga a los valores esperados de BLAST, superando las limitaciones del RMSD para comparar estructuras que solamente se parecen en algunas regiones [@Siew2000]. Además, hay una versión de MAMMOTH que permite calcular [alineamientos múltiples](https://ub.cbm.uam.es/software/mammothm.php).
+En aquel momento MAMMOTH era junto con DALI de los mejores programas, porque además de generar superposiciones y alineamientos satisfactorios, sus medidas numéricas de similitud devuelven valores que se ajustan a la evaluación visual de la superposición obtenida. En concreto, MAMMOTH devuelve para cada alineamiento una puntuación y su valor esperado asociado (*E-value*), que podemos interpretar de manera análoga a los valores esperados de BLAST, superando las limitaciones del RMSD para comparar estructuras que solamente se parecen en algunas regiones [@Siew2000]. Recientemente otros algoritmos han superado a MAMMOTH, sobre todo a la hora de hacer alineamientos estructurales múltiples, combinando estructura y secuencia, como por ejemplo [PC_ali](https://github.com/ugobas/PC_ali) [@Bastolla2023] o [FoldMason](https://github.com/steineggerlab/foldmason) [@Cameron2026].
 
 Para superar las limitaciones del RMSD, que da el mismo peso a regiones del core que a regiones divergentes, @Zhang2004 propusieron otra función, el TM-score, que disminuye el peso de las parejas alineadas a mayor distancia, es menos sensible a la longitud de las estructuras comparadas y toma valores entre 0 y 1:
 
@@ -738,29 +748,26 @@ $$TMscore = max[  \frac{1}{L_{Q}}  \sum_{i=1}^{L_{T}} \frac{1}{ 1 + (\frac{d_{i}
 
 Aquí $max$ es el valor máximo obtenido en todas las superposiciones calculadas, $L_{Q}$ es la longitud de la estructura Q o *query*, $L_{T}$ es el total de residuos alineados a la estructura T o *template*, $d_{i}$ es la distancia entre la pareja $i$ de residuos y $d_{0}$ el factor de escala para normalizar por longitud de secuencia.
 
-Para calcularlo de manera óptima podemos usar su algoritmo TM-align [@Zhang2005], cuyo código fuente esta disponible en [TMalignc.tar.gz](http://zhanglab.ccmb.med.umich.edu/TM-align/TM-align-C/TMalignc.tar.gz). La función TM-score se ha convertido en el estándar para medir el parecido entre estructuras, ya que se acepta que un valor de 0.5 garantiza un plegamiento similar.
+Para calcularlo de manera óptima podemos usar su algoritmo TM-align [@Zhang2005], cuyo código fuente está [disponible](http://zhanglab.ccmb.med.umich.edu/TM-align/TM-align-C/TMalignc.tar.gz). La función TM-score es uno de los estándares para medir el parecido entre estructuras, ya que se acepta que un valor de 0.5 garantiza un plegamiento similar. Se puede calcular en línea en <http://zhanglab.ccmb.med.umich.edu/TM-score> .
 
-De todos modos, hay una gran variedad de software para esta tarea, como se muestra por ejemplo en esta [lista de la WikipediA](http://en.wikipedia.org/wiki/Structural_alignment_software).
+Se han propuesto otras métricas que no requieren superposiciones, por tanto insensibles a sus limitaciones, como la función lDDT [@Mariani2013].
+lDDT evalúa distancias locales entre átomos vecinos, dentro de un rango de radios, entre un modelo y una estructura de referencia y toma valores en el rango [0,1].
+Un valor alto significa que modelo y referencia se parecen mucho (puedes leer más [aquí](https://swissmodel.expasy.org/lddt)). 
+La métrica lDDT puede considerar todos los átomos, incluyendo cadenas laterales, o por ejemplo sólo el esqueleto peptídico.
+
 
 Para aprender a hacer alineamientos/superposiciones estructurales, y a interpretarlos, podemos hacer este ejercicio:
 
--   Visita [SCOPe](http://scop.berkeley.edu), elige una clase (ver figura [1.23](#fig:foldclassif){reference-type="ref" reference="fig:foldclassif"}) y selecciona un grupo de 5 estructuras de proteı́nas que pertenezcan a la misma superfamilia, para después
+- Visita [CATH](https://www.cathdb.info) y busca un dominio, por ejemplo 'homeodomain', y selecciona un grupo de 5-10 dominios relacionados; ten en cuenta que `3lnqA00` se corresponde con la estructura 3LNQ del Protein Data Bank, cadena A.
 
-    -   descargar los archivos PDB correspondientes,que contienen las coordenadas atómicas, del [Protein Data Bank](https://www.rcsb.org/pdb) y
+- Alinea las estructuras que contienen los dominios elegidos en <https://github.com/steineggerlab/foldmason> .
 
-    -   compara al menos una pareja de estructuras con MAMMOTH
+- Visualiza la superposición y el correspondiente alineamento de secuencia y descarga los resultados (en formato .png, .pdb y .fasta); guarda también una captura de pantalla del alineamiento múltiple de secuencias. 
 
-    -   compara al menos una pareja de estructuras con MAMMOTH e inspecciona los archivos de salida generados (`maxsub_sup.pdb,maxsub_sup2.pdb,rasmol.tcl`)
+- Envía los resultados a FoldSeek, ver botón al pie de la página; resume los resultados en una tabla.
 
-    -   (el ejecutable se encuentra en `/home/compu2/algoritmos3D/soft/mammoth-1.0-src`)
+- Modificando como veas necesario `foldmason.pdb`, `foldmason_aa.fa` y el código <a href="https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog3.1.py" style="color: black; text-decoration: underline;">[fuente: prog3.1.py]</a> calcula el %identidad y el RMSD de algunas parejas de estructuras superpuestas; resume los resultados en una tabla.
 
--   Visualiza la superposición generada, con Rasmol (usando la opción ` -script rasmol.tcl`) y con PyMOL
-
--   Puedes probar a superponer estructuras directamente en [PyMOL](https://pymol.org/dokuwiki/doku.php?id=command:align)
-
--   Prueba MAMMOTH con el fin de comparar una estructura problema (una de las 5) contra una biblioteca de estructuras en formato PDB (las otras 4), como si fuera BLAST. Cuál de las 4 estructuras sería el mejor molde o *template*) Cuál es el límite esperado de precisión, en términos de RMSD, que alcanzaríamos con cada molde?
-
--   Calcula para algunas de las superposiciones el [TM-score](http://zhanglab.ccmb.med.umich.edu/TM-score/).
 
 *Protein fold recognition* {#FRsection}
 --------------------------

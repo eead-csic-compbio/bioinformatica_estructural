@@ -8801,3 +8801,101 @@ abstract = "Plants from wide taxonomic groupings have similar genes and ordering
 	ISSN = {1087-0156},
 	URL = {https://doi.org/10.1038/s41587-025-02654-4},
 }
+
+@article{Bastolla2023,
+    author = {Bastolla, Ugo and Abia, David and Piette, Oscar},
+    title = {PC\_ali: a tool for improved multiple alignments and evolutionary inference based on a hybrid protein sequence and structure similarity score},
+    journal = {Bioinformatics},
+    volume = {39},
+    number = {11},
+    pages = {btad630},
+    year = {2023},
+    month = {10},
+    abstract = {Evolutionary inference depends crucially on the quality of multiple sequence alignments (MSA), which is problematic for distantly related proteins. Since protein structure is more conserved than sequence, it seems natural to use structure alignments for distant homologs. However, structure alignments may not be suitable for inferring evolutionary relationships.Here we examined four protein similarity measures that depend on sequence and structure (fraction of aligned residues, sequence identity, fraction of superimposed residues, and contact overlap), finding that they are intimately correlated but none of them provides a complete and unbiased picture of conservation in proteins. Therefore, we propose the new hybrid protein sequence and structure similarity score PC\_sim based on their main principal component. The corresponding divergence measure PC\_div shows the strongest correlation with divergences obtained from individual similarities, suggesting that it infers accurate evolutionary divergences. We developed the program PC\_ali that constructs protein MSAs either de novo or modifying an input MSA, using a similarity matrix based on PC\_sim. The program constructs a starting MSA based on the maximal cliques of the graph of these PAs and it refines it through progressive alignments along the tree reconstructed with PC\_div. Compared with eight state-of-the-art multiple structure or sequence alignment tools, PC\_ali achieves higher or equal aligned fraction and structural scores, sequence identity higher than structure aligners although lower than sequence aligners, highest score PC\_sim, and highest similarity with the MSAs produced by other tools and with the reference MSA Balibase.https://github.com/ugobas/PC\_ali.},
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btad630},
+    url = {https://doi.org/10.1093/bioinformatics/btad630},
+}
+
+@article{Lau2024,
+author = {Andy M. Lau  and Nicola Bordin  and Shaun M. Kandathil  and Ian Sillitoe  and Vaishali P. Waman  and Jude Wells  and Christine A. Orengo  and David T. Jones },
+title = {Exploring structural diversity across the protein universe with The Encyclopedia of Domains},
+journal = {Science},
+volume = {386},
+number = {6721},
+pages = {eadq4946},
+year = {2024},
+doi = {10.1126/science.adq4946},
+URL = {https://www.science.org/doi/abs/10.1126/science.adq4946},
+abstract = {The AlphaFold Protein Structure Database (AFDB) contains more than 214 million predicted protein structures composed of domains, which are independently folding units found in multiple structural and functional contexts. Identifying domains can enable many functional and evolutionary analyses but has remained challenging because of the sheer scale of the data. Using deep learning methods, we have detected and classified every domain in the AFDB, producing The Encyclopedia of Domains. We detected nearly 365 million domains, over 100 million more than can be found by sequence methods, covering more than 1 million taxa. Reassuringly, 77\% of the nonredundant domains are similar to known superfamilies, greatly expanding representation of their domain space. We uncovered more than 10,000 new structural interactions between superfamilies and thousands of new folds across the fold space continuum. Only a small fraction of known proteomic space has been studied by experimental protein structure methods. The AlphaFold Protein Structure Database (AFDB) thus represents a truly massive expansion in the landscape of protein structural models. Such a large database represents a major challenge for categorization and analysis. Lau et al. developed an analytical pipeline based on deep learning for sectioning predicted protein structure models into discrete domains and classifying them. The resulting Encyclopedia of Domains expands and connects existing domain families, and there are also a large number of domains with folds that have not yet been observed in experimental structures. —Michael A. Funk}
+}
+
+@article{Cech2011,
+author = {P. Cech and D. Svozil},
+title = {mmView: a web-based viewer of the mmCIF format},
+journal = {BMC Res Notes},
+volume = {4},
+number = {121},
+year = {2011},
+doi = {doi:10.1186/1756-0500-4-121},
+URL = {https://doi.org/10.1186/1756-0500-4-121},
+}
+
+@article{Cameron2026,
+author = {Cameron L. M. Gilchrist  and Milot Mirdita  and Martin Steinegger },
+title = {Multiple protein structure alignment at scale with FoldMason},
+journal = {Science},
+volume = {391},
+number = {6784},
+pages = {485-488},
+year = {2026},
+doi = {10.1126/science.ads6733},
+URL = {https://www.science.org/doi/abs/10.1126/science.ads6733},
+abstract = {Protein structure is conserved beyond sequence, making multiple structural alignment (MSTA) essential for analyzing distantly related proteins. Computational prediction methods have vastly extended our repository of available protein structures, requiring fast and accurate MSTA methods. We introduce FoldMason, a progressive MSTA method that leverages the pairwise structural aligners Foldseek and TM-align for the multiple alignment of hundreds of thousands of protein structures, matching or exceeding the alignment quality of state-of-the-art MSTA methods while being two orders of magnitude faster. Using Flaviviridae glycoproteins, we demonstrate that FoldMason’s MSTAs support phylogenetic analysis beyond the “twilight zone.” FoldMason computes confidence scores, offers interactive visualizations, and provides essential speed and accuracy for large-scale protein structure analysis in the era of accurate structure prediction. FoldMason is free, open-source software. Protein structures can preserve information about evolutionary relationships that are no longer possible to detect by sequence alone. However, aligning by structure is computationally intensive, and with the advent of large-scale structure prediction, there is a need for tools that can efficiently align vast numbers of structures. Gilchrist et al. present FoldMason, a tool designed for this purpose that is based on parallelized progressive alignment. This approach permits large-scale phylogenetic analyses for protein families that have conserved structure but limited sequence conservation. —Michael A. Funk}
+}
+
+@ARTICLE{Wang2026,
+  title     = "Predicted protein {3D} structures provide essential insights
+               into the genetic architecture underlying phenotypic diversity in
+               maize",
+  author    = "Wang, Shuai and Khaipho-Burch, Merritt and Johnson, Lynn C and
+               Miller, Zachary R and Bradbury, Peter J and Speed, Doug and
+               Allen, William J and Romay, M Cinta and Xue, Jiquan and Buckler,
+               Edward S and Ramstein, Guillaume P and Song, Baoxing",
+  abstract  = "Variation in protein 3D structures reflects genetic variation
+               and contributes to phenotypic diversity, yet its underlying
+               genetic mechanisms remain unclear. To investigate the
+               relationship between protein 3D structure and phenotype, we
+               predict the 3D structures of 795,649 proteins from 26 maize (Zea
+               mays L.) inbred lines using AlphaFold2. Population genetics
+               analysis of these protein 3D structures reveal that buried
+               residues held greater genomic evolutionary rate profiling (GERP)
+               scores than exposed residues, indicating that buried residues
+               are under stronger purifying selection. The design of the maize
+               nested association mapping population makes it possible to
+               utilize haplotype information and protein 3D structural
+               variation to reveal the molecular mechanisms linking genetic
+               diversity and phenotypic variation for a population with about
+               5000 individuals. Associating protein 3D structure variation
+               with phenotypes (structure-based proteome-wide association study
+               [PWAS]) identifies 14.2\% more (96 vs. 84) significant proteins
+               compared with associating protein sequence with phenotypes
+               (sequence-based PWAS) using 32 agronomic traits. Moreover,
+               structure-based PWAS identifies 24 additional significant
+               proteins unique to predicted structures, whereas sequence-based
+               PWAS identifies 12 additional significant proteins.
+               Structure-based proteome-wide predictions (PWPs) improve genomic
+               prediction accuracy by an average of 3.8\% compared with
+               sequence-based PWPs. In general, predicted protein 3D structures
+               represent a powerful approach for understanding the natural
+               diversity of protein haplotypes.",
+  journal   = "Genome Res.",
+  publisher = "Cold Spring Harbor Laboratory",
+  volume    =  36,
+  number    =  1,
+  pages     = "214--225",
+  month     =  jan,
+  year      =  2026,
+  url       = {https://doi.org/10.1101/gr.280514.125}
+}
+
