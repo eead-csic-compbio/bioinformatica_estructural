@@ -642,7 +642,7 @@ El procedimiento, dado unas coordenadas en formato PDB ([1LFU](https://github.co
 Otras definiciones de estructura secundaria se basan en encontrar patrones de puentes de hidrógeno entre grupos $-CO$ y $-NH$ del esqueleto peptídico, como por ejemplo hace el software [DSSP](https://swift.cmbi.umcn.nl/gv/dssp) [@Kabsch1983] de acuerdo con esta definición energética, donde un puente válido debe tener $E<-0{.}5 kcal/mol$, $q_{1}=0.42e$, $q_{2}=0.20e$ y $r$ es una distancia interatómica en Angstroms: $$E = q_{1} q_{2} \left[ \frac{1}{r_{ON}} + \frac{1}{r_{CH}} - \frac{1}{r_{OH}} - \frac{1}{r_{CN}} \right] \cdot 332 \ \mathrm{kcal/mol}
 \label{eq:dssp}$$
 
-El software [STRIDE](http://webclu.bio.wzw.tum.de/stride/) [@Frishman1995] es otro programa para este fin que en experimentos de validación mejora las asignaciones de estructura secundaria de DSSP.
+El software [STRIDE](http://webclu.bio.wzw.tum.de/stride) [@Frishman1995] es otro programa para este fin que en experimentos de validación mejora las asignaciones de estructura secundaria de DSSP.
 
 Sin embargo, frecuentemente el problema es todavía más complicado:
 
@@ -673,15 +673,16 @@ Otros predictores que combinan estructura secundaria y otras propiedades son s2D
 De acuerdo con meta-análisis recientes los mejores predictores de desorden son [DISOPRED](http://bioinf.cs.ucl.ac.uk/psipred) y 
 [PrDOS](http://prdos.hgc.jp/cgi-bin/top.cgi) [@Wang2016; @Meng2017]
 
-El ejercicio de esta sección consiste en calcular la estructura secundaria de una proteı́na del [Protein Data Bank](https://www.rcsb.org) de 3 maneras distintas, con el fin de compararlas:
+El ejercicio de esta sección consiste en calcular la estructura secundaria de una proteı́na del [Protein Data Bank](https://www.rcsb.org) de varias maneras distintas, 
+con el fin de compararlas:
 
 - por medio de PSIPRED, que en realidad es un predictor,
 
 - modificando el código [fuente: prog2.2.pl](https://github.com/eead-csic-compbio/bioinformatica_estructural/blob/master/code/prog2.2.pl), calculando segmentos de secuencia que tengan el mismo estado de estructura secundaria según el diagrama de Ramachandran y
 
-- por medio del programa [DSSP4](https://github.com/PDB-REDO/dssp), simplificando segmentos de estructura secundaria en 3 estados H,E,C.
+- por medio del programa [DSSP4](https://github.com/PDB-REDO/dssp), que soporta mmCIF, simplificando segmentos de estructura secundaria en 3 estados H,E,C.
 
-- alinea las estructuras secundarias en alfabeto simplificado de tres letras y describe las diferencias observadas
+- alinea las estructuras secundarias en alfabeto simplificado HEC y describe las diferencias observadas
 
 - debes obtener los ejecutables necesarios por tu cuenta
 
