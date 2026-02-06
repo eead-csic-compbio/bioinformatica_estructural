@@ -279,7 +279,8 @@ Plegamiento y desnaturalización {#desnat}
 
 El interés sobre el plegamiento de las macromoléculas se despertó al estudiar sus reacciones de desnaturalización. Si tenemos proteı́nas o ácidos nucleicos en disolución y cambiamos de forma notable las condiciones en que suelen encontrarse en su medio biológico, pierden su estructura y función nativas. Este proceso, llamado reacción de desnaturalización, puede ser reversible en ciertas condiciones y los cambios pueden ser por ejemplo de temperatura, por encima de su temperatura de fusión ($T_{m}$), o en la naturaleza del solvente.\
 @Anfinsen1961 mostró experimentalmente que la desnaturalización es reversible al menos para proteı́nas pequeñas, añadiendo y retirando agentes desnaturalizantes a disoluciones de enzimas que ganaban y perdı́an su actividad. Ası́ demostró que el plegamiento de una proteı́na depende exclusivamente de su secuencia, aunque hoy sabemos que algunas necesitan la ayuda de chaperoninas [@Hartl2002].\
-Todavía hoy el proceso de plegamiento no se comprende bien debido a su complejidad (ver secciones [2.3](#complejidad){reference-type="ref" reference="complejidad"} y [2.4](#complejidad2){reference-type="ref" reference="complejidad2"}), aunque llevemos 50 años estudiándolo [@Dill2012].
+Todavía hoy el proceso de plegamiento no se comprende bien debido a su complejidad (ver secciones [2.3](#complejidad){reference-type="ref" reference="complejidad"} y [2.4](#complejidad2){reference-type="ref" reference="complejidad2"}), aunque llevemos décadas estudiándolo [@Dill2012]. Sí sospechamos que es un proceso robusto, dado que las proteínas globulares mayormente toleran mutaciones al azar [@Escobedo2025].
+
 
 ![ [Figura](#fig:desnatADN}). Reacción de desnaturalización y renaturalización (hibridación) de una molécula de ADN, tomada de @HernandezLemus2012 y reproducido con permiso de los autores. ](fig/desnatADN.png){#fig:desnatADN}
 
@@ -463,7 +464,9 @@ Dentro del ámbito de los ácidos nucleicos:
 Foldit: jugando a plegar proteínas {#foldit}
 ----------------------------------
 
-Una forma divertida y amena de poner en práctica muchos de los conceptos teóricos que acabamos de repasar es jugar a [*Foldit*](http://fold.it/portal/), un juego que incluye un tutorial donde se pueden aprender de manera intuitiva las reglas del plegamiento de proteínas y cómo se empaquetan los elementos de estructura secundaria para formar dominios que cumplen una función. Una vez superado el tutorial se puede jugar en comunidad resolviendo problemas de plegamiento reales [@Eiben2012; @Khatib2011; @Cooper2010]. El juego se actualiza regularmente desde el [2008](http://fold.it/portal/files/Foldit_5thanniversary.png) e incorpora ya interfaces para [Kinect](http://en.wikipedia.org/wiki/Kinect) y [Leap](http://en.wikipedia.org/wiki/Leap_Motion).
+Una forma divertida y amena de poner en práctica muchos de los conceptos teóricos que acabamos de repasar es jugar a [*Foldit*](https://fold.it), un juego que incluye un tutorial donde se pueden aprender de manera intuitiva las reglas del plegamiento de proteínas y cómo se empaquetan los elementos de estructura secundaria para formar dominios que cumplen una función. Una vez superado el tutorial se puede jugar en comunidad resolviendo problemas de plegamiento reales [@Eiben2012; @Khatib2011; @Cooper2010]. El juego se actualiza regularmente desde 2008.
+<!--http://fold.it/portal/files/Foldit_5thanniversary.png-->
+<!-- e incorpora ya interfaces para [Kinect](http://en.wikipedia.org/wiki/Kinect) y [Leap](http://en.wikipedia.org/wiki/Leap_Motion).-->
 
 Muestro algunas capturas de pantalla del tutorial, donde se pueden deshacer choques estéricos o favorecer la formación de puentes de hidrógeno:
 
@@ -471,7 +474,7 @@ Muestro algunas capturas de pantalla del tutorial, donde se pueden deshacer choq
 
 ![ [Figura](#fig:standalonefoldit}). Capturas de pantalla del software standaloneFoldit en su versión para Windows, libre para uso académico. A diferencia del juego, que es un cliente online, esta aplicación permite importar y exportar moléculas en formato PDB y por tanto puede usarse como herramienta de modelado interactiva [@Kleffner2017]. ](fig/standaloneFoldIt.png){#fig:standalonefoldit}
 
-StandaloneFoldit está disponible en <https://fold.it/dist/external/standalone/quickstart.html> para Linux, MacOS y Windows.
+La aplicación Foldit está disponible en <https://fold.it/play> para Linux, MacOS y Windows.
 
 Familiarizarse con las operaciones habituales para manipular y modificar estructuras moleculares de proteínas, por ejemplo con Foldit, facilita el aprendizaje de plataformas especializadas como <https://sbl.inria.fr>.
 
