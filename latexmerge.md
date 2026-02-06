@@ -265,7 +265,8 @@ Sin embargo, en la actualidad el estándar es el formato [mmCIF](https://mmcif.w
 
 Estos archivos pueden visualizarse de forma interactiva usando programas como 
 [PyMOL](https://github.com/schrodinger/pymol-open-source), [Jmol](https://jmol.sourceforge.net) o [Chimera](https://www.cgl.ucsf.edu/chimera).
-Otra alternativa es el programa clásico `rasmol`, disponible por ejemplo en [Ubuntu](https://manpages.ubuntu.com/manpages/resolute/en/man1/rasmol.1.html).
+Otras alternativas son el programa clásico `rasmol`, disponible por ejemplo en [Ubuntu](https://manpages.ubuntu.com/manpages/resolute/en/man1/rasmol.1.html),
+o [FoldIt](https://fold.it/dist/external/standalone/quickstart.html), que solamente aceptan fichero en formato PDB.
 
 Finalmente, aunque en este curso usaremos coordenadas cartesianas, conviene recordar que en muchas aplicaciones se prefiere usar [coordenadas internas](http://es.wikipedia.org/wiki/Matriz_Z) para hacer operaciones geométricas con moléculas de manera eficiente.
 
@@ -474,8 +475,10 @@ Muestro algunas capturas de pantalla del tutorial, donde se pueden deshacer choq
 
 ![ [Figura](#fig:standalonefoldit}). Capturas de pantalla del software standaloneFoldit en su versión para Windows, libre para uso académico. A diferencia del juego, que es un cliente online, esta aplicación permite importar y exportar moléculas en formato PDB y por tanto puede usarse como herramienta de modelado interactiva [@Kleffner2017]. ](fig/standaloneFoldIt.png){#fig:standalonefoldit}
 
-La aplicación Foldit está disponible en <https://fold.it/play> para Linux, MacOS y Windows. 
-La versión de Ubuntu 24 require [libglut3-dev](https://askubuntu.com/questions/1526992/is-there-a-reason-24-04-lts-noble-numbat-does-not-provide-libglut-so-3).
+El cliente Foldit está disponible en <https://fold.it/play> para Linux, MacOS y Windows
+(en Ubuntu 24 requiere [libglut3-dev](https://askubuntu.com/questions/1526992/is-there-a-reason-24-04-lts-noble-numbat-does-not-provide-libglut-so-3)).
+
+Hay también una versión completa *standalone* en <https://fold.it/dist/external/standalone/quickstart.html>, que tiene la ventaja que puedes usar para editar tus propios ficheros en formato PDB.
 
 Familiarizarse con las operaciones habituales para manipular y modificar estructuras moleculares de proteínas, por ejemplo con Foldit, facilita el aprendizaje de plataformas especializadas como <https://sbl.inria.fr>.
 
