@@ -476,7 +476,7 @@ Muestro algunas capturas de pantalla del tutorial, donde se pueden deshacer choq
 ![ [Figura](#fig:standalonefoldit}). Capturas de pantalla del software standaloneFoldit en su versión para Windows, libre para uso académico. A diferencia del juego, que es un cliente online, esta aplicación permite importar y exportar moléculas en formato PDB y por tanto puede usarse como herramienta de modelado interactiva [@Kleffner2017]. ](fig/standaloneFoldIt.png){#fig:standalonefoldit}
 
 El cliente Foldit está disponible en <https://fold.it/play> para Linux, MacOS y Windows
-(en Ubuntu 24 requiere [libglut3-dev](https://askubuntu.com/questions/1526992/is-there-a-reason-24-04-lts-noble-numbat-does-not-provide-libglut-so-3)).
+(en Ubuntu 24 requiere [freeglut3-dev](https://askubuntu.com/questions/1526992/is-there-a-reason-24-04-lts-noble-numbat-does-not-provide-libglut-so-3)).
 
 Hay también una versión completa *standalone* en <https://fold.it/dist/external/standalone/quickstart.html>, que tiene la ventaja que puedes usar para editar tus propios ficheros en formato PDB.
 
