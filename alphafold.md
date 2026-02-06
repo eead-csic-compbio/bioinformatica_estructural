@@ -227,7 +227,7 @@ Si quieres calcular tus propios modelos hay varias opciones:
 ![ [Figura](#fig:OF). Comparación de predicciones de AF2 y OpenFold para la estructura [7KDX:B](https://www.rcsb.org/structure/7KDX). Figura tomada de <https://github.com/aqlaboratory/openfold>.](fig/of_banner.png){#fig:OF}
 
 
-## Ejercicio con AF2 y algoritmos similares
+### Ejercicio con AF2 y algoritmos similares
 
 El ejercicio de esta sección consiste en:
 
@@ -238,7 +238,7 @@ El ejercicio de esta sección consiste en:
 + estimar su calidad con las distintas métricas y <https://swissmodel.expasy.org/assess>
 
 
-## Ejercicio con AF3
+### Ejercicio con AF3
 
 En esta sección se trata de modelar un complejo proteína-ADN con AF3. Para ello necesitarás:
 
