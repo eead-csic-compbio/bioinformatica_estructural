@@ -643,7 +643,7 @@ Trypsin Inhibitor, Kazal Pancreatic/chemistry},
    Volume = {1(4)},
 	Pages = {177-190},
  Year = {2002},
-  url="http://www.eead.csic.es/compbio/papers/review_CM2002.pdf"
+  url="https://www.researchgate.net/publication/8574562_Comparative_modelling_an_essential_methodology_for_protein_structure_prediction_in_the_post-genomic_era"
 }
 
 
@@ -8899,3 +8899,294 @@ abstract = {Protein structure is conserved beyond sequence, making multiple stru
   url       = {https://doi.org/10.1101/gr.280514.125}
 }
 
+@ARTICLE{Ahern2026,
+  title     = "Atom-level enzyme active site scaffolding using {RFdiffusion2}",
+  author    = "Ahern, Woody and Yim, Jason and Tischer, Doug and Salike, Saman
+               and Woodbury, Seth M and Kim, Donghyo and Kalvet, Indrek and
+               Kipnis, Yakov and Coventry, Brian and Altae-Tran, Han Raut and
+               Bauer, Magnus S and Barzilay, Regina and Jaakkola, Tommi S and
+               Krishna, Rohith and Baker, David",
+  abstract  = "Designing new enzymes typically begins with idealized
+               arrangements of catalytic functional groups around a reaction
+               transition state, then attempts to generate protein structures
+               that precisely position these groups. Current AI-based methods
+               can create active enzymes but require predefined residue
+               positions and rely on reverse-building residue backbones from
+               side-chain placements, which limits design flexibility. Here we
+               show that a new deep generative model, RoseTTAFold diffusion 2
+               (RFdiffusion2), overcomes these constraints by designing enzymes
+               directly from functional group geometries without specifying
+               residue order or performing inverse rotamer generation.
+               RFdiffusion2 successfully generates scaffolds for all 41 active
+               sites in a diverse benchmark, compared to 16 using previous
+               methods. We further design enzymes for three distinct catalytic
+               mechanisms and identify active candidates after experimentally
+               testing fewer than 96 sequences in each case. These results
+               highlight the potential of atomic-level generative modeling to
+               create de novo enzymes directly from reaction mechanisms.",
+  journal   = "Nat. Methods",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  23,
+  number    =  1,
+  pages     = "96--105",
+  month     =  jan,
+  year      =  2026,
+  copyright = "https://creativecommons.org/licenses/by-nc-nd/4.0",
+  language  = "en",
+  url={https://doi.org/10.1038/s41592-025-02975-x}
+}
+
+@ARTICLE{Homma2023,
+  title     = "{AlphaFold-Multimer} predicts cross-kingdom interactions at the
+               plant-pathogen interface",
+  author    = "Homma, Felix and Huang, Jie and van der Hoorn, Renier A L",
+  abstract  = "Adapted plant pathogens from various microbial kingdoms produce
+               hundreds of unrelated small secreted proteins (SSPs) with
+               elusive roles. Here, we used AlphaFold-Multimer (AFM) to screen
+               1879 SSPs of seven tomato pathogens for interacting with six
+               defence-related hydrolases of tomato. This screen of 11,274
+               protein pairs identified 15 non-annotated SSPs that are
+               predicted to obstruct the active site of chitinases and
+               proteases with an intrinsic fold. Four SSPs were experimentally
+               verified to be inhibitors of pathogenesis-related subtilase
+               P69B, including extracellular protein-36 (Ecp36) and
+               secreted-into-xylem-15 (Six15) of the fungal pathogens
+               Cladosporium fulvum and Fusarium oxysporum, respectively.
+               Together with a P69B inhibitor from the bacterial pathogen
+               Xanthomonas perforans and Kazal-like inhibitors of the oomycete
+               pathogen Phytophthora infestans, P69B emerges as an effector hub
+               targeted by different microbial kingdoms, consistent with a
+               diversification of P69B orthologs and paralogs. This study
+               demonstrates the power of artificial intelligence to predict
+               cross-kingdom interactions at the plant-pathogen interface.",
+  journal   = "Nat. Commun.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  14,
+  number    =  1,
+  pages     = "6040",
+  month     =  sep,
+  year      =  2023,
+  copyright = "https://creativecommons.org/licenses/by/4.0",
+  language  = "en",
+  url={https://doi.org/10.1038/s41467-023-41721-9}
+}
+
+@article{Homma2024,
+author = {Homma, Felix and Lyu, Joy and van der Hoorn, Renier A. L.},
+title = {Using AlphaFold Multimer to discover interkingdom protein–protein interactions},
+journal = {The Plant Journal},
+volume = {120},
+number = {1},
+pages = {19-28},
+keywords = {AlphaFold Multimer, artificial intelligence, protein folding, small secreted protein, hydrolase, inhibitor, computing cluster},
+doi = {https://doi.org/10.1111/tpj.16969},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/tpj.16969},
+abstract = {SUMMARY Structural prediction by artificial intelligence can be powerful new instruments to discover novel protein–protein interactions, but the community still grapples with the implementation, opportunities and limitations. Here, we discuss and re-analyse our in silico screen for novel pathogen-secreted inhibitors of immune hydrolases to illustrate the power and limitations of structural predictions. We discuss strategies of curating sequences, including controls, and reusing sequence alignments and highlight important limitations caused by different platforms, sequence depth and computing times. We hope these experiences will support similar interactomic screens by the research community.},
+year = {2024}
+}
+
+@ARTICLE{Lee2023,
+  title     = "Score-based generative modeling for de novo protein design",
+  author    = "Lee, Jin Sub and Kim, Jisun and Kim, Philip M",
+  abstract  = "The generation of de novo protein structures with predefined
+               functions and properties remains a challenging problem in
+               protein design. Diffusion models, also known as score-based
+               generative models (SGMs), have recently exhibited astounding
+               empirical performance in image synthesis. Here we use
+               image-based representations of protein structure to develop
+               ProteinSGM, a score-based generative model that produces
+               realistic de novo proteins. Through unconditional generation, we
+               show that ProteinSGM can generate native-like protein
+               structures, surpassing the performance of previously reported
+               generative models. We experimentally validate some de novo
+               designs and observe secondary structure compositions consistent
+               with generated backbones. Finally, we apply conditional
+               generation to de novo protein design by formulating it as an
+               image inpainting problem, allowing precise and modular design of
+               protein structure.",
+  journal   = "Nat. Comput. Sci.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  3,
+  number    =  5,
+  pages     = "382--392",
+  month     =  may,
+  year      =  2023,
+  copyright = "https://www.springernature.com/gp/researchers/text-and-data-mining",
+  language  = "en",
+  url       = {https://doi.org/10.1038/s43588-023-00440-3}
+}
+
+@ARTICLE{Kedem1999,
+  title   = "Unit-vector {RMS} ({URMS}) as a tool to analyze molecular dynamics
+             trajectories",
+  author  = "Kedem, K and Chew, L P and Elber, R",
+  journal = "Proteins",
+  volume  =  37,
+  pages   = "554--564",
+  month   =  dec,
+  year    =  1999,
+  url     = {https://doi.org/10.1002/(SICI)1097-0134(19991201)37:4%3C554::AID-PROT6%3E3.0.CO;2-1}
+}
+
+@ARTICLE{Chew1999,
+  title     = "Fast detection of common geometric substructure in proteins",
+  author    = "Chew, L P and Huttenlocher, D and Kedem, K and Kleinberg, J",
+  abstract  = "We consider the problem of identifying common three-dimensional
+               substructures between proteins. Our method is based on comparing
+               the shape of the alpha-carbon backbone structures of the
+               proteins in order to find three-dimensional (3D) rigid motions
+               that bring portions of the geometric structures into
+               correspondence. We propose a geometric representation of protein
+               backbone chains that is compact yet allows for similarity
+               measures that are robust against noise and outliers. This
+               representation encodes the structure of the backbone as a
+               sequence of unit vectors, defined by each adjacent pair of
+               alpha-carbons. We then define a measure of the similarity of two
+               protein structures based on the root mean squared (RMS) distance
+               between corresponding orientation vectors of the two proteins.
+               Our measure has several advantages over measures that are
+               commonly used for comparing protein shapes, such as the minimum
+               RMS distance between the 3D positions of corresponding atoms in
+               two proteins. A key advantage is that this new measure behaves
+               well for identifying common substructures, in contrast with
+               position-based measures where the nonmatching portions of the
+               structure dominate the measure. At the same time, it avoids the
+               quadratic space and computational difficulties associated with
+               methods based on distance matrices and contact maps. We show
+               applications of our approach to detecting common contiguous
+               substructures in pairs of proteins, as well as the more
+               difficult problem of identifying common protein domains (i.e.,
+               larger substructures that are not necessarily contiguous along
+               the protein chain).",
+  journal   = "J. Comput. Biol.",
+  publisher = "SAGE Publications",
+  volume    =  6,
+  number    = "3-4",
+  pages     = "313--325",
+  year      =  1999,
+  language  = "en",
+  url       = {https://doi.org/10.1089/106652799318292}
+}
+
+@article{Levitt1998,
+author = {Michael Levitt  and Mark Gerstein},
+title = {A unified statistical framework for sequence comparison and
+ structure comparison},
+journal = {Proceedings of the National Academy of Sciences},
+volume = {95},
+number = {11},
+pages = {5913-5920},
+year = {1998},
+doi = {10.1073/pnas.95.11.5913},
+URL = {https://www.pnas.org/doi/abs/10.1073/pnas.95.11.5913},
+eprint = {https://www.pnas.org/doi/pdf/10.1073/pnas.95.11.5913},
+abstract = {We present an approach for assessing the significance of
+ sequence and structure comparisons by using nearly identical
+ statistical formalisms for both sequence and structure. Doing so
+ involves an all-vs.-all comparison of protein domains [taken here from
+ the Structural Classification of Proteins (scop) database] and then
+ fitting a simple distribution function to the observed scores. By using
+ this distribution, we can attach a statistical significance to each
+ comparison score in the form of a P value, the
+ probability that a better score would occur by chance. As expected, we
+ find that the scores for sequence matching follow an extreme-value
+ distribution. The agreement, moreover, between the P
+ values that we derive from this distribution and those reported by
+ standard programs (e.g., blast and fasta
+ validates our approach. Structure comparison scores also follow an
+ extreme-value distribution when the statistics are expressed in terms
+ of a structural alignment score (essentially the sum of reciprocated
+ distances between aligned atoms minus gap penalties). We find that the
+ traditional metric of structural similarity, the rms deviation in atom
+ positions after fitting aligned atoms, follows a different distribution
+ of scores and does not perform as well as the structural alignment
+ score. Comparison of the sequence and structure statistics for pairs of
+ proteins known to be related distantly shows that structural comparison
+ is able to detect approximately twice as many distant relationships as
+ sequence comparison at the same error rate. The comparison also
+ indicates that there are very few pairs with significant similarity in
+ terms of sequence but not structure whereas many pairs have significant
+ similarity in terms of structure but not sequence.}
+}
+
+@ARTICLE{Abagyan1997,
+  title     = "Do aligned sequences share the same fold?",
+  author    = "Abagyan, R A and Batalov, S",
+  abstract  = "Sequence comparison remains a powerful tool to assess the
+               structural relatedness of two proteins. To develop a sensitive
+               sequence-based procedure for fold recognition, we performed an
+               exhaustive global alignment (with zero end gap penalties)
+               between sequences of protein domains with known
+               three-dimensional folds. The subset of 1.3 million alignments
+               between sequences of structurally unrelated domains was used to
+               derive a set of analytical functions that represent the
+               probability of structural significance for any sequence
+               alignment at a given sequence identity, sequence similarity and
+               alignment score. Analysis of overlap between structurally
+               significant and insignificant alignments shows that sequence
+               identity and sequence similarity measures are poor indicators of
+               structural relatedness in the ``twilight zone'', while the
+               alignment score allows much better discrimination between
+               alignments of structurally related and unrelated sequences for a
+               wide variety of alignment settings. A fold recognition benchmark
+               was used to compare eight different substitution matrices with
+               eight sets of gap penalties. The best performing matrices were
+               Gonnet and Blosum50 with normalized gap penalties of 2.4/0.15
+               and 2.0/0.15, respectively, while the positive matrices were the
+               worst performers. The derived functions and parameters can be
+               used for fold recognition via a multilink chain of probability
+               weighted pairwise sequence alignments.",
+  journal   = "J. Mol. Biol.",
+  publisher = "Elsevier BV",
+  volume    =  273,
+  number    =  1,
+  pages     = "355--368",
+  month     =  oct,
+  year      =  1997,
+  copyright = "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  language  = "en",
+  url       = {https://doi.org/10.1006/jmbi.1997.1287}
+}
+
+@ARTICLE{BarrioHernandez2023,
+  title     = "Clustering predicted structures at the scale of the known
+               protein universe",
+  author    = "Barrio-Hernandez, Inigo and Yeo, Jingi and J{\"a}nes, J{\"u}rgen
+               and Mirdita, Milot and Gilchrist, Cameron L M and Wein, Tanita
+               and Varadi, Mihaly and Velankar, Sameer and Beltrao, Pedro and
+               Steinegger, Martin",
+  abstract  = "Proteins are key to all cellular processes and their structure
+               is important in understanding their function and evolution.
+               Sequence-based predictions of protein structures have increased
+               in accuracy1, and over 214 million predicted structures are
+               available in the AlphaFold database2. However, studying protein
+               structures at this scale requires highly efficient methods.
+               Here, we developed a structural-alignment-based clustering
+               algorithm-Foldseek cluster-that can cluster hundreds of millions
+               of structures. Using this method, we have clustered all of the
+               structures in the AlphaFold database, identifying 2.30 million
+               non-singleton structural clusters, of which 31\% lack
+               annotations representing probable previously undescribed
+               structures. Clusters without annotation tend to have few
+               representatives covering only 4\% of all proteins in the
+               AlphaFold database. Evolutionary analysis suggests that most
+               clusters are ancient in origin but 4\% seem to be species
+               specific, representing lower-quality predictions or examples of
+               de novo gene birth. We also show how structural comparisons can
+               be used to predict domain families and their relationships,
+               identifying examples of remote structural similarity. On the
+               basis of these analyses, we identify several examples of human
+               immune-related proteins with putative remote homology in
+               prokaryotic species, illustrating the value of this resource for
+               studying protein function and evolution across the tree of life.",
+  journal   = "Nature",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  622,
+  number    =  7983,
+  pages     = "637--645",
+  month     =  oct,
+  year      =  2023,
+  copyright = "https://creativecommons.org/licenses/by/4.0",
+  language  = "en",
+  url       = {https://doi.org/10.1038/s41586-023-06510-w}
+}

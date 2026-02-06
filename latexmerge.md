@@ -729,19 +729,19 @@ En general aceptamos que cada superfamilia de proteínas es un clúster de estru
 
 Lo habitual cuando se publica un nuevo método es compararlo con otros preexistentes. Estas comparaciones, si son rigurosas y reproducibles, pueden ayudar en la tarea de seleccionar un programa idóneo para esta tarea. El algoritmo MAMMOTH, uno de los más exitosos en la era pre-AlphaFold, se resumía en estos pasos, en palabras textuales de sus autores [@Ortiz2002]:
 
-> 1.- From the Calpha trace, compute the unit-vector U-RMS between all pairs of heptapeptides of both model and experimental structure. The U-RMS is described in: Kedem, Chew & Elber (1999) Proteins 37(4):554-64, and in Chew, Huttenlocher, Kedem & Kleinberg (1999) J.Comp.Biol. 6, 313-325. This is a measure sensitive to the local structure.
+> 1.- From the Calpha trace, compute the unit-vector U-RMS between all pairs of heptapeptides of both model and experimental structure. The U-RMS is described in [@Kedem1999; @Chew1999]. This is a measure sensitive to the local structure.
 >
-> 2.- Use the matrix derived in step 1 to find and alignment of local structures that maximizes the local similarity of both the model and the experimental structure. For that, use a global alignment method with zero end gaps, as described in Needleman & Wunsch (1970) J.Mol.Biol. 48, 443-453.
+> 2.- Use the matrix derived in step 1 to find and alignment of local structures that maximizes the local similarity of both the model and the experimental structure. For that, use a global alignment method with zero end gaps, as described in [@Needleman1970].
 >
-> 3.- Find the maximum subset of similar local structures that have their corresponding Calphas close in cartesian space. \"Close\" is considered here as a distance less or equal than 4.0 A. The method to find this subset is a small variant of the MaxSub algorithm from the Fischer group: Siew, Elofsson, Rychlewski & Fischer (2000) Bioinformatics, in press.
+> 3.- Find the maximum subset of similar local structures that have their corresponding Calphas close in cartesian space. "Close" is considered here as a distance less or equal than 4.0 A. The method to find this subset is a small variant of the MaxSub algorithm from the Fischer group [@Siew2000].
 >
-> 4.- Obtain the probability of obtaining the given proportion of aligned residues (with respect to the shortest protein model) by chance. This metric (E-value) is then used as the final score (or the corresponding Z-score, both are equivalent for gaussian distri- butions, however the Z-score is a more manegable index). In order to obtain this value, an approach similar to that of Levitt & Gerstein (1998) PNAS 95, 5913 is used, as described in Abagyan & Batalov (1997) J.Mol.Biol. 273, 355-368. The E-value estimation is based on extreme-value fitting. In a test set with the SCOP database, it shows rather good performance.
+> 4.- Obtain the probability of obtaining the given proportion of aligned residues (with respect to the shortest protein model) by chance. This metric (E-value) is then used as the final score (or the corresponding Z-score, both are equivalent for gaussian distri- butions, however the Z-score is a more manegable index). In order to obtain this value, an approach similar to that of [@Levitt1998] is used, as described in [@Abagyan1997]. The E-value estimation is based on extreme-value fitting. In a test set with the SCOP database, it shows rather good performance.
 
 MAMMOTH fue comparado con varios métodos, como se ve en esta figura:
 
 ![ [Figura](#fig:mammoth}). Semejanza de MAMMOTH respecto a otros algoritmos de comparación de estructura de proteínas, incluyendo el criterio de un experto humano (Murzin). Figura tomada de @Ortiz2002. Copyright (2002) Protein Science. ](fig/mammoth_bench.jpg){#fig:mammoth}
 
-En aquel momento MAMMOTH era junto con DALI de los mejores programas, porque además de generar superposiciones y alineamientos satisfactorios, sus medidas numéricas de similitud devuelven valores que se ajustan a la evaluación visual de la superposición obtenida. En concreto, MAMMOTH devuelve para cada alineamiento una puntuación y su valor esperado asociado (*E-value*), que podemos interpretar de manera análoga a los valores esperados de BLAST, superando las limitaciones del RMSD para comparar estructuras que solamente se parecen en algunas regiones [@Siew2000]. Recientemente otros algoritmos han superado a MAMMOTH, sobre todo a la hora de hacer alineamientos estructurales múltiples, combinando estructura y secuencia, como por ejemplo [PC_ali](https://github.com/ugobas/PC_ali) [@Bastolla2023] o [FoldMason](https://github.com/steineggerlab/foldmason) [@Cameron2026].
+En aquel momento MAMMOTH era junto con DALI de los mejores programas, porque además de generar superposiciones y alineamientos satisfactorios, sus medidas numéricas de similitud devuelven valores que se ajustan a la evaluación visual de la superposición obtenida. En concreto, MAMMOTH devuelve para cada alineamiento una puntuación y su valor esperado asociado (*E-value*), que podemos interpretar de manera análoga a los valores esperados de BLAST, superando las limitaciones del RMSD para comparar estructuras que solamente se parecen en algunas regiones [@Siew2000]. Recientemente otros algoritmos han superado a MAMMOTH, sobre todo a la hora de hacer alineamientos estructurales múltiples que combinan estructura y secuencia [@Bastolla2023; @Cameron2026], o de agrupar miles de estructuras de manera eficiente [@BarrioHernandez2023].
 
 Para superar las limitaciones del RMSD, que da el mismo peso a regiones del core que a regiones divergentes, @Zhang2004 propusieron otra función, el TM-score, que disminuye el peso de las parejas alineadas a mayor distancia, es menos sensible a la longitud de las estructuras comparadas y toma valores entre 0 y 1:
 
@@ -761,7 +761,7 @@ Para aprender a hacer alineamientos/superposiciones estructurales, y a interpret
 
 - Visita [CATH](https://www.cathdb.info) y busca un dominio, por ejemplo 'homeodomain', y selecciona un grupo de 5-10 dominios relacionados; ten en cuenta que `3lnqA00` se corresponde con la estructura 3LNQ del Protein Data Bank, cadena A.
 
-- Alinea las estructuras que contienen los dominios elegidos en <https://github.com/steineggerlab/foldmason> .
+- Alinea las estructuras que contienen los dominios elegidos en <https://search.foldseek.com/foldmason> 
 
 - Visualiza la superposición y el correspondiente alineamento de secuencia y descarga los resultados (en formato .png, .pdb y .fasta); guarda también una captura de pantalla del alineamiento múltiple de secuencias. 
 
