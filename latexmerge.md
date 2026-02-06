@@ -474,7 +474,8 @@ Muestro algunas capturas de pantalla del tutorial, donde se pueden deshacer choq
 
 ![ [Figura](#fig:standalonefoldit}). Capturas de pantalla del software standaloneFoldit en su versión para Windows, libre para uso académico. A diferencia del juego, que es un cliente online, esta aplicación permite importar y exportar moléculas en formato PDB y por tanto puede usarse como herramienta de modelado interactiva [@Kleffner2017]. ](fig/standaloneFoldIt.png){#fig:standalonefoldit}
 
-La aplicación Foldit está disponible en <https://fold.it/play> para Linux, MacOS y Windows.
+La aplicación Foldit está disponible en <https://fold.it/play> para Linux, MacOS y Windows. 
+La versión de Ubuntu 24 require [libglut3-dev](https://askubuntu.com/questions/1526992/is-there-a-reason-24-04-lts-noble-numbat-does-not-provide-libglut-so-3).
 
 Familiarizarse con las operaciones habituales para manipular y modificar estructuras moleculares de proteínas, por ejemplo con Foldit, facilita el aprendizaje de plataformas especializadas como <https://sbl.inria.fr>.
 
