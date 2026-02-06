@@ -9204,5 +9204,62 @@ URL = {https://www.science.org/doi/abs/10.1126/science.adq3948},
 abstract = {A lack of systematic experimental data limits our understanding of protein evolution. In this study, we experimentally characterized proteins with randomized sequences. Vast numbers of amino acid combinations constitute stable protein cores and surfaces. However, alternative cores frequently disrupt protein function by indirect allosteric effects. Both protein stability and binding can be predicted using simple additive energy models with a small contribution from pairwise energetic couplings. Indeed, energy models trained on one protein can predict functional cores and surfaces across more than a billion years of evolution, with only rare energetic couplings that we experimentally identify limiting the transplantation of cores between highly diverged proteins. Our results reveal the simple energetic architecture of proteins and suggest that allostery is an important constraint on sequence evolution. Globular proteins typically have a stable and densely packed core. Whether mutations are detrimental thus depends on context, and one residue change can potentially be mitigated by another. Escobedo et al. systematically randomized a small set of hydrophobic residues in the cores of three well-studied globular proteins and evaluated the effects on stability and partner binding. There were many possible core residue combinations that retained thermal stability, and a simple energetic model was trained to predict functional cores. This work helps to demystify allosteric interactions in protein structure and lends support to efforts to engineer surface and core sequences. —Michael A. Funk}
 }
 
+@article{Fleming2025,
+title = {AlphaFold Protein Structure Database and 3D-Beacons: New Data and Capabilities},
+journal = {Journal of Molecular Biology},
+volume = {437},
+number = {15},
+pages = {168967},
+year = {2025},
+note = {Computation Resources for Molecular Biology},
+issn = {0022-2836},
+doi = {https://doi.org/10.1016/j.jmb.2025.168967},
+url = {https://www.sciencedirect.com/science/article/pii/S0022283625000336},
+author = {Jennifer Fleming and Paulyna Magana and Sreenath Nair and Maxim Tsenkov and Damian Bertoni and Ivanna Pidruchna and Marcelo Querino {Lima Afonso} and Adam Midlik and Urmila Paramval and Augustin Žídek and Agata Laydon and Oleg Kovalevskiy and Joshua Pan and Jun Cheng and Žiga Avsec and Clare Bycroft and Lai Hong Wong and Meera Last and Milot Mirdita and Martin Steinegger and Pushmeet Kohli and Mihály Váradi and Sameer Velankar},
+keywords = {AlphaFold, Alphamissense, Annotations, Foldseek, Training},
+abstract = {The AlphaFold Protein Structure Database (https://alphafold.ebi.ac.uk/) has made significant strides in enhancing its utility and accessibility for the life science research community. The recent integration of AlphaMissense predictions enables access to the pathogenicity of human protein missense variants, with an innovative and interactive heatmap and 3D visualisation that display variant data at the residue level. Users can now toggle between structure model quality (pLDDT) and average pathogenicity scores, providing insights into the implications of specific residue changes. The Foldseek integration offers a rapid and accurate method for protein structure searches and comparisons. Bulk data download options further facilitate comprehensive data analysis and integration with other computational tools. The 3D-Beacons framework (https://www.ebi.ac.uk/pdbe/pdbe-kb/3dbeacons/) has also been enhanced with detailed annotation endpoints (such as AlphaMissense data) and integrates LevyLab’s dataset of homomeric AlphaFold 2 models. These advancements significantly improve the functionality and accessibility of these resources, enabling discoveries using structure data.}
+}
 
+@article{Gerasimavicius2026,
+    author = {Gerasimavicius, Lukas and Biddie, Simon C and Marsh, Joseph A},
+    title = {A structure-guided approach to noncoding variant evaluation for transcription factor binding using AlphaFold 3},
+    journal = {Nucleic Acids Research},
+    volume = {54},
+    number = {1},
+    pages = {gkaf1417},
+    year = {2026},
+    month = {01},
+    abstract = {Noncoding single-nucleotide variants (SNVs) that alter transcription factor (TF) binding can affect gene expression and contribute to disease. Sequence-based methods can excel at predicting TF binding, but rely on training data and can exhibit TF-specific biases. Here, we propose a structure-guided approach for noncoding SNVs, using AlphaFold 3 (AF3) to model TF–DNA complexes and FoldX for downstream physics-based assessment. Benchmarked against single nucleotide polymorphism-systematic evolution of ligands by exponential enrichment (SNP-SELEX) data for six TFs (SPIB, ELK3, ETV4, SF-1, PAX5, and MEIS2), the FoldX-based strategy showed good agreement with experimental allele preferences. Interestingly, differences in AF3’s interface-predicted template modelling (ipTM) score aligned even more closely with SNP-SELEX results, generally surpassing energy-based metrics. Application to known disease-associated variants recapitulated most reported effects for TFs including NKX2-5, GATA3, and USF2A-USF1. In these examples, considering both ΔipTM and FoldX energies proved more reliable than either metric alone. While less accurate than state-of-the-art sequence-based methods, this work demonstrates that structural modelling can yield interpretable insights into how noncoding variants influence TF binding. By highlighting both the promise and limitations of AF3 in this context, our study provides a framework for complementary structural evaluation of regulatory variants.},
+    issn = {1362-4962},
+    doi = {10.1093/nar/gkaf1417},
+    url = {https://doi.org/10.1093/nar/gkaf1417},
+    eprint = {https://academic.oup.com/nar/article-pdf/54/1/gkaf1417/66284917/gkaf1417.pdf},
+}
 
+@article{Varga2025,
+    author = {Varga, Julia K and Ovchinnikov, Sergey and Schueler-Furman, Ora},
+    title = {actifpTM: a refined confidence metric of AlphaFold2 predictions involving flexible regions},
+    journal = {Bioinformatics},
+    volume = {41},
+    number = {3},
+    pages = {btaf107},
+    year = {2025},
+    month = {03},
+    abstract = {One of the main advantages of deep learning models of protein structure, such as Alphafold2, is their ability to accurately estimate the confidence of a generated structural model, which allows us to focus on highly confident predictions. The ipTM score provides a confidence estimate of interchain contacts in protein–protein interactions. However, interactions, in particular motif-mediated interactions, often also contain regions that remain flexible upon binding. These noninteracting flanking regions are assigned low confidence values and will affect ipTM, as it considers all interchain residue–residue pairs, and two models of the same motif-domain interaction, but differing in the length of their flanking regions, would be assigned very different values. Here, we propose actual interface pTM (actifpTM), a modified ipTM measure, that focuses on the residues participating in the interaction, resulting in a more robust measure of interaction confidence. Besides, actifpTM is calculated both for the full complex as well as for each pair of chains, making it well-suited for evaluating multi-chain complexes with a particularly critical binding interface, such as antibody-antigen interactions.The method is available as part of the ColabFold (https://github.com/sokrypton/ColabFold) repository, installable both locally or usable with Colab notebook.},
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btaf107},
+    url = {https://doi.org/10.1093/bioinformatics/btaf107},
+}
+
+@article{Tang2025,
+author = {Haocheng Tang  and Junmei Wang },
+title = {Accurate site-specific folding via conditional diffusion based on AlphaFold3},
+journal = {Proceedings of the National Academy of Sciences},
+volume = {122},
+number = {44},
+pages = {e2521048122},
+year = {2025},
+doi = {10.1073/pnas.2521048122},
+URL = {https://www.pnas.org/doi/abs/10.1073/pnas.2521048122},
+abstract = {Precisely predicting interactions between diverse biomolecules, including small molecules, peptides, and nucleic acids, is fundamental to drug design. We developed SiteAF3, a generalized, high-accuracy, site-specific modeling tool that significantly enhances AlphaFold3’s performance. SiteAF3 excels at predicting not only small molecule binding but also protein–peptide and protein–nucleic acid interactions. It demonstrates its most transformative power on notoriously difficult cases, such as targeting orphan proteins with known structures or finding allosteric sites for next-generation drugs, showing markedly higher accuracy where other cofolding methods falter. By accurately modeling this diverse range of complex interactions, SiteAF3 provides a powerful, universal platform for designing novel drug molecules. Accurate structure prediction of biomolecular complexes is crucial for understanding biological processes and enabling drug discovery. While AlphaFold3 represents a significant advancement, enhancing its accuracy for specific binding sites remains a challenge. We present SiteAF3, a method for accurate site-specific folding via conditional diffusion, built upon the AlphaFold3 framework. SiteAF3 refines the diffusion process by fixing the receptor structure and optionally incorporating binding pocket and hotspot residue information. Comprehensive evaluations on protein–small molecule, protein–peptide, and protein–nucleic acid datasets demonstrate that SiteAF3 consistently outperforms AlphaFold3, achieving higher accuracy in complex structure prediction especially for orphan proteins and allosteric ligands, with reduced computational cost. SiteAF3 offers a user-friendly plug-in compatible with AlphaFold3, providing a valuable tool for more accurate modeling of biomolecular interactions.}
+}

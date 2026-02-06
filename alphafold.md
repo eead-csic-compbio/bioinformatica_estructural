@@ -2,14 +2,14 @@ AlphaFold y la revolución del aprendizaje automático {#alphafoldAA}
 ===================================================================
 
 Las metodologías descritas en los capítulos anteriores son el resultado de décadas de trabajo de la comunidad científica.
-A hombros de estos gigantes, y aprovechando el enorme número de secuencias (~10E8) y estructuras (~10E5) conocidas en la actualidad, 
+A hombros de estos gigantes, y aprovechando el enorme número de secuencias (~10E8) y estructuras (~10E5) de proteínas conocidas en la actualidad, 
 se han ido publicando desde 2020 herramientas basadas en el 
 [aprendizaje automático](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico) 
 (AU, _machine learning_ (ML) en inglés) 
 que han permitido dar un salto cualitativo en la predicción de la estructura de las proteínas. 
 La más famosa de todas es [AlphaFold](https://alphafold.ebi.ac.uk) (AF), 
 merecedora del [Nobel](https://bioinfoperl.blogspot.com/2024/10/nobel-diseno-prediccion-proteinas.html), 
-pero hay muchas otras, y las que vendrán. Vayamos por partes.
+pero hay muchas otras. Vayamos por partes.
 
 
 La revolución del aprendizaje automático {#AA}
@@ -76,49 +76,61 @@ Puedes ver la lista completa de dependencias en su
 ### Métricas de calidad de AlphaFold2 (AF2) {#AFmetrics}
 
 Los modelos 3D producidos por AF2 se ordenan por su puntuación **pLDDT** (*predicted Local Distance Difference Test*).
-Es una predicción por residuo de la función lDDT-C$alpha$, una medida de confianza para cada residuo basada en el porcentaje de distancias interatómicas que caen dentro de valores esperados. Por tanto es una medida que informa de la calidad local.
+Es una predicción por residuo de la función lDDT-C$alpha$, una medida de confianza para cada residuo basada en el porcentaje de distancias interatómicas que caen dentro de valores esperados. 
+Por tanto es una medida que informa de la calidad local (ver sección [5.1](#compS3).
 
-Como se muestra eb la siguiente figura, toma valores de 0 a 100 que se guardan como factores de temperatura en los modelos generados en formato PDB (ver sección [1.5](#PDBformat). Los valores [70-90] se interpretan como de alta confianza y los mayores de 90 de muy alta confianza. Valores por debajo de 50 se consideran propios de estructuras desordenadas, como pasa frecuentemente en los extremos de los  polipéptidos.
+A diferencia de lDDT, pLDDT toma valores de 0 a 100 que se guardan como factores de temperatura en los modelos generados en formato PDB (ver sección [1.5](#PDBformat). 
+Los valores [70-90] se interpretan como de alta confianza y los mayores de 90 de muy alta confianza. Valores por debajo de 50 se consideran propios de estructuras desordenadas, como pasa frecuentemente en los extremos de los  polipéptidos.
 
 ![ [Figura](#fig:pLDDT). Ejemplos de pLDDT de modelos AF2. El esquema de arriba muestra una proteínas con varios dominios. La gráfica de abajo muestra los valores en un dominio solo. Figura adaptada de [@Tunyasuvunakool2022] .](fig/pLDDT.png){#fig:pLDDT} 
 
 Otra medida independiente de la calidad de un modelo AF2 es **PAE** (*Predicted Aligned Error*), que se mide en Angstrom.
-Esta métrica mide el error de las posiciones de los residuos de un modelo si se pudiera superponer con la estructura experimental. Se usa sobre todo para evaluar las posiciones de los diferentes dominios de una proteína multidominio.
+Esta métrica mide el error de las posiciones de los residuos de un modelo si se pudiera superponer con la estructura experimental. 
+Se usa sobre todo para evaluar las posiciones de los diferentes dominios de una proteína multidominio.
  
 
 Evaluación de calidad de las predicciones de AlphaFold2 (AF2) {#AFQC}
 ---------------------------------------------------------------------
 
-Entre las **fortalezas** de AF2 destaca su notable precisión promedio de 1.5 Å de RMSD para todos los átomos modelados, no sólo carbonos $\alpha$, tanto en CASP14 como en un conjunto de 3144 estructuras recientemente publicadas en el Protein Data Bank tras descartar las estructuras conocidas con identidad de secuencia > 40%. Además, AF2 es capaz de estimar bien la calidad los modelos que genera:
+Entre las **fortalezas** de AF2 destaca su notable precisión promedio de 1.5 Å de RMSD para todos los átomos modelados, 
+no sólo carbonos $\alpha$, tanto en CASP14 como en un conjunto de 3144 estructuras recientemente publicadas en el *Protein Data Bank* tras descartar las estructuras conocidas con identidad de secuencia > 40%. 
+Además, AF2 es capaz de estimar bien la calidad los modelos que genera:
 
 ![ [Figura](#fig:AF2bench). Banco de pruebas de AF2 sobre un conjunto de 3144 estructuras del PDB: a) RMSD del esqueleto peptídico modelado comparado con la estructura experimental. b) Correlación entre la precisión del esqueleto, calculada con la función lDDT [@Mariani2013], y la correcta elección de rotámeros de la cadenas laterales. Figura tomada de [@Jumper2021].](fig/AF2bench.png){#fig:AF2bench}
 
-Otra fortaleza de AF2 según sus usuarios en [Twitter](https://twitter.com/sokrypton/status/1417935552905728006) es que tiene buenas prestaciones observadas para predecir estructuras cuaternarias de homómeros.
+Otra fortaleza es que la [AlphaFold Protein Structure Database](https://alphafold.ebi.ac.uk) [@Fleming2025]
+va creciendo y al inicio de 2026 incluye 214M de estructuras predichas para múltiples especies.
+Si en julio de 2021 agregó los proteomas de 20 especies modelo, 
+incluyendo varias [plantas](https://bioinfoperl.blogspot.com/2022/09/plantas-beneficiadas-alphafold.html),
+desde septiembre de 2025 incluye todas las secuencias de [UniProt](https://www.uniprot.org) 2025_03. 
+<!--Otra fortaleza de AF2 según sus usuarios en [Twitter](https://twitter.com/sokrypton/status/1417935552905728006) es que tiene buenas prestaciones observadas para predecir estructuras cuaternarias de homómeros.-->
+
+Al analizar estos modelos de AF2 la mayoría se pueden asignar a superfamilias ya existentes en la clasificación de plegamientos,
+pero enriqueciendo de manera significativa las conformaciones de las superfamilias conocidas en CATH,
+y revelando nuevos plegamientos [@Varadi2022; @Bordin2022; @Koehler2023; @Durairaj2023; @Lau2024]. 
+ 
+![ [Figura](#fig:AF2CATH). Crecimiento en conocimiento estructural en número de dominios (izquierda) y en proporción (derecha) para 21 especies en 2021. Figura tomada de [@Bordin2022].](fig/AF2CATH.jpg){#fig:AF2CATH}
+
 
 Entre las **limitaciones** destacan:
 
  + La calidad de las predicciones cae de manera significativa si el alineamiento múltiple de secuencias homólogas a la de interés tiene una profundidad < 30 (ver sección de [predicción de contactos](#contactosPred))
 
- + Las estructuras de AF2 son de menor calidad para dominios poco compactos, con pocos contactos, como los dominios puente. 
+ + Las estructuras de AF2 son de menor calidad para dominios poco compactos, con pocos contactos, como las regiones puente. 
  
-Además, el análisis de las 365.184 estructuras de AF2 disponibles para un total de 21 especies en UniProt [@Varadi2022; @Bordin2022], incluyendo 4 plantas (*Arabidopsis thaliana*, soja, arroz y maíz), ha permitido hacer varias **observaciones**:
-
- + Las especies que han ganado más anotaciones estructurales de proteínas en proporción son plantas (soja, arroz y maíz)
- 
- + Tras seleccionar modelos de AF2 de buena calidad (tras eliminar los desordenados por ejemplo), el 92% se pueden asignar a superfamilias ya existentes en la clasificación de plegamientos CATH. Por tanto, hay indicios de que AF2 podría haber descubierto nuevos plegamientos. Puedes ver más detalles en el [blog](https://bioinfoperl.blogspot.com/2022/09/plantas-beneficiadas-alphafold.html).
- 
- + Los modelos de AF2 enriquecen de manera significativa (36%) las conformaciones de las superfamilias de plegamientos conocidas en CATH
- 
-![ [Figura](#fig:AF2CATH). Crecimiento en conocimiento estructural en número de dominios (izquierda) y en proporción (derecha) para 21 especies. Figura tomada de [@Bordin2022].](fig/AF2CATH.jpg){#fig:AF2CATH}
 
 
 Qué cambia con AlphaFold3 {#alphafold3}
 ---------------------------------------
 
-El modelo AlphaFold3 (AF3) es una modificación sustancial de AF2 de manera que pueda representar una mayor variabilidad de 
-estructuras químicas (ADN, ARN, ligandos) y aprenda más rápido. AF3 i) reduce el procesamiento de alineamientos múltiples de 
-secuencias y ii) predice directamente coordenadas atómicas por medio de un nuevo módulo de difusión que elimina la necesidad 
-de trabajar sobre la base de aminoácidos y cadenas laterales. 
+AlphaFold3 (AF3) es una modificación sustancial de AF2 que durante el entrenamiento aprende más rápido y que,
+al soportar una mayor variedad de moléculas (ADN, ARN, ligandos), permite predecir estructuras cuaternarias 
+y estudiar interacciones proteína-proteína, proteína-ADN y proteína-ARN. 
+Desde el punto de vista algorítmico, AF3 
+i) reduce el procesamiento de alineamientos múltiples de secuencias y 
+ii) predice directamente coordenadas atómicas por medio de un nuevo módulo de difusión que elimina la necesidad 
+de trabajar sobre la base de aminoácidos y cadenas laterales, dado que es un modelo generativo que genera 
+imágenes tridimensionales de proteínas.
 
 ![ [Figura](#fig:AF3). Arquitectura de AF3, una evolución de AF2 especializada en interacciones de proteínas. Figura tomada de [@AF3].](fig/AF3.png){#fig:AF3} 
 
@@ -137,26 +149,37 @@ El segundo se describe en [@ESMFold2023].
 <!--su rendimiento es superior a los predictores clásicos pero inferior a AF2. 
 Al igual que AF2 usa redes neuronales profundas y require de mucha potencia de cálculo.-->
 
+[RFdiffusion2](https://rosettacommons.github.io/RFdiffusion2) es un algoritmo de diseño de proteínas basado en RoseTTAFold [@Ahern2026]
+que se ha aplicado a problemas de diseño de enzimas con función a la carta. 
+
 Otros algoritmos que usan aprendizaje profundo son por ejemplo [D-I-TASSER](https://zhanggroup.org/D-I-TASSER) [@DITASSER2025] o 
 [DMPfold](https://github.com/psipred/DMPfold) [@Greener2019]. 
 
-Otra alternativa interesante es el algoritmo [RGNA2](https://github.com/aqlaboratory/rgn2), una red geométrica recurrente descrita en [@Chowdhury2022].
-A diferencia de AF2 y RoseTTAFold, RGN2 no calcula alineamientos múltiples y por tanto se puede aplicar a cualquier secuencia, incluso a aquellas que llamamos huérfanas porque no tienen secuencias similares homólogas en las bases de datos.
+Otra alternativa interesante es el algoritmo [RGNA2](https://github.com/aqlaboratory/rgn2), 
+una red geométrica recurrente descrita en [@Chowdhury2022].
+A diferencia de AF2 y RoseTTAFold, RGN2 no calcula alineamientos múltiples y por tanto se puede aplicar a cualquier secuencia, 
+incluso a aquellas que llamamos huérfanas porque no tienen secuencias similares homólogas en las bases de datos.
 En cambio, RGN2 es un modelo de lenguaje, derivado de los que se usan cotidianamente para procesar lenguaje natural o para completar una frase cuando escribes en tu móvil. Aunque los autores recomiendan AF2 para los casos que sí tienen homólogos,
 sus resultados muestran que RGN2 supera a AF2 y RoseTTAFold en secuencias huérfanas gastando cien veces menos tiempo de cálculo.
 
+[ProteinSGM](https://gitlab.com/mjslee0921/proteinsgm) es un modelo de difusión capaz de generar estructuras *de novo* [@Lee2023].
+
 
 Aplicaciones de AlphaFold y algoritmos similares {#AFapps}
-------------------------------------
+------------------------------------------------
 
-Tras la publicación de los primeros resultados de AF2 la comunidad se puso manos a la obra para explorar las aplicaciones reales que podría tener. Muchos de esos esfuerzos se discutieron y diseminaron en Twitter. Por ejemplo, en este [hilo](https://twitter.com/_BalintMeszaros/status/1419579483921731591) se habla de la capacidad de predecir regiones desordenadas en proteínas con AF2, en [éste](https://twitter.com/DeepMind/status/1455589083611271169?s=20) de predicciones para multímeros o este [otro](https://twitter.com/MoAlQuraishi/status/1459188604723351552) de cómo reimplementar AF2 por completo para poder entrenarlo tú mismo.
+Tras la publicación de los primeros resultados de AF2 y AF3 la comunidad se puso manos a la obra para explorar las aplicaciones reales que podría tener. Muchos de esos esfuerzos se discutieron y diseminaron en Twitter. Por ejemplo, en este [hilo](https://twitter.com/_BalintMeszaros/status/1419579483921731591) se habla de la capacidad de predecir regiones desordenadas en proteínas con AF2, en [éste](https://twitter.com/DeepMind/status/1455589083611271169?s=20) de predicciones para multímeros o este [otro](https://twitter.com/MoAlQuraishi/status/1459188604723351552) de cómo reimplementar AF2 por completo para poder entrenarlo tú mismo.
 
 El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiva el potencial de AF2 para resolver problemas clásicos de la bioinformática estructural:
 
- * **Predicción del efecto fenotípico de variantes/SNPs**. Para ellos modelaron 33 proteínas con más de cien mil mutaciones en total resultantes de experimentos de mutagénesis profunda. Tras calcular correlaciones entre los efectos predichos y los medidos experimentalmente observaron que las obtenidas con AF2 eran en promedio iguales o mejores que las obtenidas por métodos experimentales. 
+ * **Predicción del efecto fenotípico de variantes/SNPs**. Para ellos modelaron 33 proteínas con más de cien mil mutaciones en total resultantes de experimentos de mutagénesis profunda. 
+ Tras calcular correlaciones entre los efectos predichos y los medidos experimentalmente observaron que las obtenidas con AF2 eran en promedio iguales o mejores que las obtenidas por métodos experimentales. 
  Otros trabajos más recientes proponen diferentes algoritmos [@Brandes2023; @AlphaMissense2023; @Lacoste2024], pero a menudo se centran en proteínas humanas.
  
- * **Predicción de cavidades de unión a ligandos**. En este caso usaron un conjunto de 225 proteínas para las cuales había estructuras disponibles en conformación unida al ligando (holo) y también sin unir (apo). En sus manos no apreciaron diferencia entre las cavidades obtenidas experimentalmente y las derivadas de modelos AF2 con **pLDDT > 90**. En cambio, observaron que los modelos AF2 con pLDDT < 90 no son fiables para buscar cavidades.
+ * **Predicción de cavidades de unión a ligandos**. En este caso usaron un conjunto de 225 proteínas para las cuales había estructuras disponibles en conformación unida al ligando (holo) y también sin unir (apo). 
+ En sus manos no apreciaron diferencia entre las cavidades obtenidas experimentalmente y las derivadas de modelos AF2 con **pLDDT > 90**. 
+ En cambio, observaron que los modelos AF2 con pLDDT < 90 no son fiables para buscar cavidades. 
+ [AlphaFill](https://github.com/PDB-REDO/alphafill) se puede usar para agregar ligandos en esas cavidades.
  
  * **Predicción de homo-oligómeros**. En su banco de pruebas observaron que en 71 de 87 casos los modelos de AF2 con el estado correcto de oligomerización tenían la puntuación más alta. Hay otra evaluación más completa em [@Evans2021].
  
@@ -166,21 +189,23 @@ El trabajo de [@Akdel2022] surgió de manera similar y evaluó de manera objetiv
  
  * **Diseño de proteínas con función a la carta**, como se explica por ejemplo en [@ProGen2023; @Guo2025] 
  
- * **Descubrimiento de nuevos plegamientos**, como se describe por ejemplo en [@Koehler2023; @Durairaj2023].
+ * **Predicción de sitios activos**, como se explica por ejemplo en [@Tang2025]
  
- * **Predicción de interacciones entre proteínas**, se ha aplicado a proteínas de defensa de plantas (ver [blog](https://bioinfoperl.blogspot.com/2024/09/protocolo-parejas-proteinas%20con%20AlphaFold.html))
-y a interfaces mediadas por proteínas desordenadas** [@Ginell2025]. 
+ * **Predicción de interacciones entre proteínas**, por ejemplo con [proteínas de defensa de plantas](https://bioinfoperl.blogspot.com/2024/09/protocolo-parejas-proteinas%20con%20AlphaFold.html)
+y o en interfaces mediadas por proteínas desordenadas [@Homma2023; @Homma2024 ; @Ginell2025 ; @Varga2025]
+
+ * **Predicción de complejos proteína-ADN**, como se explica por ejemplo en [@Gerasimavicius2026]
  
 ## Cómo obtener y usar modelos de AlphaFold y algoritmos similares 
 
 La manera más rápida de explorar modelos de AF es acceder a los que están precalculados en <https://alphafold.ebi.ac.uk>.
-En la interfaz Web puedes buscar proteínas por identificador de UniProt, 
+En la interfaz Web puedes buscar proteínas por identificador de UniProt, pegando una secuencia,
 o descargar todos los modelos de un organismo o de SwissProt en la sección de descargas <https://alphafold.ebi.ac.uk/download>. 
-También buscar por similitud de secuencia en <https://www.ebi.ac.uk/jdispatcher/sss/fasta>
+<!--También buscar por similitud de secuencia en <https://www.ebi.ac.uk/jdispatcher/sss/fasta>-->
 
 Si quieres calcular tus propios modelos hay varias opciones:
 
- + El servidor Web de AF3 <https://alphafoldserver.com> permite modelar monómeros, multímeros e incluso complejos 
+ + El servidor Web de AF3 <https://alphafoldserver.com> permite modelar monómeros, multímeros e incluso complejos
  [proteína-ADN]( https://bioinfoperl.blogspot.com/2024/05/logo-protein-DNA-complex-alphafold.html).
 
  + Un contenedor Docker de AF2 descrito en <https://github.com/deepmind/alphafold> que requiere 2.2TB de espacio si instalas todas las bases de datos 
@@ -202,7 +227,33 @@ Si quieres calcular tus propios modelos hay varias opciones:
 ![ [Figura](#fig:OF). Comparación de predicciones de AF2 y OpenFold para la estructura [7KDX:B](https://www.rcsb.org/structure/7KDX). Figura tomada de <https://github.com/aqlaboratory/openfold>.](fig/of_banner.png){#fig:OF}
 
 
+## Ejercicio con AF2 y algoritmos similares
 
-<!-- relajacion de modelos AF
-https://twitter.com/sokrypton/status/1585284793792602113?s=20&t=P2RSWfIRWnJOPzulsRE49Q
--->
+El ejercicio de esta sección consiste en:
+
++ elegir una secuencia de aminoácidos de una proteína de cualquier colección,
+
++ modelar su estructura terciaria con algoritmos disponibles en [ColabFold](https://github.com/sokrypton/ColabFold) u [OpenFold](https://colab.research.google.com/github/aqlaboratory/openfold/blob/main/notebooks/OpenFold.ipynb),
+
++ estimar su calidad con las distintas métricas y <https://swissmodel.expasy.org/assess>
+
+
+## Ejercicio con AF3
+
+En esta sección se trata de modelar un complejo proteína-ADN con AF3. Para ello necesitarás:
+
++ la secuencia de aminoácidos de un factor de transcripción; si es un dímero necesitarás dos secuencias
+
++ la secuencia de ADN (20-30 pares de bases) que contenga un sitio conocido o esperado de unión del factor de transcripción
+
++ si conoces iones necesarios para la unión, como Zn, puedes incluirlos también
+
++ lanzar la predicción en <https://alphafoldserver.com> 
+
++ estimar su calidad con las distintas métricas y <https://swissmodel.expasy.org/assess>
+
++ opcionalmente puedes estudiar la especificidad del complejo obtenido como se explica en el [blog](https://bioinfoperl.blogspot.com/2024/05/logo-protein-DNA-complex-alphafold.html)
+
+
+
+
